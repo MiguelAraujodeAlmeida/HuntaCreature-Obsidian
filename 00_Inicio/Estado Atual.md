@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-20-06** · 20/10/2026.
+Revisão de contexto **CTX-2026-10-20-07** · 20/10/2026.
 
 ## Entrega do jogo
 
@@ -38,7 +38,7 @@ Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de font
 
 ## Contexto compartilhado
 
-Um briefing para outro agente se conectar ao Blender MCP e absorver a direção visual foi preparado nesta revisão. Conexão, alterações de cena, exportação e aprovação artística dependem da execução desse agente e de uma tarefa de modelagem definida.
+Os MCPs do Blender e do Roblox Studio foram conectados e o fluxo de regras de modelagem 3D foi lido nesta revisão. O Blender está na cena-padrão não salva, sem asset criado; o Studio está em Play e não foi alterado. Conexão não equivale a alteração de cena, exportação ou aprovação artística.
 O Lumito é o primeiro asset para redesign, mas forma e material específicos estão em revisão. O protótipo ciano identifica a criatura atual, não aprova sua silhueta. Mutações não fazem parte desta etapa.
 
 Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura inicial enxuta e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].

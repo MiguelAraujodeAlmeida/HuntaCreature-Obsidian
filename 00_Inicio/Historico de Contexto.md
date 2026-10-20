@@ -136,6 +136,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limites:** validação do cofre e commit Git. Nenhuma alteração de Studio, Blender, jogo ou asset; modelo aguarda geração e aprovação do desenvolvedor.
 **Autoria/ambiente:** Codex, Windows, continuidade de contexto do projeto; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-20-07 — Conexão dos MCPs de Blender e Studio · 20/10/2026
+
+**Pedido:** conectar aos servidores MCP do Roblox Studio e Blender e seguir a leitura padrão das regras Markdown para criação de modelo 3D.
+**Resultado:** conexões confirmadas; bootstrap do cofre, domínio `ui_ux`, decisões aplicáveis, modelo de registro e guias técnicos foram lidos. A regra operacional para o Lumito continua: somente aparência base, identidade ciano/arredondada preservada, silhueta e volumes toy/facetados, validação em ângulos/escala; mutações posteriores.
+**Evidência/limites:** Studio conectado ao placeId 102310424634629 em Play, portanto sem mudança no lugar. Blender conectado à cena-padrão não salva (Cube/Camera/Light), sem criação, exportação ou modificação. O checkout do jogo possui alterações locais pré-existentes em `studio/shared/GameplayConfig.luau` e `art/`, preservadas sem inspeção ou edição.
+**Autoria/ambiente:** Codex, Windows, Roblox Studio MCP e Blender MCP; sem agentes auxiliares. Nenhuma aprovação artística, modelo ou commit de código do jogo.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.
