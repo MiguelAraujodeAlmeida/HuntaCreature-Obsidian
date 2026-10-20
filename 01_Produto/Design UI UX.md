@@ -6,9 +6,9 @@
 
 Toy/cartoon amigável, cores vivas, superfícies tipo studs/lego e formas legíveis. Grama, folhas, madeira, chão e criaturas devem parecer do mesmo jogo. Evitar realismo desnecessário, mistura casual de estilos e modelos genéricos sem silhueta. Modelos atuais são provisórios.
 
-### Lumito base — direção para o primeiro redesign
+### Lumito base — hipótese anterior, em revisão
 
-Preservar a leitura da criatura atual: corpo pequeno e arredondado em ciano, duas saliências superiores, olhos pretos simples, bochechas e pés curtos. Refinar como personagem original de brinquedo, não como esfera lisa com peças soltas: corpo em gota/feijão com base mais larga, silhueta reconhecível pela dupla de orelhas/antenas assimétricas, patas integradas, expressão curiosa e travessa, barriga aqua clara e um detalhe luminoso discreto próprio da espécie. Volumes, encaixes, cores e brilho devem funcionar de frente, lado, costas e três quartos, inclusive na escala 1× e ampliada até 5×. Evitar realismo, pelo, texturas ruidosas, acessórios aleatórios, excesso de neon e semelhança direta com mascotes alheios. Modelar somente a versão base; Gold/outras mutações serão aplicadas depois no Studio. Esta direção orienta o prompt, não aprova um modelo antes da revisão humana.
+O protótipo é ciano, arredondado, com duas saliências superiores, olhos simples e pés curtos. A proposta posterior de gota/feijão liso, patas integradas, barriga aqua e brilho foi rejeitada como resultado/direção insuficiente; **não é especificação aprovada para modelar**. O estudo [[06_Referencias/Estudo visual Steal an Egg]] examina uma alternativa geométrica mais alinhada ao mundo Roblox. Aguardar o parecer do desenvolvedor antes de fixar forma, materiais ou refazer o modelo. O escopo continua sendo apenas a aparência base; mutações podem ser tratadas depois no Studio.
 
 Usar componentes glossy originais existentes: ícones grandes o suficiente para leitura, brilho, relevo/contorno e texto branco com sombra escura. Não substituir mochila/moeda/laço por emoji, símbolos de fonte ou retângulos de texto. A referência de botões foi explicitamente escolhida pelo desenvolvedor; manter sua linguagem visual, ajustando escala ao jogo.
 

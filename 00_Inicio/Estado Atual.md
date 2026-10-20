@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-20-04** · 20/10/2026.
+Revisão de contexto **CTX-2026-10-20-05** · 20/10/2026.
 
 ## Entrega do jogo
 
@@ -26,7 +26,7 @@ Regras dos sistemas preservados: [[01_Produto/Sistemas Atuais]]. Padrão visual:
 
 - `ac385ae` substituiu Small/Normal/Large por multiplicador individual oculto de 1× a 5×, removeu rótulos de tamanho da UI, ampliou validação de perfil e ajustou movimento/visibilidade de gigantes. Oito fontes foram compilados em Edit; limites e migração 0,85× → 1× verificados sem Play. O Studio confirmou salvamento na Roblox. Não houve publicação nem playtest da mudança.
 - Feedback posterior: ainda aparecem gigantes demais. Um sorteio com 70% de 1× e curva decrescente para os demais foi alterado no checkout local e no script em Edit, com checagem de limites, **mas a sessão de controle foi interrompida antes da confirmação de salvamento**. O checkout do jogo está modificado e sem commit para esse ajuste. O lugar salvo pode continuar com a curva anterior; não tratá-lo como entregue.
-- Redesign solicitado: somente aparência **base** do Lumito. Um prompt detalhado de modelagem foi reformulado a partir da imagem atual; mutações ficam para etapa posterior no Studio. Nenhum modelo foi criado ou integrado.
+- Redesign solicitado: somente aparência **base** do Lumito; mutações ficam para etapa posterior no Studio. O resultado/direção do prompt anterior foi rejeitado. [[06_Referencias/Estudo visual Steal an Egg]] analisa outra linguagem de criaturas e mundo, **aguardando parecer do desenvolvedor**. Nenhum modelo foi criado ou integrado.
 
 ## Entrega anterior de menus
 
@@ -39,7 +39,7 @@ Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de font
 ## Contexto compartilhado
 
 Um briefing para outro agente se conectar ao Blender MCP e absorver a direção visual foi preparado nesta revisão. Conexão, alterações de cena, exportação e aprovação artística dependem da execução desse agente e de uma tarefa de modelagem definida.
-O Lumito é o primeiro asset para redesign. A direção vigente é refiná-lo mantendo corpo ciano arredondado e rosto amigável; mutações não fazem parte desta etapa.
+O Lumito é o primeiro asset para redesign, mas forma e material específicos estão em revisão. O protótipo ciano identifica a criatura atual, não aprova sua silhueta. Mutações não fazem parte desta etapa.
 
 Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura inicial enxuta e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
 

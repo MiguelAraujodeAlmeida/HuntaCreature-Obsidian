@@ -6,7 +6,7 @@ Imagens fornecidas pelo desenvolvedor, copiadas sem alteração para este cofre 
 
 ![Lumito provisório em jogo, fornecido pelo desenvolvedor em 20/10/2026](../assets/lumito-prototipo-2026-10-20.png)
 
-Preservar corpo ciano arredondado, duas saliências superiores, olhos simples e pés curtos, elevando expressão, silhueta e acabamento. Direção vigente em [[01_Produto/Design UI UX]]. Esta imagem é o estado a melhorar, não o alvo de qualidade.
+Este é o estado a melhorar, não o alvo de qualidade. A direção exata de volumes e material está em revisão após o feedback de 20/10/2026. Ver [[06_Referencias/Estudo visual Steal an Egg]] e [[01_Produto/Design UI UX]] antes de encomendar um novo modelo.
 
 ## Botões e recursos
 

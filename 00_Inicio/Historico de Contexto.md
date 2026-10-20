@@ -122,6 +122,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Correção de registro:** CTX-2026-10-20-03 marcou um prompt como entregue, mas o turno correspondente foi interrompido antes da resposta final. O primeiro prompt efetivamente entregue foi mais curto e foi rejeitado pelo desenvolvedor; esta solicitação o substitui por instruções visuais concretas.
 **Autoria/ambiente:** Codex, Windows, Studio MCP e interface local. Sem agentes auxiliares. Aprovação artística e avaliação no jogo pendentes.
 
+## CTX-2026-10-20-05 — Estudo visual Steal an Egg · 20/10/2026
+
+**Pedido:** estudar formato, textura, personalidade das criaturas e construção do mundo de Steal an Egg antes de escolher nova direção para Hunt A Creature; entregar relatório ao desenvolvedor para concordância ou correção.
+**Resultado:** análise separada em observação e inferência em [[06_Referencias/Estudo visual Steal an Egg]], com links de imagens de divulgação, capturas de jogo e limitações das fontes. A proposta anterior de volumes lisos para Lumito foi retirada da posição de direção vigente; nenhuma nova forma específica foi aprovada.
+**Evidência:** fontes visuais e comparação com a imagem do Lumito provisório na nota. Sem edição de Studio/Blender, Play, exportação ou teste. Estudo aguardando parecer humano; não altera regra de jogo.
+**Autoria/ambiente:** Codex, Windows e pesquisa web; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.
