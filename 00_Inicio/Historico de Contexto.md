@@ -107,6 +107,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência e limites:** prompt preparado; esta sessão não se conectou ao Blender, não editou cena, não modelou nem exportou assets. O agente executor deverá informar o estado real da conexão e aguardar um objeto concreto para modelar.
 **Autoria/ambiente:** Codex, Windows; sem agentes auxiliares nesta sessão. Modelo exato não registrado.
 
+## CTX-2026-10-20-03 — Prompt de redesign do Lumito · 20/10/2026
+
+**Pedido:** formular um prompt completo para outro agente redesenhar o Lumito no Blender segundo as referências dos jogos e a direção visual própria do projeto.
+**Resultado:** briefing de asset com identidade visual original, silhueta, expressão, estados de caça, variações de tamanho e Gold, uso do modelo no mundo e retratos, e critérios de integração com pivô/volume/partes animáveis.
+**Evidência e limites:** inspeção dos documentos vigentes e de CreatureFactory, CreatureProfiles, GameplayConfig e CatalogPresentation; prompt textual entregue. Nenhum modelo, arquivo de arte ou código do jogo alterado nesta sessão.
+**Autoria/ambiente:** Codex, Windows; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

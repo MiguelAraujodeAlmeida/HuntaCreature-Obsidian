@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-20-02",
+  "context_revision": "CTX-2026-10-20-03",
   "updated": "2026-10-20",
   "code_reference": "be1bfaf",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
@@ -46,14 +46,14 @@
     "assets/referencia-settings.png"
   ],
   "sha256": {
-    "README.md": "e29f0cddf6021d04b29f82e960b210945f5ba8de82852ec9a534fcb131a093b0",
+    "README.md": "b1ad95e703acc9270a509da85029e3164ba9d4751d8c8864761d639c2251881d",
     "AGENTS.md": "5482bfa94859580b6358cfff3f82e3d795fdda59e9c5f6c32619a30a48209c39",
     "00_Inicio/Painel do Projeto.md": "e061a98b7af422231b01f104e671caf1c4e199d29fb1a8c35bdb8986bb853f37",
-    "00_Inicio/Estado Atual.md": "46bd478134b172af05a376caaf6c810c7eceaef13d6cdca8e978d796164025f1",
+    "00_Inicio/Estado Atual.md": "b10d2728b662076028ac06fe37d705954e7192d51e1a9140d4527b899f657936",
     "01_Produto/Visao e Escopo.md": "b2309819d597de82b351ea1504f3d5af1625afb9d5867688bddfbf625c1f1208",
-    "02_Planejamento/Backlog.md": "62401400a2bf560bc71f7d2bd19ce295c7fca6685941d037c950ef59029aff13",
+    "02_Planejamento/Backlog.md": "93bde009da5b173d19979ac1d0c6ed17d5bde6cb0e3cc6e71c673fbdd67f2f26",
     "03_Engenharia/Fluxo de Desenvolvimento.md": "714a13fa39deba31547b996bee2f716e82c4ef9b67b5d136d85879f5a711c69b",
-    "00_Inicio/Historico de Contexto.md": "9d6c2448b2b1503de584c3560ab31436875f436729e97f7b9536c40c76e5a77b",
+    "00_Inicio/Historico de Contexto.md": "7ad56cc845b12fcba98dc9f61fcce83bb79eea2b45658024ec3bca48fb727e34",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "008c97c9b32859f2bafa2a2e71936a4fa45b782368b421e8fac9d16ea09866c1",
     "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",

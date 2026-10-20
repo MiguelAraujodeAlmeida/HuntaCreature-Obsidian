@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-20-02** · 20/10/2026.
+Revisão de contexto **CTX-2026-10-20-03** · 20/10/2026.
 
 ## Entrega do jogo
 
@@ -33,6 +33,7 @@ Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de font
 ## Contexto compartilhado
 
 Um briefing para outro agente se conectar ao Blender MCP e absorver a direção visual foi preparado nesta revisão. Conexão, alterações de cena, exportação e aprovação artística dependem da execução desse agente e de uma tarefa de modelagem definida.
+O desenvolvedor especificou o Lumito como primeiro asset para redesign. Um prompt de modelagem completo foi preparado; nenhum modelo foi criado ou integrado nesta sessão.
 
 Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura inicial enxuta e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
 
