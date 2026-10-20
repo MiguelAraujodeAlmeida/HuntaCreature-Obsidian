@@ -6,7 +6,7 @@ Prioridade revisável conforme feedback. **Implementado ≠ testado ≠ aprovado
 
 | Prioridade / ID | Próxima ação | Estado |
 |---|---|---|
-| P0 · PROC-01 | Confirmar salvamento integral do lugar e restauração em outra máquina | Fontes commitados; .rbxl/nuvem e remote do código pendentes |
+| P0 · PROC-01 | Confirmar salvamento integral do lugar e restauração em outra máquina | Código em GitHub; .rbxl/nuvem continua pendente |
 | P0 · HAC-12 / HAC-33 | Testar reset em duas contas e persistência do progresso novo | Geração fixa aplicada; DataStore real/reconexão/publicação não verificados |
 | P1 · HAC-01 / HAC-32 | Avaliar família visual e interação dos cinco menus | Implementados com kit; prévia Edit inspecionada, parecer humano pendente |
 | P1 · HAC-13 / HAC-06 | Retestar placas e início/saída do treino | Correção de placas vazias aplicada; input real pendente |
@@ -29,7 +29,7 @@ Roteiro único: [[04_Validacao/Playtest Atual]]. Ao receber feedback, registrar 
 | HAC-07 / HAC-08 | Teletransporte e mapa amplo | Direção desejada; ponte atual provisória |
 | EXP-01 | Segunda espécie, mais laços/biomas/eventos | Novo escopo a definir |
 | HAC-27 | Interferência durante captura | Hipótese não implementada |
-| PROC-02 | Código remoto + sincronização Studio/disco verificada | Proposta de infraestrutura; não configurada |
-| PROC-03 | Otimização adicional de tokens | Opções em [[07_Relatorios/Otimizacao de Tokens]]; discutir antes de implantar |
+| PROC-02 | Aplicação Studio a partir do Git | GitHub configurado; sem Script Sync/Rojo e sem comparação integral rotineira |
+| PROC-03 | Otimização adicional de tokens | Revisada nesta rodada; práticas imediatas aplicadas, automações avançadas aguardam necessidade concreta |
 
 Uma fatia principal por vez. Não fazer publicação, expandir catálogo ou introduzir monetização apenas porque um item aparece neste backlog.

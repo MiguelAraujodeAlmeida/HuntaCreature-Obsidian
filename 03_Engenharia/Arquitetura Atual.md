@@ -55,11 +55,11 @@ Workspace.HACStudioMemoryMode = true habilita memória temporária **apenas no S
 ## Versões, código e lugar
 
 - Checkout atual: C:/Users/melg_/OneDrive/Documents/ChatGPT/Hunt A Creature.
-- Branch local: codex/menu-system-reset; commit base anterior 4c381d9, entrega de menus 90045a0.
-- Sincronização automática Studio/disco **não configurada/verificada**. Comparar antes de sobrescrever qualquer lado.
+- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Entrega de menus 90045a0; política de fluxo b0be2b9.
+- Git é a referência operacional dos fontes versionados. Sincronização automática Studio/disco não está configurada e comparações integrais rotineiras foram removidas por custo. Investigar somente divergência concreta reportada ou falha de aplicação.
 - O lugar contém modelos/Tools/propriedades não integralmente exportados. Salvar fontes no Git não salva o lugar; publicação e salvamento são operações distintas.
 - BuildWorld.luau e studio/archive são históricos; não executar o construtor antigo sobre o cenário atual.
 - UpgradePage não possui rota ativa e depende do antigo UI:Card removido. QuickSlot só reserva espaço invisível; inventário visível é nativo.
 - Backup da última rodada: contexto/menus-2026-10-19 no checkout. Não disponível pelo clone deste cofre.
 
-Uma máquina nova precisa do cofre **e** checkout correto **e** acesso ao lugar atual. Configurar remote do código, export do lugar e sync verificado continua pendente.
+Uma máquina nova precisa do cofre **e** clone correto do código **e** acesso ao lugar atual. Exportar/salvar integralmente o lugar continua pendente.

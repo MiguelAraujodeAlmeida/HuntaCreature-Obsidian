@@ -77,6 +77,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência:** validação estrutural e revisão de diff desta entrega; commit/estado remoto consultáveis pelo Git, sem SHA autorreferente nesta nota. Se o envio falhar, registrar pendência na entrega.
 **Pendências do jogo:** permanecem em Estado Atual/Backlog; otimizações avançadas são propostas, não infraestrutura implementada.
 
+## CTX-2026-10-19-04 — Código no GitHub e fluxo enxuto · 19/10/2026
+
+**Pedido:** associar os fontes atuais ao repositório HuntACreature e eliminar comparações rotineiras Studio ↔ disco, avaliando desperdícios de tokens em todo o fluxo.
+**Resultado:** o histórico local foi publicado como `main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature. Git passa a ser a referência operacional dos fontes versionados. AGENTS, arquitetura, README e fluxo deixam de exigir varredura integral Studio/disco; o Studio permanece para aplicar/salvar o lugar e investigar divergência concreta.
+**Otimizações aplicadas:** leitura incremental na mesma sessão, saída de ferramenta limitada a trechos/diffs, validações somente após entrega alterada e confirmação remota somente após push. A leitura completa do contexto em novo chat/dispositivo foi preservada por pedido explícito do desenvolvedor.
+**Evidência:** repositório remoto vazio confirmado antes do envio; push de `main` e SHA remoto conferidos. Não houve exportação integral do lugar, mudança de gameplay, Play ou QA.
+**Autor/ambiente:** Codex, Windows, workspace do projeto; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

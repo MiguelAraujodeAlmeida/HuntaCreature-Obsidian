@@ -4,7 +4,7 @@
 
 ## O que foi feito nesta rodada
 
-Cofre com uma nota principal por assunto; especificações obsoletas fora do conjunto vigente; histórico único; manifesto de leitura/hash; mapa de módulos; referências visuais portáveis e checklist único. Isso reduz releitura e reexplicação sem omitir as regras atuais.
+Cofre com uma nota principal por assunto; especificações obsoletas fora do conjunto vigente; histórico único; manifesto de leitura/hash; mapa de módulos; referências visuais portáveis e checklist único. Isso reduz releitura e reexplicação sem omitir as regras atuais. Nesta revisão, o código também passou a ter repositório próprio; comparações integrais Studio/disco deixaram de ser uma etapa rotineira.
 
 Métricas reproduzíveis aparecem abaixo. Caracteres/bytes medem volume de texto; não são contagem exata de tokens nem percentual de economia da assinatura. Tokens variam com tokenizer, idioma, imagens, ferramentas e respostas.
 
@@ -25,10 +25,10 @@ O novo conjunto inicial tem 71.4% menos caracteres que o acervo antigo completo.
 | 2. Pedido com objetivo, domínio, critério de aceite e limites | Baixo | Menos suposições e refações do HUD/mecânicas | Não transformar cada pedido em formulário longo |
 | 3. Uma fatia jogável por entrega | Baixo | Feedback localiza o problema; menor diff e regressão | Não fragmentar uma mudança inseparável |
 | 4. Buscar símbolo/arquivo e ler trechos relevantes, não todos os scripts | Baixo | Menos saída de ferramentas e contexto de código | Ampliar leitura quando há dependência real |
-| 5. Preferir diff, hashes e resumo de resultados a dumps completos | Baixo | Barato conferir Studio/disco e Git | Hash detecta diferença, não explica comportamento |
+| 5. Preferir diff, hashes e resumo de resultados a dumps completos | Baixo | Barato revisar Git e mudanças de contexto | Hash detecta diferença, não explica comportamento |
 | 6. Feedback de bug com passos, esperado, observado, build e imagem certa | Baixo | Evita ciclos tentando adivinhar o erro | Um vídeo curto pode comunicar melhor que muitos screenshots |
 | 7. Reusar MenuKit, tokens e componentes | Médio; base existente | Menos código e design refeitos por menu | Padrão deve evoluir quando feedback mostrar defeito |
-| 8. Remote do código + export identificável do lugar + sync verificado | Médio; pendente | Evita recuperação de versões divergentes entre máquinas | Introduzir comparação/backup antes de automatizar escrita |
+| 8. Remote do código + export identificável do lugar | Médio; código concluído; lugar pendente | Evita recuperação de versões divergentes entre máquinas | Git não armazena automaticamente propriedades/modelos do lugar |
 | 9. Checks locais de contexto, lint e contratos pequenos | Médio; validador do cofre pronto | Máquinas detectam repetidamente erros estruturais sem explicações longas | Não substituir teste humano de diversão ou executar QA extenso por rotina |
 | 10. Encerrar um chat em marco estável e abrir outro com cofre atualizado | Baixo/médio | Evita carregar tentativas fracassadas por semanas | A nova leitura tem custo; não abrir chat para cada ajuste mínimo |
 | 11. Ajustar esforço/modelo à tarefa | Médio; decisão futura | Tarefas mecânicas podem precisar menos raciocínio que rede/persistência | Menor custo por chamada pode gerar mais refações; medir por entrega |
@@ -46,6 +46,16 @@ As práticas de manter AGENTS curto, correto e ligado a documentação específi
 **Persistência/economia:** mudanças exigem mais cuidado. Não economizar omitindo validação de autoridade, transação, migração, reset ou conflitos de sessão. Comparar configuração/contratos e registrar geração/build; o custo de refazer perda de dados é maior.
 
 **Contexto:** atualizar a nota dona, uma linha no backlog quando necessário e uma entrada curta no histórico. Evitar transcrições de chat, logs brutos, pesquisas antigas inteiras e o mesmo relatório repetido em seis páginas.
+
+## Cortes de custo já aplicados
+
+- Não comparar todos os objetos/fontes de Studio com o disco antes de cada alteração. A base de código vem de `main`; somente um erro concreto de aplicação justifica investigação entre os dois lados.
+- Não repetir fetch, hashes de manifesto, validação completa ou `ls-remote` em leituras sem alteração. Executar essas verificações ao sincronizar ou concluir uma entrega que mudou o respectivo repositório.
+- Não despejar arquivos inteiros no contexto quando busca por símbolo, trecho limitado ou diff resolve a dúvida.
+- Não reler histórico, relatórios e imagens em continuações da mesma sessão; o conjunto vigente inteiro continua obrigatório apenas para novo chat, IA ou dispositivo.
+- Não abrir Studio para tarefas de documentação e não iniciar Play para revisão estática.
+
+Esses cortes reduzem chamadas e texto de ferramentas sem eliminar os controles necessários para persistência, segurança de dados ou uma mudança de gameplay de maior risco.
 
 ## API: quando faria sentido
 

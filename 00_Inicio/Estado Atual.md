@@ -1,10 +1,10 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-19-03** · 19/10/2026.
+Revisão de contexto **CTX-2026-10-19-04** · 19/10/2026.
 
 ## Entrega do jogo
 
-Último código: **90045a0**, branch local `codex/menu-system-reset`. Lugar **[Testing] Hunt a Creature**, placeId **102310424634629**. Cinco menus refeitos e reset por geração implementados; **aguardam playtest do desenvolvedor**.
+Último código de produto: **90045a0**; política de fluxo no commit **b0be2b9**. Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`. Lugar **[Testing] Hunt a Creature**, placeId **102310424634629**. Cinco menus refeitos e reset por geração implementados; **aguardam playtest do desenvolvedor**.
 
 - Creatures, Creature Market, Creature Index, Hunting Shop e Settings usam a família MenuTheme/MenuKit, retratos e componentes glossy.
 - Reset configurado em geração fixa `20261019_menu_reset_01`. Todas as contas que entrarem nesta versão começam novas; progresso posterior deve persistir. Dados antigos preservados em outro namespace.
@@ -25,7 +25,7 @@ Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de font
 
 Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura integral inicial e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
 
-Esta rodada altera documentação e organização; não altera gameplay nem gera nova validação do Studio.
+Nesta rodada, o código foi associado ao GitHub. Git é a fonte operacional dos arquivos versionados; comparações integrais Studio/disco foram removidas do fluxo para evitar custo repetitivo. O Studio continua necessário para aplicar e salvar mudanças no lugar. Não houve mudança de gameplay nem nova validação do Studio.
 
 ## Próximos passos
 
@@ -33,4 +33,4 @@ Esta rodada altera documentação e organização; não altera gameplay nem gera
 2. Desenvolvedor executa [[04_Validacao/Playtest Atual]], começando por duas contas, reset e reconexão.
 3. Corrigir o feedback por domínio antes de expandir conteúdo. Prioridades em [[02_Planejamento/Backlog]].
 
-O cofre é portável; o código ainda não tem remote configurado e o lugar não foi exportado integralmente. Esses são impedimentos reais para restaurar o **jogo** apenas com este clone.
+O cofre e o código são portáveis por Git; o lugar ainda não foi exportado integralmente. Isso continua impedindo restaurar o **jogo** apenas pelos clones.
