@@ -15,8 +15,14 @@ parser.add_argument("--refresh", action="store_true", help="Update declared file
 args = parser.parse_args()
 manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
 errors = []
-groups = ["entrypoints", "current", "reference", "assets"]
+groups = ["entrypoints", "bootstrap", "reference", "assets"]
+domain_groups = manifest.get("domains", {})
+if not isinstance(domain_groups, dict) or not domain_groups:
+    errors = ["Missing or invalid domains mapping"]
+else:
+    errors = []
 declared = [name for group in groups for name in manifest[group]]
+declared.extend(name for names in domain_groups.values() for name in names)
 if len(declared) != len(set(declared)):
     errors.append("Duplicate manifest entries")
 if not re.fullmatch(r"CTX-\d{4}-\d{2}-\d{2}-\d{2}", manifest["context_revision"]):
@@ -63,7 +69,7 @@ if args.refresh and not errors:
     MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 elif manifest.get("sha256") != hashes:
     errors.append("Hashes changed; review and run --refresh")
-initial_names = manifest["entrypoints"] + manifest["current"]
+initial_names = manifest["entrypoints"] + manifest["bootstrap"]
 metrics = {
     "notes_total": len(notes),
     "initial_notes": len(initial_names),

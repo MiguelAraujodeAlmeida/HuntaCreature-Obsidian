@@ -4,14 +4,14 @@ Cofre Obsidian e memória compartilhada do jogo Roblox. Contém **o contexto vig
 
 - Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian
 - Começar em [[00_Inicio/Painel do Projeto]] e seguir **toda** a leitura inicial.
-- Revisão de contexto: **CTX-2026-10-19-04**. Versões são registradas em [[00_Inicio/Historico de Contexto]]; Git identifica o conteúdo exato.
+- Revisão de contexto: **CTX-2026-10-19-05**. Versões são registradas em [[00_Inicio/Historico de Contexto]]; Git identifica o conteúdo exato.
 - Código de referência: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`. Produto: commit **90045a0**; política de fluxo: **b0be2b9**.
 - Conteúdo é mutável. Feedback mais recente do desenvolvedor prevalece; implementação não equivale a aprovação.
 
 ## Abrir em outra máquina
 
 1. Clonar este repositório e abrir a pasta como cofre no Obsidian.
-2. Ler AGENTS.md e todos os documentos vigentes enumerados em `context-manifest.json`, na ordem indicada.
+2. Ler AGENTS.md e o grupo `bootstrap` de `context-manifest.json`. Antes de implementar, carregar somente o grupo de domínio exigido pela tarefa.
 3. Para desenvolver, obter também o código correspondente e o lugar atual no Studio. O cofre não substitui scripts, modelos ou arquivo .rbxl.
 4. Seguir [[03_Engenharia/Fluxo de Desenvolvimento]] para sincronizar antes e depois de trabalhar.
 

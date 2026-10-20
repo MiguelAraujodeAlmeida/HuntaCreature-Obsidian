@@ -4,7 +4,7 @@ Política permanente do projeto, solicitada pelo desenvolvedor. Toda IA/chat/dis
 
 ## 1. Receber contexto
 
-- Novo chat/dispositivo: ler README, AGENTS e **todo o conjunto current do manifesto**, incluindo requisitos de produto, design, engenharia, pendências e referências.
+- Novo chat/dispositivo: ler README, AGENTS e o conjunto `bootstrap` do manifesto. Antes de atuar, identificar a tarefa e ler o grupo `domains` correspondente. Não carregar todos os domínios por padrão.
 - Continuação da mesma sessão: verificar revisão/hash e reler os arquivos alterados e os domínios envolvidos. Histórico serve para proveniência, não como especificação.
 - Se faltar acesso ao cofre, código ou Studio necessário, informar a lacuna. Não assumir que o resumo do chat substitui o conjunto vigente.
 - Feedback recente do desenvolvedor prevalece sobre antigas propostas. Código comprova implementação; somente feedback comprova aprovação.
@@ -50,7 +50,7 @@ Registrar proposta, implementado, verificado e aprovado como estados distintos. 
 
 1. Adicionar entrada em Historico de Contexto conforme o modelo; revisão `CTX-AAAA-MM-DD-NN`, incrementada por entrega que altera contexto.
 2. Atualizar Estado Atual, Backlog e decisão se necessária. README/Estado/manifesto devem apontar a mesma revisão.
-3. Declarar novas notas em `context-manifest.json`: current (leitura inicial), reference (histórico/modelo/relatório), ou entrypoints. Imagens ficam em assets.
+3. Declarar novas notas em `context-manifest.json`: bootstrap (início obrigatório), domains (leitura por tarefa), reference (histórico/modelo/relatório) ou entrypoints. Imagens ficam em assets.
 4. Executar `python tools/check_context.py --refresh` para regenerar hashes do conjunto; revisar as mudanças.
 5. Executar `python tools/check_context.py`. O script verifica estrutura, cobertura, links locais, hashes e revisão; **não prova ausência de contradições semânticas**.
 6. Revisar `git diff --check`, diff e arquivos staged. Não incluir .obsidian, credenciais, perfis de jogadores, dumps, .rbxl ou backups.

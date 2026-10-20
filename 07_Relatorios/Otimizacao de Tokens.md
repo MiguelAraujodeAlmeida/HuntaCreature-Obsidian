@@ -1,27 +1,27 @@
 # Otimização de tokens — opções para o projeto
 
-19/10/2026. **Relatório para discussão**, não autorização para instalar ferramentas, trocar modelos ou criar infraestrutura. A regra de leitura integral na primeira entrada foi preservada.
+19/10/2026. **Relatório para discussão**, não autorização para instalar ferramentas, trocar modelos ou criar infraestrutura. A primeira entrada lê uma base obrigatória curta; detalhes entram por domínio da tarefa.
 
 ## O que foi feito nesta rodada
 
-Cofre com uma nota principal por assunto; especificações obsoletas fora do conjunto vigente; histórico único; manifesto de leitura/hash; mapa de módulos; referências visuais portáveis e checklist único. Isso reduz releitura e reexplicação sem omitir as regras atuais. Nesta revisão, o código também passou a ter repositório próprio; comparações integrais Studio/disco deixaram de ser uma etapa rotineira.
+Cofre com uma nota principal por assunto; especificações obsoletas fora do conjunto vigente; histórico único; manifesto de leitura/hash; mapa de módulos; referências visuais portáveis e checklist único. Nesta revisão, o código também passou a ter repositório próprio; comparações integrais Studio/disco deixaram de ser uma etapa rotineira. A primeira leitura agora carrega uma base curta e consulta domínios sob demanda.
 
 Métricas reproduzíveis aparecem abaixo. Caracteres/bytes medem volume de texto; não são contagem exata de tokens nem percentual de economia da assinatura. Tokens variam com tokenizer, idioma, imagens, ferramentas e respostas.
 
 | Medida | Antes | Depois |
 |---|---:|---:|
 | Notas Markdown no cofre | 44 | 16 |
-| Notas da leitura inicial definida | Sem manifesto; 44 notas no acervo | 13 |
-| Caracteres: acervo antigo completo vs. novo conjunto inicial | 161.139 | 46.079 |
+| Notas da leitura inicial definida | Sem manifesto; 44 notas no acervo | 7 |
+| Caracteres: acervo antigo completo vs. nova base inicial | 161.139 | 20.585 |
 
-O novo conjunto inicial tem 71.4% menos caracteres que o acervo antigo completo. A comparação exclui imagens, manifesto e instruções adicionais da plataforma; histórico/modelo/relatório novos são consulta complementar. Não significa que o sistema anterior lia sempre as 44 notas, nem que a economia de tokens será essa porcentagem. Contagem: caracteres Unicode dos Markdown UTF-8; reproduzir o conjunto atual com tools/check_context.py.
+A base inicial é deliberadamente pequena; detalhes são carregados pelo domínio da tarefa. Ela tem cerca de 87,2% menos caracteres que o acervo antigo completo. A comparação exclui imagens, manifesto e instruções adicionais da plataforma; histórico/modelo/relatório continuam consulta complementar. A medição em caracteres não equivale a tokens nem à economia exata de uso. Reproduzir os valores atuais com `tools/check_context.py`.
 
 
 ## Prioridades recomendadas
 
 | Ação | Esforço | Benefício esperado neste projeto | Cuidado |
 |---|---|---|---|
-| 1. Ler todo o conjunto vigente uma vez; depois só notas alteradas na mesma sessão | Baixo; regra já registrada | Evita reler dezenas de notas a cada ajuste | Novo chat/dispositivo exige leitura completa |
+| 1. Ler a base e depois apenas o domínio necessário; na mesma sessão, só notas alteradas | Baixo; regra já registrada | Evita absorver detalhes irrelevantes a cada chat | A seleção do domínio deve ser explícita e correta |
 | 2. Pedido com objetivo, domínio, critério de aceite e limites | Baixo | Menos suposições e refações do HUD/mecânicas | Não transformar cada pedido em formulário longo |
 | 3. Uma fatia jogável por entrega | Baixo | Feedback localiza o problema; menor diff e regressão | Não fragmentar uma mudança inseparável |
 | 4. Buscar símbolo/arquivo e ler trechos relevantes, não todos os scripts | Baixo | Menos saída de ferramentas e contexto de código | Ampliar leitura quando há dependência real |
@@ -52,7 +52,7 @@ As práticas de manter AGENTS curto, correto e ligado a documentação específi
 - Não comparar todos os objetos/fontes de Studio com o disco antes de cada alteração. A base de código vem de `main`; somente um erro concreto de aplicação justifica investigação entre os dois lados.
 - Não repetir fetch, hashes de manifesto, validação completa ou `ls-remote` em leituras sem alteração. Executar essas verificações ao sincronizar ou concluir uma entrega que mudou o respectivo repositório.
 - Não despejar arquivos inteiros no contexto quando busca por símbolo, trecho limitado ou diff resolve a dúvida.
-- Não reler histórico, relatórios e imagens em continuações da mesma sessão; o conjunto vigente inteiro continua obrigatório apenas para novo chat, IA ou dispositivo.
+- Não reler histórico, relatórios e imagens em continuações da mesma sessão; em novo chat, a base é obrigatória e os detalhes entram apenas pelo domínio da tarefa.
 - Não abrir Studio para tarefas de documentação e não iniciar Play para revisão estática.
 
 Esses cortes reduzem chamadas e texto de ferramentas sem eliminar os controles necessários para persistência, segurança de dados ou uma mudança de gameplay de maior risco.

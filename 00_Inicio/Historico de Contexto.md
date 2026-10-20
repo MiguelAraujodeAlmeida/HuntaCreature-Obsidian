@@ -85,6 +85,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência:** repositório remoto vazio confirmado antes do envio; push de `main` e SHA remoto conferidos. Não houve exportação integral do lugar, mudança de gameplay, Play ou QA.
 **Autor/ambiente:** Codex, Windows, workspace do projeto; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-19-05 — Leitura de contexto por domínio · 19/10/2026
+
+**Pedido:** reduzir a leitura inicial do Obsidian ao contexto básico e carregar arquivos adicionais somente quando a tarefa exigir — por exemplo, regras e referências visuais em trabalho de UI.
+**Resultado:** o manifesto separa `bootstrap` de `domains`. Todo novo chat/dispositivo lê somente README, AGENTS e cinco notas-base; depois roteia a tarefa para gameplay, ui_ux, engineering, decisions ou validation. Histórico, modelos e relatório de tokens continuam sob consulta explícita.
+**Evidência:** instruções no cofre, checkout e README técnico atualizadas; validador ajustado para essa estrutura. Sem mudança de gameplay, Studio ou Play.
+**Autor/ambiente:** Codex, Windows, workspace do projeto; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

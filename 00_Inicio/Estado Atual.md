@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-19-04** · 19/10/2026.
+Revisão de contexto **CTX-2026-10-19-05** · 19/10/2026.
 
 ## Entrega do jogo
 
@@ -23,9 +23,9 @@ Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de font
 
 ## Entrega de contexto desta rodada
 
-Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura integral inicial e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
+Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura inicial enxuta e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
 
-Nesta rodada, o código foi associado ao GitHub. Git é a fonte operacional dos arquivos versionados; comparações integrais Studio/disco foram removidas do fluxo para evitar custo repetitivo. O Studio continua necessário para aplicar e salvar mudanças no lugar. Não houve mudança de gameplay nem nova validação do Studio.
+Nesta rodada, o código foi associado ao GitHub. Git é a fonte operacional dos arquivos versionados; comparações integrais Studio/disco foram removidas do fluxo para evitar custo repetitivo. O Studio continua necessário para aplicar e salvar mudanças no lugar. A leitura inicial do cofre agora usa uma base curta e grupos por domínio, evitando carregar detalhes sem relação com a tarefa. Não houve mudança de gameplay nem nova validação do Studio.
 
 ## Próximos passos
 

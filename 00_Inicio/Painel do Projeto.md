@@ -1,19 +1,25 @@
 # Painel do projeto
 
-## Leitura inicial completa
+## Leitura inicial enxuta
 
-Este conjunto é o contexto vigente, sem depender de chat anterior. Ler na ordem; `context-manifest.json` enumera os mesmos documentos e seus hashes.
+Em um novo chat/dispositivo, ler README, AGENTS e estes fundamentos na ordem do `bootstrap` do manifesto:
 
 1. [[00_Inicio/Estado Atual]] — entrega, evidência e próximo passo.
 2. [[01_Produto/Visao e Escopo]] — identidade, ciclo e limites.
-3. [[01_Produto/Sistemas Atuais]] — comportamento implementado.
-4. [[01_Produto/Design UI UX]] — regras visuais e de interação.
-5. [[02_Planejamento/Backlog]] — prioridades e itens adiados.
-6. [[03_Engenharia/Arquitetura Atual]] — responsabilidades e persistência.
-7. [[03_Engenharia/Fluxo de Desenvolvimento]] — execução, contexto e Git.
-8. [[03_Engenharia/Decisoes Vigentes]] — decisões e consequências.
-9. [[04_Validacao/Playtest Atual]] — verificações humanas pendentes.
-10. [[06_Referencias/Referencias Visuais]] — referências portáveis.
+3. [[02_Planejamento/Backlog]] — prioridades e itens adiados.
+4. [[03_Engenharia/Fluxo de Desenvolvimento]] — execução, Git e manutenção do cofre.
+
+Depois, carregar apenas o domínio da tarefa:
+
+| Domínio | Ler quando a tarefa envolver |
+|---|---|
+| `gameplay` | laço, captura, criatura, treino, economia, loja ou ferramentas |
+| `ui_ux` | HUD, menu, componente visual, layout, efeitos ou referência de arte |
+| `engineering` | módulos, persistência, segurança, rede, Studio ou aplicação do código |
+| `decisions` | decisão que pode mudar uma regra duradoura |
+| `validation` | playtest, bug, regressão ou checklist humano |
+
+O manifesto contém os arquivos exatos e hashes. Não carregar todos os domínios por padrão.
 
 ## Consulta complementar
 
