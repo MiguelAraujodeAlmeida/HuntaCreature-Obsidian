@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "context_revision": "CTX-2026-10-19-03",
+  "updated": "2026-10-19",
+  "code_reference": "90045a0",
+  "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
+  "branch": "main",
+  "entrypoints": [
+    "README.md",
+    "AGENTS.md"
+  ],
+  "current": [
+    "00_Inicio/Painel do Projeto.md",
+    "00_Inicio/Estado Atual.md",
+    "01_Produto/Visao e Escopo.md",
+    "01_Produto/Sistemas Atuais.md",
+    "01_Produto/Design UI UX.md",
+    "02_Planejamento/Backlog.md",
+    "03_Engenharia/Arquitetura Atual.md",
+    "03_Engenharia/Fluxo de Desenvolvimento.md",
+    "03_Engenharia/Decisoes Vigentes.md",
+    "04_Validacao/Playtest Atual.md",
+    "06_Referencias/Referencias Visuais.md"
+  ],
+  "reference": [
+    "00_Inicio/Historico de Contexto.md",
+    "05_Modelos/Registro de Solicitacao.md",
+    "07_Relatorios/Otimizacao de Tokens.md"
+  ],
+  "assets": [
+    "assets/referencia-botoes-glossy.png",
+    "assets/referencia-index.png",
+    "assets/referencia-shop.png",
+    "assets/referencia-settings.png"
+  ],
+  "sha256": {
+    "README.md": "2c6bd8e6bba86b918ab9b9de937a0c7b3b320c0cee91c5d86f1c7370777803fb",
+    "AGENTS.md": "ed19b4831f7217fa67a764bca2cfcc16a1b92f7e3063c4d1e46a9822cb02fc81",
+    "00_Inicio/Painel do Projeto.md": "887316400aa0a7076117d5f679f74becd1acc0ddeaf5eca96fc2e68190557429",
+    "00_Inicio/Estado Atual.md": "764792c46f4720627284ba2b51a7a3878d0e2cb4485fef073a418c906224c06a",
+    "01_Produto/Visao e Escopo.md": "b2309819d597de82b351ea1504f3d5af1625afb9d5867688bddfbf625c1f1208",
+    "01_Produto/Sistemas Atuais.md": "83668b7cabe9b2bb98b799b2ec5095e3480119c24c0e6ee7c6c97141c7d791aa",
+    "01_Produto/Design UI UX.md": "2a84a88954558fbb0a245b205b6ac99dc85ab0c7c8436e4ad8b5ef750f6b789b",
+    "02_Planejamento/Backlog.md": "2aabd07d1fb265fc02539b7234f7d454d47e145f9da5ef88b66b824b3ad17556",
+    "03_Engenharia/Arquitetura Atual.md": "2565dbd59737b353c5cfbf82788ab8a3606100f16d4f92aa7f6044a2c6b7dee9",
+    "03_Engenharia/Fluxo de Desenvolvimento.md": "620ed8be874ac02db1f0371ec877d5951980cef4b9eef5cc567feae341703df8",
+    "03_Engenharia/Decisoes Vigentes.md": "8d7bbf887b88ae9e28891d218c1ea7703ddf6bd57d4d1279b1d561a0d1975efa",
+    "04_Validacao/Playtest Atual.md": "e7f2abab73571e8fb49897fbf0b513092fce7d822dacf7e38f6a48c8ea7bdbe7",
+    "06_Referencias/Referencias Visuais.md": "55236e16603a30cee91552bf4c7d670d30b8171137ffb6ba56743c9677b3e01c",
+    "00_Inicio/Historico de Contexto.md": "303825e038e7df84a0bd85192d6f37f344f2df014a313be7893185c34601990e",
+    "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
+    "07_Relatorios/Otimizacao de Tokens.md": "284130185eb64470577f543fbbe7fc4ef291ad3399cec12545887c0c149b8718",
+    "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",
+    "assets/referencia-index.png": "d24d0363bb5d68821255e4e467430cb51a3868b7cb991764d144c76ba92eef5d",
+    "assets/referencia-shop.png": "81f937be1e2a643f4939fe02a0c27b9fe7e0570d26f0d3dc6bd62d69b5ddcf71",
+    "assets/referencia-settings.png": "0ac699f72172057f0b250ccb4daeb91b92b9b764d8c0ff6571276fd4df79e4ec"
+  }
+}
