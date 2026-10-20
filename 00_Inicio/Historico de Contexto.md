@@ -92,6 +92,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência:** instruções no cofre, checkout e README técnico atualizadas; validador ajustado para essa estrutura. Sem mudança de gameplay, Studio ou Play.
 **Autor/ambiente:** Codex, Windows, workspace do projeto; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-20-01 — Polimento da caça · 20/10/2026
+
+**Pedido:** tornar mira, carga, lançamento, acerto, disputa e vitória uma sequência curta, fluida e recompensadora, preservando laço reto/livre, parâmetros do Training Lasso, servidor autoritativo e UI compacta. Anexo de texto do desenvolvedor detalhou estados visuais, ritmo e recompensa.
+**Resultado:** contorno contextual, carga até MAX, trilha de voo/retorno, distinção de obstáculo/alcance/contato recusado, hit confirm, reação do Lumito, fases previsíveis de resistência/abertura, poção contextual e vitória com retrato/Gold/Index/tamanho e potencial real de renda/XP na base. Ganho-base 0,18/s; limite 22 s e ritmo 3,6 s. Nenhuma alteração de alcance/velocidade/gravidade/assistência do laço.
+**Evidência:** código `be1bfafb13c42787906157a77829f3eec961848a` enviado e SHA remoto conferido; 11 fontes aplicados e compilados estaticamente em Studio Edit no placeId 102310424634629; “Salvar na Roblox” acionado pela interface. Studio estava em Play antes da solicitação e foi encerrado para edição; nenhum novo Play, emulação ou benchmark iniciado. Sem publicação.
+**Pendências:** playtest humano de precisão, ritmo, Gold/descoberta, som e PC/celular; DataStore/reconexão da entrega anterior; exportação .rbxl e restauração independente. Salvamento em nuvem e código Git não demonstram essas verificações.
+**Autoria/ambiente:** Codex, Windows, Studio MCP e interface local; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

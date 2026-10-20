@@ -21,6 +21,13 @@ Fonte: **Fredoka One** em títulos, números e interface, consistente entre tela
 - Efeitos acompanham o evento, não loops decorativos constantes. Limpar sons, partículas, tweens e conexões. Cancelamento/interrupção precisa encerrar feedback.
 - AudioFeedback/AudioConfig limitam vozes e intervalos. Configuração atual: master 0,7, até 8 vozes; som de renda limitado por cooldown, não por tick de 1 s. Mix final pendente.
 
+## Caça e recompensa
+
+- Alvo em foco recebe contorno discreto com estados de distância, possibilidade, alinhamento, bloqueio e disputa alheia. Intensidade e preenchimento acompanham cor; não piscar a cada movimento de câmera. A marca do limite surge durante a carga.
+- Carga central acima da barra nativa mostra alcance e ápice MAX, com pulso leve e som limitado. Voo tem trilha curta quente; retorno é ciano e recolhe a corda. Impacto com obstáculo ou tentativa recusada se lê pelo efeito, sem aviso rotineiro.
+- Acerto combina som, faísca curta, corda presa e resistência do Lumito. HUD compacta mostra zona móvel, progresso, tempo, resistência/abertura e poção; mantém a visão do mundo livre.
+- Vitória tem retrato real, sinal maior para Gold e primeira descoberta de espécie/variante, tamanho incomum quando houver e potencial de renda/XP **na base**. Fecha sozinha em até 2,35 s; não bloqueia o retorno ao controle. Renda passiva permanece discreta.
+
 ## Família dos menus
 
 Aplica-se a Creatures, Creature Market, Creature Index, Hunting Shop e Settings e a novos menus comparáveis.
@@ -43,14 +50,14 @@ Rolagem não deve bloquear saída; textos longos não podem sobrepor preço ou a
 
 ## Componentes e regra para novas páginas
 
-| Camada | Fonte no código | Responsabilidade |
-|---|---|---|
-| Tokens | shared/MenuTheme, VisualStyle | Cor, fonte, proporções e arte |
-| Estrutura | client/MenuKit | Window, Surface, Scroller, Layout, Detail, Grid, Badge, Stat, Action, Selectable, Empty |
-| Criaturas | CreatureCards / CreaturePortrait | Cartão, ficha, retrato real e silhueta |
-| Ferramentas | ToolPortrait | Representação de consumíveis e ícone do laço |
-| Interação | GlossyButton / CollectionUI / páginas | Animação, input, seleção e snapshots |
-| Autoridade | servidor | Posse, custos, favoritos, progressão |
+| Camada      | Fonte no código                       | Responsabilidade                                                                        |
+| ----------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
+| Tokens      | shared/MenuTheme, VisualStyle         | Cor, fonte, proporções e arte                                                           |
+| Estrutura   | client/MenuKit                        | Window, Surface, Scroller, Layout, Detail, Grid, Badge, Stat, Action, Selectable, Empty |
+| Criaturas   | CreatureCards / CreaturePortrait      | Cartão, ficha, retrato real e silhueta                                                  |
+| Ferramentas | ToolPortrait                          | Representação de consumíveis e ícone do laço                                            |
+| Interação   | GlossyButton / CollectionUI / páginas | Animação, input, seleção e snapshots                                                    |
+| Autoridade  | servidor                              | Posse, custos, favoritos, progressão                                                    |
 
 1. Configurar a página em MenuTheme; módulo Render(ui) e rota necessária em CollectionUI.
 2. Definir pageTitle e Tabs; compor com Kit/CreatureCards. Em galeria, Detail vem antes de Grid para calcular largura.

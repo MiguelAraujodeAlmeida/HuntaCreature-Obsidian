@@ -1,17 +1,19 @@
 # Sistemas atuais
 
-Estado: implementados, com validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Valores abaixo são referência da entrega 90045a0; ao alterar configuração, atualizar esta nota na mesma solicitação. Código inspecionado decide o valor executado; documento registra a intenção e a versão.
+Estado: implementados, com validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Valores abaixo são referência da entrega be1bfaf; ao alterar configuração, atualizar esta nota na mesma solicitação. Código inspecionado decide o valor executado; documento registra a intenção e a versão.
 
 ## Laço e captura
 
 - Lançamento livre para o ponto escolhido pelo jogador, inclusive céu/chão/locais sem criatura. Sem mensagens rotineiras de “mira inválida” ou “laço errou”.
 - Direção reta, sem gravidade ou correção automática para o alvo. A 100% segue exatamente a direção da mira, respeitando obstáculos e alcance real. Carga menor reduz alcance.
 - Cada laço tem seus parâmetros. Training Lasso: alcance mínimo 18/máximo 73 studs, carga máxima 1,4 s; voo 100 studs/s e retorno 145; cooldown 0,12 s. Barra de força central, acima da barra nativa, sem ocupar permanentemente a tela.
-- Criatura elegível na mira/alcance recebe contorno. A elegibilidade e o acerto são revalidados no servidor.
+- Contorno local diferencia criatura distante, no alcance possível, alinhada e capturável, bloqueada, ocupada por outra disputa ou sem força mínima. Intensidade/preenchimento e cor dão sinais combinados; o servidor revalida elegibilidade e acerto.
 - Colisão contínua considera movimento relativo da criatura e volume do laço/corpo; bloqueios do mundo também são considerados. Isso não equivale a colisão por pixel da orelha. Precisão percebida precisa de teste.
-- Disputa compacta, sem modal gigante/tutorial. Parâmetros atuais: duração-base 22 s e ganho-base 0,29/s; força beneficia com retorno decrescente. Não considerar esse ritmo aprovado.
+- Disputa compacta, sem modal gigante/tutorial. Parâmetros atuais: limite 22 s, ganho-base 0,18/s e perda fora da zona 0,075/s. Ritmo de 3,6 s alterna normal, resistência (mais movimento/menos ganho) e abertura (menos movimento/mais ganho). A meta muda em passos limitados de 0,25; força amplia a zona com retorno decrescente. Ritmo ainda aguarda avaliação humana.
 - Uma disputa possui dono exclusivo; validação de força mínima no início e na recompensa. Lumito exige 0. Não permitir segunda captura simultânea ou prêmio duplicado.
 - Poção pode ser usada durante a disputa; trocar a ferramenta não deve cancelar o estado por deixar de segurar o laço.
+- Voo quente e recolhimento ciano distinguem lançamento e retorno; contato em obstáculo, fim de alcance e contato recusado têm efeitos curtos diferentes. Falhas rotineiras não exibem notificações. Acerto inicia reação do Lumito e estado de tensão na corda/HUD; poção mostra o efeito aplicado.
+- Vitória curta apresenta retrato da criatura, Gold/primeira descoberta/variante de Index/tamanho quando aplicável e o potencial de **ouro e XP por segundo ao equipar na base**. Captura na bolsa não credita esses recursos instantaneamente.
 
 ## Criaturas e coleção
 

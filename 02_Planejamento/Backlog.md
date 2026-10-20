@@ -6,18 +6,18 @@ Prioridade revisável conforme feedback. **Implementado ≠ testado ≠ aprovado
 
 | Prioridade / ID | Próxima ação | Estado |
 |---|---|---|
-| P0 · PROC-01 | Confirmar salvamento integral do lugar e restauração em outra máquina | Código em GitHub; .rbxl/nuvem continua pendente |
+| P0 · PROC-01 | Exportar .rbxl e verificar restauração em outra máquina | Lugar de teste salvo na Roblox em 20/10; cópia recuperável/restauração pendente |
 | P0 · HAC-12 / HAC-33 | Testar reset em duas contas e persistência do progresso novo | Geração fixa aplicada; DataStore real/reconexão/publicação não verificados |
 | P1 · HAC-01 / HAC-32 | Avaliar família visual e interação dos cinco menus | Implementados com kit; prévia Edit inspecionada, parecer humano pendente |
 | P1 · HAC-13 / HAC-06 | Retestar placas e início/saída do treino | Correção de placas vazias aplicada; input real pendente |
 | P1 · HAC-16 / 17 / 18 / 31 | Equip/Unequip, mercado e favoritos | Implementados; testar capacidades, cancelamento e proteção |
 | P1 · HAC-19 / 25 / 14 | Index, loja e Settings | Implementados; testar compra/cota, descobertas e preferências/reconexão |
-| P1 · HAC-03 / 03A / 04 / 02 | Laço, alvo móvel, IA e ritmo da disputa | Geometria/velocidade corrigidas; diversão/precisão percebida pendentes |
+| P1 · HAC-03 / 03A / 04 / 02 | Avaliar sequência da caça em PC/celular: mira, carga, voo, disputa, poção, falha e vitória | Polimento be1bfaf aplicado/salvo em Edit; diversão, precisão, ritmo e som aguardam playtest humano |
 | P2 · HAC-20 / 21 / 22 / 23 | Backpack, isca, armadilha e poção | Integrados; regressão de input/respawn/disputa pendente |
-| P2 · HAC-05 / 11 / 28 / 29 | Feedback, clareza, base viva e inglês | Implementados; polimento e avaliação de áudio pendentes |
+| P2 · HAC-05 / 11 / 28 / 29 | Feedback, clareza, base viva e inglês | Recompensa da caça e estados visuais polidos; legibilidade e mix de áudio aguardam avaliação |
 | P2 · HAC-15 / 24 / 30 | Variações, renda 5× e força mínima | Regras implementadas; economia/preços precisam de avaliação |
 | Contínua · HAC-26 | Modularidade e integração | Separar domínio alterado e preservar eventos independentes |
-| Contínua · CTX-01 | Cofre portável, limpo e versionado | Consolidação desta rodada; manter a cada solicitação |
+| Contínua · CTX-01 | Cofre portável, limpo e versionado | Revisão CTX-2026-10-20-01; manter a cada solicitação |
 
 Roteiro único: [[04_Validacao/Playtest Atual]]. Ao receber feedback, registrar caso reproduzível e atualizar a linha afetada; não abrir uma cópia do mesmo backlog.
 

@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código **90045a0**, 53 fontes runtime. Este cofre registra arquitetura e contratos, não duplica os fontes.
+Referência: código **be1bfaf**, 54 fontes runtime. Este cofre registra arquitetura e contratos, não duplica os fontes.
 
 ## Mapa de responsabilidade
 
@@ -8,14 +8,14 @@ Referência: código **90045a0**, 53 fontes runtime. Este cofre registra arquite
 |---|---|---|
 | studio/shared (9) | ReplicatedStorage.HACShared | Configurações, geometria e estilo |
 | studio/server (15) | ServerScriptService.HACServer | Regras e persistência autoritativas |
-| studio/client (27) | StarterPlayer.StarterPlayerScripts.HACClient | Input, apresentação e preferências locais |
+| studio/client (28) | StarterPlayer.StarterPlayerScripts.HACClient | Input, apresentação e preferências locais |
 | HuntACreature.server.luau | ServerScriptService.HuntACreature | Bootstrap e validação dos acessos |
 | HuntACreature.client.luau | StarterPlayerScripts.HuntACreatureClient | Inicialização e snapshots |
 
 | Alteração desejada | Fontes principais |
 |---|---|
 | Catálogo, renda, melhorias, ferramentas, força mínima | GameplayConfig |
-| Laço e disputa | CaptureConfig, LassoAim, LassoCollision, CaptureService, CaptureController |
+| Laço e disputa | CaptureConfig, LassoAim, LassoCollision, LassoVisuals, LassoFeedback, CaptureService, CaptureController, CaptureHUD |
 | IA selvagem | CreatureProfiles, CreatureBehaviorService, LumitoBehavior |
 | Construção / retrato de criatura | CreatureFactory, CatalogPresentation, CreaturePortrait |
 | Regras de perfil / transações | ProfileData; integração via ProfileService |
@@ -23,7 +23,7 @@ Referência: código **90045a0**, 53 fontes runtime. Este cofre registra arquite
 | Ferramentas / posicionamento | HuntingTools, ToolInventory, ToolPlacement, ToolPlacementPreview |
 | Base viva / mundo / placas | BaseRoamingService, WorldPresentation, WorldStations, UpgradeBoards |
 | HUD / menus / preferências | HUD, CollectionUI, módulos de página, LocalPreferences |
-| Aparência / som | VisualStyle, MenuTheme, MenuKit, GlossyButton, WorldStyle, AudioConfig, AudioFeedback |
+| Aparência / som | VisualStyle, MenuTheme, MenuKit, GlossyButton, WorldStyle, AudioConfig, AudioFeedback, RewardPresentation |
 
 Os nomes acima são módulos, salvo bootstraps explícitos. Consultar o arquivo no checkout antes de editar; não inferir uma API só pelo nome.
 
@@ -55,11 +55,11 @@ Workspace.HACStudioMemoryMode = true habilita memória temporária **apenas no S
 ## Versões, código e lugar
 
 - Checkout atual: C:/Users/melg_/OneDrive/Documents/ChatGPT/Hunt A Creature.
-- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Entrega de menus 90045a0; política de fluxo b0be2b9.
+- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Entrega da caça be1bfaf; menus 90045a0; política de fluxo b0be2b9.
 - Git é a referência operacional dos fontes versionados. Sincronização automática Studio/disco não está configurada e comparações integrais rotineiras foram removidas por custo. Investigar somente divergência concreta reportada ou falha de aplicação.
-- O lugar contém modelos/Tools/propriedades não integralmente exportados. Salvar fontes no Git não salva o lugar; publicação e salvamento são operações distintas.
+- O lugar contém modelos/Tools/propriedades não integralmente exportados. O lugar de teste foi salvo na Roblox via Studio em 20/10/2026; exportação .rbxl recuperável continua pendente. Salvar fontes no Git, salvar lugar e publicar são operações distintas.
 - BuildWorld.luau e studio/archive são históricos; não executar o construtor antigo sobre o cenário atual.
 - UpgradePage não possui rota ativa e depende do antigo UI:Card removido. QuickSlot só reserva espaço invisível; inventário visível é nativo.
-- Backup da última rodada: contexto/menus-2026-10-19 no checkout. Não disponível pelo clone deste cofre.
+- Backup histórico dos menus: contexto/menus-2026-10-19 no checkout. Não disponível pelo clone deste cofre.
 
-Uma máquina nova precisa do cofre **e** clone correto do código **e** acesso ao lugar atual. Exportar/salvar integralmente o lugar continua pendente.
+Uma máquina nova precisa do cofre **e** clone correto do código **e** acesso ao lugar atual. Exportar .rbxl e comprovar restauração independente continuam pendentes.
