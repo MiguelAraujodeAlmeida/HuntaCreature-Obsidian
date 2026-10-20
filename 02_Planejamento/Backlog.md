@@ -25,7 +25,7 @@ Roteiro único: [[04_Validacao/Playtest Atual]]. Ao receber feedback, registrar 
 
 | IDs | Tema | Situação |
 |---|---|---|
-| HAC-01A / HAC-09 / HAC-10 | Arte, texturas, modelos e animações finais | Adiados; padrão atual é direção, não arte final aprovada |
+| HAC-01A / HAC-09 / HAC-10 | Arte, texturas, modelos e animações finais | Briefing para agente Blender preparado; modelagem/exportação ainda não iniciadas; padrão atual não é arte final aprovada |
 | HAC-07 / HAC-08 | Teletransporte e mapa amplo | Direção desejada; ponte atual provisória |
 | EXP-01 | Segunda espécie, mais laços/biomas/eventos | Novo escopo a definir |
 | HAC-27 | Interferência durante captura | Hipótese não implementada |

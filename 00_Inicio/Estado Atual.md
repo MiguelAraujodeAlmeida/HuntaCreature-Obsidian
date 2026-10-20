@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-20-01** · 20/10/2026.
+Revisão de contexto **CTX-2026-10-20-02** · 20/10/2026.
 
 ## Entrega do jogo
 
@@ -31,6 +31,8 @@ Na entrega anterior não houve Play, emulação ou benchmark. DataStore real, re
 Artefatos no checkout do jogo: `contexto/menus-2026-10-19/` contém mapa de fontes, hashes, verificações e backup. Não estão neste repositório de contexto.
 
 ## Contexto compartilhado
+
+Um briefing para outro agente se conectar ao Blender MCP e absorver a direção visual foi preparado nesta revisão. Conexão, alterações de cena, exportação e aprovação artística dependem da execução desse agente e de uma tarefa de modelagem definida.
 
 Cofre consolidado em um conjunto vigente, histórico único e manifesto verificável. Especificações contraditórias substituídas; referências visuais copiadas para o próprio cofre. Instruções de leitura inicial enxuta e manutenção por solicitação registradas. O histórico antigo integral está no backup externo descrito em [[00_Inicio/Historico de Contexto]].
 

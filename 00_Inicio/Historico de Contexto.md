@@ -100,6 +100,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Pendências:** playtest humano de precisão, ritmo, Gold/descoberta, som e PC/celular; DataStore/reconexão da entrega anterior; exportação .rbxl e restauração independente. Salvamento em nuvem e código Git não demonstram essas verificações.
 **Autoria/ambiente:** Codex, Windows, Studio MCP e interface local; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-20-02 — Briefing para agente Blender · 20/10/2026
+
+**Pedido:** criar um prompt para outro agente conectar-se ao servidor MCP do Blender e receber as regras e referências visuais atuais do projeto.
+**Resultado:** briefing textual entregue com leitura inicial enxuta do cofre, domínio `ui_ux`, direção toy/cartoon, coerência de materiais e silhuetas, distinção entre referências e arte aprovada, e inspeção inicial da cena sem alteração presumida.
+**Evidência e limites:** prompt preparado; esta sessão não se conectou ao Blender, não editou cena, não modelou nem exportou assets. O agente executor deverá informar o estado real da conexão e aguardar um objeto concreto para modelar.
+**Autoria/ambiente:** Codex, Windows; sem agentes auxiliares nesta sessão. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.
