@@ -1,6 +1,6 @@
 # Estudo visual: criaturas e mundo de Steal an Egg
 
-**Estado: pesquisa para avaliação do desenvolvedor, sem aprovação ou mudança no jogo.** 20/10/2026. O objetivo é identificar princípios de leitura visual, não reproduzir modelos, texturas ou personagens do jogo citado.
+**Estado: princípios gerais aprovados pelo desenvolvedor em 20/10/2026 e registrados em [[01_Produto/Design UI UX]].** Aprovação da direção não significa aprovação de qualquer modelo específico nem mudança no jogo. O objetivo é identificar princípios de leitura visual, não reproduzir modelos, texturas ou personagens do jogo citado.
 
 ## Material observado e limites
 
@@ -54,4 +54,4 @@ O Lumito provisório é uma esfera ciano com pequenas peças esféricas e rosto 
 |---|---|---|
 | Leitura instantânea, formas grandes, material de brinquedo, cenário modular | Studs/grade, saturação, escala, raridade visual, pose, paleta por bioma | Copiar modelos/texturas exatas, importar a lógica de ovos, neon constante, transformar todas as espécies na mesma bolinha |
 
-**Pendente:** parecer do desenvolvedor sobre a análise; selecionar quais princípios viram regra vigente; então produzir estudos próprios de Lumito e cenário, em vez de integrar um redesign direto. Nenhuma alteração de Studio, Blender ou jogo foi feita por este estudo.
+**Aplicação aprovada:** silhuetas distintas, formas blocadas/facetadas de brinquedo, áreas amplas de cor, mundo modular com studs/grade hierarquizados e efeitos reservados para raridade/eventos. **Pendente:** aprovação do modelo base do Lumito e futuras amostras próprias de cenário. Nenhuma alteração de Studio, Blender ou jogo foi feita por este estudo.

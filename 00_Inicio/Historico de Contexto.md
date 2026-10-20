@@ -129,6 +129,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência:** fontes visuais e comparação com a imagem do Lumito provisório na nota. Sem edição de Studio/Blender, Play, exportação ou teste. Estudo aguardando parecer humano; não altera regra de jogo.
 **Autoria/ambiente:** Codex, Windows e pesquisa web; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-20-06 — Regras visuais e novo prompt do Lumito · 20/10/2026
+
+**Pedido:** adotar um padrão visual mais próximo dos princípios observados em Steal an Egg e preparar um novo prompt para redesign da aparência base do Lumito.
+**Resultado:** regras de criatura e mundo atualizadas em [[01_Produto/Design UI UX]]; distinção mantida entre direção aprovada e modelo ainda sujeito a revisão. O estudo foi atualizado para refletir aprovação dos princípios gerais. Prompt de modelagem focado no Lumito base entregue no chat.
+**Evidência/limites:** validação do cofre e commit Git. Nenhuma alteração de Studio, Blender, jogo ou asset; modelo aguarda geração e aprovação do desenvolvedor.
+**Autoria/ambiente:** Codex, Windows, continuidade de contexto do projeto; sem agentes auxiliares. Modelo exato não registrado.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

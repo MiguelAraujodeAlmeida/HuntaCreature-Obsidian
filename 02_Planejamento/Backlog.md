@@ -26,7 +26,7 @@ Roteiro único: [[04_Validacao/Playtest Atual]]. Ao receber feedback, registrar 
 
 | IDs | Tema | Situação |
 |---|---|---|
-| HAC-01A / HAC-09 / HAC-10 | Arte, texturas, modelos e animações finais | Estudo visual de Steal an Egg entregue para avaliação; direção do Lumito anterior rejeitada. Aguardar parecer antes de novo briefing, modelagem/exportação; mutações depois no Studio |
+| HAC-01A / HAC-09 / HAC-10 | Arte, texturas, modelos e animações finais | Regras geométricas de criatura/mundo atualizadas com base no estudo aprovado. Novo prompt do Lumito base entregue; gerar e revisar modelo antes de integração; mutações depois no Studio |
 | HAC-07 / HAC-08 | Teletransporte e mapa amplo | Direção desejada; ponte atual provisória |
 | EXP-01 | Segunda espécie, mais laços/biomas/eventos | Novo escopo a definir |
 | HAC-27 | Interferência durante captura | Hipótese não implementada |

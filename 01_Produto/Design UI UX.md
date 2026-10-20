@@ -4,11 +4,27 @@
 
 ## Direção de arte
 
-Toy/cartoon amigável, cores vivas, superfícies tipo studs/lego e formas legíveis. Grama, folhas, madeira, chão e criaturas devem parecer do mesmo jogo. Evitar realismo desnecessário, mistura casual de estilos e modelos genéricos sem silhueta. Modelos atuais são provisórios.
+**Padrão vigente após aprovação do estudo visual em 20/10/2026; revisável por feedback.** Referência de leitura: [[06_Referencias/Estudo visual Steal an Egg]]. Usar a lógica visual como inspiração, sem copiar malhas, personagens ou texturas. A meta é uma linguagem de brinquedo/cartoon que pareça nativa do Roblox e una cenário e criaturas.
 
-### Lumito base — hipótese anterior, em revisão
+### Criaturas e objetos
 
-O protótipo é ciano, arredondado, com duas saliências superiores, olhos simples e pés curtos. A proposta posterior de gota/feijão liso, patas integradas, barriga aqua e brilho foi rejeitada como resultado/direção insuficiente; **não é especificação aprovada para modelar**. O estudo [[06_Referencias/Estudo visual Steal an Egg]] examina uma alternativa geométrica mais alinhada ao mundo Roblox. Aguardar o parecer do desenvolvedor antes de fixar forma, materiais ou refazer o modelo. O escopo continua sendo apenas a aparência base; mutações podem ser tratadas depois no Studio.
+- A espécie deve ser reconhecida pela silhueta antes de detalhes, efeitos ou cor. Cada espécie tem uma massa principal e de 1 a 2 marcas anatômicas próprias em escala exagerada; evitar repetir a mesma esfera com acessórios trocados.
+- Construir com volumes grandes e encaixados, formas blocadas ou facetadas e chanfros simples. Curvas podem suavizar cantos, mas não devem apagar os planos e a leitura de peça montável. Evitar superfície uniformemente lisa, detalhamento fino e realismo orgânico.
+- Definir cores por áreas amplas: corpo principal, área secundária e poucos acentos de alto contraste. Faixas, barriga, placas, bico, focinho, patas, espinhos ou cristas devem explicar forma ou espécie. Textura de studs pode ser usada quando reforça o material de brinquedo; não cobrir tudo com ruído/relevo sem hierarquia.
+- Personalidade vem de proporções, pose e poucos traços faciais legíveis. Olhos e boca simples; exagerar um traço que comunique a criatura. Não depender de partículas para tornar a forma interessante.
+- Raridade e mutações podem adicionar forma, paleta, peças e VFX por camadas, preservando a leitura da espécie base. Brilho intenso é reservado a eventos/variantes que o justifiquem; criatura comum continua atraente sem VFX.
+- Conferir o modelo em silhueta monocromática, frente/lado/costas e três quartos; testar legibilidade pequena, escala 1× e multiplicadores altos existentes. Pivô, chão e peças animáveis devem servir à integração prevista no Studio.
+
+### Mundo e materiais
+
+- Construir como cenário modular de brinquedo: terreno amplo, caminhos, plataformas, muros, cercas, placas e lojas com formas simples, encaixes claros e limites legíveis.
+- Usar superfícies estudadas — studs/grade em chão e peças construídas, madeira estilizada onde fizer sentido — com cores vivas por bioma. Grama, árvores, água, areia, estruturas e criaturas devem compartilhar acabamento e proporção do mesmo mundo.
+- Manter áreas de circulação visualmente simples para que criatura, objetivo e recompensa se destaquem. Repetição regular une o espaço, mas não deve competir com pontos de interesse; reservar contraste forte, luz e partículas para locais/ocasiões especiais.
+- Mostrar escala com avatar, cercas e props; garantir que cenário e criatura funcionem na câmera e em tela pequena. Evitar realismo, ruído visual, microdetalhes e excesso de neon.
+
+### Lumito base — escopo do próximo estudo
+
+O protótipo atual é ciano, com duas saliências superiores, olhos simples e pés curtos. Esses traços dão reconhecimento à espécie, mas a forma atual quase esférica foi julgada básica demais. No próximo redesign, preservar essa identidade e reinterpretar o corpo segundo as regras acima: silhueta própria, volumes montáveis/facetados e traços anatômicos intencionais. Fazer somente a aparência base; Gold e outras mutações ficam para etapa posterior no Studio. O prompt atual é uma proposta para modelagem e aguarda revisão do modelo, não aprovação antecipada.
 
 Usar componentes glossy originais existentes: ícones grandes o suficiente para leitura, brilho, relevo/contorno e texto branco com sombra escura. Não substituir mochila/moeda/laço por emoji, símbolos de fonte ou retângulos de texto. A referência de botões foi explicitamente escolhida pelo desenvolvedor; manter sua linguagem visual, ajustando escala ao jogo.
 
