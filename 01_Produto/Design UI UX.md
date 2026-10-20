@@ -6,6 +6,10 @@
 
 Toy/cartoon amigável, cores vivas, superfícies tipo studs/lego e formas legíveis. Grama, folhas, madeira, chão e criaturas devem parecer do mesmo jogo. Evitar realismo desnecessário, mistura casual de estilos e modelos genéricos sem silhueta. Modelos atuais são provisórios.
 
+### Lumito base — direção para o primeiro redesign
+
+Preservar a leitura da criatura atual: corpo pequeno e arredondado em ciano, duas saliências superiores, olhos pretos simples, bochechas e pés curtos. Refinar como personagem original de brinquedo, não como esfera lisa com peças soltas: corpo em gota/feijão com base mais larga, silhueta reconhecível pela dupla de orelhas/antenas assimétricas, patas integradas, expressão curiosa e travessa, barriga aqua clara e um detalhe luminoso discreto próprio da espécie. Volumes, encaixes, cores e brilho devem funcionar de frente, lado, costas e três quartos, inclusive na escala 1× e ampliada até 5×. Evitar realismo, pelo, texturas ruidosas, acessórios aleatórios, excesso de neon e semelhança direta com mascotes alheios. Modelar somente a versão base; Gold/outras mutações serão aplicadas depois no Studio. Esta direção orienta o prompt, não aprova um modelo antes da revisão humana.
+
 Usar componentes glossy originais existentes: ícones grandes o suficiente para leitura, brilho, relevo/contorno e texto branco com sombra escura. Não substituir mochila/moeda/laço por emoji, símbolos de fonte ou retângulos de texto. A referência de botões foi explicitamente escolhida pelo desenvolvedor; manter sua linguagem visual, ajustando escala ao jogo.
 
 Fonte: **Fredoka One** em títulos, números e interface, consistente entre telas. Não adicionar famílias sem justificativa. Inglês, rótulos curtos e hierarquia clara.
@@ -26,7 +30,7 @@ Fonte: **Fredoka One** em títulos, números e interface, consistente entre tela
 - Alvo em foco recebe contorno discreto com estados de distância, possibilidade, alinhamento, bloqueio e disputa alheia. Intensidade e preenchimento acompanham cor; não piscar a cada movimento de câmera. A marca do limite surge durante a carga.
 - Carga central acima da barra nativa mostra alcance e ápice MAX, com pulso leve e som limitado. Voo tem trilha curta quente; retorno é ciano e recolhe a corda. Impacto com obstáculo ou tentativa recusada se lê pelo efeito, sem aviso rotineiro.
 - Acerto combina som, faísca curta, corda presa e resistência do Lumito. HUD compacta mostra zona móvel, progresso, tempo, resistência/abertura e poção; mantém a visão do mundo livre.
-- Vitória tem retrato real, sinal maior para Gold e primeira descoberta de espécie/variante, tamanho incomum quando houver e potencial de renda/XP **na base**. Fecha sozinha em até 2,35 s; não bloqueia o retorno ao controle. Renda passiva permanece discreta.
+- Vitória tem retrato real, sinal maior para Gold e primeira descoberta de espécie/variante e potencial de renda/XP **na base**. O tamanho aparece no modelo, sem categoria ou multiplicador escrito na interface. Fecha sozinha em até 2,35 s; não bloqueia o retorno ao controle. Renda passiva permanece discreta.
 
 ## Família dos menus
 

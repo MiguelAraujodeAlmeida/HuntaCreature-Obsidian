@@ -114,6 +114,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência e limites:** inspeção dos documentos vigentes e de CreatureFactory, CreatureProfiles, GameplayConfig e CatalogPresentation; prompt textual entregue. Nenhum modelo, arquivo de arte ou código do jogo alterado nesta sessão.
 **Autoria/ambiente:** Codex, Windows; sem agentes auxiliares. Modelo exato não registrado.
 
+## CTX-2026-10-20-04 — Escala contínua e redesign restrito ao Lumito base · 20/10/2026
+
+**Pedido:** substituir classes Small/Normal/Large por multiplicador oculto de 1× a 5×; após feedback de gigantes frequentes, tornar 1× muito mais comum e os tamanhos maiores progressivamente raros. Reformular o prompt de modelagem só para a aparência base, com mais detalhes e fidelidade à identidade ciano/arredondada da imagem anexada. Mutações ficam para depois no Studio.
+**Resultado confirmado:** código `ac385aed7c62a8eb4c4e43f18c342363ca86fbe0` enviado para escala contínua; oito scripts aplicados/compilados em Studio Edit, limites e migração 0,85× → 1× verificados e status “Novas alterações salvas ... na Roblox” visto. A imagem do Lumito provisório foi copiada para as referências do cofre e a direção de arte vigente foi refinada.
+**Pendente separado:** o ajuste adicional de raridade (`BaseChance = 0.7`, `Curve = 12`) foi aplicado no checkout local e no script em Studio Edit, com limites 1×/5× conferidos. O usuário interrompeu o controle da interface com Esc antes da confirmação de salvamento; esta parte está sem commit no repositório do jogo e sem salvamento do lugar comprovado. Não houve Play novo, publicação, modelagem ou integração do Lumito. Exemplares existentes preservam tamanho.
+**Correção de registro:** CTX-2026-10-20-03 marcou um prompt como entregue, mas o turno correspondente foi interrompido antes da resposta final. O primeiro prompt efetivamente entregue foi mais curto e foi rejeitado pelo desenvolvedor; esta solicitação o substitui por instruções visuais concretas.
+**Autoria/ambiente:** Codex, Windows, Studio MCP e interface local. Sem agentes auxiliares. Aprovação artística e avaliação no jogo pendentes.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

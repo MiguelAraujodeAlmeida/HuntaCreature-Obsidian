@@ -2,6 +2,12 @@
 
 Imagens fornecidas pelo desenvolvedor, copiadas sem alteração para este cofre para não depender de Temp ou do chat. **Referências, não screenshots de aprovação do nosso jogo.** Não atribuir a nós a autoria dos jogos/arte mostrados.
 
+## Lumito antes do redesign
+
+![Lumito provisório em jogo, fornecido pelo desenvolvedor em 20/10/2026](../assets/lumito-prototipo-2026-10-20.png)
+
+Preservar corpo ciano arredondado, duas saliências superiores, olhos simples e pés curtos, elevando expressão, silhueta e acabamento. Direção vigente em [[01_Produto/Design UI UX]]. Esta imagem é o estado a melhorar, não o alvo de qualidade.
+
 ## Botões e recursos
 
 ![Família glossy escolhida pelo desenvolvedor](../assets/referencia-botoes-glossy.png)

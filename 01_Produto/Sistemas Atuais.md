@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Estado: implementados, com validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Valores abaixo são referência da entrega be1bfaf; ao alterar configuração, atualizar esta nota na mesma solicitação. Código inspecionado decide o valor executado; documento registra a intenção e a versão.
+Estado: implementados, com validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Código enviado mais recente: ac385ae. A curva de raridade adicional está pendente de commit e salvamento confirmado; [[00_Inicio/Estado Atual]] registra essa diferença.
 
 ## Laço e captura
 
@@ -13,24 +13,24 @@ Estado: implementados, com validação humana pendente conforme [[04_Validacao/P
 - Uma disputa possui dono exclusivo; validação de força mínima no início e na recompensa. Lumito exige 0. Não permitir segunda captura simultânea ou prêmio duplicado.
 - Poção pode ser usada durante a disputa; trocar a ferramenta não deve cancelar o estado por deixar de segurar o laço.
 - Voo quente e recolhimento ciano distinguem lançamento e retorno; contato em obstáculo, fim de alcance e contato recusado têm efeitos curtos diferentes. Falhas rotineiras não exibem notificações. Acerto inicia reação do Lumito e estado de tensão na corda/HUD; poção mostra o efeito aplicado.
-- Vitória curta apresenta retrato da criatura, Gold/primeira descoberta/variante de Index/tamanho quando aplicável e o potencial de **ouro e XP por segundo ao equipar na base**. Captura na bolsa não credita esses recursos instantaneamente.
+- Vitória curta apresenta retrato da criatura, Gold/primeira descoberta/variante de Index quando aplicável e o potencial de **ouro e XP por segundo ao equipar na base**. Captura na bolsa não credita esses recursos instantaneamente.
 
 ## Criaturas e coleção
 
 Lumito é a única espécie atual. Passeia, pausa, percebe jogador com linha de visão, foge e se cansa. IA delimitada ao cenário atual; não é navegação universal para qualquer mapa.
 
 - Indivíduo tem ID próprio, espécie, raridade, tamanho, mutações, local (bolsa/base), posição lógica e favorito.
-- Tamanhos atuais 0,85/1/1,2 com pesos 25/55/20. Gold é mutação: chance 18%, multiplicador de valor 3 e dificuldade 1,2; não é raridade separada.
+- Tamanho é multiplicador individual oculto na UI, entre 1× e 5×, com duas casas. No código enviado, sorteia-se `1 + 4 × u^5`. O ajuste solicitado depois dá 70% de chance a 1× e distribui o restante por `1 + 4 × u^12`, tornando cada faixa maior progressivamente mais rara; ainda precisa de commit e salvamento confirmado no Studio. Exemplares já capturados mantêm seu tamanho. Gold é mutação: chance 18%, multiplicador de valor 3 e dificuldade 1,2; não é raridade separada.
 - Raridades: Common, Rare, Epic, Mythic, Legendary, Secret, Divine. IDs internos legados em português permanecem estáveis.
 - Creatures permite selecionar, filtrar favoritos e **Equip/Unequip**. Destino precisa ter espaço; sem troca implícita, exclusão ou perda de criatura. Bloqueios de treino/disputa continuam válidos.
 - Favorito persiste por indivíduo e bloqueia venda no servidor, inclusive se o cliente tentar ignorar a interface.
 - Index registra descobertas permanentes, independentes da posse; variantes All/Normal/Gold, raridade, progresso, silhuetas e ficha. Paginação de 18. Não há recompensas de coleção implementadas.
-- Criaturas equipadas passeiam dentro do piso da base, com pausas/separação. Não ficam em pedestais. Visuais ancorados sem colisão/toque/query; a atualização de renda não reinicia sua posição. Área atual de passeio: 18 × 17 studs.
+- Criaturas equipadas passeiam dentro do piso da base, com pausas/separação. Não ficam em pedestais. Visuais ancorados sem colisão/toque/query; a atualização de renda não reinicia sua posição. Área atual de passeio: 18 × 17 studs; sem espaço livre para um gigante, seu visual fica visível e imóvel.
 
 ## Economia, treino e melhorias
 
 - Renda de ouro e XP a cada **1 segundo**, mantendo o valor que antes era pago a cada 5 s: aceleração **5× expressamente escolhida pelo desenvolvedor**.
-- Lumito normal: referência-base 1 ouro/s, 1 XP/s e venda 12; variações/mutações influenciam valor. Preços antigos mantidos, balanceamento pendente.
+- Lumito base de 1×: referência de 1 ouro/s, 1 XP/s e venda 12; escala/mutações influenciam valor. Preços antigos mantidos, balanceamento pendente.
 - Treino automático no manequim: avatar imóvel, animação de laçar; não exige jogar um minigame. Tick de 2 s; ganho combina nível de treino e eficiência. Sair/morrer/interromper deve restaurar movimento.
 - Gerenciar melhorias **apenas nas placas da própria base**, com botão clicável. Treino e sua eficiência junto ao manequim. Sem acesso duplicado por menu.
 - Placas exibem nível atual/próximo, custo e estado máximo; proprietário, distância e saldo validados no servidor. Texto nas duas faces e descoberta tardia dos objetos não devem deixar a placa vazia.

@@ -35,3 +35,7 @@ Consequência: toda entrega inclui manutenção de contexto, validação de link
 ## ADR-008 — Caça legível pelo mundo e recompensa verdadeira
 
 **Vigente, 20/10/2026; sujeito a playtest humano.** Preservar lançamento livre, reto e sem assistência. Mira, carga, voo, contato, disputa e retorno usam sinais visuais/sonoros curtos e estados distintos; erros normais não viram notificações. Ritmo da disputa é configurado e autoritativo no servidor. Vitória mostra a criatura e o valor real de renda/XP **quando equipada na base**, sem sugerir crédito instantâneo. Consequência: cliente apresenta dados validados e limpa efeitos ao terminar; ajustes de ritmo ficam em CaptureConfig.
+
+## ADR-009 — Escala individual e Lumito base
+
+**Vigente como direção, 20/10/2026; curva mais rara ainda pendente de salvamento confirmado.** Tamanho é atributo numérico oculto na UI, de 1× a 5×, sem classes Small/Normal/Large. A distribuição deve favorecer fortemente 1× e tornar tamanhos maiores progressivamente mais raros; parâmetros pertencem a GameplayConfig e não alteram exemplares já capturados. O redesign artístico desta etapa preserva a identidade ciano/arredondada do Lumito base. Mutações são trabalho posterior no Studio. Consequência: escala afeta geometria e valor, mas não deve criar rótulos de categoria, invalidar saves ou fazer criaturas equipadas desaparecerem quando a base estiver cheia.
