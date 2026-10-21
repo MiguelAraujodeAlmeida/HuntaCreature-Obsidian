@@ -22,9 +22,9 @@
 - Manter áreas de circulação visualmente simples para que criatura, objetivo e recompensa se destaquem. Repetição regular une o espaço, mas não deve competir com pontos de interesse; reservar contraste forte, luz e partículas para locais/ocasiões especiais.
 - Mostrar escala com avatar, cercas e props; garantir que cenário e criatura funcionem na câmera e em tela pequena. Evitar realismo, ruído visual, microdetalhes e excesso de neon.
 
-### Lumito base — escopo do próximo estudo
+### Lumito base — modelo v01 integrado
 
-O protótipo atual é ciano, com duas saliências superiores, olhos simples e pés curtos. Esses traços dão reconhecimento à espécie, mas a forma atual quase esférica foi julgada básica demais. No próximo redesign, preservar essa identidade e reinterpretar o corpo segundo as regras acima: silhueta própria, volumes montáveis/facetados e traços anatômicos intencionais. Fazer somente a aparência base; Gold e outras mutações ficam para etapa posterior no Studio. O prompt atual é uma proposta para modelagem e aguarda revisão do modelo, não aprovação antecipada.
+O protótipo esférico anterior foi substituído pela versão facetada v01 (`Lumito_Base_v01`), mantendo a identidade ciano (`12,211,255`), barriga/focinho aqua claro (`196,248,255`), acentos em teal escuro (`0,112,168` nas orelhas internas, crista dorsal com 3 studs, solas e ponta da cauda) e olhos/boca em azul-marinho (`3,12,40`). Os traços próprios adotados são a testa saliente facetada, a orelha direita dobrada assimetricamente e a crista dorsal com studs. No Studio, o template `ReplicatedStorage.HACLumitoTemplate` (33 `UnionOperation`s + `Root` + `Corpo` de colisão) é instanciado e escalado por `CreatureFactory`, preservando o pivô (`Y = -1.625 * scale` na sola), o volume de captura (`Corpo`) e a animação de passos (`FootSide` em `LumitoBehavior`). Aprovação artística humana continua revisável por feedback.
 
 Usar componentes glossy originais existentes: ícones grandes o suficiente para leitura, brilho, relevo/contorno e texto branco com sombra escura. Não substituir mochila/moeda/laço por emoji, símbolos de fonte ou retângulos de texto. A referência de botões foi explicitamente escolhida pelo desenvolvedor; manter sua linguagem visual, ajustando escala ao jogo.
 

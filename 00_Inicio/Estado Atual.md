@@ -1,10 +1,10 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-20-07** · 20/10/2026.
+Revisão de contexto **CTX-2026-10-20-08** · 20/10/2026.
 
 ## Entrega do jogo
 
-Último código de produto enviado: **ac385ae**. Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`. Lugar **[Testing] Hunt a Creature**, placeId **102310424634629**. A escala contínua de 1× a 5× foi aplicada e salva no Studio; aguarda playtest do desenvolvedor.
+Último código de produto enviado: **ee6e901**. Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`. Lugar **[Testing] Hunt a Creature**, placeId **102310424634629**. O modelo antigo do Lumito foi substituído pelo novo modelo facetado v01 (`HACLumitoTemplate` + `CreatureFactory`/`LumitoBehavior`) no Studio Edit e no código; aguarda salvamento do lugar e playtest do desenvolvedor.
 
 - Creatures, Creature Market, Creature Index, Hunting Shop e Settings usam a família MenuTheme/MenuKit, retratos e componentes glossy.
 - Reset configurado em geração fixa `20261019_menu_reset_01`. Todas as contas que entrarem nesta versão começam novas; progresso posterior deve persistir. Dados antigos preservados em outro namespace.
@@ -26,7 +26,7 @@ Regras dos sistemas preservados: [[01_Produto/Sistemas Atuais]]. Padrão visual:
 
 - `ac385ae` substituiu Small/Normal/Large por multiplicador individual oculto de 1× a 5×, removeu rótulos de tamanho da UI, ampliou validação de perfil e ajustou movimento/visibilidade de gigantes. Oito fontes foram compilados em Edit; limites e migração 0,85× → 1× verificados sem Play. O Studio confirmou salvamento na Roblox. Não houve publicação nem playtest da mudança.
 - Feedback posterior: ainda aparecem gigantes demais. Um sorteio com 70% de 1× e curva decrescente para os demais foi alterado no checkout local e no script em Edit, com checagem de limites, **mas a sessão de controle foi interrompida antes da confirmação de salvamento**. O checkout do jogo está modificado e sem commit para esse ajuste. O lugar salvo pode continuar com a curva anterior; não tratá-lo como entregue.
-- Redesign solicitado: somente aparência **base** do Lumito; mutações ficam para etapa posterior no Studio. O resultado/direção do prompt anterior foi rejeitado. O desenvolvedor aprovou os princípios gerais do estudo [[06_Referencias/Estudo visual Steal an Egg]], incorporados em [[01_Produto/Design UI UX]]. Novo prompt de modelagem foi entregue; nenhum modelo foi criado ou integrado.
+- Redesign solicitado: aparência **base** do Lumito modelada no Blender (`Lumito_Base_v01.blend` / `.fbx`) e integrada funcionalmente no Studio (`ReplicatedStorage.HACLumitoTemplate`, `ReplicatedStorage.HACCreaturePreviews` e módulos `CreatureFactory` + `LumitoBehavior` no commit `ee6e901`). Aprovação artística final e salvamento do lugar no Studio permanecem pendentes do desenvolvedor.
 
 ## Entrega anterior de menus
 

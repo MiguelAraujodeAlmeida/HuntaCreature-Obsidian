@@ -143,6 +143,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limites:** Studio conectado ao placeId 102310424634629 em Play, portanto sem mudança no lugar. Blender conectado à cena-padrão não salva (Cube/Camera/Light), sem criação, exportação ou modificação. O checkout do jogo possui alterações locais pré-existentes em `studio/shared/GameplayConfig.luau` e `art/`, preservadas sem inspeção ou edição.
 **Autoria/ambiente:** Codex, Windows, Roblox Studio MCP e Blender MCP; sem agentes auxiliares. Nenhuma aprovação artística, modelo ou commit de código do jogo.
 
+## CTX-2026-10-20-08 — Modelagem do Lumito base v01 e substituição funcional no Studio · 20/10/2026
+
+**Pedido:** redesenhar a aparência base do Lumito em Blender segundo as regras visuais de `Design UI UX.md` e `Estudo visual Steal an Egg.md` e, em seguida, substituir completamente o modelo antigo do Lumito pelo novo de forma funcional.
+**Resultado:** modelo `Lumito_Base_v01` criado e salvo em `C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Art\Lumito\Lumito_Base_v01.blend` (e `.fbx` + prancha de vistas), construído no Studio em `ReplicatedStorage.HACLumitoTemplate` (33 `UnionOperation`s CSG fiéis à geometria facetada do Blender + `Root` + `Corpo` invisível para colisão do laço) e integrado em `CreatureFactory.luau` (com fallback procedural compacto e suporte às paletas Normal e Dourado via `ColorRole`) e `LumitoBehavior.luau` (passo sincronizado de pé/sola/stud via `FootSide`). `ReplicatedStorage.HACCreaturePreviews` (`Lumito:Normal` e `Lumito:Dourado`) foi reconstruído no Studio Edit.
+**Evidência/limites:** commit `ee6e901c99aa9855e5b84f1d8a87c3a05fe569a0` enviado para `main` no repositório de código; scripts `CreatureFactory` e `LumitoBehavior` atualizados e compilados em Studio Edit; prévia inspecionada por captura de tela em Edit e removida. Nenhum Play iniciado; salvamento do lugar na nuvem Roblox e aprovação estética final em playtest permanecem com o desenvolvedor.
+**Autoria/ambiente:** Antigravity, Windows, Blender 5.4 (porta 9876) e Roblox Studio MCP; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

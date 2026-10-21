@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código enviado **ac385ae**, 54 fontes runtime. Curva posterior `BaseChance = 0.7`, `Curve = 12` está apenas no checkout e no Studio Edit sem salvamento confirmado. Este cofre registra arquitetura e contratos, não duplica os fontes.
+Referência: código enviado **ee6e901**, 54 fontes runtime. Curva posterior `BaseChance = 0.7`, `Curve = 12` está apenas no checkout e no Studio Edit sem salvamento confirmado. Este cofre registra arquitetura e contratos, não duplica os fontes.
 
 ## Mapa de responsabilidade
 
@@ -55,7 +55,7 @@ Workspace.HACStudioMemoryMode = true habilita memória temporária **apenas no S
 ## Versões, código e lugar
 
 - Checkout atual: C:/Users/melg_/OneDrive/Documents/ChatGPT/Hunt A Creature.
-- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Escala ac385ae; caça be1bfaf; menus 90045a0; política de fluxo b0be2b9.
+- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Lumito v01 ee6e901; escala ac385ae; caça be1bfaf; menus 90045a0; política de fluxo b0be2b9.
 - Git é a referência operacional dos fontes versionados. Sincronização automática Studio/disco não está configurada e comparações integrais rotineiras foram removidas por custo. Investigar somente divergência concreta reportada ou falha de aplicação.
 - O lugar contém modelos/Tools/propriedades não integralmente exportados. O lugar de teste foi salvo na Roblox via Studio em 20/10/2026; exportação .rbxl recuperável continua pendente. Salvar fontes no Git, salvar lugar e publicar são operações distintas.
 - BuildWorld.luau e studio/archive são históricos; não executar o construtor antigo sobre o cenário atual.
