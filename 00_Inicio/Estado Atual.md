@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-21-02** · 21/10/2026.
+Revisão de contexto **CTX-2026-10-21-03** · 21/10/2026.
 
 ## Entrega vigente do jogo
 
@@ -31,3 +31,5 @@ Revisão de contexto **CTX-2026-10-21-02** · 21/10/2026.
 1. Exportar cópia `.rbxl` recuperável do lugar salvo (`P0 · PROC-01`).
 2. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
 3. Executar [[04_Validacao/Playtest Atual]] em PC e celular (novo reset em duas contas, Hunter Rank/economia, sensação da caça, menus e avaliação visual/animação/VFX do Lumito v01 em campo, base e retratos).
+
+Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O commit de código `42ca28a` está no GitHub, o lugar de teste foi salvo mas não publicado, e a alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.

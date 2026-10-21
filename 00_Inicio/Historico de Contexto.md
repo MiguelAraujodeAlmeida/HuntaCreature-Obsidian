@@ -173,6 +173,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Pendências:** playtest humano em PC/celular, reset e reconexão de duas contas no DataStore real, curva de ouro/XP com espécies futuras e exportação `.rbxl` recuperável. O reset ainda não atinge servidores públicos sem publicação explícita.
 **Autoria/ambiente:** Codex, Windows, Studio MCP e interface local; sem agentes auxiliares.
 
+## CTX-2026-10-21-03 — Resumo de continuidade para outro agente · 21/10/2026
+
+**Pedido:** resumir o que foi combinado, o que já foi feito e o que falta, para continuidade por outro agente.
+**Resultado:** estado e backlog conferidos contra os commits remotos; resumo de passagem registrado em [[00_Inicio/Estado Atual]]. Nenhuma regra ou script do jogo alterado.
+**Evidência/limites:** código `42ca28ae1133f7d63c1000c976cca2a3858ff62c` e cofre `9036d0efb4c237027ee7fe1e1e8c8f366aad1a19` estavam sincronizados com `origin/main` na abertura desta solicitação. Lugar salvo, mas não publicado; validação humana de experiência, reset real e reconexão continuam pendentes. `GameplayConfig.luau` e duas pastas locais de arte permanecem fora do commit por escolha prévia.
+**Autoria/ambiente:** Codex, Windows; leitura de Git/cofre, sem Studio, Play ou agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.
