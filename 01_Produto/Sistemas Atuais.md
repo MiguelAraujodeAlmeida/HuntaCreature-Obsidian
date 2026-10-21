@@ -1,65 +1,59 @@
 # Sistemas atuais
 
-Estado: implementados, com validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Código enviado mais recente: ac385ae. A curva de raridade adicional está pendente de commit e salvamento confirmado; [[00_Inicio/Estado Atual]] registra essa diferença.
+Regras e parâmetros de gameplay implementados no código de referência (**ee6e901**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
-- Lançamento livre para o ponto escolhido pelo jogador, inclusive céu/chão/locais sem criatura. Sem mensagens rotineiras de “mira inválida” ou “laço errou”.
-- Direção reta, sem gravidade ou correção automática para o alvo. A 100% segue exatamente a direção da mira, respeitando obstáculos e alcance real. Carga menor reduz alcance.
-- Cada laço tem seus parâmetros. Training Lasso: alcance mínimo 18/máximo 73 studs, carga máxima 1,4 s; voo 100 studs/s e retorno 145; cooldown 0,12 s. Barra de força central, acima da barra nativa, sem ocupar permanentemente a tela.
-- Contorno local diferencia criatura distante, no alcance possível, alinhada e capturável, bloqueada, ocupada por outra disputa ou sem força mínima. Intensidade/preenchimento e cor dão sinais combinados; o servidor revalida elegibilidade e acerto.
-- Colisão contínua considera movimento relativo da criatura e volume do laço/corpo; bloqueios do mundo também são considerados. Isso não equivale a colisão por pixel da orelha. Precisão percebida precisa de teste.
-- Disputa compacta, sem modal gigante/tutorial. Parâmetros atuais: limite 22 s, ganho-base 0,18/s e perda fora da zona 0,075/s. Ritmo de 3,6 s alterna normal, resistência (mais movimento/menos ganho) e abertura (menos movimento/mais ganho). A meta muda em passos limitados de 0,25; força amplia a zona com retorno decrescente. Ritmo ainda aguarda avaliação humana.
-- Uma disputa possui dono exclusivo; validação de força mínima no início e na recompensa. Lumito exige 0. Não permitir segunda captura simultânea ou prêmio duplicado.
-- Poção pode ser usada durante a disputa; trocar a ferramenta não deve cancelar o estado por deixar de segurar o laço.
-- Voo quente e recolhimento ciano distinguem lançamento e retorno; contato em obstáculo, fim de alcance e contato recusado têm efeitos curtos diferentes. Falhas rotineiras não exibem notificações. Acerto inicia reação do Lumito e estado de tensão na corda/HUD; poção mostra o efeito aplicado.
-- Vitória curta apresenta retrato da criatura, Gold/primeira descoberta/variante de Index quando aplicável e o potencial de **ouro e XP por segundo ao equipar na base**. Captura na bolsa não credita esses recursos instantaneamente.
+- **Arremesso livre e reto:** dispara para qualquer ponto mirado (inclusive céu, chão ou parede), sem gravidade nem assistência de mira. A carga máxima (`100%`) atinge o alcance total; cargas menores reduzem o alcance proporcionalmente.
+- **Parâmetros do Training Lasso (`CaptureConfig`):** alcance mínimo `18` / máximo `73` studs, tempo máximo de carga `1,4 s`, velocidade de voo `100 studs/s`, retorno `145 studs/s`, cooldown `0,12 s`.
+- **Elegibilidade e colisão (`LassoAim` / `LassoCollision`):** o cliente exibe contorno contextual por estado (distante, no alcance, alinhado, bloqueado por obstáculo, ocupado ou sem força mínima), mas o servidor revalida tudo. A colisão contínua varre o deslocamento relativo entre projétil e o volume elipsoidal de `Corpo` (`3,3 × 2,8 × 2,6 * scale`), bloqueando capturas através de paredes.
+- **Disputa autoritativa (`CaptureService`):** dono exclusivo e validação de força mínima no início e na entrega (`Lumito` exige `0`). Limite de `22 s`, ganho-base `0,18/s` na zona e perda `0,075/s` fora dela. Ciclo de `3,6 s` alterna fase normal, resistência (mais movimento, menos ganho) e abertura (menos movimento, mais ganho); meta desloca em passos limitados de `0,25` e força amplia a zona com retorno decrescente.
+- **Uso de Poção na disputa:** reduz a velocidade do alvo em `35%` (para `65%`) por `6 s`; alternar para a ferramenta da poção não cancela a captura.
+- **Recompensa:** credita o indivíduo na bolsa, atualiza descobertas do Index (`Normal` / `Gold`) e exibe o potencial de **ouro/s e XP/s quando equipado na base** (a captura não paga ouro/XP instantâneos).
 
 ## Criaturas e coleção
 
-Lumito é a única espécie atual. Passeia, pausa, percebe jogador com linha de visão, foge e se cansa. IA delimitada ao cenário atual; não é navegação universal para qualquer mapa.
-
-- Indivíduo tem ID próprio, espécie, raridade, tamanho, mutações, local (bolsa/base), posição lógica e favorito.
-- Tamanho é multiplicador individual oculto na UI, entre 1× e 5×, com duas casas. No código enviado, sorteia-se `1 + 4 × u^5`. O ajuste solicitado depois dá 70% de chance a 1× e distribui o restante por `1 + 4 × u^12`, tornando cada faixa maior progressivamente mais rara; ainda precisa de commit e salvamento confirmado no Studio. Exemplares já capturados mantêm seu tamanho. Gold é mutação: chance 18%, multiplicador de valor 3 e dificuldade 1,2; não é raridade separada.
-- Raridades: Common, Rare, Epic, Mythic, Legendary, Secret, Divine. IDs internos legados em português permanecem estáveis.
-- Creatures permite selecionar, filtrar favoritos e **Equip/Unequip**. Destino precisa ter espaço; sem troca implícita, exclusão ou perda de criatura. Bloqueios de treino/disputa continuam válidos.
-- Favorito persiste por indivíduo e bloqueia venda no servidor, inclusive se o cliente tentar ignorar a interface.
-- Index registra descobertas permanentes, independentes da posse; variantes All/Normal/Gold, raridade, progresso, silhuetas e ficha. Paginação de 18. Não há recompensas de coleção implementadas.
-- Criaturas equipadas passeiam dentro do piso da base, com pausas/separação. Não ficam em pedestais. Visuais ancorados sem colisão/toque/query; a atualização de renda não reinicia sua posição. Área atual de passeio: 18 × 17 studs; sem espaço livre para um gigante, seu visual fica visível e imóvel.
+- **Espécie atual (`Lumito`):** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha e `1,625 * scale` na base, animando os conjuntos de pés (`FootSide = "L" / "R"`) em fase oposta.
+- **Atributos por indivíduo:** `id`, `species`, `rarity`, `size`, `mutations`, `location` (`bag` ou `base`) e `favorite`.
+- **Escala contínua (`1×` a `5×`, duas casas):** atributo numérico oculto na UI; exemplares existentes preservam seu tamanho.
+  - Em `ee6e901` (Git): `1 + 4 × u^5`.
+  - No checkout local e Studio Edit (pendente de confirmação/commit): `BaseChance = 0.7` para `1×` e `1 + 4 × u^12` nos `30%` restantes.
+- **Mutação `Dourado` (`Gold`):** chance `18%`, multiplicador de valor/renda `3×` e dificuldade `1,2×`.
+- **Raridades suportadas:** `Common`, `Rare`, `Epic`, `Mythic`, `Legendary`, `Secret`, `Divine` (IDs internos legados preservados para compatibilidade de save).
+- **Gestão (`Creatures` e `Index`):**
+  - `Creatures`: filtrar favoritos e acionar `Equip`/`Unequip` (exige vaga livre no destino; sem substituição implícita). Favorito persiste no perfil e bloqueia venda no servidor.
+  - `Index`: registro permanente de variantes descobertas (`All` / `Normal` / `Gold`), independente de venda posterior, com paginação de `18` itens e sem recompensa de reivindicação (`Claim`).
+- **Base viva (`BaseRoamingService`):** criaturas equipadas (escala visual `0,72 × size`) caminham livremente sobre a plataforma (`18 × 17 studs`) sem colisão física com avatares. Espécimes grandes demais para caminhar sem colidir ficam visíveis e estacionários. Ticks de renda não reiniciam a posição das criaturas.
 
 ## Economia, treino e melhorias
 
-- Renda de ouro e XP a cada **1 segundo**, mantendo o valor que antes era pago a cada 5 s: aceleração **5× expressamente escolhida pelo desenvolvedor**.
-- Lumito base de 1×: referência de 1 ouro/s, 1 XP/s e venda 12; escala/mutações influenciam valor. Preços antigos mantidos, balanceamento pendente.
-- Treino automático no manequim: avatar imóvel, animação de laçar; não exige jogar um minigame. Tick de 2 s; ganho combina nível de treino e eficiência. Sair/morrer/interromper deve restaurar movimento.
-- Gerenciar melhorias **apenas nas placas da própria base**, com botão clicável. Treino e sua eficiência junto ao manequim. Sem acesso duplicado por menu.
-- Placas exibem nível atual/próximo, custo e estado máximo; proprietário, distância e saldo validados no servidor. Texto nas duas faces e descoberta tardia dos objetos não devem deixar a placa vazia.
+- **Renda passiva (aceleração 5× aprovada):** paga a cada **1 segundo** o valor das criaturas equipadas na base. Referência do Lumito `1×` Normal: `1 ouro/s`, `1 XP/s` e venda por `12 ouro` (escalados por tamanho e mutação).
+- **Treino automático no manequim (`WorldPresentation`):** posiciona o avatar imóvel laçando o manequim a cada `2 s`, somando força conforme nível de treino × eficiência. Sair, pular ou morrer restaura a movimentação imediatamente.
+- **Placas físicas da base (`UpgradeBoards`):** único local para comprar melhorias (validação de dono, distância de `16 studs` e saldo no servidor; `SurfaceGui` nas duas faces).
 
-| Melhoria | Valores por nível | Custos das três compras |
+| Melhoria | Valores por nível (1 → 4) | Custos (níveis 2 / 3 / 4) |
 |---|---|---|
-| Base | 3 / 4 / 5 / 6 criaturas | 40 / 100 / 220 |
-| Bolsa | 3 / 4 / 5 / 6 criaturas | 25 / 70 / 160 |
-| Treino | 1 / 2 / 3 / 4 | 30 / 90 / 180 |
-| Eficiência | 1 / 1,25 / 1,5 / 2 | 50 / 140 / 300 |
-| Velocidade | 16 / 18 / 20 / 22 | 35 / 100 / 240 |
+| Base (`baseLevel`) | 3 / 4 / 5 / 6 criaturas | 40 / 100 / 220 |
+| Bolsa (`bagLevel`) | 3 / 4 / 5 / 6 criaturas | 25 / 70 / 160 |
+| Treino (`trainingLevel`) | +1 / +2 / +3 / +4 força | 30 / 90 / 180 |
+| Eficiência (`efficiencyLevel`) | 1× / 1,25× / 1,5× / 2× | 50 / 140 / 300 |
+| Velocidade (`speedLevel`) | 16 / 18 / 20 / 22 walkSpeed | 35 / 100 / 240 |
 
 ## Mercado, loja e ferramentas
 
-**Venda:** somente no mercado físico próximo ao jogador (14 studs). Selecionar indivíduo de bolsa/base, confirmar ou cancelar. Remoção e crédito atômicos; favorito protegido. Sem botão de venda remota no Creatures.
+- **Creature Market (venda física):** exige proximidade (`14 studs`), seleção explícita e confirmação; remove o indivíduo e credita ouro atomicamente (bloqueado se favorito).
+- **Hunting Shop (`18 studs`):** abas `Tools` e `Lassos`. Rotação determinística a cada `5 minutos` compartilhada por horário, mas com **cota de compra individual persistida no perfil**. `Training Lasso` já inicia possuído.
 
-**Hunting Shop:** proximidade de 18 studs; abas Tools/Lassos. Rotação determinística de 5 minutos com ofertas comuns entre servidores e **cota individual persistida**. Não é um estoque global consumido por todos os jogadores. Mostrar itens e motivo de indisponibilidade. Training Lasso é o único laço, já possuído inicialmente.
-
-| Ferramenta / ID interno | Preço | Função atual | Estoque por rotação |
+| Ferramenta / ID interno | Preço | Efeito validado no servidor | Estoque por rotação |
 |---|---:|---|---|
-| Bait / Isca | 8 | Atrai por 15 s, raio 18; cooldown 8 s | 2–5, recorrente |
-| Trap / Armadilha | 12 | Arma em 1 s, dura 25 s, raio 3; velocidade a 35% (redução de 65%) por 6 s, cooldown 10 s | 1–3, chance 70% |
-| Potion / Pocao | 10 | Durante disputa, alvo da disputa a 65% da velocidade (redução de 35%) por 6 s, cooldown 12 s | 1–4, chance 60% |
+| Bait / `Isca` | 8 | Atrai criaturas por `15 s` em raio de `18 studs`; cooldown `8 s` | 2–5 (100%) |
+| Trap / `Armadilha` | 12 | Arma em `1 s`, dura `25 s`, raio `3 studs`; reduz velocidade a `35%` por `6 s`, cooldown `10 s` | 1–3 (70%) |
+| Potion / `Pocao` | 10 | Na disputa ativa, reduz velocidade do alvo a `65%` por `6 s`, cooldown `12 s` | 1–4 (60%) |
 
-Posição, cota, propriedade, quantidade, cooldown e contexto são validados pelo servidor; consumir apenas quando a ação for válida. Inventário usa **Backpack nativo do Roblox**, com reordenação padrão. Só existem Tools possuídos; quantidade zero remove o Tool. Atualização passiva não deve recriar ferramentas. Ordem não tem persistência personalizada.
+- **Inventário (`ToolInventory`):** usa o `Backpack` nativo do Roblox apenas para ferramentas com quantidade `> 0`; zerar estoque remove a `Tool`, e ticks de renda não recriam nem reordenam ferramentas.
 
-## Preferências, idioma e início
+## Preferências, idioma e perfil inicial
 
-- Inglês como idioma nativo da apresentação. Documentação em português. Não renomear IDs de save para traduzir.
-- Settings: Sound e Base creatures. Preferências persistentes; efeito local. Ocultar criaturas das bases não suspende renda e se aplica também às que surgirem depois.
-- Perfil novo: ouro/XP/força zerados, coleção/descobertas vazias, melhorias iniciais, Training Lasso e uma unidade de cada consumível; preferências ligadas.
-- Reset excepcional atual e proteção de dados: [[03_Engenharia/Arquitetura Atual]]. Não confundir reset de teste com mecânica de progressão.
+- **Idioma:** interface em inglês; documentação e IDs legados de save em português.
+- **Settings:** `Sound` (áudio local) e `Base creatures` (oculta/mostra modelos nas bases localmente sem interromper a renda).
+- **Perfil inicial (`ProfileData`):** ouro, XP e força `0`, coleção/descobertas vazias, melhorias no nível `1`, `Training Lasso` e `1` unidade de cada consumível (`Isca`, `Armadilha`, `Pocao`).

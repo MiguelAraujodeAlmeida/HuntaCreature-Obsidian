@@ -150,6 +150,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limites:** commit `ee6e901c99aa9855e5b84f1d8a87c3a05fe569a0` enviado para `main` no repositório de código; scripts `CreatureFactory` e `LumitoBehavior` atualizados e compilados em Studio Edit; prévia inspecionada por captura de tela em Edit e removida. Nenhum Play iniciado; salvamento do lugar na nuvem Roblox e aprovação estética final em playtest permanecem com o desenvolvedor.
 **Autoria/ambiente:** Antigravity, Windows, Blender 5.4 (porta 9876) e Roblox Studio MCP; sem agentes auxiliares.
 
+## CTX-2026-10-20-09 — Otimização integral do cofre Obsidian e remoção de contradições · 21/10/2026
+
+**Pedido:** atualizar e otimizar o cofre Obsidian removendo repetições, contradições e informações desatualizadas, consolidando todas as mudanças recentes sem prejudicar o raciocínio do leitor.
+**Resultado:** todas as notas de `bootstrap` e `domains` foram revisadas e enxugadas sem perda de regras ou links. Contradições corrigidas: remoção do texto residual em `Estado Atual` que dizia que Blender/Studio não tinham modelo criado; alinhamento do build de referência (`ee6e901`) em `Sistemas Atuais`, `Arquitetura Atual` e `Playtest Atual`; atualização de `ADR-009` em `Decisoes Vigentes` para refletir o modelo facetado `Lumito_Base_v01` em vez da descrição antiga; documentação do contrato técnico de `ReplicatedStorage.HACLumitoTemplate` (`ColorRole`, `FootSide`, `Corpo`) em `Arquitetura Atual`; e inclusão da captura em Studio (`assets/lumito-v01-studio-2026-10-20.jpg`) em `Referencias Visuais` e no manifesto. O volume da leitura inicial (`entrypoints` + `bootstrap`) caiu de 24.049 para 16.696 caracteres (~30,6% menor que a revisão anterior e ~89,6% menor que o acervo original).
+**Evidência/limites:** validação determinística `python tools/check_context.py` sem erros e sincronização Git (`main`). Nenhuma alteração adicional de código ou Studio nesta etapa.
+**Autoria/ambiente:** Antigravity, Windows; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

@@ -1,104 +1,61 @@
 # Design, UI e UX
 
-**Padrão vigente, revisável por feedback.** A implementação mais recente ainda não foi aprovada artisticamente. Referências portáveis: [[06_Referencias/Referencias Visuais]].
+**Padrão visual vigente, revisável por feedback.** Princípios gerais aprovados a partir de [[06_Referencias/Estudo visual Steal an Egg]]; imagens de apoio em [[06_Referencias/Referencias Visuais]]. Regras mecânicas e parâmetros: [[01_Produto/Sistemas Atuais]].
 
-## Direção de arte
+## 1. Direção de arte: criaturas e mundo
 
-**Padrão vigente após aprovação do estudo visual em 20/10/2026; revisável por feedback.** Referência de leitura: [[06_Referencias/Estudo visual Steal an Egg]]. Usar a lógica visual como inspiração, sem copiar malhas, personagens ou texturas. A meta é uma linguagem de brinquedo/cartoon que pareça nativa do Roblox e una cenário e criaturas.
+### Criaturas
+- **Silhueta em primeiro lugar:** cada espécie deve ser reconhecível em silhueta monocromática (frente, lado, costas e 3/4) antes de cor ou efeito, combinando uma massa dominante e 1–2 traços anatômicos próprios em escala exagerada.
+- **Construção de brinquedo montável:** poucos volumes grandes e bem encaixados, planos visíveis, facetas e chanfros simples. Cantos podem ser suavizados, mas sem voltar à esfera lisa com bolinhas soltas.
+- **Cor por zonas amplas:** cor principal, área secundária (barriga/focinho) e acentos de contraste seguindo a geometria. Studs discretos apenas onde reforçarem o material de brinquedo.
+- **Expressão sem ruído:** personalidade dada por proporção, inclinação da cabeça e rosto simples (olhos/boca legíveis), sem depender de partículas ou neon em criaturas comuns.
 
-### Criaturas e objetos
-
-- A espécie deve ser reconhecida pela silhueta antes de detalhes, efeitos ou cor. Cada espécie tem uma massa principal e de 1 a 2 marcas anatômicas próprias em escala exagerada; evitar repetir a mesma esfera com acessórios trocados.
-- Construir com volumes grandes e encaixados, formas blocadas ou facetadas e chanfros simples. Curvas podem suavizar cantos, mas não devem apagar os planos e a leitura de peça montável. Evitar superfície uniformemente lisa, detalhamento fino e realismo orgânico.
-- Definir cores por áreas amplas: corpo principal, área secundária e poucos acentos de alto contraste. Faixas, barriga, placas, bico, focinho, patas, espinhos ou cristas devem explicar forma ou espécie. Textura de studs pode ser usada quando reforça o material de brinquedo; não cobrir tudo com ruído/relevo sem hierarquia.
-- Personalidade vem de proporções, pose e poucos traços faciais legíveis. Olhos e boca simples; exagerar um traço que comunique a criatura. Não depender de partículas para tornar a forma interessante.
-- Raridade e mutações podem adicionar forma, paleta, peças e VFX por camadas, preservando a leitura da espécie base. Brilho intenso é reservado a eventos/variantes que o justifiquem; criatura comum continua atraente sem VFX.
-- Conferir o modelo em silhueta monocromática, frente/lado/costas e três quartos; testar legibilidade pequena, escala 1× e multiplicadores altos existentes. Pivô, chão e peças animáveis devem servir à integração prevista no Studio.
+### Modelo vigente: Lumito base v01 (`Lumito_Base_v01`)
+- **Identidade preservada e reinterpretada:** substituiu o protótipo esférico no código (`ee6e901`) e no Studio (`ReplicatedStorage.HACLumitoTemplate`).
+- **Anatomia e silhueta:**
+  - **Cabeça (~50% da altura):** cápsula facetada em três faixas com **testa larga projetada sobre o rosto** (traço próprio nº 1), inclinada com curiosidade (`14°` roll, `10°` yaw, `6°` pitch).
+  - **Orelhas em duas folhas facetadas:** esquerda ereta e **direita dobrada para fora** (traço próprio nº 2, assimétrico em 360°), com interior em teal escuro.
+  - **Tronco, pés e crista:** tronco trapezoidal curto com placa de barriga aqua acompanhando o chanfro frontal; pés em cunha com sola teal e 1 stud; **crista dorsal teal com 3 studs** conectando topo, nuca e ponta da cauda.
+  - **Expressão:** olho esquerdo aberto com brilho branco, olho direito semicerrado, boca torta e um único dente triangular.
+- **Paleta aplicada por `ColorRole` (`SmoothPlastic`, sem neon):**
+  - `Normal`: `Main` Cyan `12,211,255` · `Secondary` Pale Aqua `196,248,255` · `Accent` Deep Teal `0,112,168` · `Ink` `3,12,40` · `Glint` `255,255,255`.
+  - `Gold` (`Dourado`): `Main` `255,220,86` · `Secondary` `255,252,240` · `Accent` `214,142,28` · `Ink` `3,12,40` · `Glint` `255,255,255`.
 
 ### Mundo e materiais
+- Cenário modular de brinquedo: pisos amplos com studs/grade, plataformas, cercas e estruturas simples com cores vivas por bioma. Áreas de circulação permanecem limpas para destacar criaturas, alvos e recompensas.
 
-- Construir como cenário modular de brinquedo: terreno amplo, caminhos, plataformas, muros, cercas, placas e lojas com formas simples, encaixes claros e limites legíveis.
-- Usar superfícies estudadas — studs/grade em chão e peças construídas, madeira estilizada onde fizer sentido — com cores vivas por bioma. Grama, árvores, água, areia, estruturas e criaturas devem compartilhar acabamento e proporção do mesmo mundo.
-- Manter áreas de circulação visualmente simples para que criatura, objetivo e recompensa se destaquem. Repetição regular une o espaço, mas não deve competir com pontos de interesse; reservar contraste forte, luz e partículas para locais/ocasiões especiais.
-- Mostrar escala com avatar, cercas e props; garantir que cenário e criatura funcionem na câmera e em tela pequena. Evitar realismo, ruído visual, microdetalhes e excesso de neon.
+## 2. HUD, caça e feedback
 
-### Lumito base — modelo v01 integrado
+- **HUD limpo:** ações na lateral, recursos no canto inferior esquerdo com ícones proporcionais ao texto e barra de carga central acima da hotbar nativa. Sem título fixo do jogo nem avisos para falhas comuns.
+- **Botões glossy (`GlossyButton`):** ícones reais, brilho, contorno escuro e fonte **Fredoka One** em inglês; compressão curta ao clicar/tocar (`0.94×`) e leve expansão em hover (`1.06×`).
+- **Leitura da caça no mundo (`LassoFeedback` / `CaptureHUD` / `RewardPresentation`):**
+  - Contorno (`Highlight`) muda cor e opacidade conforme estado do alvo; voo do laço usa trilha quente e retorno usa trilha ciano.
+  - Disputa exibe barra compacta de progresso, zona móvel, fase (normal/resistência/abertura) e indicador de poção.
+  - Vitória mostra cartão curto (`2,35 s`) com retrato 3D real (`ViewportFrame`), destaque de Gold/primeira descoberta e taxas de `ouro/s` e `XP/s` na base (sem exibir rótulo textual de tamanho).
+- **Áudio (`AudioConfig` / `AudioFeedback`):** master `0,7`, limite de `8` vozes simultâneas e cooldown no som de renda para não tocar a cada segundo.
 
-O protótipo esférico anterior foi substituído pela versão facetada v01 (`Lumito_Base_v01`), mantendo a identidade ciano (`12,211,255`), barriga/focinho aqua claro (`196,248,255`), acentos em teal escuro (`0,112,168` nas orelhas internas, crista dorsal com 3 studs, solas e ponta da cauda) e olhos/boca em azul-marinho (`3,12,40`). Os traços próprios adotados são a testa saliente facetada, a orelha direita dobrada assimetricamente e a crista dorsal com studs. No Studio, o template `ReplicatedStorage.HACLumitoTemplate` (33 `UnionOperation`s + `Root` + `Corpo` de colisão) é instanciado e escalado por `CreatureFactory`, preservando o pivô (`Y = -1.625 * scale` na sola), o volume de captura (`Corpo`) e a animação de passos (`FootSide` em `LumitoBehavior`). Aprovação artística humana continua revisável por feedback.
+## 3. Família de menus (`MenuTheme` / `MenuKit`)
 
-Usar componentes glossy originais existentes: ícones grandes o suficiente para leitura, brilho, relevo/contorno e texto branco com sombra escura. Não substituir mochila/moeda/laço por emoji, símbolos de fonte ou retângulos de texto. A referência de botões foi explicitamente escolhida pelo desenvolvedor; manter sua linguagem visual, ajustando escala ao jogo.
+Aplica-se a `Creatures`, `Creature Market`, `Creature Index`, `Hunting Shop` e `Settings` (guia técnico espelhado em `studio/MENU_STANDARD.md`). Placas físicas do mundo e HUD de disputa são as únicas exceções justificadas.
 
-Fonte: **Fredoka One** em títulos, números e interface, consistente entre telas. Não adicionar famílias sem justificativa. Inglês, rótulos curtos e hierarquia clara.
+- **Estrutura visual:** fundo escuro em tile (`ImageLabel`), borda escura, cabeçalho colorido por função (**ciano** = coleção/Index, **verde** = loja, **dourado** = mercado, **azul claro** = Settings) e botão **X vermelho** no canto superior direito.
+- **Responsividade:** janelas até `1000 × 660` (`Settings` `800 × 450`). Em `>= 740 px`, galeria à esquerda (`~62%`) e ficha à direita (`~38%`); abaixo disso, ficha selecionada acima da grade.
+- **Comportamento:** retrato 3D/ícone antes do texto; uma ação principal por ficha; seleção e rolagem preservadas durante atualizações de `valueRefreshers`; confirmação visual depende do snapshot do servidor.
 
-## HUD e feedback
+| Camada | Módulo no código | Papel |
+|---|---|---|
+| Tokens e paleta | `shared/MenuTheme`, `shared/VisualStyle` | Cores, fontes, tamanhos e asset IDs |
+| Componentes de janela | `client/MenuKit` | `Window`, `Surface`, `Scroller`, `Detail`, `Grid`, `Badge`, `Stat`, `Action`, `Selectable`, `Empty` |
+| Retratos | `client/CreatureCards`, `client/CreaturePortrait`, `client/ToolPortrait` | Cartões, `ViewportFrame` 3D (colorido ou silhueta `12,18,40`) e ícones de ferramentas |
+| Controle e páginas | `client/GlossyButton`, `client/CollectionUI`, `*Page.luau` | Navegação, foco (`FocusKey`) e envio via `ui:Send` |
 
-- Ações laterais; recursos no canto inferior esquerdo; laço/carga perto do centro inferior, acima da barra nativa. Respeitar áreas seguras e menus do Roblox.
-- Ícones de moeda/XP/força proporcionais ao valor; mochila não domina a tela. Recursos não precisam de caixas grandes para existir.
-- Sem título permanente do jogo, comandos repetidos, guias contínuos ou mensagens que repetem o que o jogador já viu.
-- Priorizar o mundo. Disputa compacta com leitura de progresso e tensão; não uma janela gigante de instruções.
-- Hover/foco: brilho e relevo; pressionar: compressão curta; soltar: retorno suave. Mesma resposta por toque sem depender de hover.
-- Captura: impacto/celebração e prêmio legível; primeira descoberta/raridade pode ter destaque maior. Compra/upgrade confirma benefício. Renda frequente deve ser sutil.
-- Efeitos acompanham o evento, não loops decorativos constantes. Limpar sons, partículas, tweens e conexões. Cancelamento/interrupção precisa encerrar feedback.
-- AudioFeedback/AudioConfig limitam vozes e intervalos. Configuração atual: master 0,7, até 8 vozes; som de renda limitado por cooldown, não por tick de 1 s. Mix final pendente.
+## 4. Tokens e Asset IDs (`VisualStyle`)
 
-## Caça e recompensa
-
-- Alvo em foco recebe contorno discreto com estados de distância, possibilidade, alinhamento, bloqueio e disputa alheia. Intensidade e preenchimento acompanham cor; não piscar a cada movimento de câmera. A marca do limite surge durante a carga.
-- Carga central acima da barra nativa mostra alcance e ápice MAX, com pulso leve e som limitado. Voo tem trilha curta quente; retorno é ciano e recolhe a corda. Impacto com obstáculo ou tentativa recusada se lê pelo efeito, sem aviso rotineiro.
-- Acerto combina som, faísca curta, corda presa e resistência do Lumito. HUD compacta mostra zona móvel, progresso, tempo, resistência/abertura e poção; mantém a visão do mundo livre.
-- Vitória tem retrato real, sinal maior para Gold e primeira descoberta de espécie/variante e potencial de renda/XP **na base**. O tamanho aparece no modelo, sem categoria ou multiplicador escrito na interface. Fecha sozinha em até 2,35 s; não bloqueia o retorno ao controle. Renda passiva permanece discreta.
-
-## Família dos menus
-
-Aplica-se a Creatures, Creature Market, Creature Index, Hunting Shop e Settings e a novos menus comparáveis.
-
-- Corpo escuro texturizado, contorno escuro, cabeçalho colorido forte, título grande, **X vermelho** no canto superior direito.
-- Ciano: coleção/Index; verde: equipamentos; dourado: mercado/valor/Gold; azul claro: preferências.
-- Retrato/objeto antes da ficha textual. Uma ação principal por seleção; preço/capacidade/benefício sempre legíveis.
-- Estados explícitos: carregando, vazio, selecionado, indisponível, atualização de dados; confirmação/cancelamento em venda.
-- Não inventar recompensas, contadores, urgência, produtos ou catálogo para preencher espaço.
-- Textura por ImageLabel em Tile; não milhares de Frames decorativos.
-- Menus de coleção usam MenuTheme/MenuKit. Placas físicas e disputa compacta têm composição própria por serem interações no mundo/combate; essa é a exceção atual justificada.
-
-## Layout e acessibilidade
-
-Valores atuais em MenuTheme: cabeçalho 78 px, margens 16, intervalo 12; tamanho máximo 1000 × 660, Settings 800 × 450. Área real é limitada pelo viewport seguro.
-
-A partir de 740 px: galeria esquerda (~62%) e ficha direita (~38%). Abaixo disso: ficha selecionada acima da galeria na rolagem principal. Não reduzir toda a tela até texto/botões ficarem minúsculos.
-
-Rolagem não deve bloquear saída; textos longos não podem sobrepor preço ou ação. Foco/seleção persistem entre atualizações de renda; distinguir estados com texto/forma, não só cor. Compras bloqueadas mostram o motivo real. Feedback visual de clique não comprova compra: snapshot do servidor confirma.
-
-## Componentes e regra para novas páginas
-
-| Camada      | Fonte no código                       | Responsabilidade                                                                        |
-| ----------- | ------------------------------------- | --------------------------------------------------------------------------------------- |
-| Tokens      | shared/MenuTheme, VisualStyle         | Cor, fonte, proporções e arte                                                           |
-| Estrutura   | client/MenuKit                        | Window, Surface, Scroller, Layout, Detail, Grid, Badge, Stat, Action, Selectable, Empty |
-| Criaturas   | CreatureCards / CreaturePortrait      | Cartão, ficha, retrato real e silhueta                                                  |
-| Ferramentas | ToolPortrait                          | Representação de consumíveis e ícone do laço                                            |
-| Interação   | GlossyButton / CollectionUI / páginas | Animação, input, seleção e snapshots                                                    |
-| Autoridade  | servidor                              | Posse, custos, favoritos, progressão                                                    |
-
-1. Configurar a página em MenuTheme; módulo Render(ui) e rota necessária em CollectionUI.
-2. Definir pageTitle e Tabs; compor com Kit/CreatureCards. Em galeria, Detail vem antes de Grid para calcular largura.
-3. Enviar intenções via ui:Send; atualizar valores voláteis via valueRefreshers. Não reconstruir tudo por renda.
-4. FocusKey estável por ação/indivíduo; reutilizar bordas, cancelar animações ao destruir.
-5. Conferir vazio/cheio, indisponível, confirmação, perda de seleção, texto longo e estreitamento por revisão leve. Teste manual depende do desenvolvedor.
-6. Se o padrão não atender, evoluir primeiro o componente compartilhado; registrar exceção e motivo.
-
-O antigo UI:Card(título, parágrafo) foi removido das páginas ativas. UpgradePage é legado sem rota, incompatível com essa remoção: não reativar.
-
-## Tokens e assets de referência
-
-IDs Roblox existentes; não dependem de arquivos temporários da máquina.
-
-| Recurso | Asset ID |
+| Recurso | Asset ID (`rbxassetid://`) |
 |---|---|
-| Coin / XP / Strength | 137147969134175 / 90531108912513 / 111581776806956 |
-| Bag / Lasso | 84667354571821 / 117254148917574 |
-| SkinTile / Panel | 93505871377958 / 130734564577623 |
-| Studs / Wood / Tiles | 133050717017276 / 97810845356536 / 103826263412719 |
+| `Coin` / `XP` / `Strength` | `137147969134175` / `90531108912513` / `111581776806956` |
+| `Bag` / `Lasso` | `84667354571821` / `117254148917574` |
+| `SkinTile` / `Panel` (`SliceCenter 150,140,874,200`) | `93505871377958` / `130734564577623` |
+| `Studs` / `Wood` / `Tiles` (amostras de mundo) | `133050717017276` / `97810845356536` / `103826263412719` |
 
-Paleta RGB base: Gold 255,203,20; Cyan 12,211,255; Purple 211,108,255; Green 59,246,29; Red 255,72,81; Ink 3,12,40. Menu: Ink 8,14,31; Body 28,35,56; Surface 43,56,78; Muted 178,203,224. Texturas de mundo são amostras, não arte aprovada.
-
-Esta nota é a especificação portável. `studio/MENU_STANDARD.md` é o guia técnico correspondente e deve permanecer alinhado; constantes executáveis ficam nos módulos. Mudança visual exige atualizar os lados afetados na mesma entrega.
+Paleta RGB UI/Menu: `Gold` `255,203,20` · `Cyan` `12,211,255` · `Purple` `211,108,255` · `Green` `59,246,29` · `Red` `255,72,81` · `Ink` `3,12,40` · `MenuBody` `28,35,56` · `MenuSurface` `43,56,78` · `MenuMuted` `178,203,224`.

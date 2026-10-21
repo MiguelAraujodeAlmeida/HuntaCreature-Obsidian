@@ -1,65 +1,44 @@
 # Arquitetura atual
 
-Referência: código enviado **ee6e901**, 54 fontes runtime. Curva posterior `BaseChance = 0.7`, `Curve = 12` está apenas no checkout e no Studio Edit sem salvamento confirmado. Este cofre registra arquitetura e contratos, não duplica os fontes.
+Referência: código enviado **ee6e901** (`main`, 54 fontes Luau). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece preservado sem commit até decisão do desenvolvedor.
 
-## Mapa de responsabilidade
+## 1. Mapa de responsabilidade
 
-| Pasta do jogo | Destino no Studio | Domínio |
+| Pasta no repositório | Destino no Roblox Studio | Papel |
 |---|---|---|
-| studio/shared (9) | ReplicatedStorage.HACShared | Configurações, geometria e estilo |
-| studio/server (15) | ServerScriptService.HACServer | Regras e persistência autoritativas |
-| studio/client (28) | StarterPlayer.StarterPlayerScripts.HACClient | Input, apresentação e preferências locais |
-| HuntACreature.server.luau | ServerScriptService.HuntACreature | Bootstrap e validação dos acessos |
-| HuntACreature.client.luau | StarterPlayerScripts.HuntACreatureClient | Inicialização e snapshots |
+| `studio/shared` (9) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `AudioConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
+| `studio/server` (15) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA de criaturas, captura, loja, base viva e persistência |
+| `studio/client` (28) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, menus (`MenuKit`, `*Page`), retratos e preferências locais |
+| `studio/HuntACreature.server.luau` | `ServerScriptService.HuntACreature` | Bootstrap do servidor, loops de tick e roteamento de eventos |
+| `studio/HuntACreature.client.luau` | `StarterPlayerScripts.HuntACreatureClient` | Bootstrap do cliente e recepção de snapshots |
 
-| Alteração desejada | Fontes principais |
+| Domínio técnico | Módulos principais |
 |---|---|
-| Catálogo, renda, melhorias, ferramentas, força mínima | GameplayConfig |
-| Laço e disputa | CaptureConfig, LassoAim, LassoCollision, LassoVisuals, LassoFeedback, CaptureService, CaptureController, CaptureHUD |
-| IA selvagem | CreatureProfiles, CreatureBehaviorService, LumitoBehavior |
-| Construção / retrato de criatura | CreatureFactory, CatalogPresentation, CreaturePortrait |
-| Regras de perfil / transações | ProfileData; integração via ProfileService |
-| Gravação / reset | ProfileService, PersistenceConfig |
-| Ferramentas / posicionamento | HuntingTools, ToolInventory, ToolPlacement, ToolPlacementPreview |
-| Base viva / mundo / placas | BaseRoamingService, WorldPresentation, WorldStations, UpgradeBoards |
-| HUD / menus / preferências | HUD, CollectionUI, módulos de página, LocalPreferences |
-| Aparência / som | VisualStyle, MenuTheme, MenuKit, GlossyButton, WorldStyle, AudioConfig, AudioFeedback, RewardPresentation |
+| Catálogo, economia e tamanhos | `GameplayConfig` |
+| Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + `ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews` |
+| IA selvagem e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `BaseRoamingService` |
+| Laço, colisão e disputa | `CaptureConfig`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `CaptureService`, `CaptureController`, `CaptureHUD` |
+| Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
+| Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
+| Mundo, treino e placas | `WorldPresentation`, `WorldStations`, `UpgradeBoards` |
+| HUD, menus e áudio | `HUD`, `CollectionUI`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
 
-Os nomes acima são módulos, salvo bootstraps explícitos. Consultar o arquivo no checkout antes de editar; não inferir uma API só pelo nome.
+*Legado inativo:* `BuildWorld.luau`, `studio/archive` e `UpgradePage.luau` (sem rota ativa) são históricos; não executá-los nem reativá-los. `QuickSlot.luau` apenas reserva espaço invisível para a hotbar nativa.
 
-## Contratos que precisam sobreviver às refatorações
+## 2. Contrato do modelo 3D (`HACLumitoTemplate` e `CreatureFactory`)
 
-- Cliente envia intenções, nunca saldo, prêmio, preço ou posse final. Servidor valida tipos, valores finitos, distância, proprietário, contexto, cooldown e capacidades.
-- Captura tem dono exclusivo, força mínima e entrega única; transações de coleção/venda/compra são autoritativas.
-- Perfil é a única fonte de estado do jogador. Snapshots atualizam apresentação; renda passiva não deve destruir seleção, Tools ou posições dos visuais da base.
-- Favorito, Settings e descobertas de variantes pertencem ao perfil; esconder visuais é somente preferência local.
-- Eventos de rede devem ser conectados sem esperar indefinidamente por placas/inventário. UpgradeBoards descobre placas tardias e usa SurfaceGui no PlayerGui com Adornee; duas faces.
-- Limite de pedidos atual: balde de 40 com reposição 20/s; isso complementa validação das ações, não a substitui.
-- Separar parâmetros, regras, entrada e arte. Evitar expandir os bootstraps monolíticos ao criar um domínio.
+- **Template no Studio (`ReplicatedStorage.HACLumitoTemplate`):** gerado a partir de `C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Art\Lumito\Lumito_Base_v01.blend` (33 `UnionOperation`s CSG com `UsePartColor = true` + `Root` + `Corpo`).
+- **Pivô e contato com o chão:** `Root` (`PrimaryPart`, invisível) fica na origem `(0, 0, 0)` do template na escala `1.0`, com a base das solas em `Y = -1.625 * scale` (compatível com `RootHeight = 1.68` na ilha e `1.625` na base).
+- **Colisão do laço (`Corpo`):** `Part` invisível (`Transparency = 1`, `CanCollide/CanTouch/CanQuery = false`, `CastShadow = false`) de tamanho `Vector3.new(3.3, 2.8, 2.6) * scale` centrada em `Root`, garantindo que `LassoCollision` mantenha o mesmo elipsoide de captura enquanto `LassoAim`/`Highlight` atingem as peças visíveis.
+- **Paletas e animação:** cada peça possui o atributo `ColorRole` (`Main`, `Secondary`, `Accent`, `Ink`, `Glint`) colorido por `CreatureFactory` conforme variante (`Normal` ou `Golden`), e as peças dos pés (`Pe`, `Sole_*`, `Stud_Foot_*`) possuem `FootSide = "L" | "R"` para passo sincronizado em `LumitoBehavior`. Se `HACLumitoTemplate` não existir no lugar, `CreatureFactory` usa o fallback procedural compacto de 33 partes.
 
-## Persistência e reset excepcional
+## 3. Contratos de autoridade e rede
 
-Schema atual 1; migrações aditivas preservam IDs internos. ProfileService usa lease de 180 s, margem de bloqueio de 45 s e autosave de 45 s. Falha de leitura **não** pode virar perfil novo gravado sobre o anterior.
+- **Cliente envia intenções; servidor decide:** nenhum saldo, preço, captura ou posse vem do cliente. Servidor valida tipos, valores finitos (`finiteVector`), distância, dono, cooldown, estoque e capacidade. Rate limit: balde de `40` requisições com reposição de `20/s`.
+- **Snapshots não destrutivos:** atualizações de renda (`1 s`) atualizam textos via `valueRefreshers` sem destruir seleção de menu, ordem do `Backpack` ou posição das criaturas na base.
 
-Geração explícita em PersistenceConfig: **20261019_menu_reset_01**.
+## 4. Persistência e geração de save (`PersistenceConfig`)
 
-| Ambiente | Store desta versão |
-|---|---|
-| Studio | HAC_Profiles_Studio_20261019_menu_reset_01 |
-| Publicado | HAC_Profiles_20261019_menu_reset_01 |
-
-Stores anteriores: HAC_Profiles_Studio_v1 / HAC_Profiles_v1. Foram preservados; o reset não foi exclusão física. Não derivar a geração da data atual, de cada boot ou de cada login. Alterar novamente somente com pedido explícito de reset.
-
-Workspace.HACStudioMemoryMode = true habilita memória temporária **apenas no Studio**. Nil/false usa DataStore. Verificações em memória não demonstram persistência. Um rollback precisa considerar código e geração juntos, sem fundir silenciosamente saldos de gerações diferentes.
-
-## Versões, código e lugar
-
-- Checkout atual: C:/Users/melg_/OneDrive/Documents/ChatGPT/Hunt A Creature.
-- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch main. Lumito v01 ee6e901; escala ac385ae; caça be1bfaf; menus 90045a0; política de fluxo b0be2b9.
-- Git é a referência operacional dos fontes versionados. Sincronização automática Studio/disco não está configurada e comparações integrais rotineiras foram removidas por custo. Investigar somente divergência concreta reportada ou falha de aplicação.
-- O lugar contém modelos/Tools/propriedades não integralmente exportados. O lugar de teste foi salvo na Roblox via Studio em 20/10/2026; exportação .rbxl recuperável continua pendente. Salvar fontes no Git, salvar lugar e publicar são operações distintas.
-- BuildWorld.luau e studio/archive são históricos; não executar o construtor antigo sobre o cenário atual.
-- UpgradePage não possui rota ativa e depende do antigo UI:Card removido. QuickSlot só reserva espaço invisível; inventário visível é nativo.
-- Backup histórico dos menus: contexto/menus-2026-10-19 no checkout. Não disponível pelo clone deste cofre.
-
-Uma máquina nova precisa do cofre **e** clone correto do código **e** acesso ao lugar atual. Exportar .rbxl e comprovar restauração independente continuam pendentes.
+- **Schema `1`** com migração aditiva (converte `size = 0.85` antigo para `1`). Lease de sessão de `180 s`, margem de `45 s` e autosave a cada `45 s`. Falha de leitura bloqueia sobreescrita para nunca zerar perfil existente.
+- **Geração fixa atual:** `20261019_menu_reset_01` (DataStore Studio: `HAC_Profiles_Studio_20261019_menu_reset_01`; Publicado: `HAC_Profiles_20261019_menu_reset_01`; geração anterior `_v1` preservada intacta).
+- `Workspace.HACStudioMemoryMode = true` usa memória volátil apenas no Studio; testes de persistência real exigem `nil`/`false`.

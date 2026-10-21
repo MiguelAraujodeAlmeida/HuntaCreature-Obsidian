@@ -1,54 +1,39 @@
 # Playtest atual
 
-Build de referência: **90045a0**, lugar **102310424634629**. **Todos os itens abaixo aguardam confirmação humana nesta versão.** O assistente não deve iniciar Play/emulação por rotina. Evidência técnica existente: [[00_Inicio/Estado Atual]].
+Build de referência: **ee6e901**, lugar **102310424634629** (`[Testing] Hunt a Creature`). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
-## Primeiro: reset e persistência
+## 1. Reset e persistência (`P01`–`P04`)
 
-- [ ] P01 · Entrar em duas contas: ouro/XP/força zerados, coleção vazia, níveis iniciais, Training Lasso e uma unidade de cada consumível. Se a conta já jogou nesta geração, ela deve manter o progresso novo, não zerar novamente.
-- [ ] P02 · Capturar, treinar, comprar/melhorar, favoritar e alterar Settings; sair e reconectar. Dados novos preservados, sem reset repetido.
-- [ ] P03 · Confirmar ambiente: Studio e publicado usam stores distintos; HACStudioMemoryMode precisa estar desativado para testar persistência real. Não inferir que teste em memória aprovou save.
-- [ ] P04 · Se houver erro de leitura/perfil ocupado, nenhum perfil vazio deve ser gravado por cima do anterior.
+- [ ] **P01 · Primeira entrada na geração `20261019_menu_reset_01`:** testar em duas contas que ouro/XP/força iniciam em `0`, coleção vazia, melhorias nível `1`, `Training Lasso` e `1` unidade de cada consumível.
+- [ ] **P02 · Persistência em reconexão:** capturar, treinar, comprar melhoria, favoritar e alterar `Settings`; sair e reconectar confirmando que nada reseta novamente.
+- [ ] **P03 · Modo de DataStore real:** confirmar que `Workspace.HACStudioMemoryMode` está desativado (`nil`/`false`) ao validar persistência no Studio.
+- [ ] **P04 · Proteção contra sobreescrita:** verificar que falha ou bloqueio de sessão não grava perfil vazio sobre progresso existente.
 
-## Menus e interação
+## 2. Novo modelo Lumito v01, escala e base (`C01`–`C06`)
 
-- [ ] M01 · Abrir/fechar Creatures, Index, Shop e Settings; mercado pelo ponto físico. Uma janela por vez, X acessível, sem sobreposição com barra/controles Roblox.
-- [ ] M02 · Selecionar itens, rolar e receber renda: seleção/foco/posição de rolagem estáveis; valores atualizam sem piscar/recriar tudo.
-- [ ] M03 · Conferir vazio, texto longo, indisponível, página cheia e seleção removida. Ícone/retrato comunica antes do texto.
-- [ ] M04 · PC e celular: botões legíveis/tocáveis, rolagem e saída funcionam. Ficha vai acima da grade em largura pequena.
-- [ ] M05 · Hover/pressão/retorno, brilho e som agradáveis; sem repetição irritante, travamento ou excesso de efeitos. Registrar avaliação visual separada dos bugs.
-- [ ] M06 · Texto visível em inglês; sem guias permanentes, título fixo do jogo ou avisos redundantes.
+- [ ] **C01 · Leitura visual do `Lumito_Base_v01`:** avaliar silhueta facetada, testa saliente, orelha direita dobrada, crista dorsal com studs e expressão facial (Normal e Gold) na ilha, na base e nos retratos 3D.
+- [ ] **C02 · Escala contínua (`1×` a `5×`) e animação de passos:** conferir contato das solas com o chão, passo sincronizado de pé/sola/stud (`FootSide`) e altura do nome (`Identificacao`) sem invadir as orelhas.
+- [ ] **C03 · Passeio na base (`BaseRoamingService`):** criaturas equipadas caminham dentro da plataforma sem empurrar avatares; ticks de `1 s` de renda não reiniciam posição; gigantes sem espaço livre ficam visíveis e imóveis.
+- [ ] **C04 · Equip/Unequip (`Creatures`):** move o indivíduo correto e bloqueia destino cheio sem trocar ou perder criaturas.
+- [ ] **C05 · Favorito e venda no mercado físico (`Creature Market`):** favorito bloqueia venda; venda exige proximidade (`14 studs`) e confirmação, removendo apenas o exemplar escolhido e creditando ouro uma vez.
+- [ ] **C06 · Descoberta permanente (`Creature Index`):** capturar Normal/Gold atualiza retrato colorido e filtros (`All`/`Normal`/`Gold`); itens não descobertos exibem silhueta escura do novo modelo v01; vender não apaga descoberta.
 
-## Criaturas, base e mercado
+## 3. Caça, laço e IA (`A01`–`A04`)
 
-- [ ] C01 · Equip/Unequip move o indivíduo correto. Destino cheio bloqueia sem trocar, duplicar ou perder.
-- [ ] C02 · Equipadas passeiam dentro da base, sem colisões/bordas atravessadas. Renda não reinicia posição. Desequipar/remove visual certo.
-- [ ] C03 · Favoritar e tentar vender: bloqueado. Reconectar mantém favorito. Desfavoritar permite venda perto do mercado.
-- [ ] C04 · Venda exige confirmação; cancelar preserva tudo. Confirmar remove apenas o escolhido e credita uma vez.
-- [ ] C05 · Afastar-se do mercado, tentar outra base ou agir durante treino/disputa não contorna restrições.
-- [ ] C06 · Index registra captura Normal/Gold corretamente; filtros/contagem/silhueta/ficha coerentes. Vender não apaga descoberta.
+- [ ] **A01 · Mira e arremesso reto:** tiro segue exatamente a direção escolhida sem arco; carga (`0%` a `100% MAX`) define alcance (`18` a `73 studs`); testar tiro livre para céu/chão/parede e trilha quente/retorno ciano.
+- [ ] **A02 · Contorno contextual e colisão (`Corpo`):** contorno reflete distância, alinhamento e bloqueio; colisão contínua no novo Lumito v01 tem precisão natural sem capturar através de obstáculos.
+- [ ] **A03 · Disputa (`3,6 s`) e recompensa:** avaliar ritmo das fases (normal, resistência, abertura), uso da poção sem cancelar captura e cartão final de vitória (`2,35 s`) exibindo taxas de `ouro/s` e `XP/s` na base.
+- [ ] **A04 · IA selvagem:** passeio, pausa, detecção visual, fuga em pânico (`5 s`) e cansaço (`7 s`) respeitam as bordas da ilha sem travar em obstáculos.
 
-## Loja, ferramentas e progressão
+## 4. Menus, loja, treino e preferências (`M01`–`M04`, `L01`–`L03`, `B01`–`B02`, `S01`)
 
-- [ ] L01 · Shop só acessível nas condições de proximidade; Tools/Lassos corretos, preço/quantidade/owned e motivos de bloqueio claros.
-- [ ] L02 · Compra decrementa cota individual e ouro uma vez; saldo insuficiente/cota zero/limite não consome. Reabrir/reconectar na mesma rotação preserva cota.
-- [ ] L03 · Duas contas veem a mesma oferta na rotação, mas compras não consomem a cota uma da outra.
-- [ ] L04 · Backpack contém só ferramentas possuídas; reordenar funciona, consumo zero remove, renda não troca slots. Respawn não duplica.
-- [ ] L05 · Isca atrai dentro do raio; trap só consome em posição válida, arma e desacelera; potion atua durante disputa e respeita estoque/cooldown.
-- [ ] B01 · Placas mostram texto e botões nas duas faces após entrar. Só a própria base permite comprar; saldo/custo/nível máximo corretos.
-- [ ] B02 · Treinar deixa avatar imóvel; sair/morrer restaura movimento. Melhoria de treino e eficiência produz benefício correto.
-- [ ] B03 · Ouro/XP sobem por segundo com valor aprovado de 5×; sem som/aviso invasivo por tick. Conferir efeitos de tamanho/mutação.
+- [ ] **M01 · Cinco menus (`MenuKit`):** abrir/fechar uma janela por vez, botão `X` acessível, seleção e rolagem estáveis durante os ticks de renda de `1 s`.
+- [ ] **M02 · Responsividade PC e celular:** layout lateral (`>= 740 px`) e empilhado (`< 740 px`), botões confortáveis ao toque e textos legíveis em inglês.
+- [ ] **L01 · Hunting Shop e cota individual:** duas contas veem a mesma rotação de `5 min`, mas a compra de uma não consome a cota da outra; cota persiste ao reconectar na mesma rotação.
+- [ ] **L02 · Ferramentas e `Backpack` nativo:** apenas itens com estoque `> 0` aparecem; isca atrai, armadilha desacelera (`35%`) em solo válido e poção atua na disputa; respawn não duplica `Tools`.
+- [ ] **B01 · Placas de melhoria e treino no manequim:** texto clicável nas duas faces apenas na própria base; treino prende avatar laçando o manequim a cada `2 s` e sair/morrer restaura o movimento.
+- [ ] **S01 · Settings (`Sound` e `Base creatures`):** desligar som silencia efeitos locais; ocultar criaturas esconde modelos atuais e futuros nas bases sem parar a renda de `1 s`.
 
-## Laço, IA e preferências
+## Ordem sugerida de execução
 
-- [ ] A01 · Mira em pontos próximos/distantes e criatura em movimento: tiro segue a direção sem arco; carga limita distância real. Testar céu/chão/parede e retorno.
-- [ ] A02 · Contorno somente quando elegível; obstáculo/fora do alcance não captura. Erro comum não dispara tutorial/notificação.
-- [ ] A03 · Disputa exclusiva sem recompensa duplicada; mínimo Lumito 0. Quando outra espécie for adicionada, testar limite abaixo/igual/acima.
-- [ ] A04 · Lumito passeia/pausa/foge com visão/cansaço; não atravessa limites nem trava. Avaliar ritmo de captura, sensação de combate e celebração.
-- [ ] S01 · Sound desliga efeitos locais; preferência persiste. Base creatures oculta visuais atuais e novos, preservando renda; ligar restaura.
-- [ ] S02 · Cliques rápidos, resposta atrasada e fechar/reabrir Settings não deixam estado visual diferente do confirmado pelo servidor.
-
-## Registrar resultado
-
-Para cada falha: ID, build, dispositivo/resolução, passos, esperado, observado, print/vídeo/Output e frequência. Marcar aprovado/falhou/não testado/não aplicável com data. Continuar apenas blocos independentes se houver falha impeditiva.
-
-Começar por P01–P02, M01, B01–B02, C01/C03/C04. Não é necessário executar tudo numa sessão. Aparência e diversão exigem parecer explícito do desenvolvedor.
+Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar falha, anotar código do item, dispositivo, passos, esperado vs. observado e print/Output.

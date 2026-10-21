@@ -1,35 +1,35 @@
 # Referências visuais
 
-Imagens fornecidas pelo desenvolvedor, copiadas sem alteração para este cofre para não depender de Temp ou do chat. **Referências, não screenshots de aprovação do nosso jogo.** Não atribuir a nós a autoria dos jogos/arte mostrados.
+Imagens locais do cofre para consulta rápida sem depender de pastas temporárias. Regras completas em [[01_Produto/Design UI UX]] e análise em [[06_Referencias/Estudo visual Steal an Egg]].
 
-## Lumito antes do redesign
+## 1. Evolução do Lumito no projeto
 
-![Lumito provisório em jogo, fornecido pelo desenvolvedor em 20/10/2026](../assets/lumito-prototipo-2026-10-20.png)
+### Modelo atual integrado — Lumito base v01 (`ee6e901`)
 
-Este é o estado a melhorar, não o alvo de qualidade. A direção geral foi atualizada conforme o estudo aprovado em [[06_Referencias/Estudo visual Steal an Egg]] e as regras em [[01_Produto/Design UI UX]]. O modelo novo ainda aguarda aprovação.
+![Lumito base v01 facetado no Roblox Studio Edit](../assets/lumito-v01-studio-2026-10-20.jpg)
 
-## Botões e recursos
+Modelo facetado de brinquedo criado no Blender (`Art/Lumito/Lumito_Base_v01.blend`) e integrado no Studio (`ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews`). Aguarda avaliação em playtest humano.
+
+### Protótipo anterior substituído (histórico)
+
+![Lumito provisório esférico antes do redesign](../assets/lumito-prototipo-2026-10-20.png)
+
+Registro do protótipo inicial (esfera com peças soltas), mantido apenas como comparação histórica do que foi substituído.
+
+## 2. Referências externas de UI e botões (não são capturas do nosso jogo)
+
+### Botões glossy e HUD
 
 ![Família glossy escolhida pelo desenvolvedor](../assets/referencia-botoes-glossy.png)
 
-Direção solicitada com fidelidade: volume glossy, ícones próprios, contorno, branco legível e números fortes. Ajustar proporção ao HUD; não importar botões que ainda não possuem função.
+Referência de volume glossy, contorno escuro, ícones próprios e números fortes (`Fredoka One`). Não copiar botões sem função no nosso escopo.
 
-## Index
+### Index, Shop e Settings
 
 ![Index de referência Steal an Egg](../assets/referencia-index.png)
 
-Aproveitar grade, silhueta, contraste de raridade e ficha selecionada. Nosso Index não possui Claim/recompensas; não copiar esses controles. Steal a Brainrot também inspira descoberta por variante; não depende de replicar seu catálogo.
-
-## Shop
-
 ![Shop de referência Steal an Egg](../assets/referencia-shop.png)
-
-Aproveitar imagens dominantes, preços legíveis e hierarquia. Nosso Shop vende ferramentas/laços; não importar ovos, produtos Robux, probabilidades de compra ou urgência artificial.
-
-## Settings
 
 ![Settings de referência Steal an Egg](../assets/referencia-settings.png)
 
-Aproveitar linhas claras, controles grandes, textura e X evidente. Hoje temos Sound e Base creatures; controles separados de música/SFX e visibilidade própria/alheia seriam novo escopo.
-
-Regras completas: [[01_Produto/Design UI UX]]. Relação com inspirações: [[01_Produto/Visao e Escopo]]. Pesquisas antigas de regras/preços externos foram retiradas do conjunto vigente; verificar fontes atuais se voltarem a ser necessárias.
+Aproveitar hierarquia visual, grade de cartões, silhuetas de não-descobertos, destaque de preço e botão `X` evidente. Não importar mecânicas ausentes do nosso escopo (como recompensas de `Claim` no Index, ovos, compras em Robux ou timers de urgência artificial).

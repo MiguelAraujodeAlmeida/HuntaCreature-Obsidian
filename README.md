@@ -1,22 +1,18 @@
 # Hunt A Creature — contexto do projeto
 
-Cofre Obsidian e memória compartilhada do jogo Roblox. Contém **o contexto vigente completo**, decisões, pendências e histórico de solicitações. Não contém o projeto Roblox completo.
+Cofre Obsidian e memória compartilhada do jogo Roblox. Contém **o contexto vigente completo**, decisões, pendências e histórico de solicitações (não contém o arquivo `.rbxl`).
 
-- Repositório canônico: https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian
-- Começar em [[00_Inicio/Painel do Projeto]] e seguir **toda** a leitura inicial.
-- Revisão de contexto: **CTX-2026-10-20-08**. Versões são registradas em [[00_Inicio/Historico de Contexto]]; Git identifica o conteúdo exato.
+- Repositório de contexto: https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian
+- Ponto de partida: [[00_Inicio/Painel do Projeto]] e instruções operacionais em `AGENTS.md`.
+- Revisão de contexto: **CTX-2026-10-20-09** (histórico em [[00_Inicio/Historico de Contexto]]).
 - Código de referência: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`, commit **ee6e901**.
-- Conteúdo é mutável. Feedback mais recente do desenvolvedor prevalece; implementação não equivale a aprovação.
+- Feedback mais recente do desenvolvedor prevalece; implementação técnica não equivale a aprovação de produto ou arte.
 
-## Abrir em outra máquina
+## Caminhos e uso em outra máquina
 
-1. Clonar este repositório e abrir a pasta como cofre no Obsidian.
-2. Ler AGENTS.md e o grupo `bootstrap` de `context-manifest.json`. Antes de implementar, carregar somente o grupo de domínio exigido pela tarefa.
-3. Para desenvolver, obter também o código correspondente e o lugar atual no Studio. O cofre não substitui scripts, modelos ou arquivo .rbxl.
-4. Seguir [[03_Engenharia/Fluxo de Desenvolvimento]] para sincronizar antes e depois de trabalhar.
+- Cofre atual (Windows): `C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Hunt A Creature`.
+- Código atual (Windows): `C:\Users\melg_\OneDrive\Documents\ChatGPT\Hunt A Creature`.
+- Arte 3D editável (Blender/FBX): `C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Art\Lumito`.
+- Em outro dispositivo, usar a raiz real dos clones e o lugar atual no Studio (`[Testing] Hunt a Creature`, placeId `102310424634629`), seguindo [[03_Engenharia/Fluxo de Desenvolvimento]].
 
-Caminho atual do cofre no Windows: `C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Hunt A Creature`.
-Código nesta máquina: `C:\Users\melg_\OneDrive\Documents\ChatGPT\Hunt A Creature`.
-Em outro dispositivo, usar a raiz do clone real; esses caminhos não são uma exigência de instalação.
-
-Configurações pessoais do Obsidian não são versionadas. Não colocar senhas, tokens, dados de jogadores ou backups do lugar neste repositório público.
+Configurações pessoais do Obsidian (`.obsidian`), credenciais, dados de jogadores e backups `.rbxl` não são versionados neste repositório público.
