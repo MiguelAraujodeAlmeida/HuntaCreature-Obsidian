@@ -1,10 +1,10 @@
 # Playtest atual
 
-Build de referência: **2c74752**, lugar **102310424634629** (`[Testing] Hunt a Creature`). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de referência: **42ca28a**, lugar **102310424634629** (`[Testing] Hunt a Creature`, salvo na Roblox, não publicado). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
-- [ ] **P01 · Primeira entrada na geração `20261019_menu_reset_01`:** testar em duas contas que ouro/XP/força iniciam em `0`, coleção vazia, melhorias nível `1`, `Training Lasso` e `1` unidade de cada consumível.
+- [ ] **P01 · Primeira entrada na geração `20261021_hunter_rank_01`:** testar em duas contas que ouro/XP/força iniciam em `0`, Hunter Rank `1`, coleção vazia, melhorias nível `1`, `Training Lasso` e `1` unidade de cada consumível.
 - [ ] **P02 · Persistência em reconexão:** capturar, treinar, comprar melhoria, favoritar e alterar `Settings`; sair e reconectar confirmando que nada reseta novamente.
 - [ ] **P03 · Modo de DataStore real:** confirmar que `Workspace.HACStudioMemoryMode` está desativado (`nil`/`false`) ao validar persistência no Studio.
 - [ ] **P04 · Proteção contra sobreescrita:** verificar que falha ou bloqueio de sessão não grava perfil vazio sobre progresso existente.
@@ -22,12 +22,20 @@ Build de referência: **2c74752**, lugar **102310424634629** (`[Testing] Hunt a 
 
 - [ ] **A01 · Mira e arremesso reto:** tiro segue exatamente a direção escolhida sem arco; carga (`0%` a `100% MAX`) define alcance (`18` a `73 studs`); testar tiro livre para céu/chão/parede e trilha quente/retorno ciano.
 - [ ] **A02 · Contorno contextual e colisão (`Corpo`):** contorno reflete distância, alinhamento e bloqueio; colisão contínua no novo Lumito v01 tem precisão natural sem capturar através de obstáculos.
-- [ ] **A03 · Disputa (`3,6 s`) e recompensa:** avaliar ritmo das fases (normal, resistência, abertura), uso da poção sem cancelar captura e cartão final de vitória (`2,35 s`) exibindo taxas de `ouro/s` e `XP/s` na base.
+- [ ] **A03 · Disputa (`3,6 s`) e recompensa:** avaliar ritmo das fases (normal, resistência, abertura), uso da poção sem cancelar captura e cartão final de vitória (`2,35 s`) exibindo XP imediato e potencial de `ouro/s` na base.
 - [ ] **A04 · IA selvagem:** passeio, pausa, detecção visual, fuga em pânico (`5 s`) e cansaço (`7 s`) respeitam as bordas da ilha sem travar em obstáculos.
 
-## 4. Menus, loja, treino e preferências (`M01`–`M04`, `L01`–`L03`, `B01`–`B02`, `S01`)
+## 4. Hunter Rank e economia (`R01`–`R05`)
 
-- [ ] **M01 · Cinco menus (`MenuKit`):** abrir/fechar uma janela por vez, botão `X` acessível, seleção e rolagem estáveis durante os ticks de renda de `1 s`.
+- [ ] **R01 · XP de captura:** primeira captura de Lumito normal paga `100 XP` e leva ao rank 2; capturas repetidas pagam `25 XP`; primeira variante Gold da espécie já descoberta paga `60 XP`.
+- [ ] **R02 · XP da base:** com uma criatura ativa, pagar `1 XP` a cada `10 s` no rank 1, e `2 XP` a cada `10 s` no rank 2; bolsa e base vazia não geram XP. Equipar/dessequipar não deve adiantar o ciclo.
+- [ ] **R03 · Bônus:** no rank 2, ouro da base e venda têm `+5%` com resíduos acumulados; treino tem `+3%` sem perder frações após reconexão. Nenhum rank barra acesso à ilha.
+- [ ] **R04 · Interface:** rank na HUD, página a partir do Index, limiares e barra atualizados sem destruir foco/rolagem; checar números altos e texto em tela estreita.
+- [ ] **R05 · Loja:** todos os itens atuais continuam compráveis no rank 1; para um futuro item com `RequiredHunterRank`, cliente informa requisito e servidor bloqueia a compra abaixo do rank. Validar também saldo, estoque, proximidade e cota.
+
+## 5. Menus, loja, treino e preferências (`M01`–`M04`, `L01`–`L03`, `B01`–`B02`, `S01`)
+
+- [ ] **M01 · Seis menus (`MenuKit`):** incluir `Hunter Rank`; abrir/fechar uma janela por vez, botão `X` acessível, seleção e rolagem estáveis durante os ticks de renda de `1 s`.
 - [ ] **M02 · Responsividade PC e celular:** layout lateral (`>= 740 px`) e empilhado (`< 740 px`), botões confortáveis ao toque e textos legíveis em inglês.
 - [ ] **L01 · Hunting Shop e cota individual:** duas contas veem a mesma rotação de `5 min`, mas a compra de uma não consome a cota da outra; cota persiste ao reconectar na mesma rotação.
 - [ ] **L02 · Ferramentas e `Backpack` nativo:** apenas itens com estoque `> 0` aparecem; isca atrai, armadilha desacelera (`35%`) em solo válido e poção atua na disputa; respawn não duplica `Tools`.

@@ -35,14 +35,15 @@
 - **Leitura da caça no mundo (`LassoFeedback` / `CaptureHUD` / `RewardPresentation`):**
   - Contorno (`Highlight`) muda cor e opacidade conforme estado do alvo; voo do laço usa trilha quente e retorno usa trilha ciano.
   - Disputa exibe barra compacta de progresso, zona móvel, fase (normal/resistência/abertura) e indicador de poção.
-  - Vitória mostra cartão curto (`2,35 s`) com retrato 3D real (`ViewportFrame`), destaque de Gold/primeira descoberta e taxas de `ouro/s` e `XP/s` na base (sem exibir rótulo textual de tamanho).
+  - Vitória mostra cartão curto (`2,35 s`) com retrato 3D real (`ViewportFrame`), destaque de Gold/primeira descoberta, XP ganho na captura e potencial de `ouro/s` na base (sem rótulo textual de tamanho).
+- **Hunter Rank:** o contador de XP da HUD mostra o rank atual. A partir do `Creature Index`, a página `Hunter Rank` exibe XP total, avanço ao próximo tier, bônus atuais e limiares dos dez ranks. Não apresenta ferramentas fictícias ou bloqueios de ilhas.
 - **Áudio (`AudioConfig` / `AudioFeedback`):** master `0,7`, limite de `8` vozes simultâneas e cooldown no som de renda para não tocar a cada segundo.
 
 ## 3. Família de menus (`MenuTheme` / `MenuKit`)
 
-Aplica-se a `Creatures`, `Creature Market`, `Creature Index`, `Hunting Shop` e `Settings` (guia técnico espelhado em `studio/MENU_STANDARD.md`). Placas físicas do mundo e HUD de disputa são as únicas exceções justificadas.
+Aplica-se a `Creatures`, `Creature Market`, `Creature Index`, `Hunter Rank`, `Hunting Shop` e `Settings` (guia técnico espelhado em `studio/MENU_STANDARD.md`). Placas físicas do mundo e HUD de disputa são as únicas exceções justificadas.
 
-- **Estrutura visual:** fundo escuro em tile (`ImageLabel`), borda escura, cabeçalho colorido por função (**ciano** = coleção/Index, **verde** = loja, **dourado** = mercado, **azul claro** = Settings) e botão **X vermelho** no canto superior direito.
+- **Estrutura visual:** fundo escuro em tile (`ImageLabel`), borda escura, cabeçalho colorido por função (**ciano** = coleção/Index, **roxo** = Hunter Rank, **verde** = loja, **dourado** = mercado, **azul claro** = Settings) e botão **X vermelho** no canto superior direito.
 - **Responsividade:** janelas até `1000 × 660` (`Settings` `800 × 450`). Em `>= 740 px`, galeria à esquerda (`~62%`) e ficha à direita (`~38%`); abaixo disso, ficha selecionada acima da grade.
 - **Comportamento:** retrato 3D/ícone antes do texto; uma ação principal por ficha; seleção e rolagem preservadas durante atualizações de `valueRefreshers`; confirmação visual depende do snapshot do servidor.
 

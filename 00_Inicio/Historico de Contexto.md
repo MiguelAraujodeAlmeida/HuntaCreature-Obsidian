@@ -165,6 +165,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Limites/pendências:** ritmo, intensidade, leitura em PC/celular e escalas `1×`/`5×` aguardam playtest humano. `game:SavePlace()` não está disponível no contexto Edit do conector e o controle nativo de janelas não estava exposto; portanto o salvamento integral do lugar continua sem confirmação. A alteração local anterior de `GameplayConfig.luau` e os diretórios de arte do Lumito foram preservados fora do commit.
 **Autoria/ambiente:** Codex, Windows, Studio MCP e ImageGen integrado; sem agentes auxiliares. A imagem anexada foi tratada apenas como referência visual.
 
+## CTX-2026-10-21-02 — Protótipo de Hunter Rank e reset autorizado · 21/10/2026
+
+**Pedido:** implementar o rework de progressão acordado como protótipo ajustável, com liberdade para resetar o progresso de todos os jogadores para evitar migração.
+**Resultado:** dez Hunter Ranks por XP total em curva crescente; XP imediato por captura e descoberta, XP passivo pequeno por criatura ativa na base, bônus de ouro/treino por rank, requisito opcional individual `RequiredHunterRank` para itens futuros e página de rank ligada ao Index. Ouro/preços iniciais preservados; novas espécies podem trazer XP/renda e preços extremos sem faixas rígidas de ferramenta. Namespace de save novo `20261021_hunter_rank_01` zera perfis quando a versão for executada, sem excluir dados anteriores. Ilhas não foram bloqueadas.
+**Evidência:** commit de código **42ca28ae1133f7d63c1000c976cca2a3858ff62c** enviado e SHA remoto confirmado; 15 scripts aplicados/criados em Studio Edit, backup dos 13 substituídos em `ServerStorage.HACBeforeHunterRank20261021`; módulos centrais carregaram, verificações isoladas de XP/rank/bonificação/perfil passaram e a interface do Studio confirmou “Novas alterações salvas ... na Roblox”. Sessão Play preexistente foi encerrada após autorização do usuário; nenhum Play novo ou publicação. O ajuste local de tamanho em `GameplayConfig.luau` foi incluído no salvamento do lugar, mas preservado fora do commit; as pastas de arte não rastreadas também ficaram fora.
+**Pendências:** playtest humano em PC/celular, reset e reconexão de duas contas no DataStore real, curva de ouro/XP com espécies futuras e exportação `.rbxl` recuperável. O reset ainda não atinge servidores públicos sem publicação explícita.
+**Autoria/ambiente:** Codex, Windows, Studio MCP e interface local; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

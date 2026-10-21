@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código enviado **2c74752** (`main`, 56 fontes Luau). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece preservado sem commit até decisão do desenvolvedor.
+Referência: código enviado **42ca28a** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor.
 
 ## 1. Mapa de responsabilidade
 
@@ -14,14 +14,14 @@ Referência: código enviado **2c74752** (`main`, 56 fontes Luau). Ajuste local 
 
 | Domínio técnico | Módulos principais |
 |---|---|
-| Catálogo, economia e tamanhos | `GameplayConfig` |
+| Catálogo, economia e tamanhos | `GameplayConfig`; `HunterProgression` concentra curva de XP, bônus e ritmo passivo |
 | Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + `ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews` |
 | IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
 | Laço, colisão e disputa | `CaptureConfig`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
 | Mundo, treino e placas | `WorldPresentation`, `WorldStations`, `UpgradeBoards` |
-| HUD, menus e áudio | `HUD`, `CollectionUI`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
+| HUD, menus e áudio | `HUD`, `CollectionUI`, `HunterRankPage`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
 
 *Legado inativo:* `BuildWorld.luau`, `studio/archive` e `UpgradePage.luau` (sem rota ativa) são históricos; não executá-los nem reativá-los. `QuickSlot.luau` apenas reserva espaço invisível para a hotbar nativa.
 
@@ -37,9 +37,10 @@ Referência: código enviado **2c74752** (`main`, 56 fontes Luau). Ajuste local 
 
 - **Cliente envia intenções; servidor decide:** nenhum saldo, preço, captura ou posse vem do cliente. Servidor valida tipos, valores finitos (`finiteVector`), distância, dono, cooldown, estoque e capacidade. Rate limit: balde de `40` requisições com reposição de `20/s`.
 - **Snapshots não destrutivos:** atualizações de renda (`1 s`) atualizam textos via `valueRefreshers` sem destruir seleção de menu, ordem do `Backpack` ou posição das criaturas na base.
+- **Progressão autoritativa:** `ProfileData.Capture` soma XP de captura/descoberta em transação; `HunterProgression.Level` deriva o rank do XP total; `ProfileData.Action` valida `RequiredHunterRank` na compra; `HuntACreature.server` aplica bônus ao ouro/treino e XP passivo apenas com criatura equipada. `goldCarry` e `strengthCarry` no perfil preservam frações de bônus entre ticks/sessões. `HunterRank` é atributo e leaderstat de apresentação, não entrada do cliente nem campo independente de save.
 
 ## 4. Persistência e geração de save (`PersistenceConfig`)
 
-- **Schema `1`** com migração aditiva (converte `size = 0.85` antigo para `1`). Lease de sessão de `180 s`, margem de `45 s` e autosave a cada `45 s`. Falha de leitura bloqueia sobreescrita para nunca zerar perfil existente.
-- **Geração fixa atual:** `20261019_menu_reset_01` (DataStore Studio: `HAC_Profiles_Studio_20261019_menu_reset_01`; Publicado: `HAC_Profiles_20261019_menu_reset_01`; geração anterior `_v1` preservada intacta).
+- **Schema `1`** em uma nova geração limpa; lease de sessão de `180 s`, margem de `45 s` e autosave a cada `45 s`. Falha de leitura bloqueia sobreescrita para nunca zerar perfil existente.
+- **Geração fixa atual:** `20261021_hunter_rank_01` (DataStore Studio: `HAC_Profiles_Studio_20261021_hunter_rank_01`; Publicado: `HAC_Profiles_20261021_hunter_rank_01` quando a versão for publicada). As gerações anteriores continuam intactas, sem exclusão física.
 - `Workspace.HACStudioMemoryMode = true` usa memória volátil apenas no Studio; testes de persistência real exigem `nil`/`false`.

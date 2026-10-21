@@ -22,5 +22,5 @@ A venda é uma decisão física no `Creature Market`; descobertas permanecem reg
 
 ## Escopo atual vs. futuro
 
-- **Versão atual:** fatia jogável completa com a espécie `Lumito` (modelo facetado `Lumito_Base_v01`), escala contínua `1×` a `5×`, mutação `Gold`, `Training Lasso`, três consumíveis (`Bait`, `Trap`, `Potion`), cinco menus (`MenuKit`) e persistência com proteção de sessão. A ponte física entre hub e ilha ainda é provisória.
+- **Versão atual:** fatia jogável completa com a espécie `Lumito` (modelo facetado `Lumito_Base_v01`), escala contínua `1×` a `5×`, mutação `Gold`, `Training Lasso`, três consumíveis (`Bait`, `Trap`, `Potion`), seis menus (`MenuKit`, incluindo Hunter Rank) e persistência com proteção de sessão. A ponte física entre hub e ilha ainda é provisória.
 - **Futuro (ainda fora desta fatia):** separação hub/ilha por teletransporte, mapa amplo, novas espécies/biomas/laços, mutações com geometria adicional no Studio, eventos e bosses. Não importar *Rebirth*, recompensas de *Claim* no Index, renda offline ou monetização artificial sem decisão explícita do desenvolvedor.

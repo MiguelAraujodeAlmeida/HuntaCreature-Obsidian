@@ -15,16 +15,19 @@ Melhorias são compradas exclusivamente nas placas físicas da própria base; ve
 Criaturas equipadas passeiam livremente no piso da base; ocultá-las em `Settings` é preferência visual local e não interrompe a renda. Toda a interface visível ao jogador é em inglês, mantendo IDs internos de save estáveis. O `Creature Index` registra variantes descobertas (`Normal`/`Gold`) de forma permanente, mesmo após venda.
 
 ## ADR-005 — Família unificada de menus (19/10/2026)
-Todos os menus de tela (`Creatures`, `Creature Market`, `Creature Index`, `Hunting Shop`, `Settings`) compartilham `MenuTheme`, `MenuKit`, `GlossyButton` e retratos `ViewportFrame` ([[01_Produto/Design UI UX]]). Apenas as placas físicas do mundo e a HUD compacta de disputa possuem layout próprio pela função espacial.
+Todos os menus de tela (`Creatures`, `Creature Market`, `Creature Index`, `Hunter Rank`, `Hunting Shop`, `Settings`) compartilham `MenuTheme`, `MenuKit` e `GlossyButton`; menus de criaturas usam retratos `ViewportFrame` ([[01_Produto/Design UI UX]]). Apenas as placas físicas do mundo e a HUD compacta de disputa possuem layout próprio pela função espacial.
 
-## ADR-006 — Reset global por geração fixa de DataStore (19/10/2026)
-O reset global solicitado foi implementado trocando o namespace fixo em `PersistenceConfig` para `20261019_menu_reset_01`, preservando os dados antigos (`_v1`) sem exclusão física e permitindo que o novo progresso persista normalmente entre sessões.
+## ADR-006 — Reset global por geração fixa de DataStore (atualizado 21/10/2026)
+O reset global autorizado para o protótipo de Hunter Rank troca o namespace fixo em `PersistenceConfig` para `20261021_hunter_rank_01`. Todas as contas começam novas ao carregar esta versão; dados das gerações anteriores continuam preservados, sem exclusão física. Não trocar a geração novamente sem decisão explícita: cada troca reinicia também o progresso criado desde este reset.
 
 ## ADR-007 — Contexto portável, enxuto e com dono único (19/10/2026)
 O cofre Obsidian é versionado no GitHub com manifesto de leitura (`bootstrap` + `domains`) e validador determinístico (`tools/check_context.py`). Cada regra tem uma única nota dona; mudanças atualizam a nota dona e acrescentam uma entrada curta em [[00_Inicio/Historico de Contexto]].
 
-## ADR-008 — Caça legível pelo mundo e recompensa transparente (20/10/2026)
-O laço mantém disparo reto, livre e sem assistência. Estados de mira, carga, voo, impacto, fases da disputa (`3,6 s`) e uso de poção são comunicados por feedback visual/sonoro curto sem popups de erro. O cartão de vitória informa o ganho real (`ouro/s` e `XP/s` ao equipar na base), sem sugerir pagamento instantâneo na captura.
+## ADR-008 — Caça legível pelo mundo e recompensa transparente (atualizado 21/10/2026)
+O laço mantém disparo reto, livre e sem assistência. Estados de mira, carga, voo, impacto, fases da disputa (`3,6 s`) e uso de poção são comunicados por feedback visual/sonoro curto sem popups de erro. O cartão de vitória informa XP pago imediatamente na captura e potencial de ouro/s na base; XP passivo não é anunciado como XP/s.
 
 ## ADR-009 — Escala contínua (`1×`–`5×`) e Lumito base facetado v01 (20/10/2026)
 O tamanho das criaturas é um multiplicador individual contínuo de `1×` a `5×` sem rótulos textuais de classe na UI. O modelo provisório esférico do Lumito foi substituído pela construção facetada de brinquedo (`Lumito_Base_v01` em `ReplicatedStorage.HACLumitoTemplate` + `CreatureFactory` + `LumitoBehavior`, commit `ee6e901`), seguindo a direção de [[06_Referencias/Estudo visual Steal an Egg]] e mantendo o pivô (`Root`), o volume de colisão do laço (`Corpo`) e a paleta por `ColorRole` (`Normal` e `Gold`). Mutações com geometria adicional ficam para etapa posterior à aprovação humana do modelo base.
+
+## ADR-010 — Hunter Rank cumulativo, loja flexível e progresso sem bloqueio espacial (21/10/2026)
+O Hunter Rank é um tier derivado de XP total, com dez limiares iniciais muito crescentes, sem rebirth. Captura e descoberta dão XP imediato; criaturas equipadas dão XP passivo pequeno. Rank melhora levemente ouro e treino; cada item futuro pode optar por `RequiredHunterRank`, sem faixas prescritas de equipamentos. O rank não bloqueia visita a ilhas. A economia de ouro pode crescer livremente por renda/preço de futuras espécies e itens; o conteúdo inicial não é inflado artificialmente. Parâmetros são prototípicos e revisáveis após playtest, sem migração de dados antigos por causa do reset autorizado.

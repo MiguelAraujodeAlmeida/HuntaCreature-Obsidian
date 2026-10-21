@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**2c74752**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**42ca28a**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -9,7 +9,7 @@ Regras e parâmetros de gameplay implementados no código de referência (**2c74
 - **Elegibilidade e colisão (`LassoAim` / `LassoCollision`):** o cliente exibe contorno contextual por estado (distante, no alcance, alinhado, bloqueado por obstáculo, ocupado ou sem força mínima), mas o servidor revalida tudo. A colisão contínua varre o deslocamento relativo entre projétil e o volume elipsoidal de `Corpo` (`3,3 × 2,8 × 2,6 * scale`), bloqueando capturas através de paredes.
 - **Disputa autoritativa (`CaptureService`):** dono exclusivo e validação de força mínima no início e na entrega (`Lumito` exige `0`). Limite de `22 s`, ganho-base `0,18/s` na zona e perda `0,075/s` fora dela. Ciclo de `3,6 s` alterna fase normal, resistência (mais movimento, menos ganho) e abertura (menos movimento, mais ganho); meta desloca em passos limitados de `0,25` e força amplia a zona com retorno decrescente.
 - **Uso de Poção na disputa:** reduz a velocidade do alvo em `35%` (para `65%`) por `6 s`; alternar para a ferramenta da poção não cancela a captura.
-- **Recompensa:** credita o indivíduo na bolsa, atualiza descobertas do Index (`Normal` / `Gold`) e exibe o potencial de **ouro/s e XP/s quando equipado na base** (a captura não paga ouro/XP instantâneos).
+- **Recompensa:** credita o indivíduo na bolsa, atualiza descobertas do Index (`Normal` / `Gold`) e concede XP de caçador imediatamente. O cartão exibe XP recebido e potencial de ouro/s ao equipar na base; captura não paga ouro instantâneo.
 
 ## Criaturas e coleção
 
@@ -29,7 +29,9 @@ Regras e parâmetros de gameplay implementados no código de referência (**2c74
 
 ## Economia, treino e melhorias
 
-- **Renda passiva (aceleração 5× aprovada):** paga a cada **1 segundo** o valor das criaturas equipadas na base. Referência do Lumito `1×` Normal: `1 ouro/s`, `1 XP/s` e venda por `12 ouro` (escalados por tamanho e mutação).
+- **Renda passiva:** paga ouro a cada **1 segundo** pelo valor das criaturas equipadas. Lumito `1×` Normal rende `1 ouro/s` e vende por `12 ouro` antes do bônus de rank (ouro escala por tamanho/mutação). XP da base é separado e deliberadamente menor: `1 XP` por criatura ativa **a cada 10 s**, mais `1 XP` global por rank acima de 1, só quando existe ao menos uma criatura ativa. Não há XP da base vazia.
+- **Hunter Rank (protótipo sem rebirth):** dez tiers calculados pelo XP **total acumulado**, sem gasto de XP ou reivindicação manual. Limiares para ranks 1–10: `0`, `100`, `700`, `5.000`, `40.000`, `400.000`, `5 milhões`, `80 milhões`, `1,5 bilhão`, `30 bilhões`. Captura dá `25 XP`; primeira descoberta de espécie soma `75`, primeira variante subsequente soma `35` (sem dupla bonificação na primeira captura). Cada rank acima de 1 acrescenta `+5%` ao ouro de base/venda e `+3%` à força obtida no treino; resíduos fracionários persistem para que bônus pequenos não sejam perdidos por arredondamento. Nenhuma ilha é bloqueada por rank.
+- **Curva de ouro e expansão:** o catálogo continua definindo livremente renda/venda por espécie e preço por item/melhoria; não há faixas obrigatórias de equipamento por rank. Cada nova espécie pode definir `CaptureXP`, `FirstSpeciesXP` e `FirstVariantXP` para sustentar os ranks altos. A escalada extrema de ouro depende da introdução de espécies e compras de tiers futuros; não foram inflados os preços iniciais sem fontes de renda correspondentes. Cada item pode declarar `RequiredHunterRank` individualmente. Os itens atuais permanecem disponíveis no rank 1.
 - **Treino automático no manequim (`WorldPresentation`):** posiciona o avatar imóvel laçando o manequim a cada `2 s`, somando força conforme nível de treino × eficiência. Sair, pular ou morrer restaura a movimentação imediatamente.
 - **Placas físicas da base (`UpgradeBoards`):** único local para comprar melhorias (validação de dono, distância de `16 studs` e saldo no servidor; `SurfaceGui` nas duas faces).
 
