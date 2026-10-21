@@ -1,16 +1,16 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-21-03** · 21/10/2026.
+Revisão de contexto **CTX-2026-10-21-04** · 21/10/2026.
 
 ## Entrega vigente do jogo
 
-- **Código enviado:** commit **42ca28a** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado).
+- **Código enviado:** commit **977fbce** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado).
 - **Lugar de teste:** **[Testing] Hunt a Creature**, placeId **102310424634629** (Studio em `Edit`; protótipo aplicado e “Novas alterações salvas ... na Roblox” confirmado).
 - **Não publicado:** servidores públicos continuam na versão anterior; publicação exige pedido explícito.
 
 ### O que está implementado e integrado
 
-0. **Protótipo Hunter Rank (`42ca28a`, aplicado e salvo no Studio):** dez ranks de XP acumulado em curva ampla; XP imediato por captura/descoberta e XP passivo reduzido por criatura ativa; bônus pequenos de ouro e treino por rank; verificação opcional `RequiredHunterRank` por item, sem restringir ilhas nem bloquear itens atuais. Interface inclui rank no HUD e página a partir do Index. Novo namespace de save `20261021_hunter_rank_01` reinicia todos os perfis quando esta versão for executada, preservando gerações antigas. Módulos centrais carregaram e verificações isoladas passaram em Edit, sem Play novo; playtest humano pendente.
+0. **Hunter Rank refeito (`977fbce`, aplicado e salvo no Studio):** dez limiares iniciais de XP acumulado; captura/descoberta principais, agora com bônus de XP por tamanho/Gold, e pesquisa menor por espécie/variante equipada. Bônus pequenos de ouro e treino por rank; `RequiredHunterRank` opcional por item, sem restringir ilhas nem bloquear itens atuais. HUD tem botão/emblema/progresso próprios e celebração breve; página revela somente rank atual, progresso percentual, próximo marco, bônus seguintes e silhuetas de equipamento real quando aplicável. Missões estão marcadas como futuras. XP exigido, teto e lista de ranks não aparecem. Namespace `20261021_hunter_rank_01` preservado; reset ocorrerá ao carregar esta versão sem excluir gerações antigas. Compilação estática dos scripts alterados em Studio Edit passou; sem Play novo, playtest humano pendente.
 
 1. **Modelo e atuação do Lumito base v01 (`2c74752`):**
    - Modelado no Blender (`C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Art\Lumito\Lumito_Base_v01.blend` e `.fbx`) seguindo os princípios de [[06_Referencias/Estudo visual Steal an Egg]] e [[01_Produto/Design UI UX]].
@@ -30,6 +30,6 @@ Revisão de contexto **CTX-2026-10-21-03** · 21/10/2026.
 
 1. Exportar cópia `.rbxl` recuperável do lugar salvo (`P0 · PROC-01`).
 2. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
-3. Executar [[04_Validacao/Playtest Atual]] em PC e celular (novo reset em duas contas, Hunter Rank/economia, sensação da caça, menus e avaliação visual/animação/VFX do Lumito v01 em campo, base e retratos).
+3. Executar [[04_Validacao/Playtest Atual]] em PC e celular (reset em duas contas, Hunter Rank/economia e sua nova interface/celebração, sensação da caça, menus e avaliação visual/animação/VFX do Lumito v01 em campo, base e retratos).
 
-Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O commit de código `42ca28a` está no GitHub, o lugar de teste foi salvo mas não publicado, e a alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
+Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O commit de código `977fbce` está no GitHub, o lugar de teste foi salvo mas não publicado, e a alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.

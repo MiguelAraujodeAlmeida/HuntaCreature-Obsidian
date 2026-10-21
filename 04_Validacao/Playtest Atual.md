@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de referência: **42ca28a**, lugar **102310424634629** (`[Testing] Hunt a Creature`, salvo na Roblox, não publicado). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de referência: **977fbce**, lugar **102310424634629** (`[Testing] Hunt a Creature`, salvo na Roblox, não publicado). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -27,10 +27,10 @@ Build de referência: **42ca28a**, lugar **102310424634629** (`[Testing] Hunt a 
 
 ## 4. Hunter Rank e economia (`R01`–`R05`)
 
-- [ ] **R01 · XP de captura:** primeira captura de Lumito normal paga `100 XP` e leva ao rank 2; capturas repetidas pagam `25 XP`; primeira variante Gold da espécie já descoberta paga `60 XP`.
-- [ ] **R02 · XP da base:** com uma criatura ativa, pagar `1 XP` a cada `10 s` no rank 1, e `2 XP` a cada `10 s` no rank 2; bolsa e base vazia não geram XP. Equipar/dessequipar não deve adiantar o ciclo.
+- [ ] **R01 · XP de captura:** primeira captura de Lumito Normal `1×` paga `100 XP` e leva ao rank 2; repetição `1×` paga `25 XP`; primeira variante Gold `1×` já descoberta paga `73 XP`. Tamanho maior aumenta apenas a parcela base; conferir o XP anunciado com o crédito real.
+- [ ] **R02 · Pesquisa da base:** Lumito Normal equipado paga `1 XP/10 s` no rank 1; Gold paga `2 XP/10 s`; o bônus global acrescenta `1 XP` por rank acima de 1 quando há criatura ativa. Bolsa e base vazia não geram pesquisa. Equipar/dessequipar não deve adiantar o ciclo.
 - [ ] **R03 · Bônus:** no rank 2, ouro da base e venda têm `+5%` com resíduos acumulados; treino tem `+3%` sem perder frações após reconexão. Nenhum rank barra acesso à ilha.
-- [ ] **R04 · Interface:** rank na HUD, página a partir do Index, limiares e barra atualizados sem destruir foco/rolagem; checar números altos e texto em tela estreita.
+- [ ] **R04 · Interface:** botão próprio de Rank na HUD abre/fecha a página; barra/percentual e próximo rank atualizam; não aparecem limiares, teto nem lista completa. Conferir benefício seguinte, missões `COMING SOON`, silhueta somente quando houver item real bloqueado, celebração de rank não bloqueante e leitura em PC/celular.
 - [ ] **R05 · Loja:** todos os itens atuais continuam compráveis no rank 1; para um futuro item com `RequiredHunterRank`, cliente informa requisito e servidor bloqueia a compra abaixo do rank. Validar também saldo, estoque, proximidade e cota.
 
 ## 5. Menus, loja, treino e preferências (`M01`–`M04`, `L01`–`L03`, `B01`–`B02`, `S01`)

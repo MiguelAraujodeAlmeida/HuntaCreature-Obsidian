@@ -180,6 +180,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limites:** código `42ca28ae1133f7d63c1000c976cca2a3858ff62c` e cofre `9036d0efb4c237027ee7fe1e1e8c8f366aad1a19` estavam sincronizados com `origin/main` na abertura desta solicitação. Lugar salvo, mas não publicado; validação humana de experiência, reset real e reconexão continuam pendentes. `GameplayConfig.luau` e duas pastas locais de arte permanecem fora do commit por escolha prévia.
 **Autoria/ambiente:** Codex, Windows; leitura de Git/cofre, sem Studio, Play ou agentes auxiliares.
 
+## CTX-2026-10-21-04 — Rework do Hunter Rank e sua apresentação · 21/10/2026
+
+**Pedido:** concluir e refazer o protótipo de progressão discutido no chat compartilhado; tornar Hunter Rank visível, interessante e recompensador. Botão próprio semelhante ao da mochila, página com rank/progresso/próximo desbloqueio, silhuetas de ferramentas reais e missões apenas sinalizadas. Ocultar teto, limiares de XP, lista completa e textos supérfluos.
+**Resultado:** `HunterRankHUD` ganhou botão glossy com emblema original, barra curta, brilho/partículas/som e celebração não bloqueante de rank; `HunterRankPage` apresenta o marco atual, percentual e benefícios do próximo. O Index deixou de servir como atalho duplicado; a caixa isolada de XP saiu do HUD. A página só desenha silhueta quando um item real tem `RequiredHunterRank`; missões permanecem `COMING SOON`, sem mecânica implementada. Captura passou a calcular XP base por tamanho/Gold e descoberta; pesquisa passiva deriva da espécie/variante equipada e continua menor que XP ativo. O servidor segue autoritativo. Namespace de save foi mantido.
+**Evidência:** commit de código `977fbcea97d0071e45c8c3cdeae03bec9ed9b288` enviado a `origin/main` e SHA remoto conferido; 18 scripts alterados/carregados compilaram estaticamente em Studio Edit, com recompilação da correção final do HUD. O Studio confirmou “Novas alterações salvas ... na Roblox” após aplicação; atalho de salvamento acionado novamente após a correção final. Nenhum Play, benchmark ou publicação. Arte do emblema versionada e enviada ao Studio como `rbxassetid://94003376835794`.
+**Pendências:** playtest humano em PC/celular, impacto visual e ritmo percebido, cálculo real em DataStore/reconexão, introdução futura de equipamentos com requisito e sistema de missões. `GameplayConfig.luau` mantém somente a alteração pré-existente de curva de tamanho fora do commit; duas pastas locais de arte do Lumito permanecem intocadas. Exportação `.rbxl` recuperável ainda pendente.
+**Autoria/ambiente:** Codex, Windows, Studio MCP, ImageGen e interface local; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

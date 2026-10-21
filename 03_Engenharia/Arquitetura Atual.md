@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código enviado **42ca28a** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor.
+Referência: código enviado **977fbce** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente.
 
 ## 1. Mapa de responsabilidade
 
@@ -21,7 +21,7 @@ Referência: código enviado **42ca28a** (`main`). Ajuste local `BaseChance = 0.
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
 | Mundo, treino e placas | `WorldPresentation`, `WorldStations`, `UpgradeBoards` |
-| HUD, menus e áudio | `HUD`, `CollectionUI`, `HunterRankPage`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
+| HUD, menus e áudio | `HUD`, `HunterRankHUD`, `CollectionUI`, `HunterRankPage`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
 
 *Legado inativo:* `BuildWorld.luau`, `studio/archive` e `UpgradePage.luau` (sem rota ativa) são históricos; não executá-los nem reativá-los. `QuickSlot.luau` apenas reserva espaço invisível para a hotbar nativa.
 
@@ -37,7 +37,7 @@ Referência: código enviado **42ca28a** (`main`). Ajuste local `BaseChance = 0.
 
 - **Cliente envia intenções; servidor decide:** nenhum saldo, preço, captura ou posse vem do cliente. Servidor valida tipos, valores finitos (`finiteVector`), distância, dono, cooldown, estoque e capacidade. Rate limit: balde de `40` requisições com reposição de `20/s`.
 - **Snapshots não destrutivos:** atualizações de renda (`1 s`) atualizam textos via `valueRefreshers` sem destruir seleção de menu, ordem do `Backpack` ou posição das criaturas na base.
-- **Progressão autoritativa:** `ProfileData.Capture` soma XP de captura/descoberta em transação; `HunterProgression.Level` deriva o rank do XP total; `ProfileData.Action` valida `RequiredHunterRank` na compra; `HuntACreature.server` aplica bônus ao ouro/treino e XP passivo apenas com criatura equipada. `goldCarry` e `strengthCarry` no perfil preservam frações de bônus entre ticks/sessões. `HunterRank` é atributo e leaderstat de apresentação, não entrada do cliente nem campo independente de save.
+- **Progressão autoritativa:** `ProfileData.Capture` soma XP de captura/descoberta em transação; `HunterProgression` calcula o rank, XP de captura por espécie/tamanho/Gold e pesquisa por espécie/variante; `ProfileData.Action` valida `RequiredHunterRank` na compra. `HuntACreature.server` aplica bônus ao ouro/treino e pesquisa apenas com criatura equipada, e envia evento `HunterRankUp` quando o rank sobe. `goldCarry` e `strengthCarry` preservam frações. `HunterRank` é atributo/leaderstat de apresentação, não entrada do cliente nem campo independente de save.
 
 ## 4. Persistência e geração de save (`PersistenceConfig`)
 

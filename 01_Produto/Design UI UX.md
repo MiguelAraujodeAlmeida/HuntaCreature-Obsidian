@@ -30,13 +30,13 @@
 
 ## 2. HUD, caça e feedback
 
-- **HUD limpo:** ações na lateral, recursos no canto inferior esquerdo com ícones proporcionais ao texto e barra de carga central acima da hotbar nativa. Sem título fixo do jogo nem avisos para falhas comuns.
+- **HUD limpo:** ações na lateral, ouro/força no canto inferior esquerdo com ícones proporcionais ao texto, botão glossy próprio para Hunter Rank junto da mochila/Index e barra de carga central acima da hotbar nativa. XP aparece dentro do contexto de Rank, sem terceira caixa de recurso. Sem título fixo do jogo nem avisos para falhas comuns.
 - **Botões glossy (`GlossyButton`):** ícones reais, brilho, contorno escuro e fonte **Fredoka One** em inglês; compressão curta ao clicar/tocar (`0.94×`) e leve expansão em hover (`1.06×`).
 - **Leitura da caça no mundo (`LassoFeedback` / `CaptureHUD` / `RewardPresentation`):**
   - Contorno (`Highlight`) muda cor e opacidade conforme estado do alvo; voo do laço usa trilha quente e retorno usa trilha ciano.
   - Disputa exibe barra compacta de progresso, zona móvel, fase (normal/resistência/abertura) e indicador de poção.
   - Vitória mostra cartão curto (`2,35 s`) com retrato 3D real (`ViewportFrame`), destaque de Gold/primeira descoberta, XP ganho na captura e potencial de `ouro/s` na base (sem rótulo textual de tamanho).
-- **Hunter Rank:** o contador de XP da HUD mostra o rank atual. A partir do `Creature Index`, a página `Hunter Rank` exibe XP total, avanço ao próximo tier, bônus atuais e limiares dos dez ranks. Não apresenta ferramentas fictícias ou bloqueios de ilhas.
+- **Hunter Rank:** botão roxo de acesso direto com emblema de licença, rank e progresso curto. A página abre com emblema, rank atual e barra percentual para o próximo; abaixo, somente os benefícios do próximo marco e silhuetas dos equipamentos reais com `RequiredHunterRank` correspondente. Missões aparecem como `COMING SOON` até existir sistema próprio. Não mostrar XP exigido, lista completa de ranks, cap, ferramenta fictícia, tutorial ou bloqueio de ilha. Subida de rank usa brilho/partículas/som e cartão curto não bloqueante.
 - **Áudio (`AudioConfig` / `AudioFeedback`):** master `0,7`, limite de `8` vozes simultâneas e cooldown no som de renda para não tocar a cada segundo.
 
 ## 3. Família de menus (`MenuTheme` / `MenuKit`)
@@ -60,6 +60,7 @@ Aplica-se a `Creatures`, `Creature Market`, `Creature Index`, `Hunter Rank`, `Hu
 |---|---|
 | `Coin` / `XP` / `Strength` | `137147969134175` / `90531108912513` / `111581776806956` |
 | `Bag` / `Lasso` | `84667354571821` / `117254148917574` |
+| `HunterRank` | `94003376835794` |
 | `SkinTile` / `Panel` (`SliceCenter 150,140,874,200`) | `93505871377958` / `130734564577623` |
 | `Studs` / `Wood` / `Tiles` (amostras de mundo) | `133050717017276` / `97810845356536` / `103826263412719` |
 
