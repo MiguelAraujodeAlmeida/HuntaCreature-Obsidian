@@ -157,6 +157,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limites:** validação determinística `python tools/check_context.py` sem erros e sincronização Git (`main`). Nenhuma alteração adicional de código ou Studio nesta etapa.
 **Autoria/ambiente:** Antigravity, Windows; sem agentes auxiliares.
 
+## CTX-2026-10-21-01 — Atuação e VFX cartunesco do Lumito · 21/10/2026
+
+**Pedido:** dar vida ao novo Lumito facetado, que parecia rígido, e depois substituir a fumaça genérica de movimento por partículas cartunescas discretas inspiradas em uma prancha de nuvens de poeira, sem copiar seus desenhos.
+**Resultado:** `LumitoAnimator` e `LumitoMotionConfig` passaram a compartilhar atuação entre ilha e base: respiração, passada proporcional a velocidade/escala, balanço de cabeça/orelhas/cauda/braços, piscada, susto, cansaço, resistência, gestos ociosos e saudação a jogador próximo. Cada contato de pé dispara um flipbook original 2×2 em ciano/branco com contorno teal; corrida/pânico habilita um rastro ciano curto. Atlas-fonte versionado em `art/vfx/lumito-run-puff-flipbook-v01.png` e publicado como `rbxassetid://118477338697511`.
+**Evidência:** commit de código **2c74752a9759051b232d628798e5d6555ab0cc32** enviado e SHA remoto confirmado; quatro módulos aplicados no Studio Edit; compilação estática e verificação isolada de estados, flipbook, rastro e estabilidade de `Root`/`Corpo` passaram. O Studio encontrado em Play foi apenas encerrado; nenhum novo Play, emulação ou benchmark foi iniciado.
+**Limites/pendências:** ritmo, intensidade, leitura em PC/celular e escalas `1×`/`5×` aguardam playtest humano. `game:SavePlace()` não está disponível no contexto Edit do conector e o controle nativo de janelas não estava exposto; portanto o salvamento integral do lugar continua sem confirmação. A alteração local anterior de `GameplayConfig.luau` e os diretórios de arte do Lumito foram preservados fora do commit.
+**Autoria/ambiente:** Codex, Windows, Studio MCP e ImageGen integrado; sem agentes auxiliares. A imagem anexada foi tratada apenas como referência visual.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

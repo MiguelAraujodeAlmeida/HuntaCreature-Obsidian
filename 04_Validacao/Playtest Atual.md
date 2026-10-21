@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de referência: **ee6e901**, lugar **102310424634629** (`[Testing] Hunt a Creature`). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de referência: **2c74752**, lugar **102310424634629** (`[Testing] Hunt a Creature`). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -12,7 +12,7 @@ Build de referência: **ee6e901**, lugar **102310424634629** (`[Testing] Hunt a 
 ## 2. Novo modelo Lumito v01, escala e base (`C01`–`C06`)
 
 - [ ] **C01 · Leitura visual do `Lumito_Base_v01`:** avaliar silhueta facetada, testa saliente, orelha direita dobrada, crista dorsal com studs e expressão facial (Normal e Gold) na ilha, na base e nos retratos 3D.
-- [ ] **C02 · Escala contínua (`1×` a `5×`) e animação de passos:** conferir contato das solas com o chão, passo sincronizado de pé/sola/stud (`FootSide`) e altura do nome (`Identificacao`) sem invadir as orelhas.
+- [ ] **C02 · Escala contínua (`1×` a `5×`), atuação e VFX:** conferir contato das solas, passo sincronizado de pé/sola/stud (`FootSide`), respiração, cabeça/orelhas/cauda/braços, piscada, gestos e saudação na base. Em caminhada, validar um puff discreto por contato; em fuga, puff reforçado e rastro curto, sem cobrir a silhueta. Repetir em `1×` e `5×`, PC/celular e diferentes ângulos; confirmar que `Identificacao` não invade as orelhas.
 - [ ] **C03 · Passeio na base (`BaseRoamingService`):** criaturas equipadas caminham dentro da plataforma sem empurrar avatares; ticks de `1 s` de renda não reiniciam posição; gigantes sem espaço livre ficam visíveis e imóveis.
 - [ ] **C04 · Equip/Unequip (`Creatures`):** move o indivíduo correto e bloqueia destino cheio sem trocar ou perder criaturas.
 - [ ] **C05 · Favorito e venda no mercado físico (`Creature Market`):** favorito bloqueia venda; venda exige proximidade (`14 studs`) e confirmação, removendo apenas o exemplar escolhido e creditando ouro uma vez.

@@ -1,13 +1,13 @@
 # Arquitetura atual
 
-Referência: código enviado **ee6e901** (`main`, 54 fontes Luau). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece preservado sem commit até decisão do desenvolvedor.
+Referência: código enviado **2c74752** (`main`, 56 fontes Luau). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece preservado sem commit até decisão do desenvolvedor.
 
 ## 1. Mapa de responsabilidade
 
 | Pasta no repositório | Destino no Roblox Studio | Papel |
 |---|---|---|
-| `studio/shared` (9) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `AudioConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
-| `studio/server` (15) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA de criaturas, captura, loja, base viva e persistência |
+| `studio/shared` (10) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `AudioConfig`, `LumitoMotionConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
+| `studio/server` (16) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
 | `studio/client` (28) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, menus (`MenuKit`, `*Page`), retratos e preferências locais |
 | `studio/HuntACreature.server.luau` | `ServerScriptService.HuntACreature` | Bootstrap do servidor, loops de tick e roteamento de eventos |
 | `studio/HuntACreature.client.luau` | `StarterPlayerScripts.HuntACreatureClient` | Bootstrap do cliente e recepção de snapshots |
@@ -16,7 +16,7 @@ Referência: código enviado **ee6e901** (`main`, 54 fontes Luau). Ajuste local 
 |---|---|
 | Catálogo, economia e tamanhos | `GameplayConfig` |
 | Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + `ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews` |
-| IA selvagem e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `BaseRoamingService` |
+| IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
 | Laço, colisão e disputa | `CaptureConfig`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
@@ -31,6 +31,7 @@ Referência: código enviado **ee6e901** (`main`, 54 fontes Luau). Ajuste local 
 - **Pivô e contato com o chão:** `Root` (`PrimaryPart`, invisível) fica na origem `(0, 0, 0)` do template na escala `1.0`, com a base das solas em `Y = -1.625 * scale` (compatível com `RootHeight = 1.68` na ilha e `1.625` na base).
 - **Colisão do laço (`Corpo`):** `Part` invisível (`Transparency = 1`, `CanCollide/CanTouch/CanQuery = false`, `CastShadow = false`) de tamanho `Vector3.new(3.3, 2.8, 2.6) * scale` centrada em `Root`, garantindo que `LassoCollision` mantenha o mesmo elipsoide de captura enquanto `LassoAim`/`Highlight` atingem as peças visíveis.
 - **Paletas e animação:** cada peça possui o atributo `ColorRole` (`Main`, `Secondary`, `Accent`, `Ink`, `Glint`) colorido por `CreatureFactory` conforme variante (`Normal` ou `Golden`), e as peças dos pés (`Pe`, `Sole_*`, `Stud_Foot_*`) possuem `FootSide = "L" | "R"` para passo sincronizado em `LumitoBehavior`. Se `HACLumitoTemplate` não existir no lugar, `CreatureFactory` usa o fallback procedural compacto de 33 partes.
+- **Apresentação rígida (`LumitoAnimator`):** captura os `CFrame`s de repouso e aplica poses absolutas por grupos nomeados, compartilhadas entre a IA selvagem e `BaseRoamingService`. Cria `StepPuff` com atlas 2×2 (`rbxassetid://118477338697511`) e `RunSwoosh`; o asset-fonte versionado está em `art/vfx/lumito-run-puff-flipbook-v01.png`. Nenhum efeito altera `Root`, `Corpo`, autoridade do servidor ou tamanho do indivíduo.
 
 ## 3. Contratos de autoridade e rede
 

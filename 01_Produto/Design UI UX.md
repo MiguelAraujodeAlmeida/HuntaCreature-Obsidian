@@ -24,6 +24,10 @@
 ### Mundo e materiais
 - Cenário modular de brinquedo: pisos amplos com studs/grade, plataformas, cercas e estruturas simples com cores vivas por bioma. Áreas de circulação permanecem limpas para destacar criaturas, alvos e recompensas.
 
+### Movimento e VFX de criaturas
+- A atuação deve sugerir curiosidade e travessura com poucos movimentos grandes: inclinação e balanço de cabeça, orelhas/cauda responsivas, passada com peso, piscada e pausas gestuais. O `Root` de gameplay e o volume `Corpo` não acompanham oscilações cosméticas.
+- Poeira de passada usa massas gráficas de leitura cartunesca, contorno teal e preenchimento branco/ciano, em rajadas curtas sincronizadas ao contato do pé. Corrida pode usar rastro ciano curto e afilado; evitar fumaça contínua, nuvens grandes sobre o personagem, excesso de brilho ou partículas que substituam a animação corporal.
+
 ## 2. HUD, caça e feedback
 
 - **HUD limpo:** ações na lateral, recursos no canto inferior esquerdo com ícones proporcionais ao texto e barra de carga central acima da hotbar nativa. Sem título fixo do jogo nem avisos para falhas comuns.

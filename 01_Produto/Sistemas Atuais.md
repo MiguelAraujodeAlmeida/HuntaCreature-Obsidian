@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**ee6e901**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**2c74752**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -13,7 +13,9 @@ Regras e parâmetros de gameplay implementados no código de referência (**ee6e
 
 ## Criaturas e coleção
 
-- **Espécie atual (`Lumito`):** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha e `1,625 * scale` na base, animando os conjuntos de pés (`FootSide = "L" / "R"`) em fase oposta.
+- **Espécie atual (`Lumito`):** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha e `1,625 * scale` na base.
+- **Atuação visual (`LumitoAnimator`):** os conjuntos nomeados de cabeça, corpo, orelhas, braços, cauda e pés usam poses absolutas sobre o `Root`; passada acompanha velocidade e escala, e os estados AtBase/Wandering/Panicking/Tired/Capturing alteram postura e reação. Inclui piscada, gestos ociosos e atenção curta a jogadores próximos na base, sem alterar navegação, colisão ou regras de captura.
+- **VFX de movimento:** contato alternado dos pés dispara puff cartunesco ciano/branco em flipbook 2×2; corrida/pânico habilita rastro ciano de `0,13 s`. São efeitos de apresentação discretos, sem emissão contínua.
 - **Atributos por indivíduo:** `id`, `species`, `rarity`, `size`, `mutations`, `location` (`bag` ou `base`) e `favorite`.
 - **Escala contínua (`1×` a `5×`, duas casas):** atributo numérico oculto na UI; exemplares existentes preservam seu tamanho.
   - Em `ee6e901` (Git): `1 + 4 × u^5`.
