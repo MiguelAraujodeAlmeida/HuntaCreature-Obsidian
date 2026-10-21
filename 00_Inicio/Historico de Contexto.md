@@ -188,6 +188,20 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Pendências:** playtest humano em PC/celular, impacto visual e ritmo percebido, cálculo real em DataStore/reconexão, introdução futura de equipamentos com requisito e sistema de missões. `GameplayConfig.luau` mantém somente a alteração pré-existente de curva de tamanho fora do commit; duas pastas locais de arte do Lumito permanecem intocadas. Exportação `.rbxl` recuperável ainda pendente.
 **Autoria/ambiente:** Codex, Windows, Studio MCP, ImageGen e interface local; sem agentes auxiliares.
 
+## CTX-2026-10-21-05 — Botões Index e Settings · 21/10/2026
+
+**Pedido:** redesenhar Index para acompanhar os botões de Mochila/Rank; tornar Configurações pequeno e discreto na topbar esquerda, como na imagem enviada.
+**Resultado:** ícone original de bestiário azul/dourado gerado com ImageGen, salvo em `studio/assets/creature-index-book-v1.png` e enviado ao Roblox como `rbxassetid://112115433096189`. Index recebeu placa quadrada glossy; Settings recebeu variante circular escura de `GlossyButton` em `ScreenGui` próprio, posicionada por `GuiService.TopbarInset`. Layout lateral foi reorganizado e os dois botões passaram a fechar a janela ao segundo clique.
+**Evidência/limite:** `VisualStyle`, `GlossyButton` e `HUD` aplicados/compilados em Studio Edit. O salvamento foi acionado, mas a verificação do status foi interrompida por Esc físico do desenvolvedor; nenhuma confirmação final de salvamento ou playtest. As mudanças entraram no commit de código `8c0da860df2821bda03ff441a1e6f925431d0b29`, SHA remoto confirmado. Sem publicação.
+**Autoria/ambiente:** Codex, Windows, Studio MCP, ImageGen e interface local; sem agentes auxiliares.
+
+## CTX-2026-10-21-06 — XP restante no Hunter Rank · 21/10/2026
+
+**Pedido:** mostrar quanto XP falta para alcançar o próximo Hunter Rank.
+**Resultado:** `HunterProgression.Progress` passou a retornar XP restante; `HunterRankPage` mostra o valor exato formatado com separadores de milhar, atualizado por snapshot, e preserva a porcentagem na barra. Custo total e lista de ranks continuam ocultos.
+**Evidência/limite:** código incluído no mesmo commit `8c0da860df2821bda03ff441a1e6f925431d0b29` e SHA remoto confirmado; diff revisado. Na solicitação atual, `list_roblox_studios` retornou lista vazia duas vezes; a nova indicação de XP ainda não foi aplicada ao lugar nem compilada em Studio Edit. Play, publicação e teste humano não ocorreram. O ajuste local pré-existente de curva de tamanho e as pastas de arte do Lumito ficaram fora do commit.
+**Autoria/ambiente:** Codex, Windows, checkout Git e cofre; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

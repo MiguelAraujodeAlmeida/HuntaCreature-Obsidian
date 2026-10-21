@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código enviado **977fbce** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente.
+Referência: código enviado **8c0da86** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente. A aplicação ao Studio do novo XP restante está pendente de reconexão.
 
 ## 1. Mapa de responsabilidade
 
@@ -38,6 +38,7 @@ Referência: código enviado **977fbce** (`main`). Ajuste local `BaseChance = 0.
 - **Cliente envia intenções; servidor decide:** nenhum saldo, preço, captura ou posse vem do cliente. Servidor valida tipos, valores finitos (`finiteVector`), distância, dono, cooldown, estoque e capacidade. Rate limit: balde de `40` requisições com reposição de `20/s`.
 - **Snapshots não destrutivos:** atualizações de renda (`1 s`) atualizam textos via `valueRefreshers` sem destruir seleção de menu, ordem do `Backpack` ou posição das criaturas na base.
 - **Progressão autoritativa:** `ProfileData.Capture` soma XP de captura/descoberta em transação; `HunterProgression` calcula o rank, XP de captura por espécie/tamanho/Gold e pesquisa por espécie/variante; `ProfileData.Action` valida `RequiredHunterRank` na compra. `HuntACreature.server` aplica bônus ao ouro/treino e pesquisa apenas com criatura equipada, e envia evento `HunterRankUp` quando o rank sobe. `goldCarry` e `strengthCarry` preservam frações. `HunterRank` é atributo/leaderstat de apresentação, não entrada do cliente nem campo independente de save.
+- **Progresso apresentado:** `HunterProgression.Progress` também retorna o XP restante, sem transmitir o custo total como texto; `HunterRankPage` o formata e atualiza via `valueRefreshers`. `HUD` posiciona Settings num `ScreenGui` separado com `DeviceSafeInsets` e acompanha `GuiService.TopbarInset`.
 
 ## 4. Persistência e geração de save (`PersistenceConfig`)
 

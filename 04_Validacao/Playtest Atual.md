@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de referência: **977fbce**, lugar **102310424634629** (`[Testing] Hunt a Creature`, salvo na Roblox, não publicado). **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **8c0da86**; lugar **102310424634629** (`[Testing] Hunt a Creature`). Aplicação no Studio da indicação de XP restante e salvamento da rodada de navegação ainda pendentes de confirmação. **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -30,12 +30,12 @@ Build de referência: **977fbce**, lugar **102310424634629** (`[Testing] Hunt a 
 - [ ] **R01 · XP de captura:** primeira captura de Lumito Normal `1×` paga `100 XP` e leva ao rank 2; repetição `1×` paga `25 XP`; primeira variante Gold `1×` já descoberta paga `73 XP`. Tamanho maior aumenta apenas a parcela base; conferir o XP anunciado com o crédito real.
 - [ ] **R02 · Pesquisa da base:** Lumito Normal equipado paga `1 XP/10 s` no rank 1; Gold paga `2 XP/10 s`; o bônus global acrescenta `1 XP` por rank acima de 1 quando há criatura ativa. Bolsa e base vazia não geram pesquisa. Equipar/dessequipar não deve adiantar o ciclo.
 - [ ] **R03 · Bônus:** no rank 2, ouro da base e venda têm `+5%` com resíduos acumulados; treino tem `+3%` sem perder frações após reconexão. Nenhum rank barra acesso à ilha.
-- [ ] **R04 · Interface:** botão próprio de Rank na HUD abre/fecha a página; barra/percentual e próximo rank atualizam; não aparecem limiares, teto nem lista completa. Conferir benefício seguinte, missões `COMING SOON`, silhueta somente quando houver item real bloqueado, celebração de rank não bloqueante e leitura em PC/celular.
+- [ ] **R04 · Interface:** botão próprio de Rank na HUD abre/fecha a página; barra/percentual, XP restante exato e próximo rank atualizam; não aparecem custo total, teto nem lista completa. Conferir benefício seguinte, missões `COMING SOON`, silhueta somente quando houver item real bloqueado, celebração não bloqueante e leitura em PC/celular.
 - [ ] **R05 · Loja:** todos os itens atuais continuam compráveis no rank 1; para um futuro item com `RequiredHunterRank`, cliente informa requisito e servidor bloqueia a compra abaixo do rank. Validar também saldo, estoque, proximidade e cota.
 
 ## 5. Menus, loja, treino e preferências (`M01`–`M04`, `L01`–`L03`, `B01`–`B02`, `S01`)
 
-- [ ] **M01 · Seis menus (`MenuKit`):** incluir `Hunter Rank`; abrir/fechar uma janela por vez, botão `X` acessível, seleção e rolagem estáveis durante os ticks de renda de `1 s`.
+- [ ] **M01 · Seis menus (`MenuKit`):** incluir `Hunter Rank`; abrir/fechar uma janela por vez, botão `X` acessível, seleção e rolagem estáveis durante os ticks de renda de `1 s`. Index quadrado e Settings circular na topbar devem responder a clique/toque sem sobrepor controles nativos em PC/celular.
 - [ ] **M02 · Responsividade PC e celular:** layout lateral (`>= 740 px`) e empilhado (`< 740 px`), botões confortáveis ao toque e textos legíveis em inglês.
 - [ ] **L01 · Hunting Shop e cota individual:** duas contas veem a mesma rotação de `5 min`, mas a compra de uma não consome a cota da outra; cota persiste ao reconectar na mesma rotação.
 - [ ] **L02 · Ferramentas e `Backpack` nativo:** apenas itens com estoque `> 0` aparecem; isca atrai, armadilha desacelera (`35%`) em solo válido e poção atua na disputa; respawn não duplica `Tools`.
