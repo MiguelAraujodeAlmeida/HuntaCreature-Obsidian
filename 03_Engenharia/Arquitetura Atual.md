@@ -1,14 +1,14 @@
 # Arquitetura atual
 
-Referência: código enviado **8c0da86** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente. A aplicação ao Studio do novo XP restante está pendente de reconexão.
+Referência: código enviado **a5e62ab** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo anteriormente no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente. XP restante e boleio foram aplicados/compilados em Studio Edit; salvamento integral da rodada depende do desenvolvedor.
 
 ## 1. Mapa de responsabilidade
 
 | Pasta no repositório | Destino no Roblox Studio | Papel |
 |---|---|---|
-| `studio/shared` (10) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `AudioConfig`, `LumitoMotionConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
+| `studio/shared` (12) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `LassoChargeStyle`, `AudioConfig`, `LumitoMotionConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
 | `studio/server` (16) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
-| `studio/client` (28) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, menus (`MenuKit`, `*Page`), retratos e preferências locais |
+| `studio/client` (31) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, boleio do laço, menus (`MenuKit`, `*Page`), retratos e preferências locais |
 | `studio/HuntACreature.server.luau` | `ServerScriptService.HuntACreature` | Bootstrap do servidor, loops de tick e roteamento de eventos |
 | `studio/HuntACreature.client.luau` | `StarterPlayerScripts.HuntACreatureClient` | Bootstrap do cliente e recepção de snapshots |
 
@@ -17,7 +17,7 @@ Referência: código enviado **8c0da86** (`main`). Ajuste local `BaseChance = 0.
 | Catálogo, economia e tamanhos | `GameplayConfig`; `HunterProgression` concentra curva de XP, bônus e ritmo passivo |
 | Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + `ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews` |
 | IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
-| Laço, colisão e disputa | `CaptureConfig`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `CaptureService`, `CaptureController`, `CaptureHUD` |
+| Laço, colisão e disputa | `CaptureConfig`, `LassoChargeStyle`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `LassoChargePresentation`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
 | Mundo, treino e placas | `WorldPresentation`, `WorldStations`, `UpgradeBoards` |
@@ -34,6 +34,8 @@ Referência: código enviado **8c0da86** (`main`). Ajuste local `BaseChance = 0.
 - **Apresentação rígida (`LumitoAnimator`):** captura os `CFrame`s de repouso e aplica poses absolutas por grupos nomeados, compartilhadas entre a IA selvagem e `BaseRoamingService`. Cria `StepPuff` com atlas 2×2 (`rbxassetid://118477338697511`) e `RunSwoosh`; o asset-fonte versionado está em `art/vfx/lumito-run-puff-flipbook-v01.png`. Nenhum efeito altera `Root`, `Corpo`, autoridade do servidor ou tamanho do indivíduo.
 
 ## 3. Contratos de autoridade e rede
+
+- **Carga e boleio:** `CaptureController` inicia a apresentação local imediatamente; `CaptureService` valida `ChargeStart` e sinaliza `HACLassoCharging` + `HACLassoChargeStartedAt` no personagem para os demais clientes. Sinal limpo em arremesso, cancelamento, troca de laço, morte e timeout. `LassoChargePresentation` cria corda cosmética sem colisão, aplica pose aditiva em `AnimationConstraint`/`Motor6D` quando disponível e destrói os objetos ao encerrar. Nenhuma posição é enviada por quadro; `LassoAim` e o projétil autoritativo mantêm a trajetória original. Estilo ajustável por laço em `LassoChargeStyle`.
 
 - **Cliente envia intenções; servidor decide:** nenhum saldo, preço, captura ou posse vem do cliente. Servidor valida tipos, valores finitos (`finiteVector`), distância, dono, cooldown, estoque e capacidade. Rate limit: balde de `40` requisições com reposição de `20/s`.
 - **Snapshots não destrutivos:** atualizações de renda (`1 s`) atualizam textos via `valueRefreshers` sem destruir seleção de menu, ordem do `Backpack` ou posição das criaturas na base.

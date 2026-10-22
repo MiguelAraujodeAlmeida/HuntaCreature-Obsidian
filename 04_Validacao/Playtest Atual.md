@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **8c0da86**; lugar **102310424634629** (`[Testing] Hunt a Creature`). Aplicação no Studio da indicação de XP restante e salvamento da rodada de navegação ainda pendentes de confirmação. **Todos os itens abaixo aguardam validação humana.** O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **a5e62ab**; lugar **102310424634629** (`[Testing] Hunt a Creature`). XP restante, navegação e boleio foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -21,6 +21,7 @@ Build de código: **8c0da86**; lugar **102310424634629** (`[Testing] Hunt a Crea
 ## 3. Caça, laço e IA (`A01`–`A04`)
 
 - [ ] **A01 · Mira e arremesso reto:** tiro segue exatamente a direção escolhida sem arco; carga (`0%` a `100% MAX`) define alcance (`18` a `73 studs`); testar tiro livre para céu/chão/parede e trilha quente/retorno ciano.
+- [ ] **A01B · Boleio durante a carga:** em PC e celular, confirmar que braço/pulso preparam o arremesso com laço flexível inclinado que passa por cima e pela lateral, sem aro parado sobre a cabeça. Comparar carga parcial, aceleração até MAX e giro constante depois de MAX; conferir destaque visual/sonoro único, rastro curto e alvo visível. Testar andando e pulando, soltura para pontos diferentes, cancelamento, troca de ferramenta, morte, timeout e visão de um segundo jogador. Verificar que todos os efeitos somem e que a direção/alcance do disparo continuam exatos.
 - [ ] **A02 · Contorno contextual e colisão (`Corpo`):** contorno reflete distância, alinhamento e bloqueio; colisão contínua no novo Lumito v01 tem precisão natural sem capturar através de obstáculos.
 - [ ] **A03 · Disputa (`3,6 s`) e recompensa:** avaliar ritmo das fases (normal, resistência, abertura), uso da poção sem cancelar captura e cartão final de vitória (`2,35 s`) exibindo XP imediato e potencial de `ouro/s` na base.
 - [ ] **A04 · IA selvagem:** passeio, pausa, detecção visual, fuga em pânico (`5 s`) e cansaço (`7 s`) respeitam as bordas da ilha sem travar em obstáculos.

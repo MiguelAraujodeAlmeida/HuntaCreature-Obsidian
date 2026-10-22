@@ -37,3 +37,9 @@ Hunter Rank tem botão próprio na HUD, progresso percentual e celebração brev
 
 ## ADR-012 — Navegação principal ilustrada e Configurações na topbar (21/10/2026)
 Criaturas, Index e Hunter Rank compartilham a placa quadrada glossy e ícones próprios. Configurações é um controle circular auxiliar, pequeno e sem legenda permanente, na região da topbar desocupada pelo Roblox. A posição acompanha `GuiService.TopbarInset`, evitando deslocamentos fixos que colidam com controles nativos. Clique/foco/brilho continuam centralizados em `GlossyButton`.
+
+## ADR-013 — Boleio de preparação separado do disparo (22/10/2026)
+Segurar o arremesso faz o avatar preparar o laço com braço e pulso, corda flexível inclinada que passa pela região superior da cabeça e desce pela lateral. O laço não fica como aro estático acima do personagem. O ciclo acelera com a carga e segue estável em MAX; soltar sugere um chicote breve. `LassoChargePresentation` e `LassoChargeStyle` contêm apenas a apresentação, com início/fim replicados após validação do servidor; `LassoAim`, alcance e trajetória permanecem independentes. Ritmo e pose aguardam aprovação em playtest.
+
+## ADR-014 — Salvamento do lugar é ação do desenvolvedor (22/10/2026)
+O assistente pode editar scripts no Studio Edit via MCP, mas não aciona Save pelo acesso ao computador. Após aplicar, informa ao desenvolvedor que ele deve salvar o lugar e registra o estado como pendente até receber confirmação. Commit de código, compilação e lugar salvo são estados distintos.

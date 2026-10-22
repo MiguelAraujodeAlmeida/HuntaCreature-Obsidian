@@ -1,11 +1,12 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**8c0da86**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**a5e62ab**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
 - **Arremesso livre e reto:** dispara para qualquer ponto mirado (inclusive céu, chão ou parede), sem gravidade nem assistência de mira. A carga máxima (`100%`) atinge o alcance total; cargas menores reduzem o alcance proporcionalmente.
 - **Parâmetros do Training Lasso (`CaptureConfig`):** alcance mínimo `18` / máximo `73` studs, tempo máximo de carga `1,4 s`, velocidade de voo `100 studs/s`, retorno `145 studs/s`, cooldown `0,12 s`.
+- **Preparação visual (`LassoChargePresentation`):** enquanto o botão fica pressionado, o avatar ergue o braço e boleia o laço em plano inclinado, passando pela região da cabeça e descendo pela lateral. O movimento acelera até `100%` e permanece em ciclo depois disso. Soltar produz um gesto cosmético breve de chicote; cancelar recolhe o efeito. Isso não muda mira, alcance, trajetória ou locomoção. Outros jogadores veem a preparação confirmada pelo servidor.
 - **Elegibilidade e colisão (`LassoAim` / `LassoCollision`):** o cliente exibe contorno contextual por estado (distante, no alcance, alinhado, bloqueado por obstáculo, ocupado ou sem força mínima), mas o servidor revalida tudo. A colisão contínua varre o deslocamento relativo entre projétil e o volume elipsoidal de `Corpo` (`3,3 × 2,8 × 2,6 * scale`), bloqueando capturas através de paredes.
 - **Disputa autoritativa (`CaptureService`):** dono exclusivo e validação de força mínima no início e na entrega (`Lumito` exige `0`). Limite de `22 s`, ganho-base `0,18/s` na zona e perda `0,075/s` fora dela. Ciclo de `3,6 s` alterna fase normal, resistência (mais movimento, menos ganho) e abertura (menos movimento, mais ganho); meta desloca em passos limitados de `0,25` e força amplia a zona com retorno decrescente.
 - **Uso de Poção na disputa:** reduz a velocidade do alvo em `35%` (para `65%`) por `6 s`; alternar para a ferramenta da poção não cancela a captura.

@@ -202,6 +202,13 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 **Evidência/limite:** código incluído no mesmo commit `8c0da860df2821bda03ff441a1e6f925431d0b29` e SHA remoto confirmado; diff revisado. Na solicitação atual, `list_roblox_studios` retornou lista vazia duas vezes; a nova indicação de XP ainda não foi aplicada ao lugar nem compilada em Studio Edit. Play, publicação e teste humano não ocorreram. O ajuste local pré-existente de curva de tamanho e as pastas de arte do Lumito ficaram fora do commit.
 **Autoria/ambiente:** Codex, Windows, checkout Git e cofre; sem agentes auxiliares.
 
+## CTX-2026-10-22-01 — Boleio corrigido e salvamento reservado ao desenvolvedor · 22/10/2026
+
+**Pedido:** preparar o arremesso com movimento cinematográfico de braço e pulso, não com um aro fixo girando acima da cabeça; manter corda flexível, ciclo enquanto segura, soltura em chicote e precisão anterior. O desenvolvedor proibiu o assistente de salvar o lugar pelo acesso ao computador.
+**Resultado:** `LassoChargePresentation` foi separado de `LassoFeedback`; `LassoChargeStyle` define visual por laço. O Training Lasso inicia localmente e, após aceitação do servidor, a carga é vista pelos demais via atributos de início/fim no personagem. O braço direito/cotovelo/pulso e o tronco acompanham um pequeno boleio; a corda segmentada ondula em plano inclinado (`38°` inicial ajustável), movendo-se com a mão pela região superior e lateral. Entrada, destaque único em MAX, rastro curto, cancelamento e soltura cosmética têm transições. O servidor limpa o sinal em arremesso, cancelamento, troca, morte e timeout. Nenhum parâmetro de `LassoAim`, alcance, física ou locomoção foi modificado. A regra de salvamento humano foi registrada em `AGENTS.md`, [[03_Engenharia/Fluxo de Desenvolvimento]] e ADR-014.
+**Evidência/limites:** commits de código `6beb403` e `a5e62ab` enviados, SHA remoto final `a5e62ab8f1e03111557cc55c6ab9b6f53b1b87cb` confirmado. Cinco módulos aplicados e compilados por `loadstring` em Studio Edit; a revisão final de estilo/apresentação também compilou. Sem Play, emulação, teste de animação real ou publicação. **Salvamento integral do lugar ainda depende do desenvolvedor**, assim como playtest visual, PC/celular e dois jogadores. A curva local de tamanhos em `GameplayConfig.luau` e as duas pastas de arte não rastreadas foram preservadas fora dos commits.
+**Autoria/ambiente:** Codex, Windows, checkout Git e Roblox Studio MCP; sem agentes auxiliares.
+
 ## Proveniência do acervo anterior
 
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.

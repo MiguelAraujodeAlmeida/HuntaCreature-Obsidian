@@ -4,8 +4,8 @@ Cofre Obsidian e memória compartilhada do jogo Roblox. Contém **o contexto vig
 
 - Repositório de contexto: https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian
 - Ponto de partida: [[00_Inicio/Painel do Projeto]] e instruções operacionais em `AGENTS.md`.
-- Revisão de contexto: **CTX-2026-10-21-06** (histórico em [[00_Inicio/Historico de Contexto]]).
-- Código de referência: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`, commit **8c0da86**.
+- Revisão de contexto: **CTX-2026-10-22-01** (histórico em [[00_Inicio/Historico de Contexto]]).
+- Código de referência: https://github.com/MiguelAraujodeAlmeida/HuntACreature, branch `main`, commit **a5e62ab**.
 - Feedback mais recente do desenvolvedor prevalece; implementação técnica não equivale a aprovação de produto ou arte.
 
 ## Caminhos e uso em outra máquina

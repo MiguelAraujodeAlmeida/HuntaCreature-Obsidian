@@ -13,6 +13,7 @@ Política permanente do projeto. Toda IA, chat ou dispositivo deve segui-la; alt
 ## 2. Implementar uma fatia por vez
 
 - Trabalhar a partir do código no Git e aplicar no Studio Edit quando a tarefa envolver o jogo.
+- O desenvolvedor salva o lugar no Studio. O assistente não aciona Save por controle do computador; após aplicar em Edit, lembra o desenvolvedor de salvar e registra confirmação ou pendência. Commit de código e compilação não comprovam salvamento integral.
 - Manter servidor autoritativo, configuração isolada, componentes compartilhados (`MenuTheme`/`MenuKit`) e textos de UI em inglês.
 - Distinguir claramente quatro estados: **proposta**, **implementado**, **verificado tecnicamente** (compilação/inspeção em Edit) e **aprovado pelo desenvolvedor** (após playtest/revisão visual).
 

@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-21-06",
-  "updated": "2026-10-21",
-  "code_reference": "8c0da86",
+  "context_revision": "CTX-2026-10-22-01",
+  "updated": "2026-10-22",
+  "code_reference": "a5e62ab",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
   "branch": "main",
   "entrypoints": [
@@ -49,14 +49,14 @@
     "assets/lumito-v01-studio-2026-10-20.jpg"
   ],
   "sha256": {
-    "README.md": "f828cd889310acc86cfb75e9d23a9a80f823babb4b803391741ce948325702eb",
-    "AGENTS.md": "6a0a7497c95569208c60b40b3fabb9789698c3f53a4a4928dbeb05a282335bb8",
+    "README.md": "d48680c9b45a689379826015eb9d6463f7343fc2700a5141dce67ea70dd8a6e0",
+    "AGENTS.md": "f44fefbf8da70791c6bec1bb3b108df91861c4af17b59c0f7acbeefe206e0c70",
     "00_Inicio/Painel do Projeto.md": "82db03868aefffb060c3a618a664071c0b09153098bdd6055b56c69544851ce1",
-    "00_Inicio/Estado Atual.md": "2c55383b627597f830562b30579ac65021d1039f952563d38d6bbbc779269aec",
+    "00_Inicio/Estado Atual.md": "27fe0afce7f48490fd7ce013a3e0be06007508a36713361ec08f110709510f4e",
     "01_Produto/Visao e Escopo.md": "6933e6f866e1853179cdf785ea34a28972244ccf5a72d7371077ea1a6463ddc5",
-    "02_Planejamento/Backlog.md": "eb5776e347f410b219d84a99f88879cfb3d888cbeefaa5a0bae841ef132415d5",
-    "03_Engenharia/Fluxo de Desenvolvimento.md": "fdee4ecb3984e385d3f42566a57e62d87e2f784abaab5d9d8776d458de235396",
-    "00_Inicio/Historico de Contexto.md": "63ff7511dda6739b2271a0c365202225fdbf428dffe1e72a2c4d554a1bdc4d98",
+    "02_Planejamento/Backlog.md": "e89e155aca24e6590686179047d7df2826c710e0d9cd514213eb36f819d84a0c",
+    "03_Engenharia/Fluxo de Desenvolvimento.md": "7dbcbf2e6031a0a1a3436e995e282e2fbd898057cd6b6f5449609082b148b8d9",
+    "00_Inicio/Historico de Contexto.md": "93ec5eae67acdb291426c37c8b1d37c0ad0b7cdcf8e277f080fbacbaa4d859d2",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "bfcbf85e79cecee4e8492404d22218611b58856d017d89f921fd8aea59d487ac",
     "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",
@@ -65,12 +65,12 @@
     "assets/referencia-settings.png": "0ac699f72172057f0b250ccb4daeb91b92b9b764d8c0ff6571276fd4df79e4ec",
     "assets/lumito-prototipo-2026-10-20.png": "4094ec65c34ac0462f95b9ae34d2f0615e98bc1494e938f029caafb4bf5013c6",
     "assets/lumito-v01-studio-2026-10-20.jpg": "9234c0defb2c230fd6c2e280c9a6cbc1af9b15e2e79c41d32422a9a9fc004f23",
-    "01_Produto/Sistemas Atuais.md": "c2b4348c1200a1271921c9b31c345f392a542b0935a2f24fb2252b6ef37f5028",
-    "01_Produto/Design UI UX.md": "8b5932229d625083d900056ed4bf2b93f8d567b38ae099400841ed7f1076380b",
+    "01_Produto/Sistemas Atuais.md": "4eca368e6c2d9e34ee30599ce7c7e3a1a511380af3faa49300a63c89f83f2372",
+    "01_Produto/Design UI UX.md": "18a4f368f7f5185a9c287cf3181f94c6feeafcf92cf919a125509b30c3e83568",
     "06_Referencias/Referencias Visuais.md": "08f702fa0d2634e8a73b885e61ee9c099372d1801d6466a3253faba92c5b0e52",
     "06_Referencias/Estudo visual Steal an Egg.md": "3b24a0607364d4fbe7eedc58f1b28a6bfd57a8a3e49432bc3f81a38c8c960fbe",
-    "03_Engenharia/Arquitetura Atual.md": "7a067578483ecd2d4547d8cbe89b9a2f3fe8428587f7df439a17479e2a9e0a65",
-    "03_Engenharia/Decisoes Vigentes.md": "37bcf2dcafa1a7af66666ab6c1c4c97bff7043cc65dfc63013d6c5e8decacfcb",
-    "04_Validacao/Playtest Atual.md": "66a3a2e61b3d25f3cdd813a9532aea4435fb8dfab19f9ca029eac5d9bf17a5d9"
+    "03_Engenharia/Arquitetura Atual.md": "23439085be1a4fa58136981f1464f76cf378266c5ac69813507764c9b13fd82c",
+    "03_Engenharia/Decisoes Vigentes.md": "80745304366ee1ee40d1476a6970a9db6825a18008553a7aba344a690571d78f",
+    "04_Validacao/Playtest Atual.md": "e999f7689179459b5870b9d25c8e9f5ddd7e9d4bcd3ac31ff6dd658a5abfe985"
   }
 }

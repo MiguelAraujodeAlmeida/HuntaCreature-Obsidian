@@ -14,7 +14,7 @@ Banco de contexto do **Hunt A Creature** (política permanente definida pelo des
 ## 2. Regras de execução no projeto
 
 - **Proibições sem pedido explícito:** não iniciar Play, emulação, benchmarks, QA extenso nem subagentes. Verificações estáticas leves em modo Edit são permitidas.
-- **Código vs. Studio:** Git (`main`) é a referência operacional dos scripts versionados; o Studio aplica mudanças e salva o lugar (`.rbxl` / nuvem). Não fazer varredura integral Studio ↔ disco por rotina — investigar apenas divergência concreta.
+- **Código vs. Studio:** Git (`main`) é a referência operacional dos scripts versionados; o Studio aplica mudanças, e **somente o desenvolvedor aciona o salvamento do lugar** (`.rbxl` / nuvem). Não usar acesso ao computador para salvar por conta própria. Se não houver confirmação humana, registrar o save como pendente. Não fazer varredura integral Studio ↔ disco por rotina — investigar apenas divergência concreta.
 
 ## 3. Manutenção obrigatória ao concluir uma entrega
 
