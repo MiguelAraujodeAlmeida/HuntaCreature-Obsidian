@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **ab96be0**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O fechamento de menus por saída da zona foi aplicado/compilado em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **d15f63a**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O polimento da Chicken e o fechamento de menus por saída da zona foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -74,6 +74,7 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 
 - [ ] Confirmar Chicken comum em `Ponto4` após iniciar e em cada respawn, com os outros três pontos ainda ocupados por Lumito; Normal e Gold têm cor/silhueta próprias.
 - [ ] Observar frente, perfil e três quartos: pés tocam o chão sem deslizar, cabeça bica e inclina, asas e cauda acompanham; pausas e gestos variam entre indivíduos. Conferir passeio, alerta, fuga, cansaço e resistência ao laço.
+- [ ] Comparar passeio (`2,8 studs/s`), fuga (`9 studs/s`) e base (`1,65 studs/s`): arrancada/frenagem e curvas suaves, passada acompanhando deslocamento, salto atrapalhado e susto ocasionais sem tremor. Puff igual ao Lumito alterna junto aos pés só quando caminha/corre; nenhuma fumaça parada ou na captura.
 - [ ] Mirar e capturar a Chicken; bolsa cheia e força mínima, vitória, XP, nome e retrato corretos. Conferir Index antes/depois, silhuetas, favoritos, venda protegida e equipar/desequipar.
 - [ ] Na base, verificar passeio, saudação ocasional, renda provisória de 1 ouro/s em 1× Normal, ocultar criaturas sem interromper renda e reconectar sem perder o indivíduo.
 - [ ] Testar tamanhos 1× e grandes, Gold, PC/celular, dois jogadores, som desligado e regressão do Lumito. Anotar clips/prints de animações estranhas para polimento.

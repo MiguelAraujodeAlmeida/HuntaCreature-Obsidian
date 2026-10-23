@@ -1,13 +1,13 @@
 # Arquitetura atual
 
-Referência operacional: `main` do repositório de código; integração Chicken aplicada em Studio Edit a partir de `ab96be0`. A curva de tamanho `BaseChance = 0.7, Curve = 12` também está nesse commit. A aplicação mais recente ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
+Referência operacional: `main` do repositório de código; integração e polimento Chicken aplicados em Studio Edit a partir de `d15f63a`. A curva de tamanho `BaseChance = 0.7, Curve = 12` permanece vigente. A aplicação mais recente ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
 
 ## 1. Mapa de responsabilidade
 
 | Pasta no repositório | Destino no Roblox Studio | Papel |
 |---|---|---|
 | `studio/shared` (12) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `LassoChargeStyle`, `AudioConfig`, `LumitoMotionConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
-| `studio/server` (18) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
+| `studio/server` (19) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
 | `studio/client` (31) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, boleio do laço, menus (`MenuKit`, `*Page`), retratos e preferências locais |
 | `studio/HuntACreature.server.luau` | `ServerScriptService.HuntACreature` | Bootstrap do servidor, loops de tick e roteamento de eventos |
 | `studio/HuntACreature.client.luau` | `StarterPlayerScripts.HuntACreatureClient` | Bootstrap do cliente e recepção de snapshots |
@@ -16,7 +16,7 @@ Referência operacional: `main` do repositório de código; integração Chicken
 |---|---|
 | Catálogo, economia e tamanhos | `GameplayConfig`; `HunterProgression` concentra curva de XP, bônus e ritmo passivo |
 | Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + templates `HACLumitoTemplate`/`HACChickenTemplate` e `HACCreaturePreviews` |
-| IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `ChickenAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
+| IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `ChickenAnimator`, `CreatureFootPuff`, `LumitoMotionConfig`, `BaseRoamingService` |
 | Laço, colisão e disputa | `CaptureConfig`, `LassoChargeStyle`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `LassoChargePresentation`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
@@ -36,7 +36,7 @@ Referência operacional: `main` do repositório de código; integração Chicken
 ## Chicken Base v01
 
 - `HACChickenTemplate` em ReplicatedStorage foi importado de `art/chicken-base-v01/Chicken_Base_v01.fbx` (25 MeshParts). O importador ampliou em 100×; o template foi normalizado para 1 unidade Blender = 1 stud, frente -Z e raiz 1,35 studs acima do chão. O procedimento reprodutível está em `studio/tools/PrepareChickenTemplate.luau` e `art/chicken-base-v01/ROBLOX_IMPORT.md`. O lugar precisa de Save humano para persistir os MeshIds publicados.
-- `CreatureFactory` escolhe template/paleta por espécie, cria `Corpo` da Chicken de 1,65 × 2 × 1,45 studs e retratos Normal/Gold. `Ponto4` é reserva estável no catálogo; `CreatureProfiles` fornece comportamento terrestre distinto e `ChickenAnimator` move grupos anatômicos sem deslocar `Root`/colisão. `LumitoBehavior` reutiliza só a navegação e seleciona o animador pelo perfil. A base seleciona o animador por espécie.
+- `CreatureFactory` escolhe template/paleta por espécie, cria `Corpo` da Chicken de 1,65 × 2 × 1,45 studs e retratos Normal/Gold. `Ponto4` é reserva estável no catálogo. `CreatureProfiles` fornece velocidade, aceleração, frenagem e curva próprias da Chicken; `ChickenAnimator` move grupos anatômicos sem deslocar `Root`/colisão e emite `CreatureFootPuff` nos contatos dos pés. `LumitoBehavior` reutiliza a navegação e seleciona o animador pelo perfil; a base seleciona animador e velocidade por espécie.
 - O perfil econômico Chicken herda provisoriamente valores do Lumito via `C.Species.Chicken` no `GameplayConfig`; IDs existentes e geração de save permanecem. Sem Play automático: poses isoladas e módulos foram verificados em Edit, transições e visual real aguardam o desenvolvedor.
 
 ## 3. Contratos de autoridade e rede
@@ -56,4 +56,4 @@ Referência operacional: `main` do repositório de código; integração Chicken
 
 - **Treino AFK:** `HuntACreature.server` mantém ciclo e ganho autoritativos, publicando `Treinando`, `TrainingStartedAt`, `TrainingPulse` e `TrainingGain`. `WorldPresentation` fixa/restaura avatar; `TrainingDummies` define modelos por nível sem tocar na economia; `TrainingPresentation` cria a apresentação local, limpa poses/corda ao terminar e limita detalhe a 110 studs.
 
-- **Zonas de entrada:** `WorldStations` constrói os indicadores; `HuntACreature.server` testa entrada a cada 0,15 s e guarda presença por jogador até saída. `WorldPresentation` cria a zona da loja após criar o balcão. A lógica de compra/venda e validações existentes permanecem no servidor. `WorldStations.Prepare` move treino, remove Totem e cria identificação da base antes da construção dos dummies.
+- **Zonas de entrada:** `WorldStations` constrói os indicadores; `HuntACreature.server` testa entrada a cada 0,15 s e guarda presença por jogador até saída. `WorldPresentation` cria a zona da loja após criar o balcão. `OpenZoneCollection` marca a origem da janela no cliente; `CloseZoneCollection` só fecha aquela página se ainda tiver origem na zona. Compra/venda permanecem autoritativas. `WorldStations.Prepare` move treino, remove Totem e cria identificação da base antes dos dummies.

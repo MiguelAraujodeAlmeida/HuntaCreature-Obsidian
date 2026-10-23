@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**ab96be0**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**d15f63a**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -16,9 +16,9 @@ Regras e parâmetros de gameplay implementados no código de referência (**ab96
 
 - **Espécies atuais:** Lumito e Chicken comum. Chicken ocupa `Ponto4` na ilha de teste, preservando quatro spawns totais; economia, força mínima, XP e dificuldade usam valores provisórios herdados do Lumito. Atribuição definitiva de ilha e balanceamento permanecem pendentes.
 - **Lumito:** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha e `1,625 * scale` na base.
-- **Chicken (`ChickenAnimator`):** passos curtos, bicadas e inclinação de cabeça com bater de asa em repouso; fuga agitada, cansaço, resistência ao laço e reação ocasional ao jogador na base. Movimentos são poses absolutas sobre 25 MeshParts, sem mover a raiz autoritativa. A qualidade visual ainda depende de Play.
+- **Chicken (`ChickenAnimator`):** passeio `2,8 studs/s`, fuga `9 studs/s`, aceleração/frenagem e curvas suavizadas apenas em seu perfil; passada acompanha o deslocamento efetivo. Bicadas, inclinação intrigada, salto atrapalhado, susto, asas e cauda dão variedade. Na base passeia a `1,65 studs/s`. Poses absolutas sobre 25 MeshParts não deslocam a raiz autoritativa. A qualidade visual ainda depende de Play humano.
 - **Atuação visual (`LumitoAnimator`):** os conjuntos nomeados de cabeça, corpo, orelhas, braços, cauda e pés usam poses absolutas sobre o `Root`; passada acompanha velocidade e escala, e os estados AtBase/Wandering/Panicking/Tired/Capturing alteram postura e reação. Inclui piscada, gestos ociosos e atenção curta a jogadores próximos na base, sem alterar navegação, colisão ou regras de captura.
-- **VFX de movimento:** contato alternado dos pés dispara puff cartunesco ciano/branco em flipbook 2×2; corrida/pânico habilita rastro ciano de `0,13 s`. São efeitos de apresentação discretos, sem emissão contínua.
+- **VFX de movimento:** `CreatureFootPuff` fornece textura e flipbook 2×2 compartilhados por Lumito e Chicken. A Chicken emite alternadamente junto aos pés apenas em passos terrestres. Lumito mantém rastro ciano de `0,13 s` em corrida/pânico. Sem emissão contínua.
 - **Atributos por indivíduo:** `id`, `species`, `rarity`, `size`, `mutations`, `location` (`bag` ou `base`) e `favorite`.
 - **Escala contínua (`1×` a `5×`, duas casas):** atributo numérico oculto na UI; exemplares existentes preservam seu tamanho.
   - Curva vigente no Git e Studio Edit: `BaseChance = 0.7` para `1×`; nos `30%` restantes, `1 + 4 × u^12`. O histórico anterior fica no Git.
@@ -83,4 +83,4 @@ Tempos aproximados usam renda total de referência de 1, 3 e 6 ouro/s para os n�
 
 - Treino, Hunting Shop e Creature Market têm zonas circulares de entrada de raio `4,5 studs`, sem rótulo flutuante sobre a área. A entrada dispara a ação uma vez; sair rearma. Treino é restrito ao dono da base. Botão TRAIN saiu da placa de upgrade.
 - Estação/manequim ficam ao lado e claramente fora da plataforma da base, sobre anexo de piso provisório; o hub definitivo poderá reposicioná-los. Totem foi removido. Base vazia não mostra “FREE BASE”; base ocupada mostra nome e foto do dono bem acima das criaturas, no centro.
-- Loja e mercado fecham a respectiva janela ao sair da zona. Fechar pelo `X` enquanto permanece dentro não reabre a janela até sair e entrar novamente; a saída não fecha outras páginas. Interação real ainda depende de playtest humano.
+- Loja e mercado usam eventos próprios de abertura/fechamento da zona; sair fecha só a janela aberta pela própria área. Fechar pelo `X` dentro dela não reabre até sair e entrar novamente; a saída não fecha páginas abertas por outro caminho. O cliente da sessão anterior não tinha o receptor de fechamento; correção aplicada em Edit, pendente de playtest humano.

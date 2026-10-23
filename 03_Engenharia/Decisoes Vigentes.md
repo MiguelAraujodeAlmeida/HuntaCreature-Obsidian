@@ -63,3 +63,7 @@ A skill hac-creature-integrator cadastra espécie nova por padrão, pede raridad
 ## ADR-020 — Chicken como segunda espécie de teste (23/10/2026)
 
 A primeira integração da skill usa `Chicken_Base_v01` como espécie **Chicken**, raridade Common, no ponto fixo `Ponto4` da ilha existente. Herda temporariamente os números do Lumito sem mudar economia global. Template MeshPart, perfil de navegação e animador próprio ficam separados; preservar o modelo aprovado, o Lumito e os saves. Bicadas, inclinação curiosa, fuga atrapalhada e movimento de asas são direção de atuação, sujeita a playtest humano. O lugar importado depende de Save manual pelo desenvolvedor.
+
+## ADR-021 — Passada e puff de contato em criaturas terrestres (23/10/2026)
+
+Criaturas terrestres que caminham ou correm devem ter frequência de passos proporcional ao deslocamento real e à escala, com transições de velocidade legíveis. O puff compartilhado do Lumito aparece somente no contato dos pés com o solo; posição e intensidade variam conforme a anatomia. Criaturas flutuantes não emitem fumaça de passada. Cada espécie mantém perfil de velocidade e atuação próprios, sujeito a aprovação visual humana.

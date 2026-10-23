@@ -316,3 +316,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: FBX importado e normalizado em `HACChickenTemplate` (25 MeshParts), Chicken no catálogo, `Ponto4` reservado, animador próprio com bicadas/inclinação/asas, comportamento terrestre, base, captura, retratos Normal/Gold, renda/venda/XP provisórios herdados do Lumito. Procedimento de reconstrução versionado. Curva local de tamanhos previamente presente foi reconciliada no Git sem alterar sua regra.
 - Evidência: módulos carregaram em Studio Edit; fábrica produziu 25 meshes e retratos Chicken Normal/Gold; poses isoladas executaram em cinco estados. Código `ab96be0` enviado ao GitHub. Sem Play, Save ou aprovação visual; verificar o checklist EXP-01.
 - Autoria/ambiente: Codex, Windows, Studio MCP e importação pontual do FBX pela interface; sem subagentes. O desenvolvedor salva o lugar manualmente.
+
+## CTX-2026-10-23-14 — polimento da Chicken e fechamento das zonas
+
+- Pedido: reduzir movimento rápido/travado da Chicken, acrescentar puff de passos igual ao Lumito, tornar atuação mais viva e corrigir janela que não fecha ao sair da área.
+- Resultado: Chicken com velocidade menor, aceleração/frenagem/curva por perfil, passada ligada ao deslocamento, susto e gesto atrapalhado; puff 2×2 compartilhado em contatos alternados. Skill de integração recebeu regra para terrestres corredores. Loja/mercado receberam evento de abertura específico da zona e fechamento condicionado à origem da janela.
+- Causa verificada da janela: servidor em execução emitia `CloseZoneCollection`, mas o `HuntACreatureClient` dessa sessão não possuía receptor. Fontes reaplicados em Studio Edit; dez scripts compilaram com `loadstring`, módulos de animação/navegação carregaram e o emitter isolado mostrou textura/flipbook corretos. `quick_validate.py` da skill passou. Código `d15f63a` enviado, SHA remoto confirmado.
+- Limites: sem Play automático, teste visual, aprovação humana ou Save do lugar. Desenvolvedor deve testar a sensação de movimento e a saída de loja/mercado em PC/celular e salvar manualmente. Autoria/ambiente: Codex, Windows, Studio MCP e Git; sem agentes auxiliares.
