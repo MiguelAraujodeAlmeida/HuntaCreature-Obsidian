@@ -54,3 +54,10 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 - [ ] Comprar Base, Training, Efficiency e Speed; conferir custo, saldo, próximo benefício e resposta visual.
 - [ ] Tentar compras sem ouro, no nível máximo e longe de cada placa; compra da bolsa pelo menu deve funcionar sem proximidade.
 - [ ] Verificar captura com bolsa cheia, equipar/desequipar e progresso antigo após reconectar. Medir tempos dos primeiros níveis com 1–6 ouro/s.
+
+## Treino AFK evolutivo (TRAIN-01)
+
+- [ ] Em quatro níveis, comparar silhueta, cor, peças, reação e estação; subir eficiência separadamente e verificar acessórios.
+- [ ] Assistir a vários minutos de ciclos de 2 s; conferir gesto do avatar, corda, impacto, recuperação e variação sem efeitos cansativos.
+- [ ] Confirmar ganho real, `+Strength` e som no pagamento, sem pagamentos extras nem perda de frações.
+- [ ] Testar dois jogadores, PC/celular, saída, pulo, morte, respawn e troca de manequim durante treino; poses/corda desaparecem.

@@ -67,3 +67,7 @@ Aplica-se a `Creatures`, `Creature Market`, `Creature Index`, `Hunter Rank`, `Hu
 | `Studs` / `Wood` / `Tiles` (amostras de mundo) | `133050717017276` / `97810845356536` / `103826263412719` |
 
 Paleta RGB UI/Menu: `Gold` `255,203,20` · `Cyan` `12,211,255` · `Purple` `211,108,255` · `Green` `59,246,29` · `Red` `255,72,81` · `Ink` `3,12,40` · `MenuBody` `28,35,56` · `MenuSurface` `43,56,78` · `MenuMuted` `178,203,224`.
+
+## Treino AFK
+
+O manequim deve evoluir em silhueta, material e personalidade, seguindo a oficina de caçador: espantalho, madeira articulada, guarda blindado e autômato. O ciclo automático deve mostrar preparação, arremesso, resistência cômica, impacto e recuperação, com variações discretas e `+Strength` apenas após crédito real. A cena precisa continuar legível após minutos de repetição; brilho e som são acentos, sem cobrir o alvo. Eficiência acrescenta equipamento próprio à estação sem multiplicar combinações de modelos.

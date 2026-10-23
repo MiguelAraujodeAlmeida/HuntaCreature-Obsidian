@@ -20,7 +20,7 @@ Referência: código enviado **a5e62ab** (`main`). Ajuste local `BaseChance = 0.
 | Laço, colisão e disputa | `CaptureConfig`, `LassoChargeStyle`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `LassoChargePresentation`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
-| Mundo, treino e placas | `WorldPresentation`, `WorldStations`, `UpgradeBoards` |
+| Mundo, treino e placas | `WorldPresentation`, `TrainingDummies`, `TrainingPresentation`, `WorldStations`, `UpgradeBoards` |
 | HUD, menus e áudio | `HUD`, `HunterRankHUD`, `CollectionUI`, `HunterRankPage`, `MenuKit`, `GlossyButton`, `RewardPresentation`, `LocalPreferences`, `AudioFeedback` |
 
 *Legado inativo:* `BuildWorld.luau`, `studio/archive` e `UpgradePage.luau` (sem rota ativa) são históricos; não executá-los nem reativá-los. `QuickSlot.luau` apenas reserva espaço invisível para a hotbar nativa.
@@ -47,3 +47,5 @@ Referência: código enviado **a5e62ab** (`main`). Ajuste local `BaseChance = 0.
 - **Schema `1`** em uma nova geração limpa; lease de sessão de `180 s`, margem de `45 s` e autosave a cada `45 s`. Falha de leitura bloqueia sobreescrita para nunca zerar perfil existente.
 - **Geração fixa atual:** `20261021_hunter_rank_01` (DataStore Studio: `HAC_Profiles_Studio_20261021_hunter_rank_01`; Publicado: `HAC_Profiles_20261021_hunter_rank_01` quando a versão for publicada). As gerações anteriores continuam intactas, sem exclusão física.
 - `Workspace.HACStudioMemoryMode = true` usa memória volátil apenas no Studio; testes de persistência real exigem `nil`/`false`.
+
+- **Treino AFK:** `HuntACreature.server` mantém ciclo e ganho autoritativos, publicando `Treinando`, `TrainingStartedAt`, `TrainingPulse` e `TrainingGain`. `WorldPresentation` fixa/restaura avatar; `TrainingDummies` define modelos por nível sem tocar na economia; `TrainingPresentation` cria a apresentação local, limpa poses/corda ao terminar e limita detalhe a 110 studs.

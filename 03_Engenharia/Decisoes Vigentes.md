@@ -46,3 +46,6 @@ O assistente pode editar scripts no Studio Edit via MCP, mas não aciona Save pe
 
 ## ADR-015 — Distribuição dos upgrades e curva de ouro (23/10/2026)
 A placa Base compra somente expansão da base. A bolsa cresce no menu Creatures; treino e eficiência ficam na placa do manequim; velocidade tem placa própria até o rework. IDs de perfil não mudam. A curva jogável usa apenas níveis sustentados pelo conteúdo atual; escalas até bilhões são projeção condicionada a novas espécies e ferramentas. Saldo, nível e proximidade de placas físicas são validados no servidor.
+
+## ADR-016 — Treino AFK evolutivo (23/10/2026)
+O treino permanece totalmente automático com pagamento de força pelo servidor a cada 2 s. Os quatro níveis atuais têm modelos de manequim distintos; eficiência altera componentes da estação de forma independente. Construção visual, animação cliente e economia são módulos separados. Níveis futuros podem adicionar novo modelo e custo quando houver renda correspondente; esta rodada não cria níveis nem altera ganho/custo.

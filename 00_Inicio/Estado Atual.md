@@ -1,12 +1,16 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-23-01** · 23/10/2026.
+Revisão de contexto **CTX-2026-10-23-02** · 23/10/2026.
 
 ## Entrega vigente do jogo
 
-- **Código enviado:** commit **7c9e9d8** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado).
+- **Código enviado:** commit **da8ac18** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado).
 - **Lugar de teste:** **[Testing] Hunt a Creature**, placeId **102310424634629**. A rodada de Index/Settings/XP restante e os cinco módulos do boleio do laço estão aplicados e compilados em Studio Edit. **Salvamento integral pendente de confirmação pelo desenvolvedor; o assistente não aciona Save.**
 - **Não publicado:** servidores públicos continuam na versão anterior; publicação exige pedido explícito.
+
+### Treino AFK evolutivo — 23/10/2026
+
+`TrainingDummies` constrói quatro silhuetas de oficina por nível: Hay Scout, Wood Ranger, Iron Guard e Clockwork Champion. Melhorias de eficiência acrescentam equipamento à estação. `TrainingPresentation` apresenta o ciclo localmente para jogadores próximos, com boleio, corda, reação do manequim e +Strength no pagamento. `HuntACreature.server` continua autoritativo para 2 s e ganho; sinaliza início e pagamento por atributos. Cinco fontes aplicados/compilados em Studio Edit; construção dos quatro níveis verificada em árvore temporária. Sem Play, parecer visual ou save humano.
 
 ### Economia e upgrades — 23/10/2026
 
@@ -39,4 +43,4 @@ Curva inicial de ouro revisada no código: Base 3→4→5→6, Bolsa 3→5→9�
 3. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
 4. Executar [[04_Validacao/Playtest Atual]] em PC e celular, incluindo boleio parcial/MAX, soltura/cancelamento, troca de ferramenta, morte e dois jogadores.
 
-Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `7c9e9d8` está no GitHub; o lugar de teste recebeu os scripts em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
+Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `da8ac18` está no GitHub; o lugar de teste recebeu os scripts em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.

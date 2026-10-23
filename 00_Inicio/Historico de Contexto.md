@@ -232,3 +232,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: custos e capacidades jogáveis revisados; projeção futura condicionada a novo conteúdo. Base, velocidade, treino e bolsa receberam pontos de compra distintos, com validação de servidor.
 - Evidência: quatro scripts compilados em Studio Edit; atributos das três placas conferidos após atualização. Sem Play pelo assistente, sem aprovação de balanceamento.
 - Estado: commit de código 7c9e9d8; save humano e playtest pendentes. Alteração preexistente na curva de tamanhos e pastas de arte locais preservadas, sem incluí-las no commit de código.
+
+## CTX-2026-10-23-02 — treino AFK evolutivo
+
+- Solicitação: treinar automaticamente com cena mais viva e quatro manequins de oficina visualmente distintos, preparando futuros níveis sem liberá-los. Autoria: Codex, Windows local; lugar de teste 102310424634629.
+- Resultado: `TrainingDummies`, `TrainingPresentation`, atualização de `WorldPresentation` e atributos de ciclo/pagamento no servidor. Ganho e custo atuais preservados.
+- Evidência: cinco scripts compilados/aplicados em Studio Edit; construção dos quatro níveis verificada sem Play. Código `da8ac180aa9f9414ef9453f4495ce2e2ed807100` enviado ao GitHub.
+- Pendências: teste visual/funcional humano, salvamento do lugar pelo desenvolvedor e expansão econômica/visual futura. Alterações locais de tamanho/arte preservadas. Sem publicação.
