@@ -288,3 +288,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: art/pug-base-v01 com Blender, FBX, script de construção e pranchas; quadrúpede com pivôs, ColorRole e FootSide em pares diagonais. Nariz encaixado e orelhas baixadas após revisão visual.
 - Evidência: construção/exportação/renderização via Blender MCP, inspeção de silhuetas e escala com avatar de 5,2 studs. Commit ac6f25f confirmado no remoto.
 - Limites: arte estática para avaliação humana, sem rig animado ou integração no Studio. Cena da galinha preservada; alterações locais anteriores preservadas. Autoria: Codex, Windows, Blender MCP, sem subagentes.
+
+## CTX-2026-10-23-10 — Lumito ornamentado conceitual
+
+- Pedido: modelar a prancha ornamentada anexada usando hac-creature-modeler.
+- Resultado: art/lumito-ornate-v01 com Blender/FBX/build.py, 12 vistas e escala. Armadura, cristais, arco dourado, expressão assimétrica e orelha dobrada. Revisão corrigiu encaixes de pescoço/pernas e espessura dos cristais laterais.
+- Evidência: construção/exportação e renders via Blender MCP; inspeção visual da prancha e escala. Commit f728f3c confirmado no remoto.
+- Limites: interpretação de arte para aprovação, sem animação/VFX dinâmico ou integração no Studio; Lumito vigente preservado. Autoria: Codex, Windows, sem subagentes.
