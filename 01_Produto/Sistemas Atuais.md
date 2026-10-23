@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**a6b138b**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**37a01c9**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -82,4 +82,4 @@ Tempos aproximados usam renda total de referência de 1, 3 e 6 ouro/s para os n�
 
 - Treino, Hunting Shop e Creature Market têm zonas circulares de entrada de raio `4,5 studs`, sem rótulo flutuante sobre a área. A entrada dispara a ação uma vez; sair rearma. Treino é restrito ao dono da base. Botão TRAIN saiu da placa de upgrade.
 - Estação/manequim ficam ao lado e claramente fora da plataforma da base, sobre anexo de piso provisório; o hub definitivo poderá reposicioná-los. Totem foi removido. Base vazia não mostra “FREE BASE”; base ocupada mostra nome e foto do dono bem acima das criaturas, no centro.
-- Menus fechados dentro de uma zona só reabrem após sair e entrar. Interação real ainda depende de playtest humano.
+- Loja e mercado fecham a respectiva janela ao sair da zona. Fechar pelo `X` enquanto permanece dentro não reabre a janela até sair e entrar novamente; a saída não fecha outras páginas. Interação real ainda depende de playtest humano.

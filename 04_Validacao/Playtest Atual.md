@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **a6b138b**; lugar **102310424634629** (`[Testing] Hunt a Creature`). Correções de zonas, posição da estação e marcador do dono foram aplicadas/compiladas em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **37a01c9**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O fechamento de menus por saída da zona foi aplicado/compilado em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -65,7 +65,7 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 ## Zonas de interação (INTERACT-01)
 
 - [ ] Entrar nas zonas de treino, loja e venda por direções diferentes; confirmar raio amplo (`4,5 studs`) e disparo único sem tecla ou prompt nativo.
-- [ ] Fechar loja/mercado dentro da área; não reabrir até sair e retornar. Conferir PC/celular, dois jogadores e renascimento dentro/próximo da zona.
+- [ ] Loja e mercado abrem ao entrar e fecham automaticamente ao sair, inclusive ao morrer ou sair durante interação. Fechar pelo `X` dentro da área não reabre até sair e retornar. Abrir outra página e depois sair da área não deve fechá-la. Conferir PC/celular e dois jogadores.
 - [ ] Treino na própria base inicia pela zona; entrar na estação de outra base não inicia; sair pelo controle de treino restaura movimento. Confirmar que nenhum texto flutua acima ou fora da área.
 - [ ] Placa de treino não tem botão TRAIN; melhorias continuam clicáveis. Manequim/estação estão claramente ao lado da base, sobre piso próprio, sem cortar borda do hub.
 - [ ] Base vazia sem nome/placa; ocupada com retrato e nome central acima das criaturas, sem sobreposição. Sair/desconectar limpa identificação, nova posse troca retrato.

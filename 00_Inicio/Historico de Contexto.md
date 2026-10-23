@@ -253,3 +253,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: zonas de treino, venda e loja com raio `4,5 studs` e sem `ZoneLabel`; detecção do servidor lê o raio da instância. Estação deslocada para `z = ±43,5`, apoiada em anexo provisório; marcador do dono elevado `6 studs` em relação à revisão anterior. Código `a6b138b38d02cc24679d638327d2aaed332f390d` enviado a `main`.
 - Evidência: três fontes compilados/aplicados em Studio Edit; quatro estações em `z = ±43,5`, quatro marcadores elevados, quatro zonas de treino e zona de venda com raio `4,5`, sem `ZoneLabel`. Sem Play ou avaliação visual humana.
 - Pendências: salvar o lugar pelo desenvolvedor; validar escala, leitura e interações em PC/celular; rever a composição final quando o hub definitivo existir. Alteração local de GameplayConfig e pastas de arte preservadas; sem publicação.
+
+## CTX-2026-10-23-05 — fechamento ao sair da área
+
+- Solicitação: janelas abertas por área de interação devem fechar ao sair, além do `X`. Autoria: Codex, Windows local; lugar de teste 102310424634629.
+- Resultado: servidor sinaliza saída das zonas de Hunting Shop e Creature Market; cliente fecha apenas a página correspondente se ela ainda estiver visível. Reentrada continua necessária após fechamento manual dentro da zona. Código `37a01c9` enviado a `main`.
+- Evidência: scripts de servidor e cliente compilados/aplicados em Studio Edit; `git diff --check` passou. Sem Play iniciado pelo assistente, nem teste funcional de movimento.
+- Pendências: salvar o lugar pelo desenvolvedor; testar entrada, saída, `X`, troca de página, morte e dois jogadores em PC/celular. Ajuste local de GameplayConfig e arte preservados; sem publicação.
