@@ -309,3 +309,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: Estado Atual e Backlog condensados em estados e ações; fatos detalhados continuam nas notas donas de gameplay, arte e engenharia. `bootstrap` passou de cinco para quatro notas; referências visuais e painel de roteamento migraram para `reference`. `ui_ux` carrega apenas a regra vigente, consultando imagens/estudo quando a tarefa pedir. Cabeçalho de arquitetura corrigido para distinguir último gameplay aplicado de commits de arte/skills; AGENTS perdeu contagem fixa de bootstrap.
 - Evidência: manifesto atualizado/validado e diff revisado. Histórico antigo permanece para proveniência, fora da leitura inicial. Nenhuma regra de jogo, fonte Luau, cena Blender ou Studio foi alterada.
 - Autoria/ambiente: Codex, Windows, Git e arquivos locais; sem Play, Save ou agentes auxiliares.
+
+## CTX-2026-10-23-13 — Chicken Base v01 integrada para teste
+
+- Pedido: usar `hac-creature-integrator` em `chicken_base_v01`; raridade comum, comportamento de galinha real, curiosa e meio atrapalhada. Continuação solicitada após interrupção do controle de computador.
+- Resultado: FBX importado e normalizado em `HACChickenTemplate` (25 MeshParts), Chicken no catálogo, `Ponto4` reservado, animador próprio com bicadas/inclinação/asas, comportamento terrestre, base, captura, retratos Normal/Gold, renda/venda/XP provisórios herdados do Lumito. Procedimento de reconstrução versionado. Curva local de tamanhos previamente presente foi reconciliada no Git sem alterar sua regra.
+- Evidência: módulos carregaram em Studio Edit; fábrica produziu 25 meshes e retratos Chicken Normal/Gold; poses isoladas executaram em cinco estados. Código `ab96be0` enviado ao GitHub. Sem Play, Save ou aprovação visual; verificar o checklist EXP-01.
+- Autoria/ambiente: Codex, Windows, Studio MCP e importação pontual do FBX pela interface; sem subagentes. O desenvolvedor salva o lugar manualmente.

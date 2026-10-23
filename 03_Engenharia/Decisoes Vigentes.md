@@ -59,3 +59,7 @@ A skill `hac-creature-modeler` fica no repositório do jogo em `skills/hac-creat
 ## ADR-019 — Skill de integração com atuação própria (23/10/2026)
 
 A skill hac-creature-integrator cadastra espécie nova por padrão, pede raridade ausente e infere atuação pela anatomia quando não houver descrição. A descrição humana prevalece. Economia/captura usam perfil provisório centralizado baseado no Lumito e aparecimento controlado em ponto existente da ilha de teste, preservando limite populacional. Integração exige catálogo, menus, animação, base e persistência; aprovação de polimento depende de playtest humano. A criação da skill não integra uma criatura automaticamente.
+
+## ADR-020 — Chicken como segunda espécie de teste (23/10/2026)
+
+A primeira integração da skill usa `Chicken_Base_v01` como espécie **Chicken**, raridade Common, no ponto fixo `Ponto4` da ilha existente. Herda temporariamente os números do Lumito sem mudar economia global. Template MeshPart, perfil de navegação e animador próprio ficam separados; preservar o modelo aprovado, o Lumito e os saves. Bicadas, inclinação curiosa, fuga atrapalhada e movimento de asas são direção de atuação, sujeita a playtest humano. O lugar importado depende de Save manual pelo desenvolvedor.

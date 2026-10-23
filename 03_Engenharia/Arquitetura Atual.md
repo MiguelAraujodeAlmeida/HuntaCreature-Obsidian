@@ -1,13 +1,13 @@
 # Arquitetura atual
 
-Referência operacional: `main` do repositório de código; último gameplay aplicado `37a01c9`. Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece fora do Git, mas foi salvo no Studio em rodada anterior. A aplicação mais recente em Edit ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
+Referência operacional: `main` do repositório de código; integração Chicken aplicada em Studio Edit a partir de `ab96be0`. A curva de tamanho `BaseChance = 0.7, Curve = 12` também está nesse commit. A aplicação mais recente ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
 
 ## 1. Mapa de responsabilidade
 
 | Pasta no repositório | Destino no Roblox Studio | Papel |
 |---|---|---|
 | `studio/shared` (12) | `ReplicatedStorage.HACShared` | Configurações (`GameplayConfig`, `CaptureConfig`, `LassoChargeStyle`, `AudioConfig`, `LumitoMotionConfig`), geometria (`LassoAim`, `LassoVisuals`) e estilo (`VisualStyle`, `MenuTheme`, `WorldStyle`) |
-| `studio/server` (16) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
+| `studio/server` (18) | `ServerScriptService.HACServer` | Autoridade de jogo, fábrica/IA/animação de criaturas, captura, loja, base viva e persistência |
 | `studio/client` (31) | `StarterPlayer.StarterPlayerScripts.HACClient` | Input, HUD, mira, boleio do laço, menus (`MenuKit`, `*Page`), retratos e preferências locais |
 | `studio/HuntACreature.server.luau` | `ServerScriptService.HuntACreature` | Bootstrap do servidor, loops de tick e roteamento de eventos |
 | `studio/HuntACreature.client.luau` | `StarterPlayerScripts.HuntACreatureClient` | Bootstrap do cliente e recepção de snapshots |
@@ -15,8 +15,8 @@ Referência operacional: `main` do repositório de código; último gameplay apl
 | Domínio técnico | Módulos principais |
 |---|---|
 | Catálogo, economia e tamanhos | `GameplayConfig`; `HunterProgression` concentra curva de XP, bônus e ritmo passivo |
-| Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + `ReplicatedStorage.HACLumitoTemplate` e `HACCreaturePreviews` |
-| IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
+| Modelo 3D, variantes e retratos de criatura | `CreatureFactory`, `CatalogPresentation`, `CreaturePortrait` + templates `HACLumitoTemplate`/`HACChickenTemplate` e `HACCreaturePreviews` |
+| IA, atuação e passeio na base | `CreatureProfiles`, `CreatureBehaviorService`, `LumitoBehavior`, `LumitoAnimator`, `ChickenAnimator`, `LumitoMotionConfig`, `BaseRoamingService` |
 | Laço, colisão e disputa | `CaptureConfig`, `LassoChargeStyle`, `LassoAim`, `LassoCollision`, `LassoVisuals`, `LassoFeedback`, `LassoChargePresentation`, `CaptureService`, `CaptureController`, `CaptureHUD` |
 | Perfil e DataStore | `ProfileData`, `ProfileService`, `PersistenceConfig` |
 | Ferramentas e loja | `HuntingTools`, `ToolInventory`, `ToolPlacement`, `ToolPlacementPreview`, `ShopPage` |
@@ -32,6 +32,12 @@ Referência operacional: `main` do repositório de código; último gameplay apl
 - **Colisão do laço (`Corpo`):** `Part` invisível (`Transparency = 1`, `CanCollide/CanTouch/CanQuery = false`, `CastShadow = false`) de tamanho `Vector3.new(3.3, 2.8, 2.6) * scale` centrada em `Root`, garantindo que `LassoCollision` mantenha o mesmo elipsoide de captura enquanto `LassoAim`/`Highlight` atingem as peças visíveis.
 - **Paletas e animação:** cada peça possui o atributo `ColorRole` (`Main`, `Secondary`, `Accent`, `Ink`, `Glint`) colorido por `CreatureFactory` conforme variante (`Normal` ou `Golden`), e as peças dos pés (`Pe`, `Sole_*`, `Stud_Foot_*`) possuem `FootSide = "L" | "R"` para passo sincronizado em `LumitoBehavior`. Se `HACLumitoTemplate` não existir no lugar, `CreatureFactory` usa o fallback procedural compacto de 33 partes.
 - **Apresentação rígida (`LumitoAnimator`):** captura os `CFrame`s de repouso e aplica poses absolutas por grupos nomeados, compartilhadas entre a IA selvagem e `BaseRoamingService`. Cria `StepPuff` com atlas 2×2 (`rbxassetid://118477338697511`) e `RunSwoosh`; o asset-fonte versionado está em `art/vfx/lumito-run-puff-flipbook-v01.png`. Nenhum efeito altera `Root`, `Corpo`, autoridade do servidor ou tamanho do indivíduo.
+
+## Chicken Base v01
+
+- `HACChickenTemplate` em ReplicatedStorage foi importado de `art/chicken-base-v01/Chicken_Base_v01.fbx` (25 MeshParts). O importador ampliou em 100×; o template foi normalizado para 1 unidade Blender = 1 stud, frente -Z e raiz 1,35 studs acima do chão. O procedimento reprodutível está em `studio/tools/PrepareChickenTemplate.luau` e `art/chicken-base-v01/ROBLOX_IMPORT.md`. O lugar precisa de Save humano para persistir os MeshIds publicados.
+- `CreatureFactory` escolhe template/paleta por espécie, cria `Corpo` da Chicken de 1,65 × 2 × 1,45 studs e retratos Normal/Gold. `Ponto4` é reserva estável no catálogo; `CreatureProfiles` fornece comportamento terrestre distinto e `ChickenAnimator` move grupos anatômicos sem deslocar `Root`/colisão. `LumitoBehavior` reutiliza só a navegação e seleciona o animador pelo perfil. A base seleciona o animador por espécie.
+- O perfil econômico Chicken herda provisoriamente valores do Lumito via `C.Species.Chicken` no `GameplayConfig`; IDs existentes e geração de save permanecem. Sem Play automático: poses isoladas e módulos foram verificados em Edit, transições e visual real aguardam o desenvolvedor.
 
 ## 3. Contratos de autoridade e rede
 

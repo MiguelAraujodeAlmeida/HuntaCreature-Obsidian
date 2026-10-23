@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **37a01c9**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O fechamento de menus por saída da zona foi aplicado/compilado em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **ab96be0**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O fechamento de menus por saída da zona foi aplicado/compilado em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -69,3 +69,11 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 - [ ] Treino na própria base inicia pela zona; entrar na estação de outra base não inicia; sair pelo controle de treino restaura movimento. Confirmar que nenhum texto flutua acima ou fora da área.
 - [ ] Placa de treino não tem botão TRAIN; melhorias continuam clicáveis. Manequim/estação estão claramente ao lado da base, sobre piso próprio, sem cortar borda do hub.
 - [ ] Base vazia sem nome/placa; ocupada com retrato e nome central acima das criaturas, sem sobreposição. Sair/desconectar limpa identificação, nova posse troca retrato.
+
+## Chicken Base v01 (EXP-01)
+
+- [ ] Confirmar Chicken comum em `Ponto4` após iniciar e em cada respawn, com os outros três pontos ainda ocupados por Lumito; Normal e Gold têm cor/silhueta próprias.
+- [ ] Observar frente, perfil e três quartos: pés tocam o chão sem deslizar, cabeça bica e inclina, asas e cauda acompanham; pausas e gestos variam entre indivíduos. Conferir passeio, alerta, fuga, cansaço e resistência ao laço.
+- [ ] Mirar e capturar a Chicken; bolsa cheia e força mínima, vitória, XP, nome e retrato corretos. Conferir Index antes/depois, silhuetas, favoritos, venda protegida e equipar/desequipar.
+- [ ] Na base, verificar passeio, saudação ocasional, renda provisória de 1 ouro/s em 1× Normal, ocultar criaturas sem interromper renda e reconectar sem perder o indivíduo.
+- [ ] Testar tamanhos 1× e grandes, Gold, PC/celular, dois jogadores, som desligado e regressão do Lumito. Anotar clips/prints de animações estranhas para polimento.
