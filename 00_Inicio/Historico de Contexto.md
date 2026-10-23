@@ -274,3 +274,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Evidência: `quick_validate.py` passou na cópia instalada; execução Blender 5.4 isolada construiu criatura sintética, gerou prancha/silhuetas/comparação com avatar e FBX, conferindo escala, eixos, metadados e composição visual. Commit de código `3ade45d67dd68bf089e83d00293765f0459afa43` enviado e SHA remoto confirmado. A cena Blender interativa e o lugar Roblox não foram alterados; nenhum Play ou Save acionado.
 - Limites: validação do kit não aprova qualidade de uma criatura real. Modelo conceitual do Lumito no jogo permanece intacto. Artistas devem revisar cada entrega; a adaptação ao `Root`/colisão atual do Studio requer outra solicitação.
 - Autoria/ambiente: Codex, Windows, Blender em processo separado, Git; sem agentes auxiliares. Alterações locais anteriores em `GameplayConfig.luau` e `art/lumito-base-v01/`/`v02/` preservadas fora do commit.
+
+## CTX-2026-10-23-08 — modelagem da galinha e reconexão Blender
+
+- Pedido: modelar o conceito anexado com hac-creature-modeler e Blender MCP; retomar após reconexão.
+- Resultado: Chicken_Base_v01, script reproduzível, FBX, prancha de 12 vistas e comparação de escala em art/chicken-base-v01. Peito aproximado do corpo, asas encaixadas, cauda em leque lateral e studs nos pés.
+- Evidência: MCP reconectado, cena Chicken_Review_v01 com 33 objetos, 25 meshes com ColorRole, FootSide L/R, chão Z=0 e altura 2,74 studs. Renders inspecionados e exportações concluídas. Código remoto 7c89ae1 confirmado.
+- Limites: arte ainda aguarda aprovação humana; sem rig/animação ou integração Studio. Alterações locais anteriores preservadas. Autoria: Codex, Windows, Blender MCP, sem subagentes.
