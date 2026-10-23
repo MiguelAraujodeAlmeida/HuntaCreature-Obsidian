@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-23-11",
+  "context_revision": "CTX-2026-10-23-12",
   "updated": "2026-10-23",
   "code_reference": "f528e6d",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
@@ -10,7 +10,6 @@
     "AGENTS.md"
   ],
   "bootstrap": [
-    "00_Inicio/Painel do Projeto.md",
     "00_Inicio/Estado Atual.md",
     "01_Produto/Visao e Escopo.md",
     "02_Planejamento/Backlog.md",
@@ -21,9 +20,7 @@
       "01_Produto/Sistemas Atuais.md"
     ],
     "ui_ux": [
-      "01_Produto/Design UI UX.md",
-      "06_Referencias/Referencias Visuais.md",
-      "06_Referencias/Estudo visual Steal an Egg.md"
+      "01_Produto/Design UI UX.md"
     ],
     "engineering": [
       "03_Engenharia/Arquitetura Atual.md"
@@ -36,9 +33,12 @@
     ]
   },
   "reference": [
+    "00_Inicio/Painel do Projeto.md",
     "00_Inicio/Historico de Contexto.md",
     "05_Modelos/Registro de Solicitacao.md",
-    "07_Relatorios/Otimizacao de Tokens.md"
+    "07_Relatorios/Otimizacao de Tokens.md",
+    "06_Referencias/Referencias Visuais.md",
+    "06_Referencias/Estudo visual Steal an Egg.md"
   ],
   "assets": [
     "assets/referencia-botoes-glossy.png",
@@ -49,16 +49,18 @@
     "assets/lumito-v01-studio-2026-10-20.jpg"
   ],
   "sha256": {
-    "README.md": "88bf9d3b6b95adfb6359e5c953be7530aa5252ae9790a1bd212f19143c6c7aa5",
-    "AGENTS.md": "f44fefbf8da70791c6bec1bb3b108df91861c4af17b59c0f7acbeefe206e0c70",
-    "00_Inicio/Painel do Projeto.md": "82db03868aefffb060c3a618a664071c0b09153098bdd6055b56c69544851ce1",
-    "00_Inicio/Estado Atual.md": "c837b5170e7eb4a1fe0749c526ae8b6187d5f48e558f7586046dc68a6848b79b",
+    "README.md": "c3b05020367e473acab2fdc4eb9ea426f3f28ea248c0c7ee7b7eeab97beccea3",
+    "AGENTS.md": "154bd742db1eb318de86bf32e1e7bf67d15a7f4401118214d2e74b34a5bd6994",
+    "00_Inicio/Estado Atual.md": "5668c65d38b7418b09662e81b07b4ccfeb39b621fd03a85ce4897aa10767858b",
     "01_Produto/Visao e Escopo.md": "597d50dab1f79b36a840f4f7c256c3102cb2552084094337e8d1a4a487198a08",
-    "02_Planejamento/Backlog.md": "8b40688fafab3966a360e8aef54858d608c15d6d02a771f6fb5db58f05347163",
+    "02_Planejamento/Backlog.md": "48e35e606e4f121fae06e27c3c598124713a4bef920c2df6c323a5095e8aa826",
     "03_Engenharia/Fluxo de Desenvolvimento.md": "13b8d4b04fed953db963263a58f795023575c2bddd129ed04d776c0babf39f51",
-    "00_Inicio/Historico de Contexto.md": "be9497a32e07ddc00701437013f14b2d18bed7c989bdfaa2005751099d5b677e",
+    "00_Inicio/Painel do Projeto.md": "9cff05eec38eac8b607034cd61126c21a513563004a9403ca1be052d9436ccb4",
+    "00_Inicio/Historico de Contexto.md": "08137e2c10e757dd6964f74aa914127377f65f5363f499e902505d90c87a2a1f",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "bfcbf85e79cecee4e8492404d22218611b58856d017d89f921fd8aea59d487ac",
+    "06_Referencias/Referencias Visuais.md": "08f702fa0d2634e8a73b885e61ee9c099372d1801d6466a3253faba92c5b0e52",
+    "06_Referencias/Estudo visual Steal an Egg.md": "3b24a0607364d4fbe7eedc58f1b28a6bfd57a8a3e49432bc3f81a38c8c960fbe",
     "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",
     "assets/referencia-index.png": "d24d0363bb5d68821255e4e467430cb51a3868b7cb991764d144c76ba92eef5d",
     "assets/referencia-shop.png": "81f937be1e2a643f4939fe02a0c27b9fe7e0570d26f0d3dc6bd62d69b5ddcf71",
@@ -67,9 +69,7 @@
     "assets/lumito-v01-studio-2026-10-20.jpg": "9234c0defb2c230fd6c2e280c9a6cbc1af9b15e2e79c41d32422a9a9fc004f23",
     "01_Produto/Sistemas Atuais.md": "b3e9de9174012af603b323d5697e2b4158b15390425e13c06ef2649d0fbc0f08",
     "01_Produto/Design UI UX.md": "0c6f9f3b56438b6dc02de518d4e9de393ced3536189ed7a1f75c720fd11d1524",
-    "06_Referencias/Referencias Visuais.md": "08f702fa0d2634e8a73b885e61ee9c099372d1801d6466a3253faba92c5b0e52",
-    "06_Referencias/Estudo visual Steal an Egg.md": "3b24a0607364d4fbe7eedc58f1b28a6bfd57a8a3e49432bc3f81a38c8c960fbe",
-    "03_Engenharia/Arquitetura Atual.md": "1ef523df9fb4a58240ec0f6309f60ebc6931df49deb7e1874e74aa3b1773f607",
+    "03_Engenharia/Arquitetura Atual.md": "c48b9ff76003ec3854452840131bf53f360212cb235a45aff5478ba9bed2d3ec",
     "03_Engenharia/Decisoes Vigentes.md": "a72a458a40aca660b7bc28bc37901f38dd14287122f7fa2428f710e8e380f914",
     "04_Validacao/Playtest Atual.md": "42cf97d5a0bcd60888636e03b1623e8fc6f8a7a4b7c53799a362ab3ce1b83079"
   }

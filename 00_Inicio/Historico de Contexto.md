@@ -302,3 +302,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: skill e guia detalhado versionados, instalados por junction local; cobre identidade/raridade, perfil provisório, spawn reservado, atuação própria, integração de catálogo/menus e checklist humano.
 - Evidência: quick_validate.py passou; referências locais e diff revisados. Código f528e6d confirmado no GitHub.
 - Limites: nenhum código de gameplay, asset ou lugar Studio alterado; nenhuma criatura integrada como teste. Validação real do fluxo aguarda solicitação de espécie. Alterações locais anteriores preservadas. Autoria: Codex, Windows, sem subagentes.
+
+## CTX-2026-10-23-12 — otimização do cofre e da leitura inicial
+
+- Pedido: retirar informação desatualizada, repetitiva e contraditória do contexto, mantendo entrada curta e detalhes sob demanda.
+- Resultado: Estado Atual e Backlog condensados em estados e ações; fatos detalhados continuam nas notas donas de gameplay, arte e engenharia. `bootstrap` passou de cinco para quatro notas; referências visuais e painel de roteamento migraram para `reference`. `ui_ux` carrega apenas a regra vigente, consultando imagens/estudo quando a tarefa pedir. Cabeçalho de arquitetura corrigido para distinguir último gameplay aplicado de commits de arte/skills; AGENTS perdeu contagem fixa de bootstrap.
+- Evidência: manifesto atualizado/validado e diff revisado. Histórico antigo permanece para proveniência, fora da leitura inicial. Nenhuma regra de jogo, fonte Luau, cena Blender ou Studio foi alterada.
+- Autoria/ambiente: Codex, Windows, Git e arquivos locais; sem Play, Save ou agentes auxiliares.

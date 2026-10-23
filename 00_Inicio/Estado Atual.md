@@ -1,68 +1,17 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-23-11** · 23/10/2026.
+Revisão **CTX-2026-10-23-12** · 23/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `f528e6d`. O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). O último código de gameplay aplicado no Studio corresponde a `37a01c9`; commits posteriores acrescentaram apenas arte e skills. Não há publicação nova confirmada.
 
-## Entrega vigente do jogo
+## O que existe
 
-- **Código enviado:** commit **f528e6d** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado). O último commit adiciona a skill de integração de criaturas; os scripts de gameplay permanecem no estado `37a01c9`.
-- **Lugar de teste:** **[Testing] Hunt a Creature**, placeId **102310424634629**. Servidor e cliente receberam o fechamento da janela ao sair das zonas de loja/venda; ambos compilaram em Studio Edit. **Salvamento integral pendente de confirmação pelo desenvolvedor; o assistente não aciona Save.**
-- **Não publicado:** servidores públicos continuam na versão anterior; publicação exige pedido explícito.
-- **Blender MCP:** conexão com a instância local aberta foi confirmada por consulta de caminho, sem alteração de cena. O arquivo atual permanece novo, não salvo e sem alterações pendentes.
-- **Skill de criaturas:** `skills/hac-creature-modeler/` no Git do jogo, instalada nesta máquina por junction em `~/.codex/skills/hac-creature-modeler`. Inclui kit procedural, renderização de 12 vistas, seis pranchas de linguagem visual e regra de entrega `.blend`/`.fbx`/script/pranchas. Teste com criatura sintética em processo Blender isolado verificou escala/eixos, exportação, propriedades e composição. Nenhuma criatura nova foi aprovada ou importada no Studio; a cena interativa não foi modificada.
+- Fase jogável com **Lumito** como única espécie integrada. Caça com mira e arremesso livres, disputa de captura, variação `Gold`, escala individual `1×–5×`, bolsa/base, renda por segundo, treino AFK, upgrades, ferramentas, Index e Hunter Rank. Detalhes e números: [[01_Produto/Sistemas Atuais]].
+- Lumito facetado e animado em `HACLumitoTemplate`; as demais criaturas modeladas **não** foram adicionadas ao jogo. Menus usam `MenuKit` e `MenuTheme`. Implementação e contratos: [[03_Engenharia/Arquitetura Atual]].
+- Zonas de entrada abrem treino, Hunting Shop e Creature Market. Loja/mercado fecham ao sair da zona; treino fica fora da base, com quatro manequins evolutivos. A base ocupada mostra foto/nome do dono; base livre não tem texto.
+- Três artes para revisão em `art/chicken-base-v01/`, `art/pug-base-v01/` e `art/lumito-ornate-v01/`, todas com Blender/FBX/pranchas. A aprovação visual está pendente. A skill `hac-creature-modeler` cria arte; `hac-creature-integrator` prepara integração jogável. Ambas estão no repositório do jogo e instaladas localmente por junction. Seus guias são consultados apenas ao usá-las.
 
-### Zonas de interação e identificação das bases — 23/10/2026
+## Estados e pendências que não podem ser confundidos
 
-Treino, Hunting Shop e Creature Market usam zonas circulares de entrada com raio `4,5 studs`, sem texto flutuante, em vez de ProximityPrompt. Servidor detecta entrada com trava até sair da área; janelas de loja/venda também fecham ao sair da respectiva zona, preservando outra página aberta. Treino continua exclusivo do dono. Estação fica ao lado de fora da base, sobre anexo de piso provisório. Botão TRAIN retirado da placa de melhorias. Totem e texto de base livre removidos; base ocupada exibe apenas nome e foto de avatar em marcador elevado sobre o centro, base desocupada fica sem identificação. Fontes aplicados/compilados em Studio Edit; playtest humano e salvamento pendentes.
-
-### Treino AFK evolutivo — 23/10/2026
-
-`TrainingDummies` constrói quatro silhuetas de oficina por nível: Hay Scout, Wood Ranger, Iron Guard e Clockwork Champion. Melhorias de eficiência acrescentam equipamento à estação. `TrainingPresentation` apresenta o ciclo localmente para jogadores próximos, com boleio, corda, reação do manequim e +Strength no pagamento. `HuntACreature.server` continua autoritativo para 2 s e ganho; sinaliza início e pagamento por atributos. Cinco fontes aplicados/compilados em Studio Edit; construção dos quatro níveis verificada em árvore temporária. Sem Play, parecer visual ou save humano.
-
-### Economia e upgrades — 23/10/2026
-
-Curva inicial de ouro revisada no código: Base 3→4→5→6, Bolsa 3→5→9→16, treino e eficiência com custos crescentes; velocidade mantém números antigos. Bolsa é comprada em Creatures, Base tem placa exclusiva, velocidade ganhou placa própria e treino mantém placa com dois upgrades. Servidor valida placa/proximidade para Base, Velocidade e Treino, e compra Bolsa pelo menu. Quatro scripts compilados em Studio Edit e instâncias das placas atualizadas; save humano e playtest pendentes. Projeção até bilhões registrada em Sistemas Atuais, sem liberar níveis sem espécies que sustentem a renda. IDs de perfil preservados; nenhuma geração de save nova.
-
-### O que está implementado e integrado
-
-0. **Hunter Rank (`977fbce` + `8c0da86`):** dez limiares iniciais de XP acumulado; captura/descoberta principais, com bônus por tamanho/Gold, e pesquisa menor por criatura equipada. Bônus de ouro/treino por rank; `RequiredHunterRank` opcional por item, sem bloquear ilhas ou itens atuais. HUD tem botão/emblema/progresso próprios; a página revela rank atual, percentual, **XP restante exato**, próximo marco, benefícios e silhuetas de equipamento real quando aplicável. Missões futuras sinalizadas. Custo total, teto e lista de ranks não aparecem. Namespace `20261021_hunter_rank_01` preservado.
-   - **Navegação visual (`8c0da86`):** Index tem ícone original e placa quadrada glossy; Settings é engrenagem circular discreta posicionada pela área livre da topbar. Os scripts e o XP restante foram aplicados/compilados em Studio Edit, com save integral ainda pendente.
-   - **Boleio do laço (`a086637`, revisão de pose):** o Training Lasso prepara o arremesso com ombro/cotovelo/pulso, laço flexível inclinado que passa pela região da cabeça e desce pela lateral, aceleração durante `1,4 s`, giro estável ao atingir MAX, destaque único e gesto breve de soltura. Outros clientes acompanham início/fim aceitos pelo servidor, sem posições por quadro; mira, alcance, voo e movimento não mudaram. A pose anterior foi rejeitada pelo desenvolvedor. Revisão atual levanta o braço com ombro/cotovelo configuráveis, corrige os eixos e evita acúmulo/interferência da animação da Tool no braço direito. Aplicada e compilada em Edit; aparência ainda não aprovada. Save e playtest humano pendentes. Prompt alternativo: `studio/prompts/LASSO_ANIMATION_AGENT.md` no repositório de código.
-
-1. **Modelo e atuação do Lumito base v01 (`2c74752`):**
-   - Modelado no Blender (`C:\Users\melg_\OneDrive\Documents\Hunt A Creature\Art\Lumito\Lumito_Base_v01.blend` e `.fbx`) seguindo os princípios de [[06_Referencias/Estudo visual Steal an Egg]] e [[01_Produto/Design UI UX]].
-   - Construído no Studio em `ReplicatedStorage.HACLumitoTemplate` (33 `UnionOperation`s CSG + `Root` + `Corpo` invisível de colisão) e reconstruído em `ReplicatedStorage.HACCreaturePreviews` (`Lumito:Normal` e `Lumito:Dourado`).
-   - `CreatureFactory.luau` clona e escala `HACLumitoTemplate` (com fallback procedural compacto) aplicando as paletas Normal e Gold por `ColorRole`.
-   - `LumitoAnimator` dá atuação rígida articulada ao modelo: respiração, passada com contato alternado, balanço de cabeça/orelhas/cauda/braços, piscada, reações de susto/cansaço/captura, gestos ociosos e saudação a jogador próximo na base. `Root` e `Corpo` permanecem autoritativos e não recebem o deslocamento visual.
-   - Cada contato de pé emite um puff cartunesco ciano/branco em flipbook 2×2 (`rbxassetid://118477338697511`); corrida/pânico habilita um rastro ciano curto. O atlas-fonte está em `art/vfx/lumito-run-puff-flipbook-v01.png`.
-   - O salvamento integral do lugar foi confirmado nesta entrega. Exportar cópia `.rbxl` recuperável ainda é pendente.
-2. **Escala contínua de criaturas (`ac385ae`) e ajuste local pendente:**
-   - Multiplicador individual oculto de `1×` a `5×` substituiu as classes Small/Normal/Large, com migração `0.85× → 1×`.
-   - **Divergência local preservada sem commit:** `studio/shared/GameplayConfig.luau` (no checkout e no lugar salvo no Studio) contém o ajuste `BaseChance = 0.7, Curve = 12` (70% de chance para `1×` e cauda rara até `5×`). O salvamento integral desta entrega incluiu o ajuste; sua confirmação como regra versionada ainda depende do desenvolvedor.
-3. **Sequência de caça (`be1bfaf`) e família de menus + reset (`90045a0`):**
-   - Contorno contextual de mira, carga até MAX, trilha de voo/retorno, disputa em fases de 3,6 s (ganho-base `0,18/s`, limite `22 s`) e recompensa com retrato, XP imediato e potencial de ouro/s na base.
-   - Menus `Creatures`, `Creature Market`, `Creature Index`, `Hunting Shop`, `Settings` com `MenuTheme`/`MenuKit`; a nova página `Hunter Rank` foi aplicada junto do protótipo.
-
-## Próximos passos do desenvolvedor
-
-1. **Desenvolvedor:** salvar o lugar no Studio e confirmar o salvamento. O assistente não aciona Save; até a confirmação, as aplicações de Index/Settings/XP restante e boleio são apenas o estado em Edit.
-2. Exportar cópia `.rbxl` recuperável do lugar salvo (`P0 · PROC-01`).
-3. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
-4. Executar [[04_Validacao/Playtest Atual]] em PC e celular, incluindo boleio parcial/MAX, soltura/cancelamento, troca de ferramenta, morte e dois jogadores.
-
-Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `f528e6d` está no GitHub; o lugar de teste recebeu os scripts da entrega anterior em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
-
-### Galinha conceitual v01 — revisão de arte
-
-Modelo em `art/chicken-base-v01/` no repositório do jogo: Blender, FBX, build.py, 12 vistas e comparação com avatar. Altura 2,74 studs, 25 meshes, ColorRole e FootSide; peito/cauda/encaixes revisados. Criado por Blender MCP em cena isolada; aprovação visual humana pendente, sem integração no Studio. A instância reconectada abriu uma cópia em Art/Lumito/Chicken_Base_v01.blend; a entrega canônica é a pasta versionada acima.
-
-### Pug conceitual v01 — revisão de arte
-
-Arte em `art/pug-base-v01/`: .blend, .fbx, build.py, 12 vistas e escala com avatar. Quadrúpede bege facetado com focinho marrom, língua rosa, orelhas caídas e cauda enrolada. Gerado em cena Blender isolada pelo MCP; nariz e orelhas ajustados após inspeção das pranchas. Aprovação visual e integração Studio pendentes; nenhuma espécie adicionada ao gameplay.
-
-### Lumito ornamentado v01 — arte conceitual
-
-Entrega em `art/lumito-ornate-v01/`: Blender, FBX, script e pranchas. Armadura branca/dourada, cristais cianos e arco posterior, em cena isolada. Aprovação visual pendente; não substitui Lumito base nem define regras de mutação no jogo.
-
-### Skill de integração de criaturas
-
-`skills/hac-creature-integrator/` criada e instalada por junction local; guia detalhado em `references/guia_skill_integracao_criaturas.md`. Validação estrutural passou. Nenhuma espécie integrada nesta entrega. A primeira utilização real ainda requer revisão humana de animação e experiência.
+- **Studio:** a última aplicação de gameplay foi compilada em Edit. O desenvolvedor ainda não confirmou o salvamento integral dessa rodada. O assistente não aciona Save. Playtest humano e exportação `.rbxl` recuperável pendentes. Checklist: [[04_Validacao/Playtest Atual]].
+- **Git local:** `studio/shared/GameplayConfig.luau` possui alteração não commitada `BaseChance = 0.7, Curve = 12`, já presente no lugar salvo de rodada anterior. `art/lumito-base-v01/` e `art/lumito-base-v02/` são pastas locais não rastreadas. Preservar esses dados e não presumir que existem em outro clone.
+- **Arte:** nenhuma galinha, pug ou Lumito ornamentado está no Studio. Aprovação visual, animação e balanceamento dependem de revisão do desenvolvedor.
+- **Próxima ação:** prioridades em [[02_Planejamento/Backlog]]. Feedback recente do desenvolvedor prevalece; verifique domínio e código para detalhes, sem usar o histórico como regra vigente.

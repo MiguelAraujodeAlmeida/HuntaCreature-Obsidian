@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência: código enviado **a5e62ab** (`main`). Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece no lugar salvo anteriormente no Studio, mas fora do commit até decisão do desenvolvedor. A linha `ResearchXP = 1` do mesmo arquivo foi commitada separadamente. XP restante e boleio foram aplicados/compilados em Studio Edit; salvamento integral da rodada depende do desenvolvedor.
+Referência operacional: `main` do repositório de código; último gameplay aplicado `37a01c9`. Ajuste local `BaseChance = 0.7, Curve = 12` em `studio/shared/GameplayConfig.luau` permanece fora do Git, mas foi salvo no Studio em rodada anterior. A aplicação mais recente em Edit ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
 
 ## 1. Mapa de responsabilidade
 
