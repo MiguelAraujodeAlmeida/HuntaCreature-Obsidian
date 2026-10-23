@@ -1,10 +1,10 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-23-08** · 23/10/2026.
+Revisão de contexto **CTX-2026-10-23-09** · 23/10/2026.
 
 ## Entrega vigente do jogo
 
-- **Código enviado:** commit **7c89ae1** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado). O último commit entrega a galinha para revisão de arte; os scripts de gameplay permanecem no estado `37a01c9`.
+- **Código enviado:** commit **ac6f25f** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado). O último commit entrega o pug para revisão de arte; os scripts de gameplay permanecem no estado `37a01c9`.
 - **Lugar de teste:** **[Testing] Hunt a Creature**, placeId **102310424634629**. Servidor e cliente receberam o fechamento da janela ao sair das zonas de loja/venda; ambos compilaram em Studio Edit. **Salvamento integral pendente de confirmação pelo desenvolvedor; o assistente não aciona Save.**
 - **Não publicado:** servidores públicos continuam na versão anterior; publicação exige pedido explícito.
 - **Blender MCP:** conexão com a instância local aberta foi confirmada por consulta de caminho, sem alteração de cena. O arquivo atual permanece novo, não salvo e sem alterações pendentes.
@@ -49,8 +49,12 @@ Curva inicial de ouro revisada no código: Base 3→4→5→6, Bolsa 3→5→9�
 3. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
 4. Executar [[04_Validacao/Playtest Atual]] em PC e celular, incluindo boleio parcial/MAX, soltura/cancelamento, troca de ferramenta, morte e dois jogadores.
 
-Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `7c89ae1` está no GitHub; o lugar de teste recebeu os scripts da entrega anterior em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
+Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `ac6f25f` está no GitHub; o lugar de teste recebeu os scripts da entrega anterior em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
 
 ### Galinha conceitual v01 — revisão de arte
 
 Modelo em `art/chicken-base-v01/` no repositório do jogo: Blender, FBX, build.py, 12 vistas e comparação com avatar. Altura 2,74 studs, 25 meshes, ColorRole e FootSide; peito/cauda/encaixes revisados. Criado por Blender MCP em cena isolada; aprovação visual humana pendente, sem integração no Studio. A instância reconectada abriu uma cópia em Art/Lumito/Chicken_Base_v01.blend; a entrega canônica é a pasta versionada acima.
+
+### Pug conceitual v01 — revisão de arte
+
+Arte em `art/pug-base-v01/`: .blend, .fbx, build.py, 12 vistas e escala com avatar. Quadrúpede bege facetado com focinho marrom, língua rosa, orelhas caídas e cauda enrolada. Gerado em cena Blender isolada pelo MCP; nariz e orelhas ajustados após inspeção das pranchas. Aprovação visual e integração Studio pendentes; nenhuma espécie adicionada ao gameplay.
