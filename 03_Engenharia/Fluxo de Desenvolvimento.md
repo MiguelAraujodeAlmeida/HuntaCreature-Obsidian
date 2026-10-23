@@ -16,6 +16,7 @@ Política permanente do projeto. Toda IA, chat ou dispositivo deve segui-la; alt
 - O desenvolvedor salva o lugar no Studio. O assistente não aciona Save por controle do computador; após aplicar em Edit, lembra o desenvolvedor de salvar e registra confirmação ou pendência. Commit de código e compilação não comprovam salvamento integral.
 - Manter servidor autoritativo, configuração isolada, componentes compartilhados (`MenuTheme`/`MenuKit`) e textos de UI em inglês.
 - Distinguir claramente quatro estados: **proposta**, **implementado**, **verificado tecnicamente** (compilação/inspeção em Edit) e **aprovado pelo desenvolvedor** (após playtest/revisão visual).
+- Para **modelagem de criaturas**, usar a skill `skills/hac-creature-modeler/` versionada no repositório de código. A instalação local em `~/.codex/skills/hac-creature-modeler` aponta para essa cópia; em outra máquina, instalar a partir do clone real. A entrega da skill termina em `.blend`, `.fbx`, script reproduzível e pranchas para revisão. Integração no Studio é outra solicitação; não substituir o Lumito vigente apenas por gerar arte.
 
 ## 3. Nota dona de cada informação
 

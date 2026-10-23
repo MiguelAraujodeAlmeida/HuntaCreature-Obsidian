@@ -1,12 +1,14 @@
 # Estado atual
 
-Revisão de contexto **CTX-2026-10-23-05** · 23/10/2026.
+Revisão de contexto **CTX-2026-10-23-07** · 23/10/2026.
 
 ## Entrega vigente do jogo
 
-- **Código enviado:** commit **37a01c9** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado).
+- **Código enviado:** commit **3ade45d** (`main` em https://github.com/MiguelAraujodeAlmeida/HuntACreature; SHA remoto confirmado). O último commit adiciona apenas a skill de arte; os scripts de gameplay permanecem no estado `37a01c9`.
 - **Lugar de teste:** **[Testing] Hunt a Creature**, placeId **102310424634629**. Servidor e cliente receberam o fechamento da janela ao sair das zonas de loja/venda; ambos compilaram em Studio Edit. **Salvamento integral pendente de confirmação pelo desenvolvedor; o assistente não aciona Save.**
 - **Não publicado:** servidores públicos continuam na versão anterior; publicação exige pedido explícito.
+- **Blender MCP:** conexão com a instância local aberta foi confirmada por consulta de caminho, sem alteração de cena. O arquivo atual permanece novo, não salvo e sem alterações pendentes.
+- **Skill de criaturas:** `skills/hac-creature-modeler/` no Git do jogo, instalada nesta máquina por junction em `~/.codex/skills/hac-creature-modeler`. Inclui kit procedural, renderização de 12 vistas, seis pranchas de linguagem visual e regra de entrega `.blend`/`.fbx`/script/pranchas. Teste com criatura sintética em processo Blender isolado verificou escala/eixos, exportação, propriedades e composição. Nenhuma criatura nova foi aprovada ou importada no Studio; a cena interativa não foi modificada.
 
 ### Zonas de interação e identificação das bases — 23/10/2026
 
@@ -47,4 +49,4 @@ Curva inicial de ouro revisada no código: Base 3→4→5→6, Bolsa 3→5→9�
 3. Decidir se confirma e commita o ajuste `BaseChance = 0.7, Curve = 12` em `GameplayConfig.luau` (`P1 · HAC-15`).
 4. Executar [[04_Validacao/Playtest Atual]] em PC e celular, incluindo boleio parcial/MAX, soltura/cancelamento, troca de ferramenta, morte e dois jogadores.
 
-Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `37a01c9` está no GitHub; o lugar de teste recebeu os scripts em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.
+Para continuidade por outro agente: ler `README.md`, `AGENTS.md` e o `bootstrap` de `context-manifest.json`; carregar os domínios da tarefa. O código `3ade45d` está no GitHub; o lugar de teste recebeu os scripts da entrega anterior em Edit e aguarda salvamento humano, sem publicação. A alteração local de tamanho em `GameplayConfig.luau` mais `art/lumito-base-v01/` e `art/lumito-base-v02/` não pertencem a esse commit. Não usar resumos de chat como especificação vigente.

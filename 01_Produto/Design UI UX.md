@@ -9,6 +9,7 @@
 - **Construção de brinquedo montável:** poucos volumes grandes e bem encaixados, planos visíveis, facetas e chanfros simples. Cantos podem ser suavizados, mas sem voltar à esfera lisa com bolinhas soltas.
 - **Cor por zonas amplas:** cor principal, área secundária (barriga/focinho) e acentos de contraste seguindo a geometria. Studs discretos apenas onde reforçarem o material de brinquedo.
 - **Expressão sem ruído:** personalidade dada por proporção, inclinação da cabeça e rosto simples (olhos/boca legíveis), sem depender de partículas ou neon em criaturas comuns.
+- **Modelagem de novas espécies:** o conceito 2D define arquétipo, anatomia e proporções; os exemplos visuais são linguagem, não moldes. Usar 1–3 pequenas áreas de studs por criatura sem esconder sua identidade. Inspecionar 12 vistas, silhuetas e escala ao lado de avatar de 5,2 studs antes de pedir aprovação. O procedimento e kit portáveis ficam em `skills/hac-creature-modeler/` no repositório do jogo; a direção vigente desta nota prevalece sobre a skill.
 
 ### Modelo vigente: Lumito base v01 (`Lumito_Base_v01`)
 - **Identidade preservada e reinterpretada:** substituiu o protótipo esférico no código (`ee6e901`) e no Studio (`ReplicatedStorage.HACLumitoTemplate`).

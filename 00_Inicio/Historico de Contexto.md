@@ -260,3 +260,17 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: servidor sinaliza saída das zonas de Hunting Shop e Creature Market; cliente fecha apenas a página correspondente se ela ainda estiver visível. Reentrada continua necessária após fechamento manual dentro da zona. Código `37a01c9` enviado a `main`.
 - Evidência: scripts de servidor e cliente compilados/aplicados em Studio Edit; `git diff --check` passou. Sem Play iniciado pelo assistente, nem teste funcional de movimento.
 - Pendências: salvar o lugar pelo desenvolvedor; testar entrada, saída, `X`, troca de página, morte e dois jogadores em PC/celular. Ajuste local de GameplayConfig e arte preservados; sem publicação.
+
+## CTX-2026-10-23-06 — conexão do MCP do Blender
+
+- Solicitação: conectar ao MCP do Blender aberto no PC. Autoria/ambiente: Codex, Windows local, Blender MCP.
+- Resultado: conexão confirmada por consulta não destrutiva de informações do arquivo aberto. A cena respondeu ao MCP; o arquivo está sem caminho, não salvo e sem alterações pendentes.
+- Evidência/limites: nenhuma cena, objeto ou arquivo foi modificado; nenhuma operação de salvar, renderizar ou exportar foi acionada. O MCP permanece disponível para solicitações futuras de arte 3D.
+
+## CTX-2026-10-23-07 — skill de modelagem de criaturas
+
+- Solicitação: criar `hac-creature-modeler` a partir do guia e seis conceitos enviados, com entrega de arte para revisão e sem importação no Studio.
+- Resultado: skill portável em `skills/hac-creature-modeler/` no repositório do jogo, instalada por junction local em `~/.codex/skills/hac-creature-modeler`; referência técnica, seis pranchas, kit de geometria/materiais/exportação e renderização de 12 vistas/escala. Convenções: `1 BU = 1 stud`, frente `-Y`, raiz no chão, `ColorRole`/`FootSide`; espécies preservam anatomia própria e usam studs discretos em 1–3 áreas.
+- Evidência: `quick_validate.py` passou na cópia instalada; execução Blender 5.4 isolada construiu criatura sintética, gerou prancha/silhuetas/comparação com avatar e FBX, conferindo escala, eixos, metadados e composição visual. Commit de código `3ade45d67dd68bf089e83d00293765f0459afa43` enviado e SHA remoto confirmado. A cena Blender interativa e o lugar Roblox não foram alterados; nenhum Play ou Save acionado.
+- Limites: validação do kit não aprova qualidade de uma criatura real. Modelo conceitual do Lumito no jogo permanece intacto. Artistas devem revisar cada entrega; a adaptação ao `Root`/colisão atual do Studio requer outra solicitação.
+- Autoria/ambiente: Codex, Windows, Blender em processo separado, Git; sem agentes auxiliares. Alterações locais anteriores em `GameplayConfig.luau` e `art/lumito-base-v01/`/`v02/` preservadas fora do commit.
