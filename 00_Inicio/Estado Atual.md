@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão **CTX-2026-10-23-15** · 23/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `1cc378e`. O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). O polimento de atuação do Lumito/Chicken e a correção anterior de saída das zonas foram aplicados ao Studio Edit; o lugar ainda aguarda Save humano. Não há publicação nova confirmada.
+Revisão **CTX-2026-10-23-16** · 23/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `1cc378e`. O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). O polimento de atuação do Lumito/Chicken e a correção anterior de saída das zonas foram aplicados ao Studio Edit; o lugar ainda aguarda Save humano. Não há publicação nova confirmada.
 
 ## O que existe
 
@@ -14,4 +14,5 @@ Revisão **CTX-2026-10-23-15** · 23/10/2026. Código canônico: `main` do [Hunt
 - **Studio:** os animadores Lumito/Chicken e a configuração de movimento foram aplicados/compilados em Edit; clones isolados de ambas as espécies foram percorridos nos cinco estados sem erro, com apêndices móveis e raiz estável. A qualidade visual ainda não foi testada em Play. O desenvolvedor ainda não confirmou o salvamento integral do lugar; o assistente não aciona Save. Playtest humano e exportação `.rbxl` recuperável pendentes. Checklist: [[04_Validacao/Playtest Atual]].
 - **Git local:** `art/lumito-base-v01/` e `art/lumito-base-v02/` continuam pastas locais não rastreadas. Preservar esses dados e não presumir que existem em outro clone.
 - **Arte:** Chicken está no Studio Edit, com FBX convertido em 25 MeshParts; Pug e Lumito ornamentado não foram integrados. Atuações revisadas, passada/aceleração e puff compartilhado ainda aguardam avaliação visual humana; balanceamento provisório aguarda playtest.
+- **Animação futura em avaliação:** migrar para rig com clipes autorais é tecnicamente viável, mas ainda não foi solicitado como implementação nem escolhido como regra vigente. O Lumito CSG requer preparação de rig distinta da Chicken MeshPart. Ver proposta em [[02_Planejamento/Backlog]].
 - **Próxima ação:** prioridades em [[02_Planejamento/Backlog]]. Feedback recente do desenvolvedor prevalece; verifique domínio e código para detalhes, sem usar o histórico como regra vigente.

@@ -15,6 +15,7 @@
 | ID | Próxima ação | Dependência |
 |---|---|---|
 | EXP-01 | Playtest Lumito/Chicken: braços/asas, expressões, gestos, estados, velocidade, suavidade, puff, captura, base, retratos, Gold e persistência | Integração e polimento técnico feitos; Save e aprovação humana pendentes. Se a taxa visual ou juntas continuarem duras, planejar rig/clipes e apresentação cosmética local |
+| ANIM-RIG-01 | Proposta para discussão: pilotar rig e clipes autorais no Lumito, preservando `Root`/`Corpo`, estados e modelo atual como fallback; criar pranchas de poses e integrar após revisão visual | Viabilidade avaliada, sem migração implementada ou decisão final. Chicken pode seguir quando o fluxo estiver validado |
 | PROG-02 | Ampliar espécies, rendas, ferramentas e níveis de treino conforme curva de ouro/XP | Conteúdo que sustente os preços, seguido de playtest |
 | HAC-07/08 | Criar hub e ilha maiores com teletransporte | Direção/layout do mapa |
 | HAC-09M | Criar mutações geométricas no Studio | Aprovação das espécies base |
