@@ -33,19 +33,33 @@ Regras e parâmetros de gameplay implementados no código de referência (**a5e6
 - **Renda passiva:** paga ouro a cada **1 segundo** pelo valor das criaturas equipadas. Lumito `1×` Normal rende `1 ouro/s` e vende por `12 ouro` antes do bônus de rank (ouro escala por tamanho/mutação). Pesquisa da base é separada e deliberadamente menor: Lumito Normal gera `1 XP/10 s`, Gold gera `2 XP/10 s`; soma-se `1 XP` global por rank acima de 1 apenas quando há criatura ativa. Espécies futuras definem `ResearchXP`; base vazia e bolsa não geram pesquisa.
 - **Hunter Rank (sem rebirth):** dez tiers iniciais calculados pelo XP **total acumulado**, sem gasto de XP ou reivindicação manual. Limiares internos para ranks 1–10: `0`, `100`, `700`, `5.000`, `40.000`, `400.000`, `5 milhões`, `80 milhões`, `1,5 bilhão`, `30 bilhões`. A UI revela apenas o rank atual, percentual até o próximo e benefícios seguintes, sem expor limiares ou cap.
 - **XP da caça:** captura de Lumito `1×` Normal rende `25 XP`; tamanho maior multiplica a base em até `1,6×`, Gold multiplica em `1,5×` (arredondado). Primeira descoberta de espécie soma `75`; primeira variante subsequente soma `35`, sem dupla bonificação na primeira captura. Cada rank acima de 1 acrescenta `+5%` ao ouro de base/venda e `+3%` à força do treino; resíduos fracionários persistem. Nenhuma ilha é bloqueada por rank.
-- **Curva de ouro e expansão:** o catálogo define livremente renda/venda por espécie e preço por item/melhoria; não há faixas obrigatórias de equipamento por rank. Cada espécie futura pode definir `CaptureXP`, `FirstSpeciesXP`, `FirstVariantXP`, `ResearchXP` e multiplicador de pesquisa Gold para sustentar ranks altos. A escalada extrema depende de espécies e compras futuras; preços iniciais não foram inflados sem fontes de renda correspondentes. Cada item pode declarar `RequiredHunterRank` individualmente. Os itens atuais permanecem disponíveis no rank 1.
+- **Curva de ouro e expansão:** valores jogáveis estão na tabela abaixo. Estágios posteriores são metas de design dependentes de novas espécies com renda correspondente, sem preços ou níveis fictícios liberados agora. Custos miram cerca de 30–240 s da renda típica do estágio; a validação real é playtest. Ouro de base e venda recebem bônus de Hunter Rank, tamanho e Gold conforme regra vigente. Itens futuros mantêm `RequiredHunterRank` individual e não há bloqueio de ilha por rank.
 - **Treino automático no manequim (`WorldPresentation`):** posiciona o avatar imóvel laçando o manequim a cada `2 s`, somando força conforme nível de treino × eficiência. Sair, pular ou morrer restaura a movimentação imediatamente.
-- **Placas físicas da base (`UpgradeBoards`):** único local para comprar melhorias (validação de dono, distância de `16 studs` e saldo no servidor; `SurfaceGui` nas duas faces).
+- **Compras de upgrades:** Base apenas na placa Base; Treino e Multiplicador na placa do manequim; Velocidade na placa própria; Bolsa no menu Creatures. Servidor valida saldo/nível para todos e proximidade da placa para os upgrades físicos.
 
 | Melhoria | Valores por nível (1 → 4) | Custos (níveis 2 / 3 / 4) |
 |---|---|---|
-| Base (`baseLevel`) | 3 / 4 / 5 / 6 criaturas | 40 / 100 / 220 |
-| Bolsa (`bagLevel`) | 3 / 4 / 5 / 6 criaturas | 25 / 70 / 160 |
-| Treino (`trainingLevel`) | +1 / +2 / +3 / +4 força | 30 / 90 / 180 |
-| Eficiência (`efficiencyLevel`) | 1× / 1,25× / 1,5× / 2× | 50 / 140 / 300 |
+| Base (`baseLevel`) | 3 / 4 / 5 / 6 criaturas | 40 / 150 / 600 |
+| Bolsa (`bagLevel`) | 3 / 4 / 5 / 6 criaturas | 25 / 180 / 1400 |
+| Treino (`trainingLevel`) | +1 / +2 / +3 / +4 força | 30 / 120 / 480 |
+| Eficiência (`efficiencyLevel`) | 1× / 1,25× / 1,5× / 2× | 50 / 200 / 800 |
 | Velocidade (`speedLevel`) | 16 / 18 / 20 / 22 walkSpeed | 35 / 100 / 240 |
 
 ## Mercado, loja e ferramentas
+
+### Tabela de balanceamento jogável
+
+Tempos aproximados usam renda total de referência de 1, 3 e 6 ouro/s para os níveis pagos 1, 2 e 3, sem bônus de rank, venda ou saldo prévio.
+
+| Upgrade | Nível 1 | Nível 2 | Nível 3 | Tempo de referência |
+|---|---:|---:|---:|---|
+| Base | 4 por 40 | 5 por 150 | 6 por 600 | 40 / 50 / 100 s |
+| Bolsa | 5 por 25 | 9 por 180 | 16 por 1400 | 25 / 60 / 233 s |
+| Manequim | 2 por 30 | 3 por 120 | 4 por 480 | 30 / 40 / 80 s |
+| Eficiência | 1,25× por 50 | 1,5× por 200 | 2× por 800 | 50 / 67 / 133 s |
+| Velocidade | 18 por 35 | 20 por 100 | 22 por 240 | 35 / 33 / 40 s |
+
+**Projeção não liberada:** crescimento 10–100 ouro/s; avançado 1 mil–20 mil/s; raro 1 milhão–80 milhões/s. Planejar Base 8/10/12 e Bolsa 28/45/70 somente ao introduzir criaturas, ferramentas e preços coerentes com esses estágios.
 
 - **Creature Market (venda física):** exige proximidade (`14 studs`), seleção explícita e confirmação; remove o indivíduo e credita ouro atomicamente (bloqueado se favorito).
 - **Hunting Shop (`18 studs`):** abas `Tools` e `Lassos`. Rotação determinística a cada `5 minutos` compartilhada por horário, mas com **cota de compra individual persistida no perfil**. `Training Lasso` já inicia possuído.

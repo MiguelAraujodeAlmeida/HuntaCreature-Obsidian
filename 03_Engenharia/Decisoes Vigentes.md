@@ -9,7 +9,7 @@ Pedido humano recente define a intenção; o cofre registra as regras vigentes; 
 O treino de força é automático, mantendo o avatar imóvel laçando o manequim da base (substituindo a ideia antiga de correr em esteira, embora o nome interno `Esteira` permaneça no modelo da estação por compatibilidade). Sair, pular ou morrer deve restaurar o movimento imediatamente.
 
 ## ADR-003 — Acessos físicos e gestão de coleção (18/10/2026)
-Melhorias são compradas exclusivamente nas placas físicas da própria base; vendas ocorrem apenas no mercado físico; ferramentas usam o `Backpack` nativo do Roblox; e a janela `Creatures` centraliza `Equip`/`Unequip` (sem troca implícita quando cheio) e proteção por favorito.
+Melhorias físicas usam placas da base, velocidade e treino; a Bolsa é comprada no menu Creatures (ADR-015). Vendas ocorrem apenas no mercado físico; ferramentas usam o `Backpack` nativo do Roblox; e a janela `Creatures` centraliza `Equip`/`Unequip` (sem troca implícita quando cheio) e proteção por favorito.
 
 ## ADR-004 — Base viva, idioma inglês e descoberta permanente (19/10/2026)
 Criaturas equipadas passeiam livremente no piso da base; ocultá-las em `Settings` é preferência visual local e não interrompe a renda. Toda a interface visível ao jogador é em inglês, mantendo IDs internos de save estáveis. O `Creature Index` registra variantes descobertas (`Normal`/`Gold`) de forma permanente, mesmo após venda.
@@ -43,3 +43,6 @@ Segurar o arremesso faz o avatar preparar o laço com braço e pulso, corda flex
 
 ## ADR-014 — Salvamento do lugar é ação do desenvolvedor (22/10/2026)
 O assistente pode editar scripts no Studio Edit via MCP, mas não aciona Save pelo acesso ao computador. Após aplicar, informa ao desenvolvedor que ele deve salvar o lugar e registra o estado como pendente até receber confirmação. Commit de código, compilação e lugar salvo são estados distintos.
+
+## ADR-015 — Distribuição dos upgrades e curva de ouro (23/10/2026)
+A placa Base compra somente expansão da base. A bolsa cresce no menu Creatures; treino e eficiência ficam na placa do manequim; velocidade tem placa própria até o rework. IDs de perfil não mudam. A curva jogável usa apenas níveis sustentados pelo conteúdo atual; escalas até bilhões são projeção condicionada a novas espécies e ferramentas. Saldo, nível e proximidade de placas físicas são validados no servidor.

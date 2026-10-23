@@ -46,3 +46,11 @@ Build de código: **a086637**; lugar **102310424634629** (`[Testing] Hunt a Crea
 ## Ordem sugerida de execução
 
 Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar falha, anotar código do item, dispositivo, passos, esperado vs. observado e print/Output.
+
+## Economia e upgrades (GOLD-01)
+
+- [ ] Conferir placa Base com apenas expansão, placa própria de Speed e placa de treino com duas opções.
+- [ ] Abrir Creatures com bolsa vazia e cheia; comprar 3→5→9→16, observar atualização imediata e MAX.
+- [ ] Comprar Base, Training, Efficiency e Speed; conferir custo, saldo, próximo benefício e resposta visual.
+- [ ] Tentar compras sem ouro, no nível máximo e longe de cada placa; compra da bolsa pelo menu deve funcionar sem proximidade.
+- [ ] Verificar captura com bolsa cheia, equipar/desequipar e progresso antigo após reconectar. Medir tempos dos primeiros níveis com 1–6 ouro/s.

@@ -225,3 +225,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Pendências: aprovação visual, regressões manuais PC/celular/dois jogadores e salvamento pelo desenvolvedor. Soltura direcionada dos observadores permanece fora desta correção. Nenhum salvamento acionado ou publicação feita. Alterações locais de GameplayConfig e art preservadas.
 
 - Encerramento em 23/10/2026: retomada solicitada pelo desenvolvedor; código remoto a086637 confirmado, verificador do cofre executado e sincronização desta revisão concluída. Sem nova aplicação no Studio ou confirmação de salvamento humano.
+
+## CTX-2026-10-23-01 — progressão de ouro e localização de upgrades
+
+- Solicitação: executar plano de curva inicial, bolsa crescente e compras separadas. Autoria: Codex no Windows local; lugar de teste 102310424634629.
+- Resultado: custos e capacidades jogáveis revisados; projeção futura condicionada a novo conteúdo. Base, velocidade, treino e bolsa receberam pontos de compra distintos, com validação de servidor.
+- Evidência: quatro scripts compilados em Studio Edit; atributos das três placas conferidos após atualização. Sem Play pelo assistente, sem aprovação de balanceamento.
+- Estado: commit de código 7c9e9d8; save humano e playtest pendentes. Alteração preexistente na curva de tamanhos e pastas de arte locais preservadas, sem incluí-las no commit de código.
