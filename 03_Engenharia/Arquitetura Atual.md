@@ -1,6 +1,6 @@
 # Arquitetura atual
 
-Referência operacional: `main` do repositório de código; integração e polimento Chicken aplicados em Studio Edit a partir de `d15f63a`. A curva de tamanho `BaseChance = 0.7, Curve = 12` permanece vigente. A aplicação mais recente ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
+Referência operacional: `main` do repositório de código; atuação Lumito/Chicken aplicada em Studio Edit a partir de `1cc378e`. A curva de tamanho `BaseChance = 0.7, Curve = 12` permanece vigente. A aplicação mais recente ainda aguarda confirmação de Save; detalhes de estado em [[00_Inicio/Estado Atual]].
 
 ## 1. Mapa de responsabilidade
 
@@ -32,6 +32,7 @@ Referência operacional: `main` do repositório de código; integração e polim
 - **Colisão do laço (`Corpo`):** `Part` invisível (`Transparency = 1`, `CanCollide/CanTouch/CanQuery = false`, `CastShadow = false`) de tamanho `Vector3.new(3.3, 2.8, 2.6) * scale` centrada em `Root`, garantindo que `LassoCollision` mantenha o mesmo elipsoide de captura enquanto `LassoAim`/`Highlight` atingem as peças visíveis.
 - **Paletas e animação:** cada peça possui o atributo `ColorRole` (`Main`, `Secondary`, `Accent`, `Ink`, `Glint`) colorido por `CreatureFactory` conforme variante (`Normal` ou `Golden`), e as peças dos pés (`Pe`, `Sole_*`, `Stud_Foot_*`) possuem `FootSide = "L" | "R"` para passo sincronizado em `LumitoBehavior`. Se `HACLumitoTemplate` não existir no lugar, `CreatureFactory` usa o fallback procedural compacto de 33 partes.
 - **Apresentação rígida (`LumitoAnimator`):** captura os `CFrame`s de repouso e aplica poses absolutas por grupos nomeados, compartilhadas entre a IA selvagem e `BaseRoamingService`. Cria `StepPuff` com atlas 2×2 (`rbxassetid://118477338697511`) e `RunSwoosh`; o asset-fonte versionado está em `art/vfx/lumito-run-puff-flipbook-v01.png`. Nenhum efeito altera `Root`, `Corpo`, autoridade do servidor ou tamanho do indivíduo.
+- **Pipeline de animação atual:** o servidor chama `Step` dos animadores por espécie em estados AtBase/Wandering/Panicking/Tired/Capturing. Cada animador agrupa peças anatômicas, guarda o repouso relativo ao pivô e aplica `CFrame` absoluto a cada atualização (~20 Hz), com interpolações, gestos temporizados e movimento secundário. Não existem clipes publicados, `AnimationTrack`, esqueleto skinned ou `Motor6D` nesses modelos. A atuação é própria de cada espécie; parâmetros visuais não comandam a navegação. O rate de apresentação/replicação e a rigidez das peças limitam fluidez e deformação; se o playtest mostrar passos discretos ou juntas duras, avaliar rig com clipes autorais e apresentação cosmética no cliente, preservando raiz/captura no servidor.
 
 ## Chicken Base v01
 

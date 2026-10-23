@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**d15f63a**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**1cc378e**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -16,8 +16,8 @@ Regras e parâmetros de gameplay implementados no código de referência (**d15f
 
 - **Espécies atuais:** Lumito e Chicken comum. Chicken ocupa `Ponto4` na ilha de teste, preservando quatro spawns totais; economia, força mínima, XP e dificuldade usam valores provisórios herdados do Lumito. Atribuição definitiva de ilha e balanceamento permanecem pendentes.
 - **Lumito:** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha e `1,625 * scale` na base.
-- **Chicken (`ChickenAnimator`):** passeio `2,8 studs/s`, fuga `9 studs/s`, aceleração/frenagem e curvas suavizadas apenas em seu perfil; passada acompanha o deslocamento efetivo. Bicadas, inclinação intrigada, salto atrapalhado, susto, asas e cauda dão variedade. Na base passeia a `1,65 studs/s`. Poses absolutas sobre 25 MeshParts não deslocam a raiz autoritativa. A qualidade visual ainda depende de Play humano.
-- **Atuação visual (`LumitoAnimator`):** os conjuntos nomeados de cabeça, corpo, orelhas, braços, cauda e pés usam poses absolutas sobre o `Root`; passada acompanha velocidade e escala, e os estados AtBase/Wandering/Panicking/Tired/Capturing alteram postura e reação. Inclui piscada, gestos ociosos e atenção curta a jogadores próximos na base, sem alterar navegação, colisão ou regras de captura.
+- **Chicken (`ChickenAnimator`):** passeio `2,8 studs/s`, fuga `9 studs/s`, aceleração/frenagem e curvas suavizadas apenas em seu perfil; passada acompanha o deslocamento efetivo. Bicadas, inclinação intrigada, salto atrapalhado e susto se combinam com olhar a jogadores próximos, asas amortecidas, cauda e piscada irregular. Na base passeia a `1,65 studs/s`. Poses absolutas sobre 25 MeshParts não deslocam a raiz autoritativa. A qualidade visual ainda depende de Play humano.
+- **Atuação visual (`LumitoAnimator`):** os conjuntos nomeados de cabeça, corpo, crista, orelhas, braços, cauda e pés usam poses absolutas sobre o `Root`; intensidade da passada acompanha velocidade e escala. Braços amortecidos respondem a passeio, fuga, cansaço, captura, curiosidade, saudação e salto; expressão dos olhos, orelhas e cauda acompanham cada reação. A crista dorsal segue o corpo, não a cabeça. AtBase/Wandering/Panicking/Tired/Capturing mantêm transições graduais, sem alterar navegação, colisão ou regras de captura. A avaliação de naturalidade depende de Play humano.
 - **VFX de movimento:** `CreatureFootPuff` fornece textura e flipbook 2×2 compartilhados por Lumito e Chicken. A Chicken emite alternadamente junto aos pés apenas em passos terrestres. Lumito mantém rastro ciano de `0,13 s` em corrida/pânico. Sem emissão contínua.
 - **Atributos por indivíduo:** `id`, `species`, `rarity`, `size`, `mutations`, `location` (`bag` ou `base`) e `favorite`.
 - **Escala contínua (`1×` a `5×`, duas casas):** atributo numérico oculto na UI; exemplares existentes preservam seu tamanho.

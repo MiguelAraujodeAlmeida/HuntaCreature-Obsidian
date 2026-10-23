@@ -67,3 +67,7 @@ A primeira integração da skill usa `Chicken_Base_v01` como espécie **Chicken*
 ## ADR-021 — Passada e puff de contato em criaturas terrestres (23/10/2026)
 
 Criaturas terrestres que caminham ou correm devem ter frequência de passos proporcional ao deslocamento real e à escala, com transições de velocidade legíveis. O puff compartilhado do Lumito aparece somente no contato dos pés com o solo; posição e intensidade variam conforme a anatomia. Criaturas flutuantes não emitem fumaça de passada. Cada espécie mantém perfil de velocidade e atuação próprios, sujeito a aprovação visual humana.
+
+## ADR-022 — Atuação individual e apresentação desacoplada (23/10/2026)
+
+Cada espécie tem gestos, expressões e ritmo compatíveis com sua anatomia e personalidade. Estados de passeio, repouso, alerta/fuga, cansaço, captura e base transitam de forma contínua; velocidade real governa passada e efeitos de contato. Peças desconhecidas ficam na pose de repouso até receberem mapeamento explícito, para não seguirem uma articulação errada. A apresentação não move `Root` nem `Corpo` autoritativos. O pipeline rígido procedural atual é provisório e pode evoluir para rig/clipes com apresentação local após avaliação visual; não se presume que animação técnica aprovada equivale a carisma aprovado.
