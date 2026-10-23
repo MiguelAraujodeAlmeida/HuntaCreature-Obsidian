@@ -61,3 +61,11 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 - [ ] Assistir a vários minutos de ciclos de 2 s; conferir gesto do avatar, corda, impacto, recuperação e variação sem efeitos cansativos.
 - [ ] Confirmar ganho real, `+Strength` e som no pagamento, sem pagamentos extras nem perda de frações.
 - [ ] Testar dois jogadores, PC/celular, saída, pulo, morte, respawn e troca de manequim durante treino; poses/corda desaparecem.
+
+## Zonas de interação (INTERACT-01)
+
+- [ ] Entrar nas zonas TRAIN, SHOP e SELL por direções diferentes; a ação dispara uma vez sem tecla ou prompt nativo.
+- [ ] Fechar loja/mercado dentro da área; não reabrir até sair e retornar. Conferir PC/celular, dois jogadores e renascimento dentro/próximo da zona.
+- [ ] Treino na própria base inicia pela zona; entrar na estação de outra base não inicia; sair pelo controle de treino restaura movimento.
+- [ ] Placa de treino não tem botão TRAIN; melhorias continuam clicáveis. Treino está fora da plataforma e não corta borda do hub.
+- [ ] Base vazia sem nome/placa; ocupada com retrato e nome central. Sair/desconectar limpa identificação, nova posse troca retrato.

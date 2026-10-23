@@ -49,3 +49,6 @@ A placa Base compra somente expansão da base. A bolsa cresce no menu Creatures;
 
 ## ADR-016 — Treino AFK evolutivo (23/10/2026)
 O treino permanece totalmente automático com pagamento de força pelo servidor a cada 2 s. Os quatro níveis atuais têm modelos de manequim distintos; eficiência altera componentes da estação de forma independente. Construção visual, animação cliente e economia são módulos separados. Níveis futuros podem adicionar novo modelo e custo quando houver renda correspondente; esta rodada não cria níveis nem altera ganho/custo.
+
+## ADR-017 — Zonas de interação e bases silenciosas (23/10/2026)
+Treino e lojas usam áreas de entrada visíveis com disparo único por entrada; fechar menu dentro da área exige sair e voltar para reabrir. O treino fica fora da plataforma da base e continua exclusivo do dono. Totem e texto de base livre foram retirados. A identidade do dono é retrato e nome no centro apenas enquanto ocupada. Placas de upgrade permanecem ações por clique.

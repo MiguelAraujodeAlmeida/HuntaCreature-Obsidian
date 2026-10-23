@@ -71,3 +71,7 @@ Paleta RGB UI/Menu: `Gold` `255,203,20` · `Cyan` `12,211,255` · `Purple` `211,
 ## Treino AFK
 
 O manequim deve evoluir em silhueta, material e personalidade, seguindo a oficina de caçador: espantalho, madeira articulada, guarda blindado e autômato. O ciclo automático deve mostrar preparação, arremesso, resistência cômica, impacto e recuperação, com variações discretas e `+Strength` apenas após crédito real. A cena precisa continuar legível após minutos de repetição; brilho e som são acentos, sem cobrir o alvo. Eficiência acrescenta equipamento próprio à estação sem multiplicar combinações de modelos.
+
+## Interações no mundo
+
+Use zonas de entrada luminosas e legíveis para treino e lojas, com título curto em inglês. A entrada é a ação; não pedir botão nativo nesses pontos. Evitar reativação contínua enquanto o jogador permanece dentro. Bases desocupadas ficam visualmente quietas; bases ocupadas recebem retrato circular e nome do dono no centro. Placas permanecem para comprar upgrades por clique.

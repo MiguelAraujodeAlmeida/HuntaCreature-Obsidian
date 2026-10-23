@@ -239,3 +239,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: `TrainingDummies`, `TrainingPresentation`, atualização de `WorldPresentation` e atributos de ciclo/pagamento no servidor. Ganho e custo atuais preservados.
 - Evidência: cinco scripts compilados/aplicados em Studio Edit; construção dos quatro níveis verificada sem Play. Código `da8ac180aa9f9414ef9453f4495ce2e2ed807100` enviado ao GitHub.
 - Pendências: teste visual/funcional humano, salvamento do lugar pelo desenvolvedor e expansão econômica/visual futura. Alterações locais de tamanho/arte preservadas. Sem publicação.
+
+## CTX-2026-10-23-03 — zonas de interação e bases
+
+- Solicitação: substituir prompts por áreas de entrada no treino e lojas; remover TRAIN da placa, mover manequim para fora, retirar Totem/Free base e mostrar retrato/nome central do dono. Autoria: Codex, Windows local; lugar de teste 102310424634629.
+- Resultado: zonas de entrada com trava de reativação, estações externas, identificação condicional. Código `5d3b37282c01f4e2802e13884700b52c46e1065a` enviado a main.
+- Evidência: cinco scripts do Studio compilaram; no Edit, Totem ausente, estação fora e zonas Train/Sell com rótulo verificadas. ShopZone surge junto da loja em runtime; sem Play.
+- Pendências: validar interação e layout em PC/celular, dois jogadores, save humano. Alteração local de GameplayConfig e arte preservadas.

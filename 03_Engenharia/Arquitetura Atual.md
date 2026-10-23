@@ -49,3 +49,5 @@ Referência: código enviado **a5e62ab** (`main`). Ajuste local `BaseChance = 0.
 - `Workspace.HACStudioMemoryMode = true` usa memória volátil apenas no Studio; testes de persistência real exigem `nil`/`false`.
 
 - **Treino AFK:** `HuntACreature.server` mantém ciclo e ganho autoritativos, publicando `Treinando`, `TrainingStartedAt`, `TrainingPulse` e `TrainingGain`. `WorldPresentation` fixa/restaura avatar; `TrainingDummies` define modelos por nível sem tocar na economia; `TrainingPresentation` cria a apresentação local, limpa poses/corda ao terminar e limita detalhe a 110 studs.
+
+- **Zonas de entrada:** `WorldStations` constrói os indicadores; `HuntACreature.server` testa entrada a cada 0,15 s e guarda presença por jogador até saída. `WorldPresentation` cria a zona da loja após criar o balcão. A lógica de compra/venda e validações existentes permanecem no servidor. `WorldStations.Prepare` move treino, remove Totem e cria identificação da base antes da construção dos dummies.

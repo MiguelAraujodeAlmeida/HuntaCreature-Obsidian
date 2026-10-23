@@ -77,3 +77,9 @@ Tempos aproximados usam renda total de referência de 1, 3 e 6 ouro/s para os n�
 - **Idioma:** interface em inglês; documentação e IDs legados de save em português.
 - **Settings:** `Sound` (áudio local) e `Base creatures` (oculta/mostra modelos nas bases localmente sem interromper a renda).
 - **Perfil inicial (`ProfileData`):** ouro, XP e força `0`, coleção/descobertas vazias, melhorias no nível `1`, `Training Lasso` e `1` unidade de cada consumível (`Isca`, `Armadilha`, `Pocao`).
+
+## Interação e identificação das bases
+
+- Treino, Hunting Shop e Creature Market têm zonas circulares com rótulos TRAIN/SHOP/SELL. A entrada dispara a ação uma vez; sair rearma. Treino é restrito ao dono da base. Botão TRAIN saiu da placa de upgrade.
+- Estação/manequim ficam fora da plataforma da base. Totem foi removido. Base vazia não mostra “FREE BASE”; base ocupada mostra nome e foto do dono em letreiro flutuante central.
+- Menus fechados dentro de uma zona só reabrem após sair e entrar. Interação real ainda depende de playtest humano.
