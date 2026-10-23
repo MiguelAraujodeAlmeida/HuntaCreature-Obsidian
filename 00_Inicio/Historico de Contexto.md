@@ -246,3 +246,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: zonas de entrada com trava de reativação, estações externas, identificação condicional. Código `5d3b37282c01f4e2802e13884700b52c46e1065a` enviado a main.
 - Evidência: cinco scripts do Studio compilaram; no Edit, Totem ausente, estação fora e zonas Train/Sell com rótulo verificadas. ShopZone surge junto da loja em runtime; sem Play.
 - Pendências: validar interação e layout em PC/celular, dois jogadores, save humano. Alteração local de GameplayConfig e arte preservadas.
+
+## CTX-2026-10-23-04 — correção de escala e posição das zonas
+
+- Solicitação: ampliar consideravelmente as áreas de interação, remover textos que flutuavam sobre elas, elevar nome/retrato do dono e colocar manequim/estação claramente ao lado e fora da base. Autoria: Codex, Windows local; lugar de teste 102310424634629.
+- Resultado: zonas de treino, venda e loja com raio `4,5 studs` e sem `ZoneLabel`; detecção do servidor lê o raio da instância. Estação deslocada para `z = ±43,5`, apoiada em anexo provisório; marcador do dono elevado `6 studs` em relação à revisão anterior. Código `a6b138b38d02cc24679d638327d2aaed332f390d` enviado a `main`.
+- Evidência: três fontes compilados/aplicados em Studio Edit; quatro estações em `z = ±43,5`, quatro marcadores elevados, quatro zonas de treino e zona de venda com raio `4,5`, sem `ZoneLabel`. Sem Play ou avaliação visual humana.
+- Pendências: salvar o lugar pelo desenvolvedor; validar escala, leitura e interações em PC/celular; rever a composição final quando o hub definitivo existir. Alteração local de GameplayConfig e pastas de arte preservadas; sem publicação.

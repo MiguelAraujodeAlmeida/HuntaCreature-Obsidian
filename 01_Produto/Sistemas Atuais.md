@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**a5e62ab**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**a6b138b**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -40,7 +40,7 @@ Regras e parâmetros de gameplay implementados no código de referência (**a5e6
 | Melhoria | Valores por nível (1 → 4) | Custos (níveis 2 / 3 / 4) |
 |---|---|---|
 | Base (`baseLevel`) | 3 / 4 / 5 / 6 criaturas | 40 / 150 / 600 |
-| Bolsa (`bagLevel`) | 3 / 4 / 5 / 6 criaturas | 25 / 180 / 1400 |
+| Bolsa (`bagLevel`) | 3 / 5 / 9 / 16 criaturas | 25 / 180 / 1400 |
 | Treino (`trainingLevel`) | +1 / +2 / +3 / +4 força | 30 / 120 / 480 |
 | Eficiência (`efficiencyLevel`) | 1× / 1,25× / 1,5× / 2× | 50 / 200 / 800 |
 | Velocidade (`speedLevel`) | 16 / 18 / 20 / 22 walkSpeed | 35 / 100 / 240 |
@@ -80,6 +80,6 @@ Tempos aproximados usam renda total de referência de 1, 3 e 6 ouro/s para os n�
 
 ## Interação e identificação das bases
 
-- Treino, Hunting Shop e Creature Market têm zonas circulares com rótulos TRAIN/SHOP/SELL. A entrada dispara a ação uma vez; sair rearma. Treino é restrito ao dono da base. Botão TRAIN saiu da placa de upgrade.
-- Estação/manequim ficam fora da plataforma da base. Totem foi removido. Base vazia não mostra “FREE BASE”; base ocupada mostra nome e foto do dono em letreiro flutuante central.
+- Treino, Hunting Shop e Creature Market têm zonas circulares de entrada de raio `4,5 studs`, sem rótulo flutuante sobre a área. A entrada dispara a ação uma vez; sair rearma. Treino é restrito ao dono da base. Botão TRAIN saiu da placa de upgrade.
+- Estação/manequim ficam ao lado e claramente fora da plataforma da base, sobre anexo de piso provisório; o hub definitivo poderá reposicioná-los. Totem foi removido. Base vazia não mostra “FREE BASE”; base ocupada mostra nome e foto do dono bem acima das criaturas, no centro.
 - Menus fechados dentro de uma zona só reabrem após sair e entrar. Interação real ainda depende de playtest humano.

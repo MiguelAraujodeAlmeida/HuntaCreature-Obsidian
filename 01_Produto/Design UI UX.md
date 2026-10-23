@@ -74,4 +74,4 @@ O manequim deve evoluir em silhueta, material e personalidade, seguindo a oficin
 
 ## Interações no mundo
 
-Use zonas de entrada luminosas e legíveis para treino e lojas, com título curto em inglês. A entrada é a ação; não pedir botão nativo nesses pontos. Evitar reativação contínua enquanto o jogador permanece dentro. Bases desocupadas ficam visualmente quietas; bases ocupadas recebem retrato circular e nome do dono no centro. Placas permanecem para comprar upgrades por clique.
+Use zonas de entrada luminosas e amplas para treino e lojas, com identidade indicada pelo próprio cenário. Texto não deve flutuar sobre a área nem escapar de seus limites. A entrada é a ação; não pedir botão nativo nesses pontos. Evitar reativação contínua enquanto o jogador permanece dentro. A estação de treino fica claramente ao lado e fora da base, sobre piso próprio; a posição fina será revista no hub definitivo. Bases desocupadas ficam visualmente quietas; bases ocupadas recebem retrato circular e nome do dono bem acima das criaturas, no centro. Placas permanecem para comprar upgrades por clique.

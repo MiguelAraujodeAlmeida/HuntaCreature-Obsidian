@@ -18,7 +18,7 @@
 ## Ciclo principal
 
 **Caçar na ilha → capturar → gerenciar bolsa/base (`Creatures`) → receber ouro e XP por segundo na base → melhorar base/treino (`Placas`) ou comprar ferramentas (`Hunting Shop`) → caçar melhor.**
-A venda é uma decisão física no `Creature Market`; descobertas permanecem registradas no `Creature Index` mesmo após vender o exemplar. Força vem do treino no manequim; o XP já é acumulado no perfil, mas ainda não possui sistema de níveis/desbloqueios ativo na UI.
+A venda é uma decisão física no `Creature Market`; descobertas permanecem registradas no `Creature Index` mesmo após vender o exemplar. Força vem do treino no manequim; o XP alimenta o Hunter Rank, com progresso e bônus já visíveis na UI.
 
 ## Escopo atual vs. futuro
 

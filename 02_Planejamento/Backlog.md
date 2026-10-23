@@ -17,7 +17,7 @@
 | P1 · HAC-LASSO-BOLEIO | Avaliar preparação com braço/pulso, laço inclinado/flexível, soltura e visão por dois jogadores em PC/celular | Pose anterior rejeitada. Revisão `a086637` aplicada/compilada; validar mão elevada ao lado da cabeça, cotovelo flexionado e ausência de torção em três ângulos. Save e aprovação visual pendentes |
 | P1 · HAC-03 / 03A / 04 / 02 | Avaliar sequência da caça em PC/celular: mira, carga, voo, disputa, poção, falha e vitória | Polimento `be1bfaf` e boleio `6beb403` em código; precisão, ritmo e áudio aguardam playtest humano |
 | P1 · HAC-01 / HAC-32 | Avaliar família visual e interação dos seis menus | Implementados com `MenuKit`; Index/Settings refinados em `8c0da86`, save e parecer humano pendentes |
-| P0 · INTERACT-01 | Testar entrada/saída em Train, Shop e Sell; fechamento de menu dentro da zona; duas contas e bases ocupadas/vazias; posição fora da base | Código `5d3b372` e Studio Edit aplicados; Play e save humano pendentes |
+| P0 · INTERACT-01 | Testar entrada/saída em Train, Shop e Sell; avaliar raio maior, ausência de texto sobre a zona, estação ao lado da base e retrato/nome elevados; duas contas e bases ocupadas/vazias | Correção `a6b138b` aplicada em Studio Edit; Play e save humano pendentes |
 | P0 · TRAIN-01 | Avaliar em jogo os quatro manequins, ciclo de 2 s, recompensa, dois jogadores, PC/celular e restauração ao sair/pular/morrer | Código `da8ac18` e Studio Edit prontos; save e validação visual pendentes |
 | P1 · TRAIN-02 | Acrescentar níveis visuais/econômicos futuros conforme novas espécies sustentem a renda | Estrutura extensível; conteúdo não liberado |
 | P1 · HAC-13 / HAC-06 | Retestar placas de melhoria (duas faces) e início/saída do treino no manequim | Correção aplicada; teste de input real pendente |
@@ -25,7 +25,7 @@
 | P1 · HAC-19 / 25 / 14 | Testar Index (Normal/Gold), loja rotativa (cota individual) e Settings | Implementados; validar em duas contas e reconexão |
 | P2 · HAC-20 / 21 / 22 / 23 | Testar Backpack nativo, isca, armadilha e poção | Integrados; regressão de respawn e disputa pendente |
 | P2 · HAC-05 / 11 / 24 / 28 / 29 / 30 | Avaliar legibilidade, mix de áudio, renda 5× (`1 s`) e força mínima | Regras implementadas; balanceamento de preços aguarda playtest |
-| Contínua · HAC-26 / CTX-01 | Manter modularidade do código e cofre sincronizado | Revisão **CTX-2026-10-23-03**; boleio e política de save humano registrados |
+| Contínua · HAC-26 / CTX-01 | Manter modularidade do código e cofre sincronizado | Revisão **CTX-2026-10-23-04**; correção das zonas registrada |
 
 ## Depois da validação da base
 
