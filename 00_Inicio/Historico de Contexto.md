@@ -214,3 +214,14 @@ Registro independente de IA/chat/dispositivo. **Não é especificação vigente*
 Antes da consolidação: 44 notas Markdown, 161.139 caracteres, 167.066 bytes. Backup ZIP íntegro e cópia das pastas antigas preservados **fora do cofre ativo**, em `contexto/obsidian-2026-10-19/` no checkout do jogo desta máquina.
 
 Esse arquivo legado não é necessário para entender as regras atuais e não foi publicado no repositório público. Uma máquina nova recebe o histórico consolidado acima; detalhes antigos não reconstruíveis são explicitamente desconhecidos. Não alegar que o Git novo contém versões históricas que nunca foram commitadas.
+
+## CTX-2026-10-22-02 — braço erguido na preparação do laço
+
+- Solicitação: corrigir novamente a pose rejeitada e entregar prompt completo para teste por outro agente.
+- Autoria/ambiente: Codex, Windows local, Studio MCP no lugar 102310424634629.
+- Resultado: ombro elevado (115°), cotovelo flexionado (65°), pulso pequeno; parâmetros por laço, conversão para eixos da articulação e restauração antes de Animator. Braço direito mistura para pose definida em vez de somar ao gesto de Tool. Reconhecimento também por membro conectado.
+- Evidência: dois módulos aplicados/compilados em Edit; verificação matemática estática de elevação/conversão de eixos passou. Rig observado usa AnimationConstraint. Nenhum Play iniciado pelo assistente; o desenvolvedor encerrou seu teste para aplicação. Isso não comprova qualidade visual.
+- Código: a086637b2f5b2260dd26f71526a6eeb4aa93f0ed enviado a main; prompt em studio/prompts/LASSO_ANIMATION_AGENT.md. Nenhum agente auxiliar executado.
+- Pendências: aprovação visual, regressões manuais PC/celular/dois jogadores e salvamento pelo desenvolvedor. Soltura direcionada dos observadores permanece fora desta correção. Nenhum salvamento acionado ou publicação feita. Alterações locais de GameplayConfig e art preservadas.
+
+- Encerramento em 23/10/2026: retomada solicitada pelo desenvolvedor; código remoto a086637 confirmado, verificador do cofre executado e sincronização desta revisão concluída. Sem nova aplicação no Studio ou confirmação de salvamento humano.
