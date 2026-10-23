@@ -55,3 +55,7 @@ Treino e lojas usam áreas de entrada amplas e visíveis, sem texto flutuando so
 
 ## ADR-018 — Skill canônica de criaturas e aprovação de arte (23/10/2026)
 A skill `hac-creature-modeler` fica no repositório do jogo em `skills/hac-creature-modeler/` e é instalada localmente apontando para a cópia versionada. Seu escopo é converter conceitos 2D de criaturas em arte Blender revisável (`.blend`, `.fbx`, script e pranchas); não integra nem substitui modelos no Studio. A direção de arte vigente pertence a [[01_Produto/Design UI UX]] e pode mudar por feedback. A geometria segue `1 unidade Blender = 1 stud`, frente `-Y`, raiz no chão e pivôs anatômicos; adaptar `Root`/colisão do Studio é etapa posterior. A aprovação do desenvolvedor é visual, distinta da validação técnica do kit.
+
+## ADR-019 — Skill de integração com atuação própria (23/10/2026)
+
+A skill hac-creature-integrator cadastra espécie nova por padrão, pede raridade ausente e infere atuação pela anatomia quando não houver descrição. A descrição humana prevalece. Economia/captura usam perfil provisório centralizado baseado no Lumito e aparecimento controlado em ponto existente da ilha de teste, preservando limite populacional. Integração exige catálogo, menus, animação, base e persistência; aprovação de polimento depende de playtest humano. A criação da skill não integra uma criatura automaticamente.

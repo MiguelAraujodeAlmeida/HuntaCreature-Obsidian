@@ -40,3 +40,7 @@ Substituir informações superadas diretamente na nota dona; nunca manter duas v
 2. Atualizar `context_revision` e `code_reference` em `context-manifest.json`, `README.md` e [[00_Inicio/Estado Atual]].
 3. Executar `python tools/check_context.py --refresh`, inspecionar o diff e rodar `python tools/check_context.py` (deve retornar `"ok": true`).
 4. Revisar `git diff --check`, commitar apenas arquivos rastreados do cofre e executar `git push origin main`, confirmando o SHA remoto.
+
+## Integração de novas criaturas
+
+Usar `skills/hac-creature-integrator/` no repositório do jogo, instalada localmente por vínculo em `~/.codex/skills/hac-creature-integrator`. O guia detalhado é `references/guia_skill_integracao_criaturas.md` dentro da skill. Recebe modelo e descrição opcional; pergunta raridade ausente, comunica personalidade e dois gestos, prepara integração completa com animações próprias. Valores de gameplay vêm de perfil provisório centralizado baseado no Lumito, e uma reserva de spawn reutiliza ponto existente sem aumentar população. Essa política é para futuras integrações; não afirma que a infraestrutura já foi implementada no jogo. Dados definitivos de economia/ilha/captura serão definidos depois.

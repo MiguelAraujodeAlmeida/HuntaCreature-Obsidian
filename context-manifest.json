@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-23-10",
+  "context_revision": "CTX-2026-10-23-11",
   "updated": "2026-10-23",
-  "code_reference": "f728f3c",
+  "code_reference": "f528e6d",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
   "branch": "main",
   "entrypoints": [
@@ -49,14 +49,14 @@
     "assets/lumito-v01-studio-2026-10-20.jpg"
   ],
   "sha256": {
-    "README.md": "8b8b76dcb77fda63aa8a0f2a91bbb6aa0fb88f868dca6820f020a01db6262aa6",
+    "README.md": "88bf9d3b6b95adfb6359e5c953be7530aa5252ae9790a1bd212f19143c6c7aa5",
     "AGENTS.md": "f44fefbf8da70791c6bec1bb3b108df91861c4af17b59c0f7acbeefe206e0c70",
     "00_Inicio/Painel do Projeto.md": "82db03868aefffb060c3a618a664071c0b09153098bdd6055b56c69544851ce1",
-    "00_Inicio/Estado Atual.md": "05c28e2df580c6b827915ae099a307890c776986c88cb540747ba5f7b5d88a6e",
+    "00_Inicio/Estado Atual.md": "c837b5170e7eb4a1fe0749c526ae8b6187d5f48e558f7586046dc68a6848b79b",
     "01_Produto/Visao e Escopo.md": "597d50dab1f79b36a840f4f7c256c3102cb2552084094337e8d1a4a487198a08",
-    "02_Planejamento/Backlog.md": "33b880b718eadd2ad512166b862744b023bd7c139a5c37d763077c829f35cedd",
-    "03_Engenharia/Fluxo de Desenvolvimento.md": "11cb552e71b1c29b3772445824ac151d26077e75eff4cbf59a4e204fd80488f3",
-    "00_Inicio/Historico de Contexto.md": "84e1275064b31d5958c20dc31931350496c42ced053366949da9c7092731917d",
+    "02_Planejamento/Backlog.md": "8b40688fafab3966a360e8aef54858d608c15d6d02a771f6fb5db58f05347163",
+    "03_Engenharia/Fluxo de Desenvolvimento.md": "13b8d4b04fed953db963263a58f795023575c2bddd129ed04d776c0babf39f51",
+    "00_Inicio/Historico de Contexto.md": "be9497a32e07ddc00701437013f14b2d18bed7c989bdfaa2005751099d5b677e",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "bfcbf85e79cecee4e8492404d22218611b58856d017d89f921fd8aea59d487ac",
     "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",
@@ -70,7 +70,7 @@
     "06_Referencias/Referencias Visuais.md": "08f702fa0d2634e8a73b885e61ee9c099372d1801d6466a3253faba92c5b0e52",
     "06_Referencias/Estudo visual Steal an Egg.md": "3b24a0607364d4fbe7eedc58f1b28a6bfd57a8a3e49432bc3f81a38c8c960fbe",
     "03_Engenharia/Arquitetura Atual.md": "1ef523df9fb4a58240ec0f6309f60ebc6931df49deb7e1874e74aa3b1773f607",
-    "03_Engenharia/Decisoes Vigentes.md": "b63e4e051f834b292bcd1f99118fc87fde9ec96af7bdd63129edb18940cb0572",
+    "03_Engenharia/Decisoes Vigentes.md": "a72a458a40aca660b7bc28bc37901f38dd14287122f7fa2428f710e8e380f914",
     "04_Validacao/Playtest Atual.md": "42cf97d5a0bcd60888636e03b1623e8fc6f8a7a4b7c53799a362ab3ce1b83079"
   }
 }

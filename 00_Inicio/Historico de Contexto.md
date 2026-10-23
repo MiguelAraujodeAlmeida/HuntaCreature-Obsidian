@@ -295,3 +295,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Resultado: art/lumito-ornate-v01 com Blender/FBX/build.py, 12 vistas e escala. Armadura, cristais, arco dourado, expressão assimétrica e orelha dobrada. Revisão corrigiu encaixes de pescoço/pernas e espessura dos cristais laterais.
 - Evidência: construção/exportação e renders via Blender MCP; inspeção visual da prancha e escala. Commit f728f3c confirmado no remoto.
 - Limites: interpretação de arte para aprovação, sem animação/VFX dinâmico ou integração no Studio; Lumito vigente preservado. Autoria: Codex, Windows, sem subagentes.
+
+## CTX-2026-10-23-11 — skill de integração de criaturas
+
+- Pedido: implementar a especificação revisada de hac-creature-integrator e entregar guia Markdown.
+- Resultado: skill e guia detalhado versionados, instalados por junction local; cobre identidade/raridade, perfil provisório, spawn reservado, atuação própria, integração de catálogo/menus e checklist humano.
+- Evidência: quick_validate.py passou; referências locais e diff revisados. Código f528e6d confirmado no GitHub.
+- Limites: nenhum código de gameplay, asset ou lugar Studio alterado; nenhuma criatura integrada como teste. Validação real do fluxo aguarda solicitação de espécie. Alterações locais anteriores preservadas. Autoria: Codex, Windows, sem subagentes.

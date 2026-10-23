@@ -26,7 +26,7 @@
 | P1 · HAC-19 / 25 / 14 | Testar Index (Normal/Gold), loja rotativa (cota individual) e Settings | Implementados; validar em duas contas e reconexão |
 | P2 · HAC-20 / 21 / 22 / 23 | Testar Backpack nativo, isca, armadilha e poção | Integrados; regressão de respawn e disputa pendente |
 | P2 · HAC-05 / 11 / 24 / 28 / 29 / 30 | Avaliar legibilidade, mix de áudio, renda 5× (`1 s`) e força mínima | Regras implementadas; balanceamento de preços aguarda playtest |
-| Contínua · HAC-26 / CTX-01 | Manter modularidade do código e cofre sincronizado | Revisão **CTX-2026-10-23-10**; skill de criaturas versionada/instalada, cena interativa do Blender inalterada |
+| Contínua · HAC-26 / CTX-01 | Manter modularidade do código e cofre sincronizado | Revisão **CTX-2026-10-23-11**; skill de criaturas versionada/instalada, cena interativa do Blender inalterada |
 
 ## Depois da validação da base
 
@@ -37,3 +37,7 @@
 | EXP-01 | Segunda espécie, novos laços, biomas e eventos | Escopo futuro a especificar |
 | HAC-27 | Interferência entre jogadores durante captura | Hipótese não implementada |
 | PROC-02 / PROC-03 | Sincronização automatizada Studio ↔ Git e automações extras de contexto | Sem necessidade imediata; fluxo enxuto ativo |
+
+## Ferramentas de produção
+
+- `hac-creature-integrator` pronta estruturalmente; próxima solicitação de integração deve validar o fluxo real em uma espécie escolhida pelo desenvolvedor. Skill não implica aprovação das artes entregues.
