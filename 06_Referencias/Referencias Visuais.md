@@ -2,6 +2,8 @@
 
 Imagens locais do cofre para consulta rápida sem depender de pastas temporárias. Regras completas em [[01_Produto/Design UI UX]] e análise em [[06_Referencias/Estudo visual Steal an Egg]].
 
+As quatro novas referências de cenário enviadas em 28/10/2026 estão junto de sua leitura e receita em [[01_Produto/Receita de Ilhas e Cenarios]].
+
 ## 1. Evolução do Lumito no projeto
 
 ### Modelo atual integrado — Lumito base v01 (`ee6e901`)

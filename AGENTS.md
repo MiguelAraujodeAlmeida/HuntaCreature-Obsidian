@@ -8,7 +8,7 @@ Banco de contexto do **Hunt A Creature** (política permanente definida pelo des
 ## 1. Leitura obrigatória por escopo
 
 1. **Novo chat ou dispositivo:** ler `README.md`, `AGENTS.md` e os arquivos de `bootstrap` em `context-manifest.json`, na ordem declarada. Não substituir essa base por resumo de chat.
-2. **Roteamento por domínio:** antes de editar, ler apenas os arquivos de `domains` correspondentes à tarefa (`gameplay`, `ui_ux`, `engineering`, `decisions` ou `validation`). Ler `reference` somente quando precisar de histórico, modelo de registro, métricas ou comparação visual específica.
+2. **Roteamento por domínio:** antes de editar, ler apenas os arquivos de `domains` correspondentes à tarefa (`gameplay`, `ui_ux`, `world_design`, `engineering`, `decisions` ou `validation`). `world_design` é necessário para mapas, biomas, props de cenário e portos, não para UI geral. Ler `reference` somente quando precisar de histórico, modelo de registro, métricas ou comparação visual específica.
 3. **Mesma sessão:** reler apenas o que mudou e os domínios afetados. Se algum arquivo, repositório ou instância do Studio estiver inacessível, explicitar a lacuna.
 
 ## 2. Regras de execução no projeto

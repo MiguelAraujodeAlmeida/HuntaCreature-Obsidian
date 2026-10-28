@@ -23,7 +23,7 @@
   - `Gold` (`Dourado`): `Main` `255,220,86` · `Secondary` `255,252,240` · `Accent` `214,142,28` · `Ink` `3,12,40` · `Glint` `255,255,255`.
 
 ### Mundo e materiais
-- Cenário modular de brinquedo: pisos amplos com studs/grade, plataformas, cercas e estruturas simples com cores vivas por bioma. Áreas de circulação permanecem limpas para destacar criaturas, alvos e recompensas.
+- Cenário modular de brinquedo: volumes/facetas de leitura rápida, cor por peças e studs seletivos; terreno, vegetação e arquitetura contam o tema de cada ilha sem esconder criaturas, alvos e recompensas. A receita para criar ilhas e avaliar exceções fica em [[01_Produto/Receita de Ilhas e Cenarios]].
 
 ### Movimento e VFX de criaturas
 - Cada espécie precisa de um ritmo e repertório próprios, coerentes com anatomia e personalidade; repouso não é congelamento. Alternar gestos com pausas variáveis, dar intenção legível a cabeça, braços/asas, cauda e olhos, e misturar entrada/saída dos estados sem trancos. A passada acompanha a velocidade real e o contato com o solo. Lumito é curioso e brincalhão; Chicken é curiosa, distraída e atrapalhada. Movimento secundário deve apoiar a atuação, sem tremor contínuo. O `Root` de gameplay e o volume `Corpo` não acompanham oscilações cosméticas.

@@ -75,3 +75,7 @@ Cada espécie tem gestos, expressões e ritmo compatíveis com sua anatomia e pe
 ## ADR-023 — Migração de animação por comparação isolada (28/10/2026)
 
 O desenvolvedor preferiu visualmente o Rig ao Original e autorizou a promoção para o Lumito jogável na ilha/base. A demonstração foi desativada por padrão; suas fontes permanecem para regressão. A integração usa Motor6D e fontes de clipe versionadas com reprodução em runtime, mantendo `LumitoAnimator` como retorno seguro. A preferência pelo comparativo não aprova automaticamente captura, base, múltiplos clientes ou desempenho; esses aspectos exigem novo Playtest. IDs temporários de Studio não entram no caminho jogável.
+
+## ADR-024 — Rede de ilhas temáticas e viagem livre (28/10/2026)
+
+Direção proposta para o mapa futuro: ilhas adicionáveis por atualização/evento, cada uma com porto e barco que serve de teletransporte; a Ilha Base é refúgio pacífico com praia, e a Fazenda é a primeira ilha de caça. Nenhuma ilha exige rank/nível para visitar; requisitos de força das criaturas sustentam a progressão. Mundo e props compartilham linguagem toy/studs, mas cada bioma pode ter relevo, paleta, materiais e objetos próprios. A receita em [[01_Produto/Receita de Ilhas e Cenarios]] orienta sem fixar quantidade de props, topologia, tecnologia de viagem ou tema de ilhas futuras. Nada disso foi implementado nesta entrega.

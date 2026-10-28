@@ -25,6 +25,7 @@ Política permanente do projeto. Toda IA, chat ou dispositivo deve segui-la; alt
 | Identidade, pilares, ciclo principal e escopo futuro | [[01_Produto/Visao e Escopo]] |
 | Regras de gameplay, economia, IA e parâmetros | [[01_Produto/Sistemas Atuais]] |
 | Direção de arte, anatomia de criaturas, HUD e padrão de menus | [[01_Produto/Design UI UX]] |
+| Receita visual e espacial das ilhas | [[01_Produto/Receita de Ilhas e Cenarios]] |
 | Módulos Luau, templates do Studio, contratos e persistência | [[03_Engenharia/Arquitetura Atual]] |
 | Decisões arquiteturais e de produto duradouras (ADRs) | [[03_Engenharia/Decisoes Vigentes]] |
 | Estado da entrega atual, pendências de save e próximos passos | [[00_Inicio/Estado Atual]] |
