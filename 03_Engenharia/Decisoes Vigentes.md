@@ -71,3 +71,7 @@ Criaturas terrestres que caminham ou correm devem ter frequência de passos prop
 ## ADR-022 — Atuação individual e apresentação desacoplada (23/10/2026)
 
 Cada espécie tem gestos, expressões e ritmo compatíveis com sua anatomia e personalidade. Estados de passeio, repouso, alerta/fuga, cansaço, captura e base transitam de forma contínua; velocidade real governa passada e efeitos de contato. Peças desconhecidas ficam na pose de repouso até receberem mapeamento explícito, para não seguirem uma articulação errada. A apresentação não move `Root` nem `Corpo` autoritativos. O pipeline rígido procedural atual é provisório e pode evoluir para rig/clipes com apresentação local após avaliação visual; não se presume que animação técnica aprovada equivale a carisma aprovado.
+
+## ADR-023 — Migração de animação por comparação isolada (28/10/2026)
+
+Antes de substituir o animador jogável do Lumito, manter Original e Rig em demonstração não capturável, com o mesmo template, escala, cor, percurso e estados. O Rig deve superar o Original em naturalidade e expressão sem regressões de encaixe, contato dos pés ou desempenho percebido; a aprovação é do desenvolvedor em Playtest. Se não superar, revisar clipes e articulações sem tocar na criatura jogável. Publicação dos clipes e promoção para ilha, base e captura são etapas separadas.
