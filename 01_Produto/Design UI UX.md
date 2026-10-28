@@ -27,6 +27,7 @@
 
 ### Movimento e VFX de criaturas
 - Cada espécie precisa de um ritmo e repertório próprios, coerentes com anatomia e personalidade; repouso não é congelamento. Alternar gestos com pausas variáveis, dar intenção legível a cabeça, braços/asas, cauda e olhos, e misturar entrada/saída dos estados sem trancos. A passada acompanha a velocidade real e o contato com o solo. Lumito é curioso e brincalhão; Chicken é curiosa, distraída e atrapalhada. Movimento secundário deve apoiar a atuação, sem tremor contínuo. O `Root` de gameplay e o volume `Corpo` não acompanham oscilações cosméticas.
+- Ao integrar nova espécie articulável, preferir rig anatômico e clipes próprios e reproduzíveis, sem impor a anatomia do Lumito a quadrúpedes ou voadores. Cada ornamento deve seguir seu grupo correto e os pés devem apoiar no chão em repouso e movimento, inclusive nas escalas extremas. A atuação final exige observação humana em jogo; compilação de joints não comprova carisma.
 - Poeira de passada usa massas gráficas de leitura cartunesca, contorno teal e preenchimento branco/ciano, em rajadas curtas sincronizadas ao contato do pé. Corrida pode usar rastro ciano curto e afilado; evitar fumaça contínua, nuvens grandes sobre o personagem, excesso de brilho ou partículas que substituam a animação corporal.
 
 ## 2. HUD, caça e feedback

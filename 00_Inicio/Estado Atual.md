@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão **CTX-2026-10-28-01** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `2855b50`. O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Há uma área isolada de comparação **Original × Rig** aplicada em Studio Edit; o Lumito jogável continua com o animador anterior. O lugar aguarda Save humano e playtest. Nenhum clipe foi publicado como asset permanente.
+Revisão **CTX-2026-10-28-02** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `f146eda`. O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Após o desenvolvedor preferir o Rig, ele foi aplicado ao Lumito jogável na ilha e na base em Studio Edit; o animador anterior permanece como retorno seguro. O lugar aguarda Save humano e playtest da integração.
 
 ## O que existe
 
@@ -11,8 +11,8 @@ Revisão **CTX-2026-10-28-01** · 28/10/2026. Código canônico: `main` do [Hunt
 
 ## Estados e pendências que não podem ser confundidos
 
-- **Studio:** o comparativo temporário tem duas cópias do mesmo template, em pistas separadas. A cópia Rig usa Motor6D e oito clipes locais reproduzíveis; toda a crista segue a cabeça e as solas ficam acima da pista nas poses amostradas. Quatro scripts compilaram em Edit. Fluidez, contato durante o ciclo completo, visibilidade de outro cliente e desempenho ainda exigem Playtest. O desenvolvedor ainda não confirmou Save; o assistente não aciona Save. Checklist: [[04_Validacao/Playtest Atual]].
+- **Studio:** o Lumito selvagem e o da base agora usam rig Motor6D com oito fontes de clipe versionadas. O servidor move `Root`/colisão, publica estado/velocidade e emite puff/rastro; cada cliente apresenta poses, gestos, olhar e piscada. O comparativo ficou desativado por padrão e sua arena foi removida do Edit. Scripts compilaram; clones 1× Normal, 3× Gold e base foram inspecionados em Edit, com crista ligada à cabeça e solas acima do piso. Fluidez, captura real, dois clientes e desempenho exigem Playtest. Save do lugar ainda sem confirmação; o assistente não aciona Save. Checklist: [[04_Validacao/Playtest Atual]].
 - **Git local:** `art/lumito-base-v01/` e `art/lumito-base-v02/` continuam pastas locais não rastreadas. Preservar esses dados e não presumir que existem em outro clone.
 - **Arte:** Chicken está no Studio Edit, com FBX convertido em 25 MeshParts; Pug e Lumito ornamentado não foram integrados. Atuações revisadas, passada/aceleração e puff compartilhado ainda aguardam avaliação visual humana; balanceamento provisório aguarda playtest.
-- **Migração de animação:** o Rig é somente demonstração no lugar de teste; não participa de caça, catálogo, base, economia ou saves. Os clipes usam IDs temporários de prévia por sessão do Studio; publicação e promoção para o jogo real dependem de avaliação posterior. A implementação vigente do Lumito permanece reversível.
+- **Migração de animação:** a preferência humana pelo Rig no comparativo autorizou a integração. O reprodutor jogável usa as fontes de pose versionadas em runtime, sem depender dos IDs temporários de prévia e sem alterar saves/economia. A qualidade final da integração ainda não foi aprovada. `CreatureProfiles.Lumito.Animator` pode voltar a `LumitoAnimator` se necessário. A skill de integração foi atualizada para exigir rig/clipes reproduzíveis quando adequados à anatomia.
 - **Próxima ação:** prioridades em [[02_Planejamento/Backlog]]. Feedback recente do desenvolvedor prevalece; verifique domínio e código para detalhes, sem usar o histórico como regra vigente.

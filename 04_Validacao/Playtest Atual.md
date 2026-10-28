@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **2855b50**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O comparativo Original × Rig, a atuação Lumito/Chicken e o fechamento de menus por saída da zona foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. Todos os itens abaixo aguardam validação humana. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **f146eda**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O Rig do Lumito jogável, a atuação Chicken e o fechamento de menus por saída da zona foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. A preferência humana pelo Rig no comparativo foi registrada, mas a integração jogável ainda aguarda validação. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -13,7 +13,7 @@ Build de código: **2855b50**; lugar **102310424634629** (`[Testing] Hunt a Crea
 
 - [ ] **C01 · Leitura visual do `Lumito_Base_v01`:** avaliar silhueta facetada, testa saliente, orelha direita dobrada, crista dorsal com studs e expressão facial (Normal e Gold) na ilha, na base e nos retratos 3D.
 - [ ] **C02 · Escala contínua (`1×` a `5×`), atuação e VFX:** conferir contato das solas, passo sincronizado de pé/sola/stud (`FootSide`), respiração, cabeça/orelhas/cauda/braços, piscada, gestos e saudação na base. Em caminhada, validar um puff discreto por contato; em fuga, puff reforçado e rastro curto, sem cobrir a silhueta. Repetir em `1×` e `5×`, PC/celular e diferentes ângulos; confirmar que `Identificacao` não invade as orelhas.
-- [ ] **C02A · Naturalidade do Lumito jogável:** observar braços em repouso, passeio, fuga, cansaço, captura, curiosidade, saudação e salto; verificar que não parecem colados, não atravessam o tronco/rosto e retornam suavemente. Conferir crista dorsal conforme o animador vigente, olhos/orelhas/cauda coerentes e nenhuma pose saltando ao trocar de estado. Comparar movimento visto por outro jogador. O teste separado de crista ligada à cabeça está em ANIM-RIG-01 abaixo.
+- [ ] **C02A · Naturalidade do Lumito com Rig:** observar braços em repouso, passeio, fuga, cansaço, captura, curiosidade, saudação e brincadeira; verificar que não parecem colados, não atravessam tronco/rosto e retornam suavemente. Conferir **crista inteira seguindo a cabeça**, olhos/orelhas/cauda coerentes e nenhuma pose saltando ao trocar de estado. Comparar movimento visto por outro jogador.
 - [ ] **C03 · Passeio na base (`BaseRoamingService`):** criaturas equipadas caminham dentro da plataforma sem empurrar avatares; ticks de `1 s` de renda não reiniciam posição; gigantes sem espaço livre ficam visíveis e imóveis.
 - [ ] **C04 · Equip/Unequip (`Creatures`):** move o indivíduo correto e bloqueia destino cheio sem trocar ou perder criaturas.
 - [ ] **C05 · Favorito e venda no mercado físico (`Creature Market`):** favorito bloqueia venda; venda exige proximidade (`14 studs`) e confirmação, removendo apenas o exemplar escolhido e creditando ouro uma vez.
@@ -81,10 +81,10 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 - [ ] Na base, verificar passeio, saudação ocasional, renda provisória de 1 ouro/s em 1× Normal, ocultar criaturas sem interromper renda e reconectar sem perder o indivíduo.
 - [ ] Testar tamanhos 1× e grandes, Gold, PC/celular, dois jogadores, som desligado e regressão do Lumito. Anotar clips/prints de animações estranhas para polimento.
 
-## Comparativo Lumito Original × Rig (ANIM-RIG-01)
+## Rig do Lumito jogável (ANIM-RIG-01)
 
-- [ ] Nas duas pistas ao lado da ilha, confirmar rótulos ORIGINAL/RIG e percursos, cor, escala e sequência de estados iguais. Observar frente, perfil e três quartos; registrar vídeo curto em cada ângulo.
-- [ ] Ver repouso e gestos de curiosidade, saudação e brincadeira; depois passeio, fuga, cansaço e resistência ao laço. Comparar braços, cabeça, orelhas, cauda, naturalidade e transições. No Rig, **moicano/crista inteira deve acompanhar a cabeça**, nunca as costas.
-- [ ] Acompanhar pés durante todo o ciclo: sem afundar na pista, flutuar de modo perceptível ou deslizar em caminhada/fuga. Verificar ausência de peças atravessando o corpo. Conferir 1×/3× e Normal/Gold quando a demonstração alternar o modo.
-- [ ] Comparar no segundo cliente e observar FPS/custo perceptível em PC/celular. O Rig não é presumido mais leve. As duas cópias não devem responder ao laço, aparecer no Index/bolsa/base, gerar ouro/XP ou persistir em reconexão.
-- [ ] Dar veredito visual: Rig claramente melhor, requer ajustes concretos ou manter Original. Só após aprovação planejar publicação de IDs de clipe e integração jogável. A demonstração ainda usa IDs temporários de prévia e não constitui validação de rede ou performance em Edit.
+- [x] Desenvolvedor preferiu a demonstração Rig ao Original e pediu aplicação ao Lumito jogável. O comparativo ficou oculto por padrão; a preferência não substitui os testes abaixo.
+- [ ] Na ilha, observar frente, perfil e três quartos: repouso, curiosidade, saudação, brincadeira, passeio, fuga, cansaço e resistência ao laço. Confirmar crista inteira seguindo a cabeça, braços expressivos, pés no solo, ausência de peças atravessando o corpo e transições suaves. Conferir 1× e grandes, Normal/Gold.
+- [ ] Capturar Lumito em diferentes fases da disputa; durante o laço, `Root` e volume de colisão devem ficar estáveis enquanto o corpo resiste. Após falha/soltura, a atuação deve voltar sem salto. Índice, retrato, bolsa, renda e saves não devem mudar por causa do Rig.
+- [ ] Na base, equipar Lumito e observar passeio lento, pausa, olhar, gestos e puff apenas no contato. Ocultar/mostrar criaturas, sair/reentrar e confirmar ausência de modelos ou efeitos órfãos.
+- [ ] Repetir com dois jogadores e em PC/celular; ambos devem ver os mesmos estados e movimento local suave. Observar FPS/custo com vários Lumitos e comparar visualmente com a versão anterior se houver regressão. Registrar vídeo/Output e retornar detalhes concretos para ajuste. O reprodutor jogável lê clipes versionados sem IDs temporários de Studio.
