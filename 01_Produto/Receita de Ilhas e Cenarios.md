@@ -1,6 +1,6 @@
 # Receita de ilhas e cenários
 
-**Estado:** direção de design proposta em 28/10/2026; revisável após bloco visual e playtest. Nenhuma ilha, barco ou teletransporte desta proposta está implementado. Esta nota orienta qualquer agente que criar ou revisar mapas; regras de interface ficam em [[01_Produto/Design UI UX]], mecânicas vigentes em [[01_Produto/Sistemas Atuais]].
+**Estado:** direção de design proposta em 28/10/2026; revisável após bloco visual e playtest. A Ilha Base tem um **bloco v01 em Studio Edit** (seção 2.1), sem aprovação humana, água ou funcionalidades; barco, teletransporte e Fazenda não estão implementados. Esta nota orienta qualquer agente que criar ou revisar mapas; regras de interface ficam em [[01_Produto/Design UI UX]], mecânicas vigentes em [[01_Produto/Sistemas Atuais]].
 
 ## 1. Experiência pretendida
 
@@ -19,6 +19,16 @@
 | **Fazenda** | Primeira ilha de caça: fazenda tranquila, fértil e acolhedora | Celeiro como marco, plantações e vegetação rural, cercas, caminhos de terra e detalhes agrícolas com escala de brinquedo. Criaturas precisam de espaço e visibilidade para caça; não fixar ainda distribuição ou economia definitiva. |
 
 Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas bases à esquerda, duas à direita e duas na parte inferior**; áreas de treino próximas às bases, **duas lojas na parte superior** e barco/porto na costa superior. A distribuição é relativa: não determina forma da ilha, posição exata, orientação dos caminhos nem arte final. A ilha de teste ainda não foi substituída. Espécies residentes, requisitos de força e demais regras de gameplay de cada ilha serão estudados numa etapa própria; não inventar esses números ao desenhar cenário.
+
+### 2.1 Ilha Base — bloco v01 (Studio Edit, 28/10/2026)
+
+**Estado:** implementado em Edit como `Workspace.HAC_IlhaBase` (Model, ~1.500 peças), sem Save confirmado, Play ou aprovação visual. Fica a ~430 studs ao norte (−Z) da ilha de teste, que não foi alterada; nenhum script referencia o novo Model. Coordenadas abaixo são locais à origem `(0, 0, −430)`; **norte = −Z = porto**.
+
+- **Terreno em camadas toy:** contorno orgânico por uniões de elipses (`Terreno`): fundação de rocha, areia rasa (topo 2,5), praia (topo 4), barranco de terra (topo 7) e gramado (topo 8), todos com textura de studs. Quatro colinas decorativas nos cantos; farol listrado na colina NE como marco do porto.
+- **Circulação (`Caminhos`):** praça central elíptica (30 × 28) com monumento do laço; avenida norte de 12 studs até a escada e o píer; eixo leste–oeste de 7 studs até escadas de praia; acessos curtos de 7 studs para cada base e de 8 studs da avenida às lojas. Avenida com postes e canteiros; vista da praça para as lojas e do píer para a praça sem árvores bloqueando.
+- **Lotes reservados (`Lotes`):** cada lote é um Model com `Piso` (frente = `LookVector`), marcadores de canto, `Volume` invisível sem colisão/consulta e atributos `HACReserva`, `HACIndice`, `HACTamanho`/`HACRaio`. Bases 1–4: 34 × 28 nas laterais (frente para a praça); Bases 5–6: 28 × 34 ao sul (frente norte); seis treinos circulares de raio 6,5 ao lado de cada base (`HACBaseVinculada`); duas lojas 26 × 20 ao norte voltadas para a avenida; `Lote_Barco1` ao norte da cabeça do píer com `AreaInteracao` sobre o píer. Dimensões são reserva inicial, ajustáveis ao projetar cercados/upgrades.
+- **Kit e paleta:** árvores em blocos escalonados, palmeiras segmentadas, arbustos, flores, rochas lilás, postes, guarda-sóis, castelo de areia e boias. Texturas existentes: studs `133050717017276`, piso `103826263412719`, madeira `97810845356536`. Neon apenas nas lanternas e na lâmpada do farol.
+- **Pendências do bloco:** nível e material da água, spawn, conversão dos lotes em cercados/lojas/treinos/barco, colisões em Play, custo em celular e revisão humana de escala, densidade e caminhos.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 
