@@ -5,6 +5,7 @@
 ## 1. Experiência pretendida
 
 - O mundo pode receber novas ilhas por atualização ou evento, sem número final pré-definido. Isso significa **estrutura expansível**, não geração procedural infinita prometida ao jogador.
+- Ilhas podem ter **tamanhos diferentes**. Como referência de sensação, a ilha média deve comportar tema e descobertas próprias sem caminhada longa ou espaços vazios, comparável a uma ilha média de *Blox Fruits*; não fixar studs ou um tempo de travessia antes do bloco em câmera jogável. Ilhas especiais podem ser menores ou maiores por função.
 - Cada ilha comunica seu tema em poucos segundos pela silhueta do terreno, um marco dominante, vegetação, paleta, materiais e ambientação. O jogador deve reconhecer onde chegou antes de ler qualquer placa.
 - O destino é um lugar de caça e descoberta, não apenas um fundo. Caminhos, relevos e pontos de interesse criam pequenos momentos de curiosidade, mas preservam visão limpa das criaturas e espaço para mirar o laço.
 - A mesma linguagem de **brinquedo montável** une criaturas, prédios e cenário: volumes grandes, planos/facetas ou blocos bem encaixados, chanfros controlados, cor por peças e studs onde reforçam material/escala. Não forçar studs em toda superfície; água, areia, folhagem e efeitos podem precisar de tratamentos próprios.
@@ -14,8 +15,10 @@
 
 | Ilha | Primeira impressão e função | Elementos de direção, ainda ajustáveis |
 |---|---|---|
-| **Base** | Refúgio amigável e pacífico onde o jogador administra sua coleção e se prepara para caçar | Bases, lojas e treino organizados em percursos legíveis; vegetação comum, praia contornando a área principal e porto com barco. A costa e o relevo devem dar identidade sem esconder ações essenciais. |
+| **Base** | Refúgio amigável e pacífico onde o jogador administra sua coleção e se prepara para caçar | Seis bases futuras como **cercados habitáveis** para criaturas, treino ao lado das bases, duas lojas na parte norte e porto/barco no norte da costa; vegetação comum e praia contornando a área principal. O esquema abaixo fixa apenas essa distribuição inicial, não o contorno nem a arte final. |
 | **Fazenda** | Primeira ilha de caça: fazenda tranquila, fértil e acolhedora | Celeiro como marco, plantações e vegetação rural, cercas, caminhos de terra e detalhes agrícolas com escala de brinquedo. Criaturas precisam de espaço e visibilidade para caça; não fixar ainda distribuição ou economia definitiva. |
+
+Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas bases à esquerda, duas à direita e duas na parte inferior**; áreas de treino próximas às bases, **duas lojas na parte superior** e barco/porto na costa superior. A distribuição é relativa: não determina forma da ilha, posição exata, orientação dos caminhos nem arte final. A ilha de teste ainda não foi substituída. Espécies residentes, requisitos de força e demais regras de gameplay de cada ilha serão estudados numa etapa própria; não inventar esses números ao desenhar cenário.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 
@@ -30,7 +33,7 @@ Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter le
 
 - Toda ilha tem um porto/embarcação de chegada e saída. O barco funciona como acesso por **teletransporte** entre ilhas; não exige viagem física longa.
 - **Nenhuma ilha exige Hunter Rank ou nível mínimo para entrar.** O limite de progressão vem da força das criaturas e de seus requisitos de captura, definidos por espécie quando o conteúdo existir. O jogador pode visitar uma ilha difícil e entender visualmente que ainda precisa evoluir.
-- A interação para viajar deve ser descoberta pelo próprio porto/barco e apresentar destinos claramente. Entrada, destino, retorno e cancelamento precisam ser previsíveis em PC e celular. Não colocar um tutorial permanente na tela.
+- Ao entrar na **área de interação do barco**, o jogador abre um menu de destinos; escolhe a ilha e confirma. **O teletransporte acontece imediatamente após a confirmação**, sem animação de viagem que imponha espera. Sair da área, fechar o menu e cancelar não deslocam o jogador. O retorno deve ser claro em PC e celular; não colocar tutorial permanente na tela.
 - A implementação pode usar áreas separadas no mesmo lugar ou lugares Roblox distintos. Escolher depois conforme escala, carregamento, multiplayer e custo; a experiência acima não depende dessa decisão técnica. Não alterar spawn, save ou permissões antes de especificar o fluxo.
 
 ## 4. Receita de produção para qualquer agente
@@ -55,4 +58,4 @@ Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter le
 
 ## 6. Pendências para a etapa de implementação
 
-Escolher escala e mapa de rotas, organização dos destinos no barco, posição definitiva de bases/treino/lojas, catálogo de props, espécies por ilha e seus requisitos de força, e abordagem técnica do teletransporte. Validar cada ilha em bloco antes de produzir a arte final. Esta receita não aprova modelos específicos nem substitui feedback visual do desenvolvedor.
+Escolher no bloco jogável as dimensões e o contorno de cada ilha, caminhos definitivos entre pontos, catálogo de props e abordagem técnica do teletransporte. A distribuição inicial da Base e o fluxo de interação do barco já estão descritos; a UI concreta do menu de destinos ainda exige design. Espécies por ilha e seus requisitos de força ficam para um estudo de gameplay separado. Validar cada ilha em bloco antes da arte final. Esta receita não aprova modelos específicos nem substitui feedback visual do desenvolvedor.

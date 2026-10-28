@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão **CTX-2026-10-28-04** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `0e1c4f8` (somente instrução de leitura do cofre nesta revisão). O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Lumito e Chicken jogáveis usam rigs de peças na ilha e na base em Studio Edit; os animadores anteriores permanecem como retorno seguro. O lugar aguarda Save humano e playtest das integrações.
+Revisão **CTX-2026-10-28-05** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `0e1c4f8` (sem alteração de código ou Studio nesta solicitação). O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Lumito e Chicken jogáveis usam rigs de peças na ilha e na base em Studio Edit; os animadores anteriores permanecem como retorno seguro. O lugar aguarda Save humano e playtest das integrações.
 
 ## O que existe
 
@@ -8,7 +8,7 @@ Revisão **CTX-2026-10-28-04** · 28/10/2026. Código canônico: `main` do [Hunt
 - Lumito e Chicken têm templates facetados e animadores próprios; Chicken usa `HACChickenTemplate` importado do FBX. Pug e Lumito ornamentado seguem apenas como arte. Menus usam `MenuKit` e `MenuTheme`. Implementação e contratos: [[03_Engenharia/Arquitetura Atual]].
 - Zonas de entrada abrem treino, Hunting Shop e Creature Market. Loja/mercado têm receptor cliente e vínculo da janela à zona para fechamento ao sair, pendente de playtest; treino fica fora da base, com quatro manequins evolutivos. A base ocupada mostra foto/nome do dono; base livre não tem texto.
 - Três fontes de arte em `art/chicken-base-v01/`, `art/pug-base-v01/` e `art/lumito-ornate-v01/`. Chicken foi integrada tecnicamente; sua aparência e atuação no jogo ainda dependem de revisão humana. A skill `hac-creature-modeler` cria arte; `hac-creature-integrator` prepara integração jogável. Ambas estão no repositório do jogo e instaladas localmente por junction. Seus guias são consultados apenas ao usá-las.
-- **Mapa futuro (somente proposta de design):** Ilha Base pacífica com praia e porto; Ilha Fazenda como primeira caça; barcos dão acesso livre entre ilhas, enquanto a força exigida pelas criaturas marca progressão. Novas ilhas podem ser adicionadas por atualização/evento. A receita visual/espacial e as quatro referências portáveis estão em [[01_Produto/Receita de Ilhas e Cenarios]]. Mapa, portos e viagem ainda não foram construídos.
+- **Mapa futuro (direção de design, sem implementação):** ilhas de tamanhos variados; Base pacífica com praia, porto e seis cercados habitáveis distribuídos em duas colunas laterais e dois ao sul; Fazenda como primeira caça. A área do barco abre menu de destinos e a confirmação teletransporta imediatamente, sem bloqueio de ilha por rank. Espécies e força por ilha ficam para estudo posterior. A distribuição e as pendências estão em [[01_Produto/Receita de Ilhas e Cenarios]]; não há bloco ou arte final aprovada.
 
 ## Estados e pendências que não podem ser confundidos
 
