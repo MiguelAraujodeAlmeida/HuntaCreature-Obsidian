@@ -1,6 +1,6 @@
 # Playtest atual
 
-Build de código: **f146eda**; lugar **102310424634629** (`[Testing] Hunt a Creature`). O Rig do Lumito jogável, a atuação Chicken e o fechamento de menus por saída da zona foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. A preferência humana pelo Rig no comparativo foi registrada, mas a integração jogável ainda aguarda validação. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
+Build de código: **22a0cc2**; lugar **102310424634629** (`[Testing] Hunt a Creature`). Os Rigs jogáveis de Lumito e Chicken e o fechamento de menus por saída da zona foram aplicados/compilados em Studio Edit; **o desenvolvedor ainda precisa salvar o lugar**. As integrações jogáveis ainda aguardam validação. O assistente não inicia Play/emulação sem pedido explícito. Estado da entrega: [[00_Inicio/Estado Atual]].
 
 ## 1. Reset e persistência (`P01`–`P04`)
 
@@ -78,8 +78,14 @@ Iniciar por **P01–P02**, **C01–C02**, **A01–A03** e **B01**. Ao registrar 
 - [ ] Conferir olhar breve para jogador próximo na base, piscadas irregulares, asas sem tremor contínuo, expressões de fuga/cansaço e transições sem saltos; registrar trechos em vídeo se algo parecer mecânico.
 - [ ] Comparar passeio (`2,8 studs/s`), fuga (`9 studs/s`) e base (`1,65 studs/s`): arrancada/frenagem e curvas suaves, passada acompanhando deslocamento, salto atrapalhado e susto ocasionais sem tremor. Puff igual ao Lumito alterna junto aos pés só quando caminha/corre; nenhuma fumaça parada ou na captura.
 - [ ] Mirar e capturar a Chicken; bolsa cheia e força mínima, vitória, XP, nome e retrato corretos. Conferir Index antes/depois, silhuetas, favoritos, venda protegida e equipar/desequipar.
-- [ ] Na base, verificar passeio, saudação ocasional, renda provisória de 1 ouro/s em 1× Normal, ocultar criaturas sem interromper renda e reconectar sem perder o indivíduo.
+- [ ] Na base, verificar passeio, reação intrigada ocasional ao jogador, renda provisória de 1 ouro/s em 1× Normal, ocultar criaturas sem interromper renda e reconectar sem perder o indivíduo.
 - [ ] Testar tamanhos 1× e grandes, Gold, PC/celular, dois jogadores, som desligado e regressão do Lumito. Anotar clips/prints de animações estranhas para polimento.
+
+## Rig da Chicken jogável (ANIM-RIG-02)
+
+- [ ] Observar bicada dupla, inclinação intrigada e tropeço ocasional; penas, crista, bico e olhos devem seguir a articulação correta. Asas abrem dos próprios ombros, sem atravessar tronco/cabeça. Conferir repouso, passeio, fuga, cansaço e captura em frente, perfil e três quartos.
+- [ ] Conferir contato dos dois pés e puff alternado em 1× e criatura grande, Normal/Gold; nenhuma sola afundada, deslize contínuo, fumaça parada ou salto de pose ao trocar de estado.
+- [ ] Capturar Chicken e equipá-la na base; observar animação por outro jogador, PC/celular, ocultar/mostrar criaturas, reconexão e custo com várias criaturas. `Root` e `Corpo` permanecem estáveis durante a resistência ao laço. Registrar vídeo e Output de defeitos para ajuste.
 
 ## Rig do Lumito jogável (ANIM-RIG-01)
 

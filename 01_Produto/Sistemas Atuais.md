@@ -1,6 +1,6 @@
 # Sistemas atuais
 
-Regras e parâmetros de gameplay implementados no código de referência (**1cc378e**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
+Regras e parâmetros de gameplay implementados no código de referência (**22a0cc2**). Validação humana pendente conforme [[04_Validacao/Playtest Atual]]. Apresentação visual e UI: [[01_Produto/Design UI UX]].
 
 ## Laço e captura
 
@@ -16,7 +16,7 @@ Regras e parâmetros de gameplay implementados no código de referência (**1cc3
 
 - **Espécies atuais:** Lumito e Chicken comum. Chicken ocupa `Ponto4` na ilha de teste, preservando quatro spawns totais; economia, força mínima, XP e dificuldade usam valores provisórios herdados do Lumito. Atribuição definitiva de ilha e balanceamento permanecem pendentes.
 - **Lumito:** passeia na ilha, pausa, detecta jogadores no cone de visão (`28 studs`, `110°`), foge em pânico (`14 studs/s` por `5 s`), cansa (`1,8 studs/s` por `7 s`) e retoma o passeio (`3,5 studs/s`). Modelo 3D facetado (`HACLumitoTemplate` / `CreatureFactory`) com pivô `Root` a `1,68 * scale` do chão na ilha; na base, a altura visual recebe folga de `0,06 * scale` para as solas do Rig.
-- **Chicken (`ChickenAnimator`):** passeio `2,8 studs/s`, fuga `9 studs/s`, aceleração/frenagem e curvas suavizadas apenas em seu perfil; passada acompanha o deslocamento efetivo. Bicadas, inclinação intrigada, salto atrapalhado e susto se combinam com olhar a jogadores próximos, asas amortecidas, cauda e piscada irregular. Na base passeia a `1,65 studs/s`. Poses absolutas sobre 25 MeshParts não deslocam a raiz autoritativa. A qualidade visual ainda depende de Play humano.
+- **Chicken (Rig):** passeio `2,8 studs/s`, fuga `9 studs/s`, aceleração/frenagem e curvas suavizadas apenas em seu perfil; passada acompanha o deslocamento efetivo. Oito clipes próprios incluem repouso, passeio, fuga, cansaço, captura, bicada, inclinação intrigada e tropeço. Asas, cauda, crista, olhar e piscada acompanham a anatomia importada; na base passeia a `1,65 studs/s`. Motor6D posa as 25 MeshParts sem deslocar a raiz autoritativa; `ChickenAnimator` antigo permanece como retorno seguro. Folga visual de `0,04 × escala` mantém as solas acima do piso. A qualidade visual ainda depende de Play humano.
 - **Atuação visual do Lumito:** peças rígidas articuladas por `Motor6D` usam fontes de clipe para repouso, passeio, fuga, cansaço, captura, curiosidade, saudação e brincadeira. O servidor preserva navegação/`Root`/`Corpo`; clientes misturam poses, gestos, olhar e piscada. A crista inteira acompanha a cabeça. Velocidade real regula a passada e o puff de contato permanece no servidor. `LumitoAnimator` anterior fica disponível para retorno seguro. A integração ainda depende de Playtest humano.
 - **VFX de movimento:** `CreatureFootPuff` fornece textura e flipbook 2×2 compartilhados por Lumito e Chicken. A Chicken emite alternadamente junto aos pés apenas em passos terrestres. Lumito mantém rastro ciano de `0,13 s` em corrida/pânico. Sem emissão contínua.
 - **Atributos por indivíduo:** `id`, `species`, `rarity`, `size`, `mutations`, `location` (`bag` ou `base`) e `favorite`.

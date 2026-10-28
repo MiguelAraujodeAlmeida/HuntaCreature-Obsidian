@@ -70,7 +70,7 @@ Criaturas terrestres que caminham ou correm devem ter frequência de passos prop
 
 ## ADR-022 — Atuação individual e apresentação desacoplada (23/10/2026)
 
-Cada espécie tem gestos, expressões e ritmo compatíveis com sua anatomia e personalidade. Estados de passeio, repouso, alerta/fuga, cansaço, captura e base transitam de forma contínua; velocidade real governa passada e efeitos de contato. Peças desconhecidas ficam estáticas até receberem mapeamento explícito. A apresentação não move `Root` nem `Corpo` autoritativos. Para novas espécies articuláveis, preferir rig anatômico e clipes próprios reproduzíveis; o Lumito migrou para esse padrão após comparação humana. Chicken ainda usa animador de peças e não é migrada por implicação. Compilação não equivale a carisma aprovado.
+Cada espécie tem gestos, expressões e ritmo compatíveis com sua anatomia e personalidade. Estados de passeio, repouso, alerta/fuga, cansaço, captura e base transitam de forma contínua; velocidade real governa passada e efeitos de contato. Peças desconhecidas ficam estáticas até receberem mapeamento explícito. A apresentação não move `Root` nem `Corpo` autoritativos. Para espécies articuláveis, preferir rig anatômico e clipes próprios reproduzíveis; Lumito e Chicken usam esse padrão, com fontes e atuação distintas. Os animadores anteriores permanecem como retorno seguro. Compilação não equivale a carisma aprovado.
 
 ## ADR-023 — Migração de animação por comparação isolada (28/10/2026)
 
