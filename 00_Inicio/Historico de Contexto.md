@@ -385,3 +385,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Entregue: `Workspace.HAC_IlhaBase` escalada em `1.1×` (texturas restauradas para `StudsPerTile = 4` e `12`); árvores, arbustos, palmeiras, flores, rochas, monumento do laço, píer, postes e cantoneiras reconstruídos com empilhamento limpo e hierarquia de alturas (`topY` com folga `>= 0,05` studs). Guia completo salvo em `../Handoff - Ilha Base v01.1.md` e consolidado em [[01_Produto/Receita de Ilhas e Cenarios]] §2.1; Estado Atual e Backlog atualizados.
 - Evidência: auditoria via `OverlapParams` em Studio Edit comprovou `0` invasões nos 15 lotes e `0` faces de topo coplanares; capturas de tela em Edit verificaram o resultado visual. Sem Play, sem alteração da ilha de teste ou scripts; Save manual segue pendente.
 - Pendências: Save humano no Studio, revisão final do bloco v01.1, criação da água/spawn e povoação funcional dos lotes. Autoria/ambiente: Antigravity, Windows, MCP do Roblox Studio e cofre local; sem agentes auxiliares.
+
+## CTX-2026-10-28-08 — prévia visual dos lotes da Ilha Base
+
+- Pedido: continuar a criação da Ilha Base a partir do handoff e entregar resultado para julgamento visual humano.
+- Entregue: `studio/BuildBaseIslandPreview.luau` (código `dcadf9c`) reconstrói `Workspace.HAC_IlhaBase.PreviewV02`: mar, seis cercados, seis alvos de treino, duas lojas e barco. A prévia não muda a ilha de teste nem seus sistemas. `SpawnLocation` ativo já existia e foi preservado. Receita, Estado Atual e Backlog alinhados.
+- Evidência: aplicação em Studio Edit, capturas aérea e de chegada pelo porto; vela corrigida após inspeção. Verificação leve: 293 BaseParts na prévia, todos ancorados; `Workspace.HuntACreature` permanece. Sem Play, teste de personagem, aprovação humana ou Save acionado.
+- Pendências: feedback visual, ajuste fino de proporção e composição; integração funcional de bases, treino, lojas e barco, menu/teletransporte, Play em PC/celular e Save manual. Autoria/ambiente: Codex, Windows, Git, Roblox Studio MCP; sem agentes auxiliares.

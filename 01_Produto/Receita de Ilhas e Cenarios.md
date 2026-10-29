@@ -1,6 +1,6 @@
 # Receita de ilhas e cenários
 
-**Estado:** direção de design proposta em 28/10/2026; revisável após bloco visual e playtest. A Ilha Base tem um **bloco v01.1 em Studio Edit** (seção 2.1, escala `1.1×` e polimento geométrico), sem aprovação humana final, água ou funcionalidades; barco, teletransporte e Fazenda não estão implementados. Esta nota orienta qualquer agente que criar ou revisar mapas; regras de interface ficam em [[01_Produto/Design UI UX]], mecânicas vigentes em [[01_Produto/Sistemas Atuais]].
+**Estado:** direção de design proposta em 28/10/2026; revisável após bloco visual e playtest. A Ilha Base tem **bloco v01.1 e prévia visual v02 em Studio Edit** (seção 2.1, escala `1.1×` e polimento geométrico), sem aprovação humana final ou migração funcional; teletransporte e Fazenda não estão implementados. Esta nota orienta qualquer agente que criar ou revisar mapas; regras de interface ficam em [[01_Produto/Design UI UX]], mecânicas vigentes em [[01_Produto/Sistemas Atuais]].
 
 ## 1. Experiência pretendida
 
@@ -33,7 +33,9 @@ Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas base
   - `Lote_Loja1..2`: `28,6 × 26,4 × 22,0` em `(−37,4, 8,73, −498,2)` e `(37,4, 8,73, −498,2)`, voltadas na diagonal para a avenida/praça.
   - `Lote_Barco1`: `Volume` `50,6 × 15,4 × 22,0` em `(0, 5,5, −635,7)` ao norte do píer e `AreaInteracao` `33,0 × 8,8 × 8,8` em `(0, 9,68, −618,1)` sobre a cabeça do píer.
 - **Kit, paleta e regras anti-bug:** `SmoothPlastic` em tudo exceto luzes funcionais (`Neon` apenas em `Farol_Lampada` e `Poste.Lanterna`). Texturas preservadas em `StudsPerTile = 4` (studs `133050717017276` e madeira `97810845356536`) e `12` (caminho `103826263412719`) — sempre restaurar `StudsPerTileU/V` após usar `:ScaleTo()`. Copas de árvores, arbustos, palmeiras, flores, monumento e vigas do píer usam empilhamento real sem interpenetração interna; auditoria via `OverlapParams` confirmou `0` invasões nos 15 lotes e `0` faces de topo coplanares.
-- **Pendências para continuar:** nível da água (recomendado `Y = 2,0` a `2,6`), `SpawnLocation`, conversão dos 15 lotes em cercados/treinos/lojas/barco, colisões em Play, custo em celular e aprovação visual humana.
+- **Pendências para continuar:** revisão humana da prévia v02, integração funcional dos cercados/treinos/lojas/barco, colisões em Play, custo em celular e aprovação visual humana.
+
+**Prévia v02:** `Workspace.HAC_IlhaBase.PreviewV02` foi criada por `studio/BuildBaseIslandPreview.luau` (commit `dcadf9c`) como grupo reconstruível: mar na cota aproximada `Y=2,4`, seis cercados com entrada, seis alvos visuais de treino, duas lojas e barco. São assets para avaliação visual, sem zonas de interação, dono, economia, menu ou teletransporte. `SpawnLocation` ativo já existia próximo às bases sul e foi preservado. A ilha de teste e seus scripts permanecem em uso. Save e aprovação humana pendentes.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 
