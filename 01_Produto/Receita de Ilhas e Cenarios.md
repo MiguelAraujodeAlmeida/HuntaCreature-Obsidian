@@ -1,6 +1,6 @@
 # Receita de ilhas e cenários
 
-**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; remoção concluída em Studio Edit. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
+**Estado (29/10/2026):** a revisão visual Art03 foi rejeitada e revertida. `Workspace.HAC_IlhaBase` voltou ao bloco v01.1 anterior, sem a PreviewV02. O desenvolvedor ainda avaliará futuras direções visuais. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
 
 ## 1. Experiência pretendida
 
@@ -20,17 +20,11 @@
 
 Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas bases à esquerda, duas à direita e duas na parte inferior**; áreas de treino próximas às bases, **duas lojas na parte superior** e barco/porto na costa superior. A distribuição é relativa: não determina forma da ilha, posição exata, orientação dos caminhos nem arte final. A ilha de teste ainda não foi substituída. Espécies residentes, requisitos de força e demais regras de gameplay de cada ilha serão estudados numa etapa própria; não inventar esses números ao desenhar cenário.
 
-### 2.1 Ilha Base — passagem Art03, 29/10/2026
+### 2.1 Ilha Base — bloco v01.1 restaurado, 29/10/2026
 
-Workspace.HAC_IlhaBase mantém terreno, caminhos, porto vazio, marcos e 15 reservas. PreviewV02 foi removida integralmente. Lotes estão invisíveis no jogo e identificados no Explorer. O SpawnLocation preexistente foi preservado.
+O bloco anterior voltou a `Workspace.HAC_IlhaBase` a partir de `ServerStorage.HACIslandBeforeArtV03`: 1.445 BaseParts, 1.051 Texture e 15 lotes reservados. `Lighting.EnvironmentSpecularScale` voltou de 0.15 para 1. A PreviewV02 continua ausente, conforme a correção de escopo. O `SpawnLocation` preexistente não foi alterado. A versão Art03 rejeitada está separada em `ServerStorage.HACIslandRejectedArtV03` para eventual recuperação técnica; não é a versão vigente.
 
-Aplicado por studio/RefineBaseIsland.luau: removidas 1.051 Textures repetitivas; grama/folhagem com cores suaves, areia e barranco com Sand, caminho Concrete, madeira do píer Wood, pedras e copas em sólidos chanfrados. Copas têm versões largas, altas e em dois níveis. Arbustos foram unidos em volumes simples; palmeiras reconstruídas com tronco único e cinco folhas. Flores, palmeiras e postes foram reduzidos; luzes locais e Neon decorativo desativados.
-
-São materiais nativos usados como primeira amostra de biblioteca por função; **texturas bitmap autorais ainda não foram produzidas**. Não tratar esta paleta como aprovada. A ilha tem 602 BaseParts, zero Texture e zero BillboardGui; as 15 reservas permanecem. Isso não comprova ausência de toda colisão ou defeito visual.
-
-EnvironmentSpecularScale foi reduzido de 1 para 0.15 em Lighting, afetando o lugar inteiro. Cópia de retorno em ServerStorage.HACIslandBeforeArtV03 contém a ilha anterior e o atributo PreviousSpecular. Preservar essa cópia até revisão humana; salvar o lugar é responsabilidade do desenvolvedor.
-
-Capturas aérea e próxima foram inspecionadas em Edit, com ajustes nos chanfros e arbustos. Pendências: julgamento visual, texturas autorais de baixa repetição, encaixes remanescentes, avaliação de luz no gameplay e Play manual. Não construir mar, bases, lojas, treino ou barco nesta fase.
+O construtor Art03 foi retirado do código. A restauração ocorreu em Studio Edit e aguarda Save manual do desenvolvedor. A pesquisa de métodos de cenário permanece em [[06_Referencias/Processo de criacao de mundos Roblox]] como referência técnica, sem aprovação da paleta ou dos modelos usados na Art03.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 

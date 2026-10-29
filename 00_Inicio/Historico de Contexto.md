@@ -406,3 +406,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Aplicado em Edit: remoção integral de PreviewV02; RefineBaseIsland.luau (a191508) reduz repetição, troca materiais por função, reconstrói copas/arbustos/palmeiras e reduz postes/flores. Sem mar, bases, treino, lojas ou barco construídos. Lighting.EnvironmentSpecularScale 1 → 0.15 afeta todo o lugar; backup da ilha e valor anterior em ServerStorage.HACIslandBeforeArtV03.
 - Evidência: 602 peças, zero Textures e BillboardGui na ilha, 15 reservas preservadas; capturas aérea/próxima revisadas, arbustos e chanfros corrigidos. Sem Play automático, Save ou aprovação humana.
 - Limitações: biblioteca experimental usa materiais nativos; bitmaps autorais ainda pendentes. Não há certificação de todos os encaixes/colisões. Próximo passo é feedback humano e amostra de texturas autorais. Autoria: Codex, Windows, Studio MCP e Git, sem agentes auxiliares.
+
+## CTX-2026-10-29-03 — reversão da Art03
+
+- Pedido: o desenvolvedor rejeitou o resultado visual e solicitou retorno à versão antiga.
+- Aplicado: `Workspace.HAC_IlhaBase` restaurada da cópia anterior à Art03, sem reintroduzir a PreviewV02 já removida. `Lighting.EnvironmentSpecularScale` voltou a `1`. A Art03 rejeitada ficou separada em ServerStorage para recuperação técnica. O construtor foi retirado do código; referência `13737a9`.
+- Evidência: Studio Edit retornou 1.445 BaseParts, 1.051 Texture e 15 lotes; PreviewV02 ausente. Sem Play ou Save acionado. Save humano permanece pendente.
+- Próximo passo: aguardar direção visual do desenvolvedor antes de outra revisão da ilha. Autoria/ambiente: Codex, Windows, Roblox Studio MCP e Git; sem agentes auxiliares.

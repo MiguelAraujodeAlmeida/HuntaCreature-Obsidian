@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-29-02",
+  "context_revision": "CTX-2026-10-29-03",
   "updated": "2026-10-29",
-  "code_reference": "a191508",
+  "code_reference": "13737a9",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
   "branch": "main",
   "entrypoints": [
@@ -57,14 +57,14 @@
     "assets/ilhas-referencia-templo.png"
   ],
   "sha256": {
-    "README.md": "6b5bc596cc54dbf4c8746abeab674ed836f2fd0eab09fa8cde8b2b62d14bc4e0",
+    "README.md": "44641b6baa5952d32acec5b7db848c153c6e22015f36debcc6954ff0b9873400",
     "AGENTS.md": "d6245324b64460061c9de9e537d58debb0dd268ad94678a3ea437d9876a6b4b5",
-    "00_Inicio/Estado Atual.md": "acee12186285a1583a7b328756887bba95f90093f8561654daa1d9ffdb24d66a",
+    "00_Inicio/Estado Atual.md": "cafcb6f9217f7cd7d2a1602139ca52af43cd314a77cabb9cd43b6932d69fd520",
     "01_Produto/Visao e Escopo.md": "84e64d7a2dc850dd3adf20aa5c82d09bebbd2a68da58454599345b1f56ebfe5e",
-    "02_Planejamento/Backlog.md": "25a4f38372db448e280175954f54f4142e89b402c899e21e4bc7cca83f66c692",
+    "02_Planejamento/Backlog.md": "8a6ac180f537745b976af5ca2197c2048bb6005fca21608773e67dc77debd3ad",
     "03_Engenharia/Fluxo de Desenvolvimento.md": "c06fa9dcc62203d9bdde65f6bcaff1e6159e8e793ca420f89c16618247c873b1",
     "00_Inicio/Painel do Projeto.md": "9cff05eec38eac8b607034cd61126c21a513563004a9403ca1be052d9436ccb4",
-    "00_Inicio/Historico de Contexto.md": "edfefc801ca4776a62f58dc4c62491215862cf807d703fd9e94db392803d21b7",
+    "00_Inicio/Historico de Contexto.md": "9c451c805341807f2b2217f9a05a01ee1fea95ffa66747c75620071a9eec2244",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "bfcbf85e79cecee4e8492404d22218611b58856d017d89f921fd8aea59d487ac",
     "06_Referencias/Referencias Visuais.md": "e6b91a24699c18fb606dd2161235ed3acce51f5dee48b0338f1e663c79a07302",
@@ -82,7 +82,7 @@
     "assets/ilhas-referencia-templo.png": "052983c2a0d38520e71e3ae0b75c490f85a9088c696e145c2e059e8dcc9af349",
     "01_Produto/Sistemas Atuais.md": "99724000435ac42227d6e3c40c99a5db151063e7ac7120cd1b9de230baacffff",
     "01_Produto/Design UI UX.md": "294dfc6630bacbf488e8dccb18bf335f06d0b6238fbce4312c521c3271f0dd18",
-    "01_Produto/Receita de Ilhas e Cenarios.md": "1bc8fbc5431f00e81e7d888485a3b619d70f9186fa3e5ee898e6f70da2a1c43e",
+    "01_Produto/Receita de Ilhas e Cenarios.md": "9ef11f6f22e83b3adcd52a6635c4ddefb77286bdc6fb0dae176b82a7f1c20a6e",
     "03_Engenharia/Arquitetura Atual.md": "8e9e1517109b62554125ae38df011df2e2f58f97fec20a65347974d614072b7e",
     "03_Engenharia/Decisoes Vigentes.md": "57360d86dde88d60da46669482a8d529d3346f810efa83e198a4969615aa9591",
     "04_Validacao/Playtest Atual.md": "a2d4062ea8264733c5074f6f5060911d28e04be41dc9495faf3d5b4f9e4659af"
