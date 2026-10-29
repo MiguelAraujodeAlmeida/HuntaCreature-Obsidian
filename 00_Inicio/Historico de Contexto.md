@@ -399,3 +399,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Feito: construtor indevido removido do código (`c760a40`); pesquisa com fontes primárias registrada em [[06_Referencias/Processo de criacao de mundos Roblox]]. Receita atualizada com escopo e critérios corrigidos.
 - Evidência: MCP recusou alteração em Edit porque Studio permanece em Play; nenhuma remoção ou refatoração foi aplicada ao lugar nesta rodada. Sem Play ou Save iniciado pelo assistente. Pesquisa consultou casos Beyond the Dark, Modern City e currículo Environment Art, sem atribuir pipeline não verificado aos jogos de inspiração.
 - Pendente: desenvolvedor encerrar Play; remover PreviewV02, criar amostra de materiais/modelos, refatorar cenário e avaliar capturas. Autoria: Codex, Windows, Roblox Studio MCP, web e Git; sem agentes auxiliares. Save manual continua pendente.
+
+## CTX-2026-10-29-02 — remoção da prévia e passagem Art03
+
+- Pedido: continuar após o desenvolvedor encerrar Play.
+- Aplicado em Edit: remoção integral de PreviewV02; RefineBaseIsland.luau (a191508) reduz repetição, troca materiais por função, reconstrói copas/arbustos/palmeiras e reduz postes/flores. Sem mar, bases, treino, lojas ou barco construídos. Lighting.EnvironmentSpecularScale 1 → 0.15 afeta todo o lugar; backup da ilha e valor anterior em ServerStorage.HACIslandBeforeArtV03.
+- Evidência: 602 peças, zero Textures e BillboardGui na ilha, 15 reservas preservadas; capturas aérea/próxima revisadas, arbustos e chanfros corrigidos. Sem Play automático, Save ou aprovação humana.
+- Limitações: biblioteca experimental usa materiais nativos; bitmaps autorais ainda pendentes. Não há certificação de todos os encaixes/colisões. Próximo passo é feedback humano e amostra de texturas autorais. Autoria: Codex, Windows, Studio MCP e Git, sem agentes auxiliares.

@@ -1,6 +1,6 @@
 # Receita de ilhas e cenários
 
-**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; aplicação bloqueada enquanto o Studio estiver em Play. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
+**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; remoção concluída em Studio Edit. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
 
 ## 1. Experiência pretendida
 
@@ -20,22 +20,17 @@
 
 Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas bases à esquerda, duas à direita e duas na parte inferior**; áreas de treino próximas às bases, **duas lojas na parte superior** e barco/porto na costa superior. A distribuição é relativa: não determina forma da ilha, posição exata, orientação dos caminhos nem arte final. A ilha de teste ainda não foi substituída. Espécies residentes, requisitos de força e demais regras de gameplay de cada ilha serão estudados numa etapa própria; não inventar esses números ao desenhar cenário.
 
-### 2.1 Ilha Base — bloco v01.1 e guia de continuidade (Studio Edit, 28/10/2026)
+### 2.1 Ilha Base — passagem Art03, 29/10/2026
 
-**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; aplicação bloqueada enquanto o Studio estiver em Play. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
+Workspace.HAC_IlhaBase mantém terreno, caminhos, porto vazio, marcos e 15 reservas. PreviewV02 foi removida integralmente. Lotes estão invisíveis no jogo e identificados no Explorer. O SpawnLocation preexistente foi preservado.
 
-- **Terreno e orientação de cilindros (`Terreno`):** contorno orgânico por 5 `UnionOperation`s de cilindros rotacionados `90°` em Z (`RightVector = +Y`, espessura vertical em `Size.X` e textura de topo em `Face = Enum.NormalId.Right`): `Fundacao` (topo `−2,20`), `AreiaRasa` (topo `2,75`), `Praia` (topo `4,40`), `Barranco` (topo `7,70`) e `Gramado` (topo **`8,80`**). Quatro colinas decorativas nos cantos e farol listrado na colina NE.
-- **Circulação e hierarquia de alturas sem Z-fighting (`Caminhos`):** todas as superfícies horizontais sobrepostas mantêm diferença mínima de `>= 0,05` studs no topo (`topY`, zero pares coplanares): `Gramado` (`8,800`) → `Acesso_Loja1..2` (`8,860`) → `Acesso_Base5..6` (`8,866`) → `Lote_Treino.Borda` (`8,910`) → `Acesso_Base1..4` (`8,932`) → `Lote_Base/Loja.Piso` (`8,950`) → `Lote_Treino.Piso` (`8,976`) → `Avenida_Porto/Oeste/Leste` (`9,020`) → `PracaBorda` (`9,108`) → `Lote.Marcador/IndicadorFrente` (`9,130`) → `Praca` (`9,196`). Píer em `T` no norte com tábuas em `5,280`/`5,302`.
-- **Lotes reservados (`Lotes`, coordenadas globais em escala `1.1×`):** cada lote é um Model desimpedido com `Piso` (`PrimaryPart`, cuja frente é `Piso.CFrame.LookVector`), cantoneiras brancas sem sobreposição nos cantos, `Volume` invisível (`CanCollide/CanQuery/CanTouch = false`) e atributos `HACReserva`, `HACIndice`, `HACTamanho`/`HACRaio`:
-  - `Lote_Base1..4`: `37,4 × 19,8 × 30,8` em `(−70,4, 8,73, −456,4)`, `(−70,4, 8,73, −412,4)`, `(70,4, 8,73, −456,4)` e `(70,4, 8,73, −412,4)`, frente para a praça (`±X`).
-  - `Lote_Base5..6`: `30,8 × 19,8 × 37,4` em `(−22,0, 8,73, −361,8)` e `(22,0, 8,73, −361,8)`, frente norte (`−Z`).
-  - `Lote_Treino1..6`: raio `7,15` (diâmetro `14,3`) ao lado de cada base (`HACBaseVinculada = 1..6`).
-  - `Lote_Loja1..2`: `28,6 × 26,4 × 22,0` em `(−37,4, 8,73, −498,2)` e `(37,4, 8,73, −498,2)`, voltadas na diagonal para a avenida/praça.
-  - `Lote_Barco1`: `Volume` `50,6 × 15,4 × 22,0` em `(0, 5,5, −635,7)` ao norte do píer e `AreaInteracao` `33,0 × 8,8 × 8,8` em `(0, 9,68, −618,1)` sobre a cabeça do píer.
-- **Kit, paleta e regras anti-bug:** `SmoothPlastic` em tudo exceto luzes funcionais (`Neon` apenas em `Farol_Lampada` e `Poste.Lanterna`). Texturas preservadas em `StudsPerTile = 4` (studs `133050717017276` e madeira `97810845356536`) e `12` (caminho `103826263412719`) — sempre restaurar `StudsPerTileU/V` após usar `:ScaleTo()`. Copas de árvores, arbustos, palmeiras, flores, monumento e vigas do píer usam empilhamento real sem interpenetração interna; auditoria via `OverlapParams` confirmou `0` invasões nos 15 lotes e `0` faces de topo coplanares.
-- **Pendências para continuar:** revisão humana da prévia v02, integração funcional dos cercados/treinos/lojas/barco, colisões em Play, custo em celular e aprovação visual humana.
+Aplicado por studio/RefineBaseIsland.luau: removidas 1.051 Textures repetitivas; grama/folhagem com cores suaves, areia e barranco com Sand, caminho Concrete, madeira do píer Wood, pedras e copas em sólidos chanfrados. Copas têm versões largas, altas e em dois níveis. Arbustos foram unidos em volumes simples; palmeiras reconstruídas com tronco único e cinco folhas. Flores, palmeiras e postes foram reduzidos; luzes locais e Neon decorativo desativados.
 
-**PreviewV02 rejeitada:** não reaplicar; construtor retirado do Git em `c760a40`. Remoção do grupo no Studio ainda pendente de Edit.
+São materiais nativos usados como primeira amostra de biblioteca por função; **texturas bitmap autorais ainda não foram produzidas**. Não tratar esta paleta como aprovada. A ilha tem 602 BaseParts, zero Texture e zero BillboardGui; as 15 reservas permanecem. Isso não comprova ausência de toda colisão ou defeito visual.
+
+EnvironmentSpecularScale foi reduzido de 1 para 0.15 em Lighting, afetando o lugar inteiro. Cópia de retorno em ServerStorage.HACIslandBeforeArtV03 contém a ilha anterior e o atributo PreviousSpecular. Preservar essa cópia até revisão humana; salvar o lugar é responsabilidade do desenvolvedor.
+
+Capturas aérea e próxima foram inspecionadas em Edit, com ajustes nos chanfros e arbustos. Pendências: julgamento visual, texturas autorais de baixa repetição, encaixes remanescentes, avaliação de luz no gameplay e Play manual. Não construir mar, bases, lojas, treino ou barco nesta fase.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 
