@@ -1,6 +1,6 @@
 # Estado atual
 
-Revisão **CTX-2026-10-28-08** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `dcadf9c` (construtor reproduzível da prévia visual da Ilha Base). O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Lumito e Chicken jogáveis usam rigs de peças na ilha e na base em Studio Edit; os animadores anteriores permanecem como retorno seguro. O lugar aguarda Save humano e playtest das integrações.
+Revisão **CTX-2026-10-29-01** · 28/10/2026. Código canônico: `main` do [HuntACreature](https://github.com/MiguelAraujodeAlmeida/HuntACreature), commit `c760a40` (construtor reproduzível da prévia visual da Ilha Base). O lugar de teste é **[Testing] Hunt a Creature** (`102310424634629`). Lumito e Chicken jogáveis usam rigs de peças na ilha e na base em Studio Edit; os animadores anteriores permanecem como retorno seguro. O lugar aguarda Save humano e playtest das integrações.
 
 ## O que existe
 
@@ -8,7 +8,7 @@ Revisão **CTX-2026-10-28-08** · 28/10/2026. Código canônico: `main` do [Hunt
 - Lumito e Chicken têm templates facetados e animadores próprios; Chicken usa `HACChickenTemplate` importado do FBX. Pug e Lumito ornamentado seguem apenas como arte. Menus usam `MenuKit` e `MenuTheme`. Implementação e contratos: [[03_Engenharia/Arquitetura Atual]].
 - Zonas de entrada abrem treino, Hunting Shop e Creature Market. Loja/mercado têm receptor cliente e vínculo da janela à zona para fechamento ao sair, pendente de playtest; treino fica fora da base, com quatro manequins evolutivos. A base ocupada mostra foto/nome do dono; base livre não tem texto.
 - Três fontes de arte em `art/chicken-base-v01/`, `art/pug-base-v01/` e `art/lumito-ornate-v01/`. Chicken foi integrada tecnicamente; sua aparência e atuação no jogo ainda dependem de revisão humana. A skill `hac-creature-modeler` cria arte; `hac-creature-integrator` prepara integração jogável. Ambas estão no repositório do jogo e instaladas localmente por junction. Seus guias são consultados apenas ao usá-las.
-- **Mapa futuro:** a Ilha Base tem bloco v01.1 e prévia visual v02 em `Workspace.HAC_IlhaBase.PreviewV02`: mar, seis cercados, seis alvos visuais de treino, duas lojas e barco. `SpawnLocation` ativo já existia próximo às bases sul e foi preservado. Ilha de teste e scripts seguem em uso; a prévia não possui gameplay nem teletransporte. Revisão visual humana e Save pendentes. Detalhes em [[01_Produto/Receita de Ilhas e Cenarios]].
+- **Ilha Base:** PreviewV02 rejeitada por extrapolar o escopo; construtor removido do Git. Studio em Play impediu remoção e refatoração visual. Escopo atual: cenário e reservas, sem mar/bases/treinos/lojas/barco construídos. Visual antigo também rejeitado por ruído, repetição e brilho. Pesquisa disponível na receita; aplicação e avaliação humana pendentes.
 
 ## Estados e pendências que não podem ser confundidos
 

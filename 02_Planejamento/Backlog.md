@@ -18,7 +18,7 @@
 | ANIM-RIG-01 | Validar o Rig aplicado ao Lumito selvagem e na base: pés, crista, transições, captura, escala, Gold, dois clientes e custo; ajustar defeitos observados | Promovido após preferência humana no comparativo; não houve Play automático nem teste de rede/desempenho. O Original segue disponível como retorno seguro |
 | ANIM-RIG-02 | Validar o Rig da Chicken: bicada, estranhamento, tropeço, asas, cauda, pés, captura, escala, Gold, dois clientes e custo; ajustar defeitos observados | Aplicado em Studio Edit e compilado; sem Play automático, teste de rede/desempenho ou Save. `ChickenAnimator` é retorno seguro |
 | PROG-02 | Ampliar espécies, rendas, ferramentas e níveis de treino conforme curva de ouro/XP | Conteúdo que sustente os preços, seguido de playtest |
-| HAC-07/08 | Desenvolvedor revisa a prévia v02 da Ilha Base; corrigir visual e então integrar cercados, treinos, lojas e viagem | Mar, seis cercados, seis treinos visuais, duas lojas e barco em `PreviewV02`; sem gameplay novo, Save ou Play. Menu e técnica de viagem abertos. [[01_Produto/Receita de Ilhas e Cenarios]] |
+| HAC-07/08 | Em Edit, remover PreviewV02; refatorar materiais, vegetação, encaixes e luz da Ilha Base, preservando reservas | Bloqueado por Play. Pesquisa registrada; mar/bases/treinos/lojas/barco fora do escopo atual. Avaliação visual humana necessária |
 | HAC-09M | Criar mutações geométricas no Studio | Aprovação das espécies base |
 
 ## Manutenção contínua

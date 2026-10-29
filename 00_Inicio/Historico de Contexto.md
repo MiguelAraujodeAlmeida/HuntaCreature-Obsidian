@@ -392,3 +392,10 @@ Esse arquivo legado não é necessário para entender as regras atuais e não fo
 - Entregue: `studio/BuildBaseIslandPreview.luau` (código `dcadf9c`) reconstrói `Workspace.HAC_IlhaBase.PreviewV02`: mar, seis cercados, seis alvos de treino, duas lojas e barco. A prévia não muda a ilha de teste nem seus sistemas. `SpawnLocation` ativo já existia e foi preservado. Receita, Estado Atual e Backlog alinhados.
 - Evidência: aplicação em Studio Edit, capturas aérea e de chegada pelo porto; vela corrigida após inspeção. Verificação leve: 293 BaseParts na prévia, todos ancorados; `Workspace.HuntACreature` permanece. Sem Play, teste de personagem, aprovação humana ou Save acionado.
 - Pendências: feedback visual, ajuste fino de proporção e composição; integração funcional de bases, treino, lojas e barco, menu/teletransporte, Play em PC/celular e Save manual. Autoria/ambiente: Codex, Windows, Git, Roblox Studio MCP; sem agentes auxiliares.
+
+## CTX-2026-10-29-01 — correção de escopo e pesquisa de cenários
+
+- Pedido: remover mar/bases/treinos/lojas/barco da prévia, pesquisar criação de mundos Roblox e refatorar o cenário por excesso de studs, repetição, brilho e textos.
+- Feito: construtor indevido removido do código (`c760a40`); pesquisa com fontes primárias registrada em [[06_Referencias/Processo de criacao de mundos Roblox]]. Receita atualizada com escopo e critérios corrigidos.
+- Evidência: MCP recusou alteração em Edit porque Studio permanece em Play; nenhuma remoção ou refatoração foi aplicada ao lugar nesta rodada. Sem Play ou Save iniciado pelo assistente. Pesquisa consultou casos Beyond the Dark, Modern City e currículo Environment Art, sem atribuir pipeline não verificado aos jogos de inspiração.
+- Pendente: desenvolvedor encerrar Play; remover PreviewV02, criar amostra de materiais/modelos, refatorar cenário e avaliar capturas. Autoria: Codex, Windows, Roblox Studio MCP, web e Git; sem agentes auxiliares. Save manual continua pendente.

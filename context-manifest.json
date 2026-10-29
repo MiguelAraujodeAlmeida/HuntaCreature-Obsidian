@@ -1,8 +1,8 @@
 {
   "schema": 1,
-  "context_revision": "CTX-2026-10-28-08",
-  "updated": "2026-10-28",
-  "code_reference": "dcadf9c",
+  "context_revision": "CTX-2026-10-29-01",
+  "updated": "2026-10-29",
+  "code_reference": "c760a40",
   "repository": "https://github.com/MiguelAraujodeAlmeida/HuntaCreature-Obsidian",
   "branch": "main",
   "entrypoints": [
@@ -41,7 +41,8 @@
     "05_Modelos/Registro de Solicitacao.md",
     "07_Relatorios/Otimizacao de Tokens.md",
     "06_Referencias/Referencias Visuais.md",
-    "06_Referencias/Estudo visual Steal an Egg.md"
+    "06_Referencias/Estudo visual Steal an Egg.md",
+    "06_Referencias/Processo de criacao de mundos Roblox.md"
   ],
   "assets": [
     "assets/referencia-botoes-glossy.png",
@@ -56,18 +57,19 @@
     "assets/ilhas-referencia-templo.png"
   ],
   "sha256": {
-    "README.md": "662e91eb90a1541606362f32a132bbbb84ebf5ade6b5bcf5fcb9ebe019a88ed9",
+    "README.md": "7a5815ad51f05f8be8cf47ccef588c9f39c15c26c44371f65617231afe3b391a",
     "AGENTS.md": "d6245324b64460061c9de9e537d58debb0dd268ad94678a3ea437d9876a6b4b5",
-    "00_Inicio/Estado Atual.md": "b36f55e6d8edb37cd08fe53efcabbb3f121df1d3cf3083c9b1a24eb47f886e22",
+    "00_Inicio/Estado Atual.md": "3748c9336ec569676d825ac36495e3d98e483ff52aaeab244de966e3ec13474d",
     "01_Produto/Visao e Escopo.md": "84e64d7a2dc850dd3adf20aa5c82d09bebbd2a68da58454599345b1f56ebfe5e",
-    "02_Planejamento/Backlog.md": "0478cee65eaed48d7bde1be181d69878064b2b25fbf3f4cb41ffbbd604f51089",
+    "02_Planejamento/Backlog.md": "b56e31f851097e9b002eaed3678010f937d041bd8c1ce8328852e676d9477e5f",
     "03_Engenharia/Fluxo de Desenvolvimento.md": "c06fa9dcc62203d9bdde65f6bcaff1e6159e8e793ca420f89c16618247c873b1",
     "00_Inicio/Painel do Projeto.md": "9cff05eec38eac8b607034cd61126c21a513563004a9403ca1be052d9436ccb4",
-    "00_Inicio/Historico de Contexto.md": "603104039c7f27e7daee4a32211d727df9b6876996fa0262389b3b4553b3d3ff",
+    "00_Inicio/Historico de Contexto.md": "b825bfafd00cb668a5f85fec354e88d5a16e0f07fe310280d2d19bc2d4197572",
     "05_Modelos/Registro de Solicitacao.md": "303e43ba5ee7f10a753711aff939deaade102d95129affb25658467dada72e83",
     "07_Relatorios/Otimizacao de Tokens.md": "bfcbf85e79cecee4e8492404d22218611b58856d017d89f921fd8aea59d487ac",
     "06_Referencias/Referencias Visuais.md": "e6b91a24699c18fb606dd2161235ed3acce51f5dee48b0338f1e663c79a07302",
     "06_Referencias/Estudo visual Steal an Egg.md": "3b24a0607364d4fbe7eedc58f1b28a6bfd57a8a3e49432bc3f81a38c8c960fbe",
+    "06_Referencias/Processo de criacao de mundos Roblox.md": "43966ab1b3966bc3b3c66a2c88e77635b60177337755ded13d513d0af0b97ce8",
     "assets/referencia-botoes-glossy.png": "7454521f458c82126df075c6e67710e4a195d6b16d4be25b3b219bc2cf356ad4",
     "assets/referencia-index.png": "d24d0363bb5d68821255e4e467430cb51a3868b7cb991764d144c76ba92eef5d",
     "assets/referencia-shop.png": "81f937be1e2a643f4939fe02a0c27b9fe7e0570d26f0d3dc6bd62d69b5ddcf71",
@@ -80,7 +82,7 @@
     "assets/ilhas-referencia-templo.png": "052983c2a0d38520e71e3ae0b75c490f85a9088c696e145c2e059e8dcc9af349",
     "01_Produto/Sistemas Atuais.md": "99724000435ac42227d6e3c40c99a5db151063e7ac7120cd1b9de230baacffff",
     "01_Produto/Design UI UX.md": "294dfc6630bacbf488e8dccb18bf335f06d0b6238fbce4312c521c3271f0dd18",
-    "01_Produto/Receita de Ilhas e Cenarios.md": "3f1a9a73c53f2479444207a4982cf38871fa135847979fdfcffd64af5403f307",
+    "01_Produto/Receita de Ilhas e Cenarios.md": "382f6171dcd33c5b8d6377531d65050e61c8f5ab6c5c7ef1a45634e8d7074346",
     "03_Engenharia/Arquitetura Atual.md": "8e9e1517109b62554125ae38df011df2e2f58f97fec20a65347974d614072b7e",
     "03_Engenharia/Decisoes Vigentes.md": "57360d86dde88d60da46669482a8d529d3346f810efa83e198a4969615aa9591",
     "04_Validacao/Playtest Atual.md": "a2d4062ea8264733c5074f6f5060911d28e04be41dc9495faf3d5b4f9e4659af"

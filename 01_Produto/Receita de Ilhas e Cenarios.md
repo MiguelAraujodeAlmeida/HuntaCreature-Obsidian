@@ -1,6 +1,6 @@
 # Receita de ilhas e cenários
 
-**Estado:** direção de design proposta em 28/10/2026; revisável após bloco visual e playtest. A Ilha Base tem **bloco v01.1 e prévia visual v02 em Studio Edit** (seção 2.1, escala `1.1×` e polimento geométrico), sem aprovação humana final ou migração funcional; teletransporte e Fazenda não estão implementados. Esta nota orienta qualquer agente que criar ou revisar mapas; regras de interface ficam em [[01_Produto/Design UI UX]], mecânicas vigentes em [[01_Produto/Sistemas Atuais]].
+**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; aplicação bloqueada enquanto o Studio estiver em Play. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
 
 ## 1. Experiência pretendida
 
@@ -22,7 +22,7 @@ Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas base
 
 ### 2.1 Ilha Base — bloco v01.1 e guia de continuidade (Studio Edit, 28/10/2026)
 
-**Estado:** implementado e polido em Edit como `Workspace.HAC_IlhaBase` (Model, `1.445` BaseParts / `2.710` descendentes, `WorldPivot = (0, 0, −430)`, escala `1.1×` via `HACEscala = 1.1`), sem Save confirmado, Play ou aprovação visual final. Fica a ~430 studs ao norte (`−Z`) da ilha de teste (`Workspace.HuntACreature`), que segue intacta; nenhum script referencia `HAC_IlhaBase`. **Norte = `−Z` = porto**. Guia avulso completo também salvo em `../Handoff - Ilha Base v01.1.md` (fora do cofre).
+**Estado (29/10/2026):** visual atual rejeitado pelo desenvolvedor: excesso de studs, repetição de modelos, brilhos e informação. A PreviewV02 extrapolou o escopo e deve ser removida integralmente; aplicação bloqueada enquanto o Studio estiver em Play. Escopo autorizado agora: terreno, caminhos, vegetação, marcos e lotes reservados. Mar, cercados/bases construídas, treinos, lojas e barco ficam para etapa posterior com sistemas de upgrade consistentes.
 
 - **Terreno e orientação de cilindros (`Terreno`):** contorno orgânico por 5 `UnionOperation`s de cilindros rotacionados `90°` em Z (`RightVector = +Y`, espessura vertical em `Size.X` e textura de topo em `Face = Enum.NormalId.Right`): `Fundacao` (topo `−2,20`), `AreiaRasa` (topo `2,75`), `Praia` (topo `4,40`), `Barranco` (topo `7,70`) e `Gramado` (topo **`8,80`**). Quatro colinas decorativas nos cantos e farol listrado na colina NE.
 - **Circulação e hierarquia de alturas sem Z-fighting (`Caminhos`):** todas as superfícies horizontais sobrepostas mantêm diferença mínima de `>= 0,05` studs no topo (`topY`, zero pares coplanares): `Gramado` (`8,800`) → `Acesso_Loja1..2` (`8,860`) → `Acesso_Base5..6` (`8,866`) → `Lote_Treino.Borda` (`8,910`) → `Acesso_Base1..4` (`8,932`) → `Lote_Base/Loja.Piso` (`8,950`) → `Lote_Treino.Piso` (`8,976`) → `Avenida_Porto/Oeste/Leste` (`9,020`) → `PracaBorda` (`9,108`) → `Lote.Marcador/IndicadorFrente` (`9,130`) → `Praca` (`9,196`). Píer em `T` no norte com tábuas em `5,280`/`5,302`.
@@ -35,7 +35,7 @@ Distribuição inicial da Base, conforme o esquema do desenvolvedor: **duas base
 - **Kit, paleta e regras anti-bug:** `SmoothPlastic` em tudo exceto luzes funcionais (`Neon` apenas em `Farol_Lampada` e `Poste.Lanterna`). Texturas preservadas em `StudsPerTile = 4` (studs `133050717017276` e madeira `97810845356536`) e `12` (caminho `103826263412719`) — sempre restaurar `StudsPerTileU/V` após usar `:ScaleTo()`. Copas de árvores, arbustos, palmeiras, flores, monumento e vigas do píer usam empilhamento real sem interpenetração interna; auditoria via `OverlapParams` confirmou `0` invasões nos 15 lotes e `0` faces de topo coplanares.
 - **Pendências para continuar:** revisão humana da prévia v02, integração funcional dos cercados/treinos/lojas/barco, colisões em Play, custo em celular e aprovação visual humana.
 
-**Prévia v02:** `Workspace.HAC_IlhaBase.PreviewV02` foi criada por `studio/BuildBaseIslandPreview.luau` (commit `dcadf9c`) como grupo reconstruível: mar na cota aproximada `Y=2,4`, seis cercados com entrada, seis alvos visuais de treino, duas lojas e barco. São assets para avaliação visual, sem zonas de interação, dono, economia, menu ou teletransporte. `SpawnLocation` ativo já existia próximo às bases sul e foi preservado. A ilha de teste e seus scripts permanecem em uso. Save e aprovação humana pendentes.
+**PreviewV02 rejeitada:** não reaplicar; construtor retirado do Git em `c760a40`. Remoção do grupo no Studio ainda pendente de Edit.
 
 Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter legibilidade e qualidade da família visual, não repetir floresta/grama por obrigação. As imagens abaixo demonstram como uma linguagem de blocos e studs suporta árvore, lava, cânion e ruína com identidades diferentes; **não são o mapa que deve ser copiado**.
 
@@ -76,3 +76,11 @@ Outras ilhas podem ser fantásticas, sazonais ou surpreendentes. Devem manter le
 ## 6. Pendências para a etapa de implementação
 
 Escolher no bloco jogável as dimensões e o contorno de cada ilha, caminhos definitivos entre pontos, catálogo de props e abordagem técnica do teletransporte. A distribuição inicial da Base e o fluxo de interação do barco já estão descritos; a UI concreta do menu de destinos ainda exige design. Espécies por ilha e seus requisitos de força ficam para um estudo de gameplay separado. Validar cada ilha em bloco antes da arte final. Esta receita não aprova modelos específicos nem substitui feedback visual do desenvolvedor.
+
+## Revisão de direção — 29/10/2026
+
+Brinquedo é linguagem de formas, proporções, cores e acabamento. Studs são acento opcional, nunca cobertura padrão de grama, areia, copa, pedra e chão simultaneamente. As paletas e texturas listadas acima descrevem o bloco antigo, não um padrão aprovado.
+
+Priorizar materiais com contraste baixo nas grandes superfícies, variação por função e silhuetas distintas na vegetação. Reduzir props repetidos, textos flutuantes e focos luminosos. Corrigir encaixes visíveis, frestas e faces coplanares; não certificar ausência de defeitos somente pela contagem de peças ancoradas. Biblioteca de materiais e modelos deve passar primeiro por uma amostra pequena, avaliada na câmera do jogador, antes da aplicação geral.
+
+Pesquisa complementar e proposta de fluxo: [[06_Referencias/Processo de criacao de mundos Roblox]]. Não presumir ferramentas internas dos jogos de referência.
